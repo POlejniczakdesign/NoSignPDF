@@ -1,0 +1,6 @@
+{
+  "name": "PDF Studio Online",
+  "description": "Darmowe, bezpieczne narzędzia PDF online. Wypełniaj formularze, usuwaj strony, obracaj, łącz i rozdzielaj pliki PDF w 100% w przeglądarce bez wysyłania plików na serwer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
