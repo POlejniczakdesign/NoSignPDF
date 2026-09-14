@@ -15,11 +15,11 @@ redirects_dist_path = os.path.join(dist_dir, '_redirects')
 with open(redirects_dist_path, 'w') as f:
     f.write('# Konfiguracja SPA obsłużona przez Cloudflare single-page-application\n')
 
-# Ensure dist/wrangler.json is clean and has only pure assets-only configuration
-dist_wrangler_path = os.path.join(dist_dir, 'wrangler.json')
-root_wrangler_path = 'wrangler.json'
-if os.path.exists(root_wrangler_path):
-    shutil.copyfile(root_wrangler_path, dist_wrangler_path)
+# Ensure no wrangler file exists in dist (wrangler config lives strictly in project root)
+for wrangler_name in ['wrangler.json', 'wrangler.jsonc', 'wrangler.toml']:
+    dist_w = os.path.join(dist_dir, wrangler_name)
+    if os.path.exists(dist_w):
+        os.remove(dist_w)
 
 # Ensure 200.html exists in dist as Cloudflare Pages native SPA fallback
 index_path = os.path.join(dist_dir, 'index.html')
@@ -32,8 +32,8 @@ print("Creating Cloudflare Pages production zip archive...")
 with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
     for root, dirs, files in os.walk(dist_dir):
         for file in files:
-            # Skip any existing zip or gitignore in assets
-            if file.endswith('.zip') or file.startswith('.git'):
+            # Skip any existing zip or gitignore or wrangler in dist assets
+            if file.endswith('.zip') or file.startswith('.git') or file.startswith('wrangler.'):
                 continue
             full_path = os.path.join(root, file)
             # relative path inside the zip should start from root, e.g. index.html, assets/app.js
