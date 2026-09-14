@@ -9,6 +9,12 @@ if not os.path.exists(dist_dir):
     print("Error: dist directory does not exist. Run 'npm run build' first.")
     exit(1)
 
+# Ensure 200.html exists in dist as Cloudflare Pages native SPA fallback
+index_path = os.path.join(dist_dir, 'index.html')
+spa_fallback_path = os.path.join(dist_dir, '200.html')
+if os.path.exists(index_path):
+    shutil.copyfile(index_path, spa_fallback_path)
+
 print("Creating Cloudflare Pages production zip archive...")
 # Create the zip in memory/file
 with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
