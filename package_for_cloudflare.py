@@ -15,6 +15,12 @@ redirects_dist_path = os.path.join(dist_dir, '_redirects')
 with open(redirects_dist_path, 'w') as f:
     f.write('# Konfiguracja SPA obsłużona przez Cloudflare single-page-application\n')
 
+# Ensure dist/wrangler.json is clean and has only pure assets-only configuration
+dist_wrangler_path = os.path.join(dist_dir, 'wrangler.json')
+root_wrangler_path = 'wrangler.json'
+if os.path.exists(root_wrangler_path):
+    shutil.copyfile(root_wrangler_path, dist_wrangler_path)
+
 # Ensure 200.html exists in dist as Cloudflare Pages native SPA fallback
 index_path = os.path.join(dist_dir, 'index.html')
 spa_fallback_path = os.path.join(dist_dir, '200.html')
