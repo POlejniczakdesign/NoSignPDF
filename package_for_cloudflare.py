@@ -9,6 +9,12 @@ if not os.path.exists(dist_dir):
     print("Error: dist directory does not exist. Run 'npm run build' first.")
     exit(1)
 
+# Ensure dist/_redirects exists and does NOT contain any catch-all infinite loop rule
+# Cloudflare Workers Assets handles SPA routing natively via single-page-application / 200.html
+redirects_dist_path = os.path.join(dist_dir, '_redirects')
+with open(redirects_dist_path, 'w') as f:
+    f.write('# Konfiguracja SPA obsłużona przez Cloudflare single-page-application\n')
+
 # Ensure 200.html exists in dist as Cloudflare Pages native SPA fallback
 index_path = os.path.join(dist_dir, 'index.html')
 spa_fallback_path = os.path.join(dist_dir, '200.html')
