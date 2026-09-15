@@ -15,31 +15,33 @@ redirects_dist_path = os.path.join(dist_dir, '_redirects')
 with open(redirects_dist_path, 'w') as f:
     f.write('# Konfiguracja SPA obsłużona przez Cloudflare single-page-application\n')
 
+import json
+
 # Copy or generate dist/wrangler.json for Cloudflare deploy requirements
 dist_wrangler_path = os.path.join(dist_dir, 'wrangler.json')
 root_wrangler_candidates = ['wrangler.json', 'wrangler.jsonc', 'disabled-wrangler.json']
-copied_wrangler = False
 
 for candidate in root_wrangler_candidates:
     if os.path.exists(candidate) and candidate != 'disabled-wrangler.json':
         shutil.copyfile(candidate, dist_wrangler_path)
         print(f"Copied {candidate} to {dist_wrangler_path}")
-        copied_wrangler = True
         break
 
-if not copied_wrangler:
-    import json
-    wrangler_content = {
-        "name": "nosignpdf",
-        "compatibility_date": "2026-09-15",
-        "assets": {
-            "directory": "dist",
-            "not_found_handling": "single-page-application"
-        }
+# Forcibly overwrite dist/wrangler.json with the compliant schema required by Cloudflare
+final_wrangler_schema = {
+    "name": "nosignpdf",
+    "compatibility_date": "2026-09-15",
+    "assets": {
+        "directory": "dist",
+        "not_found_handling": "single-page-application"
     }
-    with open(dist_wrangler_path, 'w', encoding='utf-8') as f:
-        json.dump(wrangler_content, f, indent=2)
-    print(f"Generated fresh {dist_wrangler_path} programmatically on the fly.")
+}
+
+with open(dist_wrangler_path, 'w', encoding='utf-8') as f:
+    json.dump(final_wrangler_schema, f, indent=2)
+    f.write('\n')
+
+print(f"Forcibly overwritten {dist_wrangler_path} with compliant schema.")
 
 # Ensure 200.html exists in dist as Cloudflare Pages native SPA fallback
 index_path = os.path.join(dist_dir, 'index.html')
