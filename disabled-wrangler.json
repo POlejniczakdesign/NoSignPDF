@@ -1,0 +1,4 @@
+{
+  "$comment": "Disabled to prevent Cloudflare Pages from auto-detecting a Workers script instead of static pages.",
+  "name": "nosignpdf"
+}
