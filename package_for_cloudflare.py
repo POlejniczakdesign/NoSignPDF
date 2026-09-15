@@ -32,7 +32,7 @@ final_wrangler_schema = {
     "name": "nosignpdf",
     "compatibility_date": "2026-09-15",
     "assets": {
-        "directory": "dist",
+        "directory": ".",
         "not_found_handling": "single-page-application"
     }
 }
