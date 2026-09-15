@@ -15,11 +15,31 @@ redirects_dist_path = os.path.join(dist_dir, '_redirects')
 with open(redirects_dist_path, 'w') as f:
     f.write('# Konfiguracja SPA obsłużona przez Cloudflare single-page-application\n')
 
-# Ensure no wrangler file exists in dist (wrangler config lives strictly in project root)
-for wrangler_name in ['wrangler.json', 'wrangler.jsonc', 'wrangler.toml']:
-    dist_w = os.path.join(dist_dir, wrangler_name)
-    if os.path.exists(dist_w):
-        os.remove(dist_w)
+# Copy or generate dist/wrangler.json for Cloudflare deploy requirements
+dist_wrangler_path = os.path.join(dist_dir, 'wrangler.json')
+root_wrangler_candidates = ['wrangler.json', 'wrangler.jsonc', 'disabled-wrangler.json']
+copied_wrangler = False
+
+for candidate in root_wrangler_candidates:
+    if os.path.exists(candidate) and candidate != 'disabled-wrangler.json':
+        shutil.copyfile(candidate, dist_wrangler_path)
+        print(f"Copied {candidate} to {dist_wrangler_path}")
+        copied_wrangler = True
+        break
+
+if not copied_wrangler:
+    import json
+    wrangler_content = {
+        "name": "nosignpdf",
+        "compatibility_date": "2026-09-15",
+        "assets": {
+            "directory": "dist",
+            "not_found_handling": "single-page-application"
+        }
+    }
+    with open(dist_wrangler_path, 'w', encoding='utf-8') as f:
+        json.dump(wrangler_content, f, indent=2)
+    print(f"Generated fresh {dist_wrangler_path} programmatically on the fly.")
 
 # Ensure 200.html exists in dist as Cloudflare Pages native SPA fallback
 index_path = os.path.join(dist_dir, 'index.html')
@@ -32,8 +52,8 @@ print("Creating Cloudflare Pages production zip archive...")
 with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
     for root, dirs, files in os.walk(dist_dir):
         for file in files:
-            # Skip any existing zip or gitignore or wrangler in dist assets
-            if file.endswith('.zip') or file.startswith('.git') or file.startswith('wrangler.'):
+            # Skip any existing zip or gitignore in dist assets
+            if file.endswith('.zip') or file.startswith('.git'):
                 continue
             full_path = os.path.join(root, file)
             # relative path inside the zip should start from root, e.g. index.html, assets/app.js
