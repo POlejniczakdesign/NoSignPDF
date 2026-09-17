@@ -49,13 +49,45 @@ spa_fallback_path = os.path.join(dist_dir, '200.html')
 if os.path.exists(index_path):
     shutil.copyfile(index_path, spa_fallback_path)
 
-# Ensure sitemap.xml and ads.txt are present in dist
-for seo_file in ['sitemap.xml', 'ads.txt', 'robots.txt']:
-    src_seo = os.path.join('public', seo_file)
-    dst_seo = os.path.join(dist_dir, seo_file)
-    if os.path.exists(src_seo) and (not os.path.exists(dst_seo) or os.path.getmtime(src_seo) > os.path.getmtime(dst_seo)):
-        shutil.copyfile(src_seo, dst_seo)
-        print(f"Synced {seo_file} to dist/{seo_file}")
+# Forcibly write sitemap.xml and ads.txt directly to dist/ and public/
+sitemap_content = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://sitemaps.org">
+  <url><loc>https://nosignpdf.com</loc><priority>1.0</priority></url>
+  <url><loc>https://nosignpdf.comwypelnij-formularz-pdf</loc><priority>0.9</priority></url>
+  <url><loc>https://nosignpdf.comusun-strony-z-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.comobroc-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.compolacz-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.comrozdziel-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.compdf-to-word</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.comword-to-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.compdf-to-excel</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.comexcel-to-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.compolityka-privacy</loc><priority>0.3</priority></url>
+</urlset>
+"""
+
+ads_content = """# Google AdSense configuration setup container
+"""
+
+# Write directly to dist/
+with open(os.path.join(dist_dir, 'sitemap.xml'), 'w', encoding='utf-8') as f:
+    f.write(sitemap_content)
+print(f"Forcibly created {os.path.join(dist_dir, 'sitemap.xml')}")
+
+with open(os.path.join(dist_dir, 'ads.txt'), 'w', encoding='utf-8') as f:
+    f.write(ads_content)
+print(f"Forcibly created {os.path.join(dist_dir, 'ads.txt')}")
+
+# Also write directly to public/
+os.makedirs('public', exist_ok=True)
+with open(os.path.join('public', 'sitemap.xml'), 'w', encoding='utf-8') as f:
+    f.write(sitemap_content)
+with open(os.path.join('public', 'ads.txt'), 'w', encoding='utf-8') as f:
+    f.write(ads_content)
+
+# Ensure robots.txt is present
+if os.path.exists(os.path.join('public', 'robots.txt')):
+    shutil.copyfile(os.path.join('public', 'robots.txt'), os.path.join(dist_dir, 'robots.txt'))
 
 print("Creating Cloudflare Pages production zip archive...")
 # Create the zip in memory/file
