@@ -49,6 +49,14 @@ spa_fallback_path = os.path.join(dist_dir, '200.html')
 if os.path.exists(index_path):
     shutil.copyfile(index_path, spa_fallback_path)
 
+# Ensure sitemap.xml and ads.txt are present in dist
+for seo_file in ['sitemap.xml', 'ads.txt', 'robots.txt']:
+    src_seo = os.path.join('public', seo_file)
+    dst_seo = os.path.join(dist_dir, seo_file)
+    if os.path.exists(src_seo) and (not os.path.exists(dst_seo) or os.path.getmtime(src_seo) > os.path.getmtime(dst_seo)):
+        shutil.copyfile(src_seo, dst_seo)
+        print(f"Synced {seo_file} to dist/{seo_file}")
+
 print("Creating Cloudflare Pages production zip archive...")
 # Create the zip in memory/file
 with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -74,4 +82,6 @@ print("Structure inside zip is 100% compliant with Cloudflare Pages Direct Uploa
 print("  - index.html (at root)")
 print("  - _redirects (SPA routing /* -> /index.html 200)")
 print("  - _headers (security & caching headers)")
+print("  - sitemap.xml (SEO Sitemap for all 10 tools and privacy policy)")
+print("  - ads.txt (Google AdSense publisher configuration)")
 print("  - assets/ (bundled JS, CSS, and PDF worker modules)")
