@@ -85,9 +85,11 @@ with open(os.path.join('public', 'sitemap.xml'), 'w', encoding='utf-8') as f:
 with open(os.path.join('public', 'ads.txt'), 'w', encoding='utf-8') as f:
     f.write(ads_content)
 
-# Ensure robots.txt is present
+# Ensure robots.txt and favicon.ico are present
 if os.path.exists(os.path.join('public', 'robots.txt')):
     shutil.copyfile(os.path.join('public', 'robots.txt'), os.path.join(dist_dir, 'robots.txt'))
+if os.path.exists(os.path.join('public', 'favicon.ico')):
+    shutil.copyfile(os.path.join('public', 'favicon.ico'), os.path.join(dist_dir, 'favicon.ico'))
 
 print("Creating Cloudflare Pages production zip archive...")
 # Create the zip in memory/file
