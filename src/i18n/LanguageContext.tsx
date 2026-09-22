@@ -488,16 +488,26 @@ const TOOL_DEFINITIONS_BY_LANG: Record<Language, ToolMeta[]> = {
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>(() => {
     if (typeof window !== 'undefined') {
+      // 1. Sprawdź parametr 'lang' z adresu URL (najwyższy priorytet dla kampanii reklamowych)
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get('lang')?.toLowerCase();
+      if (urlLang && (urlLang === 'pl' || urlLang === 'en' || urlLang === 'es' || urlLang === 'hi')) {
+        localStorage.setItem('app_language', urlLang);
+        return urlLang as Language;
+      }
+
+      // 2. Jeśli brak parametru w URL, sprawdź język zapisany w localStorage
       const saved = localStorage.getItem('app_language') as Language;
       if (saved && (saved === 'pl' || saved === 'en' || saved === 'es' || saved === 'hi')) {
         return saved;
       }
-      // Check browser language
+
+      // 3. Wykryj język z przeglądarki
       const browserLang = navigator.language?.slice(0, 2).toLowerCase();
       if (browserLang === 'pl') return 'pl';
       if (browserLang === 'es') return 'es';
       if (browserLang === 'hi') return 'hi';
-      return 'pl'; // Default to PL as requested in base spec
+      return 'pl'; // Domyślny język polski
     }
     return 'pl';
   });
@@ -513,6 +523,20 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   useEffect(() => {
     if (typeof window !== 'undefined') {
       document.documentElement.lang = language;
+
+      // Obsługa nawigacji wstecz/w przód lub dynamicznej zmiany parametrów URL
+      const handleUrlChange = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang')?.toLowerCase();
+        if (urlLang && (urlLang === 'pl' || urlLang === 'en' || urlLang === 'es' || urlLang === 'hi')) {
+          if (urlLang !== language) {
+            setLanguage(urlLang as Language);
+          }
+        }
+      };
+
+      window.addEventListener('popstate', handleUrlChange);
+      return () => window.removeEventListener('popstate', handleUrlChange);
     }
   }, [language]);
 
