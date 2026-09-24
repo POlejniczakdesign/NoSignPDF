@@ -42,161 +42,41 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/wypelnij-formularz-pdf</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nosignpdf.com/en/wypelnij-formularz-pdf</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nosignpdf.com/es/wypelnij-formularz-pdf</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nosignpdf.com/hi/wypelnij-formularz-pdf</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/wypelnij-formularz-pdf" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nosignpdf.com/usun-strony-z-pdf</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/usun-strony-z-pdf" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nosignpdf.com/en/usun-strony-z-pdf</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/usun-strony-z-pdf" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nosignpdf.com/es/usun-strony-z-pdf</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/usun-strony-z-pdf" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nosignpdf.com/hi/usun-strony-z-pdf</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/usun-strony-z-pdf" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/usun-strony-z-pdf" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nosignpdf.com/obroc-pdf</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/obroc-pdf" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nosignpdf.com/en/obroc-pdf</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/obroc-pdf" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nosignpdf.com/es/obroc-pdf</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/obroc-pdf" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nosignpdf.com/hi/obroc-pdf</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/obroc-pdf" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/obroc-pdf" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://nosignpdf.com/polacz-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/polacz-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/polacz-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/polacz-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/polacz-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/merge-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/unir-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/merge-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polacz-pdf" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/en/polacz-pdf</loc>
+    <loc>https://nosignpdf.com/en/merge-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/polacz-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/polacz-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/polacz-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/polacz-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/merge-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/unir-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/merge-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polacz-pdf" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/es/polacz-pdf</loc>
+    <loc>https://nosignpdf.com/es/unir-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/polacz-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/polacz-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/polacz-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/polacz-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/merge-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/unir-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/merge-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polacz-pdf" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/hi/polacz-pdf</loc>
+    <loc>https://nosignpdf.com/hi/merge-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/polacz-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/polacz-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/polacz-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/polacz-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/merge-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/unir-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/merge-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polacz-pdf" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -204,40 +84,160 @@
   <url>
     <loc>https://nosignpdf.com/rozdziel-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/rozdziel-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/rozdziel-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/rozdziel-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/rozdziel-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/split-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/dividir-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/split-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/rozdziel-pdf" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/en/rozdziel-pdf</loc>
+    <loc>https://nosignpdf.com/en/split-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/rozdziel-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/rozdziel-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/rozdziel-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/rozdziel-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/split-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/dividir-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/split-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/rozdziel-pdf" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/es/rozdziel-pdf</loc>
+    <loc>https://nosignpdf.com/es/dividir-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/rozdziel-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/rozdziel-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/rozdziel-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/rozdziel-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/split-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/dividir-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/split-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/rozdziel-pdf" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/hi/rozdziel-pdf</loc>
+    <loc>https://nosignpdf.com/hi/split-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/rozdziel-pdf" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/rozdziel-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/rozdziel-pdf" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/rozdziel-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/split-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/dividir-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/split-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/rozdziel-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/wypelnij-formularz-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/fill-pdf-form" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/rellenar-formulario-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/fill-pdf-form" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/en/fill-pdf-form</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/fill-pdf-form" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/rellenar-formulario-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/fill-pdf-form" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/es/rellenar-formulario-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/fill-pdf-form" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/rellenar-formulario-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/fill-pdf-form" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/hi/fill-pdf-form</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/fill-pdf-form" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/rellenar-formulario-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/fill-pdf-form" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/wypelnij-formularz-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/obroc-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/obroc-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/rotate-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/rotar-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/rotate-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/obroc-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/en/rotate-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/obroc-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/rotate-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/rotar-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/rotate-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/obroc-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/es/rotar-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/obroc-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/rotate-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/rotar-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/rotate-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/obroc-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/hi/rotate-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/obroc-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/rotate-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/rotar-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/rotate-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/obroc-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/usun-strony-z-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/usun-strony-z-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/delete-pages" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/eliminar-paginas-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/delete-pages" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/usun-strony-z-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/en/delete-pages</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/usun-strony-z-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/delete-pages" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/eliminar-paginas-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/delete-pages" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/usun-strony-z-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/es/eliminar-paginas-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/usun-strony-z-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/delete-pages" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/eliminar-paginas-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/delete-pages" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/usun-strony-z-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/hi/delete-pages</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/usun-strony-z-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/delete-pages" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/eliminar-paginas-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/delete-pages" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/usun-strony-z-pdf" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -245,7 +245,7 @@
     <loc>https://nosignpdf.com/pdf-to-word</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/pdf-to-word" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/pdf-to-word" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-to-word" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-a-word" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/pdf-to-word" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/pdf-to-word" />
     <changefreq>weekly</changefreq>
@@ -255,17 +255,17 @@
     <loc>https://nosignpdf.com/en/pdf-to-word</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/pdf-to-word" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/pdf-to-word" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-to-word" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-a-word" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/pdf-to-word" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/pdf-to-word" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/es/pdf-to-word</loc>
+    <loc>https://nosignpdf.com/es/pdf-a-word</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/pdf-to-word" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/pdf-to-word" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-to-word" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-a-word" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/pdf-to-word" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/pdf-to-word" />
     <changefreq>weekly</changefreq>
@@ -275,7 +275,7 @@
     <loc>https://nosignpdf.com/hi/pdf-to-word</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/pdf-to-word" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/pdf-to-word" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-to-word" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-a-word" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/pdf-to-word" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/pdf-to-word" />
     <changefreq>weekly</changefreq>
@@ -285,7 +285,7 @@
     <loc>https://nosignpdf.com/word-to-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/word-to-pdf" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/word-to-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/word-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/word-a-pdf" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/word-to-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/word-to-pdf" />
     <changefreq>weekly</changefreq>
@@ -295,17 +295,17 @@
     <loc>https://nosignpdf.com/en/word-to-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/word-to-pdf" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/word-to-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/word-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/word-a-pdf" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/word-to-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/word-to-pdf" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/es/word-to-pdf</loc>
+    <loc>https://nosignpdf.com/es/word-a-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/word-to-pdf" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/word-to-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/word-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/word-a-pdf" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/word-to-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/word-to-pdf" />
     <changefreq>weekly</changefreq>
@@ -315,7 +315,7 @@
     <loc>https://nosignpdf.com/hi/word-to-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/word-to-pdf" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/word-to-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/word-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/word-a-pdf" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/word-to-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/word-to-pdf" />
     <changefreq>weekly</changefreq>
@@ -325,7 +325,7 @@
     <loc>https://nosignpdf.com/pdf-to-excel</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/pdf-to-excel" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/pdf-to-excel" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-to-excel" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-a-excel" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/pdf-to-excel" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/pdf-to-excel" />
     <changefreq>weekly</changefreq>
@@ -335,17 +335,17 @@
     <loc>https://nosignpdf.com/en/pdf-to-excel</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/pdf-to-excel" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/pdf-to-excel" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-to-excel" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-a-excel" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/pdf-to-excel" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/pdf-to-excel" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/es/pdf-to-excel</loc>
+    <loc>https://nosignpdf.com/es/pdf-a-excel</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/pdf-to-excel" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/pdf-to-excel" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-to-excel" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-a-excel" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/pdf-to-excel" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/pdf-to-excel" />
     <changefreq>weekly</changefreq>
@@ -355,7 +355,7 @@
     <loc>https://nosignpdf.com/hi/pdf-to-excel</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/pdf-to-excel" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/pdf-to-excel" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-to-excel" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/pdf-a-excel" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/pdf-to-excel" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/pdf-to-excel" />
     <changefreq>weekly</changefreq>
@@ -365,7 +365,7 @@
     <loc>https://nosignpdf.com/excel-to-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/excel-to-pdf" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/excel-to-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/excel-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/excel-a-pdf" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/excel-to-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/excel-to-pdf" />
     <changefreq>weekly</changefreq>
@@ -375,17 +375,17 @@
     <loc>https://nosignpdf.com/en/excel-to-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/excel-to-pdf" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/excel-to-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/excel-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/excel-a-pdf" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/excel-to-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/excel-to-pdf" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/es/excel-to-pdf</loc>
+    <loc>https://nosignpdf.com/es/excel-a-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/excel-to-pdf" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/excel-to-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/excel-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/excel-a-pdf" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/excel-to-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/excel-to-pdf" />
     <changefreq>weekly</changefreq>
@@ -395,7 +395,7 @@
     <loc>https://nosignpdf.com/hi/excel-to-pdf</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/excel-to-pdf" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/excel-to-pdf" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/excel-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/excel-a-pdf" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/excel-to-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/excel-to-pdf" />
     <changefreq>weekly</changefreq>
@@ -404,39 +404,39 @@
   <url>
     <loc>https://nosignpdf.com/polityka-privacy</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/polityka-privacy" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/polityka-privacy" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/polityka-privacy" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/polityka-privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/politica-privacidad" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polityka-privacy" />
     <changefreq>weekly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/en/polityka-privacy</loc>
+    <loc>https://nosignpdf.com/en/privacy-policy</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/polityka-privacy" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/polityka-privacy" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/polityka-privacy" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/polityka-privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/politica-privacidad" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polityka-privacy" />
     <changefreq>weekly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/es/polityka-privacy</loc>
+    <loc>https://nosignpdf.com/es/politica-privacidad</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/polityka-privacy" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/polityka-privacy" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/polityka-privacy" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/polityka-privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/politica-privacidad" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polityka-privacy" />
     <changefreq>weekly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://nosignpdf.com/hi/polityka-privacy</loc>
+    <loc>https://nosignpdf.com/hi/privacy-policy</loc>
     <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/polityka-privacy" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/polityka-privacy" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/polityka-privacy" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/polityka-privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/politica-privacidad" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polityka-privacy" />
     <changefreq>weekly</changefreq>
     <priority>0.3</priority>

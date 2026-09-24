@@ -45,202 +45,342 @@ with open(dist_wrangler_path, 'w', encoding='utf-8') as f:
 TOOLS_METADATA = {
     '/': {
         'pl': {
-            'title': 'PDF Studio Online – Darmowe i Bezpieczne Narzędzia PDF w Przeglądarce',
-            'desc': 'Zaawansowany kombajn PDF działający w 100% lokalnie w Twojej przeglądarce. Edytuj, łącz, dziel, obracaj i wypełniaj pliki PDF bez rejestracji i bez wysyłania plików na serwer.'
+            'title': 'Edytor PDF Online – 100% Darmowy, Bez Logowania i Bezpieczny',
+            'desc': 'Darmowy edytor PDF online działający w Twojej przeglądarce bez logowania i rejestracji. Łącz, dziel, obracaj, usuwaj strony i wypełniaj formularze PDF bez wysyłania plików na serwer.'
         },
         'en': {
-            'title': 'Free Online PDF Tools – 100% Private & In-Browser – PDF Studio',
-            'desc': 'Advanced PDF suite running 100% locally in your browser. Edit, merge, split, rotate, and fill PDF files without registration and without uploading data to servers.'
+            'title': 'Free Online PDF Editor – No Sign-Up, Private & In-Browser',
+            'desc': '100% free online PDF editor running client-side in your browser. Merge, split, rotate, delete pages, and fill PDF forms with zero sign-up and no watermarks.'
         },
         'es': {
-            'title': 'Herramientas PDF Gratis Online – 100% Privado en Navegador – PDF Studio',
-            'desc': 'Potente suite de herramientas PDF que funciona 100% localmente en tu navegador. Edita, une, divide, gira y rellena archivos PDF sin registro y sin subir archivos.'
+            'title': 'Editor PDF Gratis Online – Sin Registro, Seguro y en Navegador',
+            'desc': 'Editor PDF online 100% gratis y privado que funciona en tu navegador sin registro. Une, divide, gira, elimina páginas y rellena formularios PDF sin subir tus archivos.'
         },
         'hi': {
-            'title': 'मुफ्त ऑनलाइन पीडीएफ टूल्स – 100% निजी व सुरक्षित – PDF Studio',
-            'desc': 'आपके ब्राउज़र में 100% स्थानीय रूप से चलने वाला उन्नत पीडीएफ सुइट। बिना पंजीकरण और बिना फाइल अपलोड किए पीडीएफ संपादित करें, जोड़ें व अलग करें।'
-        }
-    },
-    '/wypelnij-formularz-pdf': {
-        'pl': {
-            'title': 'Wypełniacz Formularzy PDF Online – Bezpiecznie i Bez Drukowania',
-            'desc': 'Uzupełniaj wnioski urzędowe, pisma i deklaracje z natywnymi polami AcroForm bezpośrednio w przeglądarce bez wysyłania plików do internetu.'
-        },
-        'en': {
-            'title': 'Fill PDF Forms Online – Free & Client-Side – PDF Studio',
-            'desc': 'Complete official applications and forms with native AcroForm fields. Click on input boxes or lines to type directly into PDF documents.'
-        },
-        'es': {
-            'title': 'Rellenar Formularios PDF Online – Gratis y Privado – PDF Studio',
-            'desc': 'Completa formularios y solicitudes oficiales directamente en tu navegador con soporte nativo para campos AcroForm sin subir tus datos.'
-        },
-        'hi': {
-            'title': 'पीडीएफ फॉर्म भरें ऑनलाइन – मुफ्त व सुरक्षित – PDF Studio',
-            'desc': 'आधिकारिक आवेदन और फॉर्म सीधे अपने ब्राउज़र में भरें। किसी भी सर्वर पर फाइल भेजे बिना सुरक्षित रूप से फॉर्म पूरा करें।'
-        }
-    },
-    '/usun-strony-z-pdf': {
-        'pl': {
-            'title': 'Usuwanie Stron z PDF – Wytnij Zbędne Strony Online – PDF Studio',
-            'desc': 'Przejrzyj miniatury stron, jednym kliknięciem usuń wybrane arkusze i pobierz odchudzony plik PDF w 100% w przeglądarce.'
-        },
-        'en': {
-            'title': 'Delete Pages from PDF Online – Free & Instant – PDF Studio',
-            'desc': 'Preview high-resolution thumbnails, delete unwanted pages with one click, and download a clean PDF file locally.'
-        },
-        'es': {
-            'title': 'Eliminar Páginas de PDF Online – Rápido y Gratis – PDF Studio',
-            'desc': 'Elimina rápidamente hojas no deseadas o páginas en blanco de tu documento PDF de forma 100% privada.'
-        },
-        'hi': {
-            'title': 'पीडीएफ से पेज हटाएं – मुफ्त ऑनलाइन टूल – PDF Studio',
-            'desc': 'अपने दस्तावेज से अवांछित पेज या खाली पन्नों को तुरंत हटाएं और नया पीडीएफ डाउनलोड करें।'
-        }
-    },
-    '/obroc-pdf': {
-        'pl': {
-            'title': 'Obracanie PDF Online – Obróć Strony o 90, 180, 270 Stopni',
-            'desc': 'Napraw krzywo zeskanowane strony dokumentu. Obracaj arkusze za pomocą jednego kliknięcia trwale w pamięci RAM przeglądarki.'
-        },
-        'en': {
-            'title': 'Rotate PDF Online – Turn Pages 90, 180, 270 Degrees – PDF Studio',
-            'desc': 'Rotate single pages or the entire PDF document by 90, 180, or 270 degrees. Fix upside-down scans permanently with one click.'
-        },
-        'es': {
-            'title': 'Rotar PDF Online – Gira Páginas 90, 180, 270 Grados – PDF Studio',
-            'desc': 'Gira páginas individuales o todo el documento a 90, 180 y 270 grados. Arregla escaneos torcidos de inmediato.'
-        },
-        'hi': {
-            'title': 'पीडीएफ पेज घुमाएं – 90, 180, 270 डिग्री ऑनलाइन – PDF Studio',
-            'desc': 'दस्तावेज के पेजों को 90, 180 या 270 डिग्री पर घुमाएं। उल्टे स्कैन किए गए पन्नों को एक क्लिक में ठीक करें।'
+            'title': 'मुफ्त ऑनलाइन पीडीएफ संपादक – बिना लॉगिन, 100% सुरक्षित और निजी',
+            'desc': 'ब्राउज़र में स्थानीय रूप से चलने वाला 100% मुफ्त पीडीएफ एडिटर। बिना रजिस्ट्रेशन पीडीएफ फाइलें जोड़ें, अलग करें, घुमाएं और फॉर्म भरें बिना सर्वर पर फाइल भेजे।'
         }
     },
     '/polacz-pdf': {
         'pl': {
-            'title': 'Łączenie Plików PDF Online – Scal Wiele Dokumentów w Jeden',
-            'desc': 'Wgraj pliki PDF, uporządkuj ich kolejność metodą przeciągnij i upuść i pobierz scalony dokument bez limitu stron i bez wysyłania do sieci.'
+            'title': 'Połącz PDF Online – Darmowe Łączenie Plików PDF bez Logowania',
+            'desc': 'Szybko i bezpiecznie połącz wiele plików PDF w jeden dokument online. W 100% darmowe narzędzie, bez rejestracji i bez znaku wodnego.'
         },
         'en': {
-            'title': 'Merge PDF Files Online – Combine PDFs into One – PDF Studio',
-            'desc': 'Upload multiple PDFs, reorder pages with drag and drop, and download your unified document 100% locally.'
+            'title': 'Merge PDF Online – Free PDF Joiner with No Sign-Up',
+            'desc': 'Combine multiple PDF files into one single document online quickly and securely. 100% free tool, no registration, no file size limits, and no watermarks.'
         },
         'es': {
-            'title': 'Unir Archivos PDF Online – Combinar Varios PDF – PDF Studio',
-            'desc': 'Combina múltiples documentos PDF en un solo archivo con el orden que desees. Rápido, gratis y sin límites.'
+            'title': 'Unir PDF Online – Combinar Archivos PDF Gratis Sin Registro',
+            'desc': 'Une múltiples archivos PDF en un solo documento online de forma rápida y segura. Herramienta 100% gratis, sin registro y sin marcas de agua.'
         },
         'hi': {
-            'title': 'पीडीएफ फाइलें जोड़ें ऑनलाइन – कई पीडीएफ एक में – PDF Studio',
-            'desc': 'कई पीडीएफ फाइलों को एक संगठित दस्तावेज में मिलाएं। ड्रैग एंड ड्रॉप से क्रम व्यवस्थित करें और डाउनलोड करें।'
+            'title': 'पीडीएफ जोड़ें ऑनलाइन – मुफ्त में कई पीडीएफ एक करें (No Sign-Up)',
+            'desc': 'कई पीडीएफ फाइलों को एक दस्तावेज़ में सुरक्षित रूप से ऑनलाइन जोड़ें। 100% मुफ्त टूल, बिना लॉगिन और बिना वॉटरमार्क के।'
         }
     },
     '/rozdziel-pdf': {
         'pl': {
-            'title': 'Rozdzielanie PDF Online – Wyodrębnij i Podziel Strony – PDF Studio',
-            'desc': 'Wybierz interesujące Cię strony, określ zakres lub usuń pozostałe arkusze i zapisz nowy plik PDF.'
+            'title': 'Rozdziel PDF Online – Darmowe Wyodrębnianie Stron z PDF',
+            'desc': 'Błyskawicznie podziel plik PDF na pojedyncze strony lub wyodrębnij wybrany zakres arkuszy. Całkowicie za darmo, bez rejestracji i bez limitów.'
         },
         'en': {
-            'title': 'Split PDF Online – Extract Pages from PDF – PDF Studio',
-            'desc': 'Extract specific page ranges or break large files into smaller parts. Define custom page ranges and download immediately.'
+            'title': 'Split PDF Online – Extract Pages from PDF for Free',
+            'desc': 'Instantly split PDF documents into single pages or extract custom page ranges online. 100% free, client-side private, with no sign-up required.'
         },
         'es': {
-            'title': 'Dividir PDF Online – Extraer Páginas de PDF – PDF Studio',
-            'desc': 'Extrae rangos específicos de páginas o divide un archivo grande en partes de forma fácil y segura.'
+            'title': 'Dividir PDF Online – Extraer Páginas de PDF Gratis Sin Registro',
+            'desc': 'Divide documentos PDF en páginas sueltas o extrae rangos específicos online. 100% gratis, sin registro y con total privacidad en tu navegador.'
         },
         'hi': {
-            'title': 'पीडीएफ अलग करें – पेज निकालें व विभाजित करें – PDF Studio',
-            'desc': 'पेज निकालें या बड़ी फाइलों को छोटे हिस्सों में विभाजित करें। अपनी पसंद के पेज चुनकर नया दस्तावेज बनाएं।'
+            'title': 'पीडीएफ अलग करें ऑनलाइन – पेज निकालें व विभाजित करें मुफ्त में',
+            'desc': 'पीडीएफ फाइल को अलग-अलग पेजों में तुरंत विभाजित करें या अपनी पसंद के पेज निकालें। 100% मुफ्त, बिना पंजीकरण और पूर्ण सुरक्षा के साथ।'
+        }
+    },
+    '/wypelnij-formularz-pdf': {
+        'pl': {
+            'title': 'Wypełnij Formularz PDF Online – Bez Drukowania i Logowania',
+            'desc': 'Uzupełniaj wnioski urzędowe, pisma i formularze PDF bezpośrednio w przeglądarce. Wpisuj tekst, zaznaczaj pola, podpisuj i zapisuj plik bez rejestracji.'
+        },
+        'en': {
+            'title': 'Fill PDF Form Online – Free PDF Form Filler No Sign-Up',
+            'desc': 'Fill out applications, contracts, and official PDF forms directly in your browser. Type text, tick checkboxes, and download instantly without printing or sign-up.'
+        },
+        'es': {
+            'title': 'Rellenar Formulario PDF Online – Gratis, Sin Imprimir y Sin Registro',
+            'desc': 'Completa formularios, contratos y solicitudes oficiales PDF directamente en tu navegador. Escribe texto, marca casillas y guarda sin registro.'
+        },
+        'hi': {
+            'title': 'पीडीएफ फॉर्म भरें ऑनलाइन – बिना प्रिंट और बिना लॉगिन के मुफ्त',
+            'desc': 'सरकारी आवेदन, अनुबंध और फॉर्म सीधे अपने ब्राउज़र में भरें। टेक्स्ट टाइप करें, चेकबॉक्स टिक करें और बिना लॉगिन तुरंत डाउनलोड करें।'
+        }
+    },
+    '/obroc-pdf': {
+        'pl': {
+            'title': 'Obróć PDF Online – Obracanie Stron PDF o 90, 180 Stopni Za Darmo',
+            'desc': 'Trwale obróć krzywe lub odwrócone strony PDF o 90°, 180° lub 270°. Napraw skany dokumentów w pamięci przeglądarki bez logowania i bez opłat.'
+        },
+        'en': {
+            'title': 'Rotate PDF Online – Turn PDF Pages 90 or 180 Degrees Free',
+            'desc': 'Permanently rotate single pages or entire PDF files by 90, 180, or 270 degrees. Fix upside-down scans instantly in your browser with no sign-up.'
+        },
+        'es': {
+            'title': 'Rotar PDF Online – Girar Páginas PDF 90 o 180 Grados Gratis',
+            'desc': 'Gira páginas individuales o todo el archivo PDF a 90°, 180° o 270° de forma permanente. Arregla escaneos invertidos online sin registro.'
+        },
+        'hi': {
+            'title': 'पीडीएफ घुमाएं ऑनलाइन – 90 या 180 डिग्री पेज रोटेट करें मुफ्त',
+            'desc': 'उल्टे या तिरछे स्कैन किए गए पीडीएफ पेजों को 90°, 180° या 270° घुमाएं। बिना लॉगिन और पूरी तरह सुरक्षित अपने ब्राउज़र में ठीक करें।'
+        }
+    },
+    '/usun-strony-z-pdf': {
+        'pl': {
+            'title': 'Usuń Strony z PDF Online – Wytnij Zbędne Strony z Pliku PDF',
+            'desc': 'Wybierz i usuń niepotrzebne strony lub puste arkusze ze swojego dokumentu PDF za pomocą jednego kliknięcia. Szybko, za darmo i bez wysyłania do chmury.'
+        },
+        'en': {
+            'title': 'Delete Pages from PDF Online – Remove PDF Pages for Free',
+            'desc': 'Select and remove unwanted or blank pages from your PDF file with one click. Fast, free, client-side, and no registration required.'
+        },
+        'es': {
+            'title': 'Eliminar Páginas de PDF Online – Borrar Páginas Gratis',
+            'desc': 'Selecciona y elimina hojas no deseadas o páginas en blanco de tu documento PDF con un solo clic. Gratis, rápido y 100% privado.'
+        },
+        'hi': {
+            'title': 'पीडीएफ से पेज हटाएं ऑनलाइन – अवांछित पेज मिटाएं मुफ्त में',
+            'desc': 'अपने पीडीएफ दस्तावेज़ से खाली या अनावश्यक पेज एक क्लिक में हटाएं। सुरक्षित, तेज़ और बिना किसी पंजीकरण के पूरी तरह मुफ्त।'
         }
     },
     '/pdf-to-word': {
         'pl': {
-            'title': 'Konwertuj PDF do Word Online (.docx) – Bezpiecznie w Przeglądarce',
-            'desc': 'Lokalna ekstrakcja tekstu i natychmiastowa konwersja PDF do formatu Word (.docx / .txt) bez wysyłania plików na serwer.'
+            'title': 'Konwertuj PDF do Word Online (.docx) – Darmowa Konwersja bez Logowania',
+            'desc': 'Przekonwertuj dokument PDF na edytowalny plik Word (.docx) bezpośrednio w przeglądarce. Ekstrakcja tekstu bez wysyłania plików na serwer.'
         },
         'en': {
-            'title': 'Convert PDF to Word Online (.docx) – 100% In-Browser – PDF Studio',
-            'desc': 'Extract text and convert PDF documents into editable Word (.docx) or plain text format directly in your browser.'
+            'title': 'Convert PDF to Word Online (.docx) – Free Converter No Sign-Up',
+            'desc': 'Convert PDF documents into editable Word (.docx) files directly in your browser. Fast client-side text extraction with no file upload to servers.'
         },
         'es': {
-            'title': 'Convertir PDF a Word Online (.docx) – Privado y Gratis – PDF Studio',
-            'desc': 'Extracción local de texto y conversión de PDF a documento Word (.docx / .txt) directamente en tu navegador.'
+            'title': 'Convertir PDF a Word Online (.docx) – Gratis y Sin Registro',
+            'desc': 'Convierte tus documentos PDF a archivos editables de Word (.docx) directamente en tu navegador. Extracción de texto local 100% privada.'
         },
         'hi': {
-            'title': 'पीडीएफ से वर्ड (.docx) बदलें ऑनलाइन – मुफ्त व स्थानीय – PDF Studio',
-            'desc': 'ब्राउज़र में स्थानीय रूप से पीडीएफ से टेक्स्ट निकालें और संपादन योग्य वर्ड दस्तावेज (.docx) में बदलें।'
+            'title': 'पीडीएफ से वर्ड (.docx) बदलें ऑनलाइन – मुफ्त कनवर्टर बिना लॉगिन',
+            'desc': 'पीडीएफ दस्तावेज़ को संपादन योग्य वर्ड (.docx) फाइल में आसानी से बदलें। बिना सर्वर पर अपलोड किए स्थानीय रूप से टेक्स्ट निकालें।'
         }
     },
     '/word-to-pdf': {
         'pl': {
-            'title': 'Konwertuj Word do PDF Online – Wklej Tekst i Generuj PDF',
-            'desc': 'Wbudowany edytor tekstu i generator dokumentów PDF z czcionką Roboto Mono. Sformatuj tekst i pobierz gotowy plik PDF.'
+            'title': 'Konwertuj Word do PDF Online – Wklej Tekst i Utwórz Dokument PDF',
+            'desc': 'Stwórz profesjonalny plik PDF z tekstu lub notatek. Wbudowany edytor tekstu, czysty format i natychmiastowe pobieranie pliku PDF za darmo.'
         },
         'en': {
-            'title': 'Convert Word to PDF Online – Text to PDF Generator – PDF Studio',
-            'desc': 'Built-in text editor and PDF generator with clean formatting and fonts. Paste your text or upload a document to generate a PDF.'
+            'title': 'Convert Word / Text to PDF Online – Free PDF Creator',
+            'desc': 'Turn text, notes, and documents into a clean formatted PDF. Built-in editor, zero sign-up, and instant local generation in your browser.'
         },
         'es': {
-            'title': 'Convertir Word a PDF Online – Generador de PDF – PDF Studio',
-            'desc': 'Editor de texto integrado y generador de documentos PDF limpios. Pega tu contenido y obtén un PDF profesional.'
+            'title': 'Convertir Word a PDF Online – Creador de PDF Gratis',
+            'desc': 'Crea documentos PDF profesionales a partir de texto o notas. Editor integrado, descarga inmediata y 100% gratis sin registro.'
         },
         'hi': {
-            'title': 'वर्ड से पीडीएफ बनाएं – टेक्स्ट से पीडीएफ कनवर्टर – PDF Studio',
-            'desc': 'टेक्स्ट पेस्ट करें और साफ-सुथरा पीडीएफ दस्तावेज तैयार करें। स्थानीय रूप से नया पीडीएफ तुरंत जनरेट करें।'
+            'title': 'वर्ड से पीडीएफ बनाएं ऑनलाइन – टेक्स्ट से पीडीएफ कनवर्टर मुफ्त',
+            'desc': 'टेक्स्ट या नोट्स से सुंदर और पेशेवर पीडीएफ तैयार करें। तुरंत स्थानीय रूप से जनरेट करें बिना किसी लॉगिन या शुल्क के।'
         }
     },
     '/pdf-to-excel': {
         'pl': {
-            'title': 'Konwertuj PDF do Excel Online – Ekstrakcja Tabel i Danych CSV',
-            'desc': 'Wyciągaj tabele i dane liczbowe z plików PDF do pliku CSV zoptymalizowanego pod program Microsoft Excel.'
+            'title': 'Konwertuj PDF do Excel Online – Ekstrakcja Tabel i Danych do CSV',
+            'desc': 'Błyskawicznie wyodrębnij tabele i dane liczbowe z pliku PDF do formatu CSV / Excel. Bezpieczne przetwarzanie w pamięci RAM bez logowania.'
         },
         'en': {
-            'title': 'Convert PDF to Excel Online – Extract Tables to CSV – PDF Studio',
-            'desc': 'Extract tables and structured numerical data from PDF files directly into Excel-ready CSV sheets.'
+            'title': 'Convert PDF to Excel Online – Extract Tables to CSV / Excel Free',
+            'desc': 'Extract tables and financial data from PDF files directly into Excel-compatible CSV sheets. Fast, accurate, and completely private.'
         },
         'es': {
-            'title': 'Convertir PDF a Excel Online – Extraer Tablas a CSV – PDF Studio',
-            'desc': 'Extrae tablas y datos estructurados de archivos PDF y expórtalos a hojas de cálculo CSV / Excel.'
+            'title': 'Convertir PDF a Excel Online – Extraer Tablas a CSV / Excel Gratis',
+            'desc': 'Extrae tablas y datos numéricos de tus archivos PDF a hojas de cálculo CSV compatibles con Excel. Rápido, gratis y sin subir archivos.'
         },
         'hi': {
-            'title': 'पीडीएफ से एक्सेल बदलें ऑनलाइन – टेबल सीएसवी में निकालें – PDF Studio',
-            'desc': 'पीडीएफ से टेबल व डेटा निकालें और एक्सेल के अनुकूल सीएसवी स्प्रेडशीट में डाउनलोड करें।'
+            'title': 'पीडीएफ से एक्सेल बदलें ऑनलाइन – टेबल और डेटा सीएसवी में निकालें',
+            'desc': 'पीडीएफ से टेबल और संख्यात्मक डेटा आसानी से एक्सेल के अनुकूल सीएसवी में निकालें। पूरी तरह सुरक्षित और मुफ्त ऑनलाइन टूल।'
         }
     },
     '/excel-to-pdf': {
         'pl': {
-            'title': 'Konwertuj Excel do PDF Online – Tabela do Raportu PDF',
-            'desc': 'Wklej wiersze i kolumny z programu Excel lub Arkuszy Google i utwórz czytelny, wyjustowany dokument PDF.'
+            'title': 'Konwertuj Excel do PDF Online – Generuj Raport Tabelaryczny PDF',
+            'desc': 'Wklej dane tabelaryczne z programu Excel lub Arkuszy Google i wygeneruj czytelny raport PDF z siatką danych. 100% darmowe narzędzie.'
         },
         'en': {
-            'title': 'Convert Excel to PDF Online – Table to PDF Report – PDF Studio',
-            'desc': 'Paste table rows and columns from Excel or Google Sheets to generate a clean, formatted PDF table report.'
+            'title': 'Convert Excel to PDF Online – Table to PDF Report Generator',
+            'desc': 'Paste table rows and columns from Excel or Google Sheets to generate a clean, formatted PDF table report instantly for free.'
         },
         'es': {
-            'title': 'Convertir Excel a PDF Online – Tablas a Documento PDF – PDF Studio',
-            'desc': 'Pega filas y columnas de Excel o Google Sheets y crea un informe PDF claro y ordenado.'
+            'title': 'Convertir Excel a PDF Online – Generador de Reportes PDF desde Tablas',
+            'desc': 'Pega filas y columnas de Excel o Google Sheets para generar un informe PDF bien formateado y con cuadrícula al instante.'
         },
         'hi': {
-            'title': 'एक्सेल से पीडीएफ बदलें – टेबल से पीडीएफ रिपोर्ट – PDF Studio',
-            'desc': 'एक्सेल या गूगल शीट्स से डेटा पेस्ट करें और व्यवस्थित टेबल वाला पीडीएफ दस्तावेज तैयार करें।'
+            'title': 'एक्सेल से पीडीएफ बदलें ऑनलाइन – टेबल से पीडीएफ रिपोर्ट बनाएं',
+            'desc': 'एक्सेल या गूगल शीट्स से डेटा पेस्ट करें और सुंदर टेबल वाला पीडीएफ दस्तावेज़ तैयार करें। बिना लॉगिन तुरंत मुफ्त बनाएं।',
         }
     },
     '/polityka-privacy': {
         'pl': {
-            'title': 'Regulamin i Polityka Prywatności – PDF Studio Online',
-            'desc': 'Zasady korzystania, zrzeczenie się odpowiedzialności oraz polityka prywatności i plików cookies aplikacji PDF Studio Online.'
+            'title': 'Polityka Prywatności i Regulamin – PDF Studio Online (nosignpdf.com)',
+            'desc': 'Zasady korzystania z darmowych narzędzi PDF Studio Online, gwarancja prywatności Client-Side, pliki cookies oraz warunki użytkowania.'
         },
         'en': {
-            'title': 'Terms & Privacy Policy – PDF Studio Online',
-            'desc': 'Terms of Service, Disclaimer, and Privacy & Cookie Policy for PDF Studio Online. 100% Client-Side zero upload privacy.'
+            'title': 'Privacy Policy & Terms of Service – PDF Studio Online (nosignpdf.com)',
+            'desc': 'Terms of service, client-side zero upload privacy policy, cookies, and conditions for using PDF Studio Online at nosignpdf.com.'
         },
         'es': {
-            'title': 'Términos y Política de Privacidad – PDF Studio Online',
-            'desc': 'Términos de servicio, descargo de responsabilidad y política de privacidad y cookies de PDF Studio Online.'
+            'title': 'Política de Privacidad y Términos – PDF Studio Online (nosignpdf.com)',
+            'desc': 'Términos de servicio, garantía de privacidad sin subida de archivos (Client-Side) y política de cookies de PDF Studio Online.'
         },
         'hi': {
-            'title': 'नियम व गोपनीयता नीति – PDF Studio Online',
-            'desc': 'उपयोग के नियम, अस्वीकरण और गोपनीयता व कुकी नीति। 100% क्लाइंट-साइड सुरक्षा।'
+            'title': 'गोपनीयता नीति और नियम – PDF Studio Online (nosignpdf.com)',
+            'desc': 'nosignpdf.com की सेवा शर्तें, 100% क्लाइंट-साइड गोपनीयता गारंटी और कुकी नीति।',
         }
     }
+}
+
+# Primary canonical slugs for each tool by language
+PRIMARY_URLS = {
+    '/': {
+        'pl': '/',
+        'en': '/en',
+        'es': '/es',
+        'hi': '/hi',
+    },
+    '/polacz-pdf': {
+        'pl': '/polacz-pdf',
+        'en': '/en/merge-pdf',
+        'es': '/es/unir-pdf',
+        'hi': '/hi/merge-pdf',
+    },
+    '/rozdziel-pdf': {
+        'pl': '/rozdziel-pdf',
+        'en': '/en/split-pdf',
+        'es': '/es/dividir-pdf',
+        'hi': '/hi/split-pdf',
+    },
+    '/wypelnij-formularz-pdf': {
+        'pl': '/wypelnij-formularz-pdf',
+        'en': '/en/fill-pdf-form',
+        'es': '/es/rellenar-formulario-pdf',
+        'hi': '/hi/fill-pdf-form',
+    },
+    '/obroc-pdf': {
+        'pl': '/obroc-pdf',
+        'en': '/en/rotate-pdf',
+        'es': '/es/rotar-pdf',
+        'hi': '/hi/rotate-pdf',
+    },
+    '/usun-strony-z-pdf': {
+        'pl': '/usun-strony-z-pdf',
+        'en': '/en/delete-pages',
+        'es': '/es/eliminar-paginas-pdf',
+        'hi': '/hi/delete-pages',
+    },
+    '/pdf-to-word': {
+        'pl': '/pdf-to-word',
+        'en': '/en/pdf-to-word',
+        'es': '/es/pdf-a-word',
+        'hi': '/hi/pdf-to-word',
+    },
+    '/word-to-pdf': {
+        'pl': '/word-to-pdf',
+        'en': '/en/word-to-pdf',
+        'es': '/es/word-a-pdf',
+        'hi': '/hi/word-to-pdf',
+    },
+    '/pdf-to-excel': {
+        'pl': '/pdf-to-excel',
+        'en': '/en/pdf-to-excel',
+        'es': '/es/pdf-a-excel',
+        'hi': '/hi/pdf-to-excel',
+    },
+    '/excel-to-pdf': {
+        'pl': '/excel-to-pdf',
+        'en': '/en/excel-to-pdf',
+        'es': '/es/excel-a-pdf',
+        'hi': '/hi/excel-to-pdf',
+    },
+    '/polityka-privacy': {
+        'pl': '/polityka-privacy',
+        'en': '/en/privacy-policy',
+        'es': '/es/politica-privacidad',
+        'hi': '/hi/privacy-policy',
+    },
+}
+
+# All URLs/subpaths to pre-render (including native aliases like /pl/polacz-pdf, /en/split-pdf, /es/unir-pdf)
+ALL_SLUGS = {
+    '/': {
+        'pl': ['/', '/pl'],
+        'en': ['/en'],
+        'es': ['/es'],
+        'hi': ['/hi'],
+    },
+    '/polacz-pdf': {
+        'pl': ['/polacz-pdf', '/pl/polacz-pdf'],
+        'en': ['/en/merge-pdf', '/en/polacz-pdf'],
+        'es': ['/es/unir-pdf', '/es/combinar-pdf', '/es/polacz-pdf'],
+        'hi': ['/hi/merge-pdf', '/hi/polacz-pdf'],
+    },
+    '/rozdziel-pdf': {
+        'pl': ['/rozdziel-pdf', '/pl/rozdziel-pdf'],
+        'en': ['/en/split-pdf', '/en/rozdziel-pdf'],
+        'es': ['/es/dividir-pdf', '/es/separar-pdf', '/es/rozdziel-pdf'],
+        'hi': ['/hi/split-pdf', '/hi/rozdziel-pdf'],
+    },
+    '/wypelnij-formularz-pdf': {
+        'pl': ['/wypelnij-formularz-pdf', '/pl/wypelnij-formularz-pdf'],
+        'en': ['/en/fill-pdf-form', '/en/wypelnij-formularz-pdf'],
+        'es': ['/es/rellenar-formulario-pdf', '/es/llenar-formulario-pdf', '/es/wypelnij-formularz-pdf'],
+        'hi': ['/hi/fill-pdf-form', '/hi/wypelnij-formularz-pdf'],
+    },
+    '/obroc-pdf': {
+        'pl': ['/obroc-pdf', '/pl/obroc-pdf'],
+        'en': ['/en/rotate-pdf', '/en/obroc-pdf'],
+        'es': ['/es/rotar-pdf', '/es/girar-pdf', '/es/obroc-pdf'],
+        'hi': ['/hi/rotate-pdf', '/hi/obroc-pdf'],
+    },
+    '/usun-strony-z-pdf': {
+        'pl': ['/usun-strony-z-pdf', '/pl/usun-strony-z-pdf'],
+        'en': ['/en/delete-pages', '/en/delete-pdf-pages', '/en/usun-strony-z-pdf'],
+        'es': ['/es/eliminar-paginas-pdf', '/es/borrar-paginas-pdf', '/es/usun-strony-z-pdf'],
+        'hi': ['/hi/delete-pages', '/hi/usun-strony-z-pdf'],
+    },
+    '/pdf-to-word': {
+        'pl': ['/pdf-to-word', '/pl/pdf-to-word'],
+        'en': ['/en/pdf-to-word'],
+        'es': ['/es/pdf-a-word', '/es/pdf-to-word'],
+        'hi': ['/hi/pdf-to-word'],
+    },
+    '/word-to-pdf': {
+        'pl': ['/word-to-pdf', '/pl/word-to-pdf'],
+        'en': ['/en/word-to-pdf'],
+        'es': ['/es/word-a-pdf', '/es/word-to-pdf'],
+        'hi': ['/hi/word-to-pdf'],
+    },
+    '/pdf-to-excel': {
+        'pl': ['/pdf-to-excel', '/pl/pdf-to-excel'],
+        'en': ['/en/pdf-to-excel'],
+        'es': ['/es/pdf-a-excel', '/es/pdf-to-excel'],
+        'hi': ['/hi/pdf-to-excel'],
+    },
+    '/excel-to-pdf': {
+        'pl': ['/excel-to-pdf', '/pl/excel-to-pdf'],
+        'en': ['/en/excel-to-pdf'],
+        'es': ['/es/excel-a-pdf', '/es/excel-to-pdf'],
+        'hi': ['/hi/excel-to-pdf'],
+    },
+    '/polityka-privacy': {
+        'pl': ['/polityka-privacy', '/pl/polityka-privacy'],
+        'en': ['/en/privacy-policy', '/en/polityka-privacy'],
+        'es': ['/es/politica-privacidad', '/es/polityka-privacy'],
+        'hi': ['/hi/privacy-policy', '/hi/polityka-privacy'],
+    },
 }
 
 languages = ['pl', 'en', 'es', 'hi']
@@ -255,23 +395,21 @@ locale_map = {
 with open(index_path, 'r', encoding='utf-8') as f:
     base_html = f.read()
 
-def generate_custom_html(tool_path, lang):
+def generate_custom_html(tool_path, lang, current_slug):
     html = base_html
     # 1. Update lang attribute
     html = re.sub(r'<html\s+lang="[^"]*"', f'<html lang="{lang}"', html)
 
-    # 2. Get tool metadata
+    # 2. Get tool metadata tailored for this micro-task
     tool_info = TOOLS_METADATA.get(tool_path, TOOLS_METADATA['/'])
     meta = tool_info.get(lang, tool_info['pl'])
     title = meta['title']
     desc = meta['desc']
 
-    # 3. Canonical and localized URL
-    if lang == 'pl':
-        localized_subpath = '' if tool_path == '/' else tool_path
-    else:
-        localized_subpath = f"/{lang}" if tool_path == '/' else f"/{lang}{tool_path}"
-    canonical_url = f"{site_domain}{localized_subpath}" if localized_subpath else f"{site_domain}/"
+    # 3. Canonical and localized URL calculation
+    primary_slug = PRIMARY_URLS[tool_path][lang]
+    canonical_url = f"{site_domain}{primary_slug}" if primary_slug != '/' else f"{site_domain}/"
+    current_page_url = f"{site_domain}{current_slug}" if current_slug != '/' else f"{site_domain}/"
 
     # 4. Replace title
     html = re.sub(r'<title>.*?</title>', f'<title>{title}</title>', html, flags=re.DOTALL)
@@ -281,10 +419,16 @@ def generate_custom_html(tool_path, lang):
     html = re.sub(r'<meta\s+property="og:title"\s+content=".*?"\s*/?>', f'<meta property="og:title" content="{title}" />', html)
     html = re.sub(r'<meta\s+property="og:description"\s+content=".*?"\s*/?>', f'<meta property="og:description" content="{desc}" />', html)
 
-    # 6. Build alternate hreflang and canonical tags
-    clean_tool = '' if tool_path == '/' else tool_path
+    # Remove any existing canonical, alternates, or ld+json from previous scripts
+    html = re.sub(r'\s*<link\s+rel="canonical"[^>]*>', '', html)
+    html = re.sub(r'\s*<link\s+rel="alternate"[^>]*>', '', html)
+    html = re.sub(r'\s*<meta\s+property="og:url"[^>]*>', '', html)
+    html = re.sub(r'\s*<meta\s+property="og:locale"[^>]*>', '', html)
+    html = re.sub(r'\s*<meta\s+name="twitter:title"[^>]*>', '', html)
+    html = re.sub(r'\s*<meta\s+name="twitter:description"[^>]*>', '', html)
+    html = re.sub(r'\s*<script\s+type="application/ld\+json">.*?</script>', '', html, flags=re.DOTALL)
     
-    # 7. Generate JSON-LD structured data for HowTo, FAQPage, WebApplication
+    # 6. Generate JSON-LD structured data for HowTo, FAQPage, WebApplication
     faq_data_by_lang = {
         'pl': [
             {"q": "Czy moje pliki są bezpieczne?", "a": "Tak, w 100% bezpieczne. W nosignpdf.com wdrożyliśmy bezpieczny silnik Client-Side — pliki otwierają się wyłącznie w pamięci RAM przeglądarki. Zero data collection / prywatność gwarantowana: nasz serwer nie widzi ani jednego bajtu."},
@@ -385,52 +529,48 @@ def generate_custom_html(tool_path, lang):
 {json.dumps(jsonld_schemas, ensure_ascii=False, indent=4)}
     </script>"""
 
+    pl_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['pl']}" if PRIMARY_URLS[tool_path]['pl'] != '/' else f"{site_domain}/"
+    en_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['en']}"
+    es_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['es']}"
+    hi_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['hi']}"
+
     alternates_html = f"""    <link rel="canonical" href="{canonical_url}" />
-    <meta property="og:url" content="{canonical_url}" />
+    <meta property="og:url" content="{current_page_url}" />
     <meta property="og:locale" content="{locale_map.get(lang, 'pl_PL')}" />
-    <link rel="alternate" hreflang="pl" href="{site_domain}{clean_tool or '/'}" />
-    <link rel="alternate" hreflang="en" href="{site_domain}/en{clean_tool}" />
-    <link rel="alternate" hreflang="es" href="{site_domain}/es{clean_tool}" />
-    <link rel="alternate" hreflang="hi" href="{site_domain}/hi{clean_tool}" />
-    <link rel="alternate" hreflang="x-default" href="{site_domain}{clean_tool or '/'}" />
+    <meta name="twitter:title" content="{title}" />
+    <meta name="twitter:description" content="{desc}" />
+    <link rel="alternate" hreflang="pl" href="{pl_alt}" />
+    <link rel="alternate" hreflang="en" href="{en_alt}" />
+    <link rel="alternate" hreflang="es" href="{es_alt}" />
+    <link rel="alternate" hreflang="hi" href="{hi_alt}" />
+    <link rel="alternate" hreflang="x-default" href="{pl_alt}" />
 {jsonld_script}"""
 
     # Insert before </head>
     html = html.replace('</head>', f'{alternates_html}\n  </head>')
     return html
 
-print("Pre-rendering static subpages for multi-language SEO...")
+print("Pre-rendering static subpages for multi-language SEO (micro-task titles & descriptions)...")
 generated_count = 0
 
-for tool_path in TOOLS_METADATA.keys():
+for tool_path in ALL_SLUGS.keys():
     for lang in languages:
-        # Determine target directory inside dist
-        if lang == 'pl':
-            if tool_path == '/':
+        slug_list = ALL_SLUGS[tool_path].get(lang, [])
+        for slug in slug_list:
+            if slug == '/':
                 target_dir = dist_dir
             else:
-                target_dir = os.path.join(dist_dir, tool_path.lstrip('/'))
-        else:
-            if tool_path == '/':
-                target_dir = os.path.join(dist_dir, lang)
-            else:
-                target_dir = os.path.join(dist_dir, lang, tool_path.lstrip('/'))
+                target_dir = os.path.join(dist_dir, slug.strip('/'))
 
-        os.makedirs(target_dir, exist_ok=True)
-        file_path = os.path.join(target_dir, 'index.html')
-        
-        # Don't overwrite the original dist/index.html unless it's root
-        custom_html = generate_custom_html(tool_path, lang)
-        if target_dir == dist_dir:
-            # For root dist/index.html, ensure canonical & hreflang tags are present
+            os.makedirs(target_dir, exist_ok=True)
+            file_path = os.path.join(target_dir, 'index.html')
+            
+            custom_html = generate_custom_html(tool_path, lang, slug)
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(custom_html)
-        else:
-            with open(file_path, 'w', encoding='utf-8') as f:
-                f.write(custom_html)
-        generated_count += 1
+            generated_count += 1
 
-print(f"Successfully pre-rendered {generated_count} static HTML index files for Googlebot & SEO.")
+print(f"Successfully pre-rendered {generated_count} static HTML index files with dedicated SEO metadata.")
 
 # Generate comprehensive multi-language sitemap.xml
 print("Generating comprehensive sitemap.xml with multi-language alternates...")
@@ -440,23 +580,25 @@ sitemap_lines = [
     '        xmlns:xhtml="http://www.w3.org/1999/xhtml">'
 ]
 
-for tool_path, lang_dict in TOOLS_METADATA.items():
-    clean_tool = '' if tool_path == '/' else tool_path
+for tool_path in PRIMARY_URLS.keys():
     priority = '1.0' if tool_path == '/' else ('0.9' if tool_path == '/wypelnij-formularz-pdf' else ('0.3' if tool_path == '/polityka-privacy' else '0.8'))
 
+    pl_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['pl']}" if PRIMARY_URLS[tool_path]['pl'] != '/' else f"{site_domain}/"
+    en_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['en']}"
+    es_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['es']}"
+    hi_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['hi']}"
+
     for lang in languages:
-        if lang == 'pl':
-            loc = f"{site_domain}{clean_tool or '/'}"
-        else:
-            loc = f"{site_domain}/{lang}{clean_tool}"
+        primary_slug = PRIMARY_URLS[tool_path][lang]
+        loc = f"{site_domain}{primary_slug}" if primary_slug != '/' else f"{site_domain}/"
 
         sitemap_lines.append('  <url>')
         sitemap_lines.append(f'    <loc>{loc}</loc>')
-        sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="pl" href="{site_domain}{clean_tool or "/"}" />')
-        sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{site_domain}/en{clean_tool}" />')
-        sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="es" href="{site_domain}/es{clean_tool}" />')
-        sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="hi" href="{site_domain}/hi{clean_tool}" />')
-        sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{site_domain}{clean_tool or "/"}" />')
+        sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="pl" href="{pl_alt}" />')
+        sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{en_alt}" />')
+        sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="es" href="{es_alt}" />')
+        sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="hi" href="{hi_alt}" />')
+        sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{pl_alt}" />')
         sitemap_lines.append('    <changefreq>weekly</changefreq>')
         sitemap_lines.append(f'    <priority>{priority}</priority>')
         sitemap_lines.append('  </url>')
