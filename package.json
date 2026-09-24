@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && python3 package_for_cloudflare.py",
-    "deploy": "echo 'Bypassing default deploy...' && npx wrangler pages deploy dist --project-name=nosignpdf",
+    "deploy": "wrangler pages deploy dist --project-name=nosignpdf",
     "preview": "vite preview",
     "package:cloudflare": "python3 package_for_cloudflare.py",
     "clean": "rm -rf dist server.js",
@@ -37,6 +37,7 @@
     "tailwindcss": "^4.1.14",
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
-    "vite": "^6.2.3"
+    "vite": "^6.2.3",
+    "wrangler": "4.86.0"
   }
 }

@@ -132,6 +132,9 @@ export interface TranslationDict {
     toolsTitle: string;
     securityTitle: string;
     securityDesc: string;
+    privacyPolicy: string;
+    termsOfService: string;
+    privacyAndTerms: string;
     copyright: string;
     engine: string;
   };
@@ -256,6 +259,9 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       toolsTitle: 'Narzędzia PDF',
       securityTitle: 'Bezpieczeństwo & RODO',
       securityDesc: 'Zgodność z europejskimi przepisami RODO / GDPR. Przeglądarka tworzy odizolowaną piaskownicę (Sandbox), chroniąc Twoje poufne dane bankowe, PESEL i umowy handlowe.',
+      privacyPolicy: 'Polityka Prywatności',
+      termsOfService: 'Regulamin Serwisu',
+      privacyAndTerms: 'Regulamin i Polityka Prywatności',
       copyright: 'Wszelkie prawa zastrzeżone.',
       engine: '100% Client-Side Engine • Powered by pdf-lib & pdfjs-dist',
     },
@@ -378,6 +384,9 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       toolsTitle: 'PDF Tools',
       securityTitle: 'Security & Privacy',
       securityDesc: 'Compliant with European GDPR regulations. The browser executes inside an isolated sandbox, keeping your financial, tax, and private data safe.',
+      privacyPolicy: 'Privacy Policy',
+      termsOfService: 'Terms of Service',
+      privacyAndTerms: 'Privacy Policy & Terms',
       copyright: 'All rights reserved.',
       engine: '100% Client-Side Engine • Powered by pdf-lib & pdfjs-dist',
     },
@@ -500,6 +509,9 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       toolsTitle: 'Herramientas PDF',
       securityTitle: 'Seguridad y RGPD',
       securityDesc: 'Cumplimiento de normativas RGPD / GDPR de la UE. El navegador crea un entorno aislado (Sandbox) protegiendo tus datos confidenciales.',
+      privacyPolicy: 'Política de Privacidad',
+      termsOfService: 'Términos de Servicio',
+      privacyAndTerms: 'Política de Privacidad y Términos',
       copyright: 'Todos los derechos reservados.',
       engine: '100% Client-Side Engine • Desarrollado con pdf-lib y pdfjs-dist',
     },
@@ -622,6 +634,9 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       toolsTitle: 'पीडीएफ टूल्स',
       securityTitle: 'सुरक्षा और गोपनीयता',
       securityDesc: 'यूरोपीय GDPR नियमों का पूर्ण अनुपालन। ब्राउज़र एक सुरक्षित सैंडबॉक्स बनाता है जो आपके वित्तीय और निजी डेटा की सुरक्षा करता है।',
+      privacyPolicy: 'गोपनीयता नीति (Privacy Policy)',
+      termsOfService: 'उपयोग की शर्तें (Terms of Service)',
+      privacyAndTerms: 'गोपनीयता नीति और नियम',
       copyright: 'सर्वाधिकार सुरक्षित।',
       engine: '100% Client-Side Engine • Powered by pdf-lib & pdfjs-dist',
     },

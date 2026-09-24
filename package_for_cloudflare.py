@@ -548,7 +548,343 @@ def generate_custom_html(tool_path, lang, current_slug):
 
     # Insert before </head>
     html = html.replace('</head>', f'{alternates_html}\n  </head>')
+
+    # 8. If privacy policy page, inject pre-rendered semantic HTML body for Google AdSense crawlers
+    if tool_path == '/polityka-privacy':
+        privacy_body = get_privacy_html_body(lang)
+        html = html.replace('<div id="root"></div>', f'<div id="root">{privacy_body}</div>')
+
     return html
+
+def get_privacy_html_body(lang):
+    if lang == 'pl':
+        return """
+<div id="privacy-policy-view" class="w-full max-w-4xl mx-auto py-8 px-4 font-sans text-zinc-900 dark:text-zinc-100">
+  <div class="mb-6 flex items-center justify-between">
+    <a href="/" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-xs font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
+      ← Powrót do narzędzi PDF
+    </a>
+    <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1 rounded-full border border-emerald-200">
+      Zgodność z Google AdSense, RODO i GDPR
+    </span>
+  </div>
+  <article class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-10 shadow-xs space-y-8">
+    <div class="border-b border-zinc-100 dark:border-zinc-800 pb-6">
+      <span class="text-xs uppercase tracking-wider font-bold text-zinc-400">nosignpdf.com – Bezpieczeństwo i Transparentność</span>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1 text-zinc-900 dark:text-white">
+        Polityka Prywatności i Regulamin Serwisu (Terms of Service)
+      </h1>
+      <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed mt-3">
+        Niniejszy dokument określa zasady przetwarzania danych, wyświetlania reklam sieci Google AdSense oraz korzystania z darmowych narzędzi serwisu nosignpdf.com. Naszym priorytetem jest pełna ochrona Twojej prywatności: aplikacja działa w 100% lokalnie w przeglądarce użytkownika i nie zbiera, nie przetwarza ani nie przetrzymuje żadnych plików PDF ani danych osobowych na zewnętrznych serwerach.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200/70 dark:border-zinc-700/60">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">100% Pamięć RAM</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Pliki PDF nigdy nie opuszczają Twojego urządzenia. Brak wysyłki do chmury.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200/70 dark:border-zinc-700/60">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">Google AdSense & Cookies</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Ciasteczka służą wyłącznie do bezpiecznej monetyzacji i emisji reklam.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200/70 dark:border-zinc-700/60">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">Brak Rejestracji i Baz</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Zero kont użytkowników, zero logowania i zero śledzenia treści dokumentów.</p>
+      </div>
+    </div>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">1. Lokalna Architektura Przetwarzania Dokumentów (Privacy-First)</h2>
+      <ul class="space-y-2 pl-6 list-disc text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <li>Wszystkie operacje techniczne (łączenie, rozdzielanie, obracanie, usuwanie stron, wypełnianie formularzy AcroForm oraz konwersje) wykonywane są wyłącznie w silniku Twojej przeglądarki internetowej przy użyciu bibliotek WebAssembly oraz JavaScript (pdf-lib, pdfjs-dist).</li>
+        <li>Twoje dokumenty PDF, wprowadzone dane tekstowe, dane wrażliwe (PESEL, NIP, numery kont, dane finansowe) oraz grafiki NIGDY nie są przesyłane na nasz serwer ani serwery pośredniczące.</li>
+        <li>Pliki istnieją wyłącznie w pamięci operacyjnej RAM Twojego komputera lub smartfona i są natychmiastowo zwalniane po zakończeniu pracy lub zamknięciu karty przeglądarki.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">2. Monetyzacja, Reklamy Google AdSense i Pliki Cookies</h2>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        W celu sfinansowania kosztów infrastruktury oraz utrzymania bezpłatnego charakteru serwisu bez opłat subskrypcyjnych, nosignpdf.com wyświetla reklamy dostarczane przez zewnętrznych dostawców, w tym sieć Google AdSense.
+      </p>
+      <ul class="space-y-2 pl-6 list-disc text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <li>Dostawcy zewnętrzni, w tym Google, używają plików cookies (ciasteczek) do wyświetlania reklam na podstawie poprzednich odwiedzin użytkownika w niniejszej witrynie lub w innych witrynach internetowych.</li>
+        <li>Pliki cookie do reklam umożliwiają firmie Google i jej partnerom wyświetlanie użytkownikom odpowiednich reklam na podstawie ich wizyt w witrynie nosignpdf.com i/lub innych witrynach w internecie.</li>
+      </ul>
+      <div class="p-3.5 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800/40 rounded-xl space-y-1 text-xs">
+        <p class="font-semibold text-amber-900 dark:text-amber-200">Prawo do rezygnacji z reklam spersonalizowanych:</p>
+        <p class="text-amber-800 dark:text-amber-300">
+          Użytkownik może w każdej chwili zrezygnować ze spersonalizowanych reklam w 
+          <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" class="font-bold underline">Ustawieniach reklam Google (Google Ads Settings)</a> 
+          lub odwiedzając stronę 
+          <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="font-bold underline">www.aboutads.info</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">3. Prawa Użytkownika i Przepisy RODO / GDPR</h2>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO / GDPR), użytkownik ma pełne prawo do prywatności. Ponieważ nosignpdf.com nie przetwarza plików PDF na serwerze, ryzyko wycieku danych z naszej strony wynosi zero.
+      </p>
+    </section>
+
+    <section class="space-y-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">4. Regulamin Świadczenia Usług (Terms of Service)</h2>
+      <ul class="space-y-2 pl-6 list-disc text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <li><strong>Charakter usługi:</strong> Narzędzia nosignpdf.com są udostępniane bezpłatnie w modelu „As Is” i mają charakter techniczny pomocniczy. Nie stanowią doradztwa podatkowego ani prawnego.</li>
+        <li><strong>Zrzeczenie się odpowiedzialności:</strong> Użytkownik ponosi wyłączną odpowiedzialność za poprawność danych wpisywanych do formularzy urzędowych (w tym PIT, PCC-3). Twórca nie odpowiada za odrzucenie dokumentów przez instytucje państwowe ani za skutki podatkowe.</li>
+      </ul>
+    </section>
+
+    <div class="pt-6 border-t border-zinc-100 dark:border-zinc-800 flex justify-between text-xs text-zinc-400">
+      <span>Zaktualizowano na potrzeby weryfikacji Google AdSense: 2026</span>
+      <span>Administrator: nosignpdf.com</span>
+    </div>
+  </article>
+</div>
+"""
+    elif lang == 'es':
+        return """
+<div id="privacy-policy-view" class="w-full max-w-4xl mx-auto py-8 px-4 font-sans text-zinc-900 dark:text-zinc-100">
+  <div class="mb-6 flex items-center justify-between">
+    <a href="/es" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-xs font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
+      ← Volver a herramientas PDF
+    </a>
+    <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1 rounded-full border border-emerald-200">
+      Cumplimiento con Google AdSense y RGPD
+    </span>
+  </div>
+  <article class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-10 shadow-xs space-y-8">
+    <div class="border-b border-zinc-100 dark:border-zinc-800 pb-6">
+      <span class="text-xs uppercase tracking-wider font-bold text-zinc-400">nosignpdf.com – Seguridad y Transparencia</span>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1 text-zinc-900 dark:text-white">
+        Política de Privacidad y Términos de Servicio (Terms of Service)
+      </h1>
+      <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed mt-3">
+        Este documento describe el tratamiento de datos, la publicidad con Google AdSense y los términos de uso en nosignpdf.com. Nuestra prioridad es tu privacidad: la aplicación funciona al 100% de manera local en el navegador del usuario y no recopila, procesa ni almacena ningún archivo PDF ni datos personales en servidores externos.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200/70 dark:border-zinc-700/60">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">100% Memoria RAM</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Los archivos nunca salen de tu dispositivo. Sin servidores en la nube.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200/70 dark:border-zinc-700/60">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">Google AdSense y Cookies</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Las cookies se utilizan únicamente para monetización y entrega de publicidad.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200/70 dark:border-zinc-700/60">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">Sin Registro ni Base de Datos</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Sin cuentas, sin inicios de sesión y sin rastreo de tus documentos.</p>
+      </div>
+    </div>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">1. Arquitectura Local del Lado del Cliente (Privacy-First)</h2>
+      <ul class="space-y-2 pl-6 list-disc text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <li>Todas las operaciones técnicas se ejecutan exclusivamente en tu navegador mediante WebAssembly y JavaScript (pdf-lib, pdfjs-dist).</li>
+        <li>Tus documentos PDF, datos de texto y datos confidenciales NUNCA se transfieren a nuestro servidor ni a terceros.</li>
+        <li>Los archivos se eliminan inmediatamente de la memoria RAM al cerrar la pestaña del navegador.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">2. Publicidad de Google AdSense y Cookies de Terceros</h2>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Para mantener este servicio 100% gratuito sin costes de suscripción, nosignpdf.com muestra anuncios de proveedores externos, principalmente Google AdSense.
+      </p>
+      <ul class="space-y-2 pl-6 list-disc text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <li>Los proveedores externos, incluido Google, utilizan cookies para publicar anuncios basados en las visitas anteriores del usuario a este o a otros sitios web.</li>
+        <li>El uso de cookies publicitarias permite a Google y a sus socios mostrar anuncios basados en las visitas a nosignpdf.com y/o a otros sitios de Internet.</li>
+      </ul>
+      <div class="p-3.5 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800/40 rounded-xl space-y-1 text-xs">
+        <p class="font-semibold text-amber-900 dark:text-amber-200">Inhabilitación de publicidad personalizada:</p>
+        <p class="text-amber-800 dark:text-amber-300">
+          Puedes inhabilitar la publicidad personalizada en 
+          <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" class="font-bold underline">Configuración de anuncios de Google</a> 
+          o en 
+          <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="font-bold underline">www.aboutads.info</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">3. Términos y Condiciones del Servicio (Terms of Service)</h2>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        El servicio se proporciona "tal cual" (As Is). El usuario es el único responsable de la veracidad y legalidad de los datos introducidos en documentos o formularios oficiales.
+      </p>
+    </section>
+
+    <div class="pt-6 border-t border-zinc-100 dark:border-zinc-800 flex justify-between text-xs text-zinc-400">
+      <span>Actualizado para verificación de Google AdSense: 2026</span>
+      <span>Administrador: nosignpdf.com</span>
+    </div>
+  </article>
+</div>
+"""
+    elif lang == 'hi':
+        return """
+<div id="privacy-policy-view" class="w-full max-w-4xl mx-auto py-8 px-4 font-sans text-zinc-900 dark:text-zinc-100">
+  <div class="mb-6 flex items-center justify-between">
+    <a href="/hi" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-xs font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
+      ← पीडीएफ टूल्स पर वापस जाएं
+    </a>
+    <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1 rounded-full border border-emerald-200">
+      Google AdSense और GDPR के अनुरूप
+    </span>
+  </div>
+  <article class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-10 shadow-xs space-y-8">
+    <div class="border-b border-zinc-100 dark:border-zinc-800 pb-6">
+      <span class="text-xs uppercase tracking-wider font-bold text-zinc-400">nosignpdf.com – सुरक्षा और पारदर्शिता</span>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1 text-zinc-900 dark:text-white">
+        गोपनीयता नीति और सेवा की शर्तें (Privacy Policy & Terms)
+      </h1>
+      <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed mt-3">
+        यह दस्तावेज़ nosignpdf.com के डेटा प्रोसेसिंग, Google AdSense विज्ञापन और सेवा शर्तों का विवरण देता है। हमारी प्राथमिकता आपकी पूर्ण गोपनीयता है: यह टूल 100% आपके ब्राउज़र में स्थानीय रूप से काम करता है और कभी किसी रिमोट सर्वर पर पीडीएफ फाइलें या डेटा अपलोड नहीं करता है।
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200/70 dark:border-zinc-700/60">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">100% ब्राउज़र रैम में</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">आपकी फाइलें कभी आपके डिवाइस से बाहर नहीं जातीं। कोई क्लाउड अपलोड नहीं।</p>
+      </div>
+      <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200/70 dark:border-zinc-700/60">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">Google AdSense और कुकीज़</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">कुकीज़ का उपयोग केवल सुरक्षित मुद्रीकरण और विज्ञापन वितरण के लिए किया जाता है।</p>
+      </div>
+      <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200/70 dark:border-zinc-700/60">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">शून्य डेटाबेस और पंजीकरण</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">कोई खाता नहीं, कोई लॉगिन नहीं और आपकी फाइलों का कोई ट्रैकिंग नहीं।</p>
+      </div>
+    </div>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">1. स्थानीय क्लाइंट-साइड सुरक्षा (Privacy-First Architecture)</h2>
+      <ul class="space-y-2 pl-6 list-disc text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <li>सभी कार्य (मर्ज, अलग करना, घुमाना, पेज हटाना, फॉर्म भरना) केवल आपके वेब ब्राउज़र में WebAssembly और JavaScript से होते हैं।</li>
+        <li>आपकी पीडीएफ फाइलें या संवेदनशील जानकारी कभी हमारे सर्वर पर नहीं भेजी जाती।</li>
+        <li>ब्राउज़र टैब बंद करते ही डेटा रैम से तुरंत नष्ट हो जाता है।</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">2. Google AdSense विज्ञापन और कुकी नीति</h2>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        वेबसाइट को पूरी तरह मुफ्त और बिना शुल्क चलाने के लिए nosignpdf.com पर Google AdSense द्वारा विज्ञापन प्रदर्शित किए जाते हैं।
+      </p>
+      <ul class="space-y-2 pl-6 list-disc text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <li>Google सहित तीसरे पक्ष के विक्रेता विज़िट के आधार पर विज्ञापन दिखाने के लिए कुकीज़ का उपयोग करते हैं।</li>
+        <li>उपयोगकर्ता <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" class="font-bold underline">Google Ads Settings</a> या <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="font-bold underline">www.aboutads.info</a> पर जाकर व्यक्तिगत विज्ञापन से बाहर निकल सकते हैं।</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">3. सेवा की शर्तें (Terms of Service)</h2>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        यह उपकरण "जैसा है" (As Is) आधार पर प्रदान किया जाता है। फॉर्म में भरी गई जानकारी की शुद्धता के लिए उपयोगकर्ता पूरी तरह जिम्मेदार है।
+      </p>
+    </section>
+
+    <div class="pt-6 border-t border-zinc-100 dark:border-zinc-800 flex justify-between text-xs text-zinc-400">
+      <span>Google AdSense सत्यापन के लिए अद्यतन: 2026</span>
+      <span>प्रशासक: nosignpdf.com</span>
+    </div>
+  </article>
+</div>
+"""
+    else:  # default 'en'
+        return """
+<div id="privacy-policy-view" class="w-full max-w-4xl mx-auto py-8 px-4 font-sans text-zinc-900 dark:text-zinc-100">
+  <div class="mb-6 flex items-center justify-between">
+    <a href="/en" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-xs font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
+      ← Back to PDF Tools
+    </a>
+    <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1 rounded-full border border-emerald-200">
+      Compliant with Google AdSense, GDPR & Privacy Standards
+    </span>
+  </div>
+  <article class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-10 shadow-xs space-y-8">
+    <div class="border-b border-zinc-100 dark:border-zinc-800 pb-6">
+      <span class="text-xs uppercase tracking-wider font-bold text-zinc-400">nosignpdf.com – Security & Transparency</span>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1 text-zinc-900 dark:text-white">
+        Privacy Policy & Terms of Service
+      </h1>
+      <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed mt-3">
+        This document outlines the data processing policies, Google AdSense advertising integration, and terms of use for nosignpdf.com. Our highest priority is your privacy: the application operates 100% locally in your browser and never uploads, stores, or processes any PDF files or personal data on remote servers (Privacy-First Architecture).
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200/70 dark:border-zinc-700/60">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">100% In-Browser RAM</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Your PDF files never leave your device. No cloud storage or remote servers.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200/70 dark:border-zinc-700/60">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">Google AdSense & Cookies</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Cookies are used solely for advertising delivery and monetization compliance.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-200/70 dark:border-zinc-700/60">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">Zero Sign-Up & No Databases</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">No accounts, no logins, and zero tracking of your document contents.</p>
+      </div>
+    </div>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">1. In-Browser Client-Side Processing (Privacy-First Architecture)</h2>
+      <ul class="space-y-2 pl-6 list-disc text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <li>All document operations (merging, splitting, rotating, deleting pages, AcroForm filling, and conversions) are performed exclusively within your web browser using WebAssembly and JavaScript (pdf-lib, pdfjs-dist).</li>
+        <li>Your PDF documents, form field inputs, sensitive identifiers (tax IDs, financial details, contracts), and images are NEVER uploaded to our server or any third-party cloud.</li>
+        <li>Document data exists solely in your device volatile memory (RAM) and is purged immediately upon finishing your work or closing the browser tab.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">2. Monetization, Google AdSense Advertising & Cookies Policy</h2>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        To finance server bandwidth and keep this tool completely free with no paywalls or user sign-ups, nosignpdf.com displays advertisements served by third-party advertising networks, including Google AdSense.
+      </p>
+      <ul class="space-y-2 pl-6 list-disc text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <li>Third-party vendors, including Google, use cookies to serve ads based on a user prior visits to your website or other websites.</li>
+        <li>Google advertising cookies enable it and its partners to serve ads to users based on their visits to nosignpdf.com and/or other sites across the Internet.</li>
+      </ul>
+      <div class="p-3.5 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800/40 rounded-xl space-y-1 text-xs">
+        <p class="font-semibold text-amber-900 dark:text-amber-200">How to opt out of personalized advertising:</p>
+        <p class="text-amber-800 dark:text-amber-300">
+          Users may opt out of personalized advertising by visiting 
+          <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" class="font-bold underline">Google Ads Settings</a> 
+          or consumer choice portals such as 
+          <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="font-bold underline">www.aboutads.info</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">3. User Rights & GDPR / CCPA Compliance</h2>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Under GDPR and global privacy frameworks, you retain full rights regarding your data privacy. Because nosignpdf.com does not collect or transmit document data to servers, your personal documents cannot be leaked, breached, or accessed by third parties.
+      </p>
+    </section>
+
+    <section class="space-y-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+      <h2 class="text-lg font-bold text-zinc-900 dark:text-white">4. Terms of Service</h2>
+      <ul class="space-y-2 pl-6 list-disc text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <li><strong>Free Service "As Is":</strong> nosignpdf.com is provided free of charge on an "As Is" and "As Available" basis without warranties of any kind. The application is a technical utility and does not constitute official legal, accounting, or tax advice.</li>
+        <li><strong>Limitation of Liability:</strong> The user assumes sole responsibility for data entered into PDF forms. The operator of nosignpdf.com disclaims liability for form rejection by government offices or institutions.</li>
+      </ul>
+    </section>
+
+    <div class="pt-6 border-t border-zinc-100 dark:border-zinc-800 flex justify-between text-xs text-zinc-400">
+      <span>Updated for Google AdSense verification: 2026</span>
+      <span>Website Administrator: nosignpdf.com</span>
+    </div>
+  </article>
+</div>
+"""
+
 
 print("Pre-rendering static subpages for multi-language SEO (micro-task titles & descriptions)...")
 generated_count = 0
