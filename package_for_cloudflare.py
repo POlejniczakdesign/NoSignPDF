@@ -17,9 +17,11 @@ if not os.path.exists(dist_dir):
 # without using _redirects file, completely eliminating ERR_TOO_MANY_REDIRECTS loops!
 index_path = os.path.join(dist_dir, 'index.html')
 spa_fallback_path = os.path.join(dist_dir, '200.html')
+spa_404_path = os.path.join(dist_dir, '404.html')
 if os.path.exists(index_path):
     shutil.copyfile(index_path, spa_fallback_path)
-    print(f"Created native SPA fallback {spa_fallback_path}")
+    shutil.copyfile(index_path, spa_404_path)
+    print(f"Created native SPA fallbacks {spa_fallback_path} and {spa_404_path}")
 
 # Remove any old _redirects file from dist if it exists, to prevent redirect loops on Cloudflare Pages
 old_redirects_path = os.path.join(dist_dir, '_redirects')
@@ -27,18 +29,77 @@ if os.path.exists(old_redirects_path):
     os.remove(old_redirects_path)
     print(f"Removed legacy {old_redirects_path} to avoid redirect loops.")
 
-# Overwrite dist/wrangler.json with compliant schema for Cloudflare
+# Generate _routes.json to explicitly exclude static files (sitemap, robots, ads, assets)
+# from Worker / Function / SPA routing intercepts on Cloudflare Pages
+routes_config = {
+    "version": 1,
+    "include": ["/*"],
+    "exclude": [
+        "/sitemap.xml",
+        "/sitemap*.xml",
+        "/robots.txt",
+        "/ads.txt",
+        "/favicon.ico",
+        "/assets/*"
+    ]
+}
+with open(os.path.join(dist_dir, '_routes.json'), 'w', encoding='utf-8') as f:
+    json.dump(routes_config, f, indent=2)
+    f.write('\n')
+with open(os.path.join('public', '_routes.json'), 'w', encoding='utf-8') as f:
+    json.dump(routes_config, f, indent=2)
+    f.write('\n')
+print("Generated _routes.json ensuring static files bypass SPA interception.")
+
+# Overwrite dist/wrangler.json and root wrangler.json with compliant schema & negative asset routing rules
+# Ensuring physical static files (sitemap.xml, robots.txt, ads.txt) are served directly
 dist_wrangler_path = os.path.join(dist_dir, 'wrangler.json')
 final_wrangler_schema = {
+    "$schema": "../node_modules/wrangler/config-schema.json",
     "name": "nosignpdf",
     "compatibility_date": "2026-09-15",
     "assets": {
         "directory": ".",
-        "not_found_handling": "single-page-application"
+        "html_handling": "auto-trailing-slash",
+        "not_found_handling": "404-page",
+        "run_worker_first": [
+            "/*",
+            "!/sitemap.xml",
+            "!/sitemap*.xml",
+            "!/robots.txt",
+            "!/ads.txt",
+            "!/favicon.ico",
+            "!/assets/*"
+        ]
     }
 }
 with open(dist_wrangler_path, 'w', encoding='utf-8') as f:
     json.dump(final_wrangler_schema, f, indent=2)
+    f.write('\n')
+
+root_wrangler_path = 'wrangler.json'
+root_wrangler_schema = {
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "nosignpdf",
+    "compatibility_date": "2026-09-15",
+    "pages_build_output_dir": "./dist",
+    "assets": {
+        "directory": "./dist",
+        "html_handling": "auto-trailing-slash",
+        "not_found_handling": "404-page",
+        "run_worker_first": [
+            "/*",
+            "!/sitemap.xml",
+            "!/sitemap*.xml",
+            "!/robots.txt",
+            "!/ads.txt",
+            "!/favicon.ico",
+            "!/assets/*"
+        ]
+    }
+}
+with open(root_wrangler_path, 'w', encoding='utf-8') as f:
+    json.dump(root_wrangler_schema, f, indent=2)
     f.write('\n')
 
 # Tools and localized metadata definitions for SEO pre-rendering
@@ -972,6 +1033,8 @@ if os.path.exists(os.path.join('public', 'ads.txt')):
     shutil.copyfile(os.path.join('public', 'ads.txt'), os.path.join(dist_dir, 'ads.txt'))
 if os.path.exists(os.path.join('public', '_headers')):
     shutil.copyfile(os.path.join('public', '_headers'), os.path.join(dist_dir, '_headers'))
+if os.path.exists(os.path.join('public', '_routes.json')):
+    shutil.copyfile(os.path.join('public', '_routes.json'), os.path.join(dist_dir, '_routes.json'))
 
 print("Creating Cloudflare Pages production zip archive...")
 with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
