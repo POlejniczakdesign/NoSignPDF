@@ -13,23 +13,19 @@ if not os.path.exists(dist_dir):
     exit(1)
 
 # Ensure 200.html exists in dist as Cloudflare Pages native SPA fallback
+# Cloudflare Pages automatically serves 200.html for any unmatched route in Single Page Apps
+# without using _redirects file, completely eliminating ERR_TOO_MANY_REDIRECTS loops!
 index_path = os.path.join(dist_dir, 'index.html')
 spa_fallback_path = os.path.join(dist_dir, '200.html')
 if os.path.exists(index_path):
     shutil.copyfile(index_path, spa_fallback_path)
-    print(f"Created SPA fallback {spa_fallback_path}")
+    print(f"Created native SPA fallback {spa_fallback_path}")
 
-# Ensure dist/_redirects exists and specifies safe SPA fallback routing via /200.html
-# This prevents Cloudflare Pages code 100324 infinite loop error when rewriting /* to /index.html
-redirects_content = """# Cloudflare Pages SPA Routing Fallback
-# Static assets and pre-rendered pages (/en, /es, /hi, etc.) are served directly by Cloudflare Pages.
-# Unmatched client-side routes fallback cleanly to /200.html without index stripping loops.
-/*    /200.html    200
-"""
-redirects_dist_path = os.path.join(dist_dir, '_redirects')
-with open(redirects_dist_path, 'w', encoding='utf-8') as f:
-    f.write(redirects_content)
-print(f"Updated {redirects_dist_path}")
+# Remove any old _redirects file from dist if it exists, to prevent redirect loops on Cloudflare Pages
+old_redirects_path = os.path.join(dist_dir, '_redirects')
+if os.path.exists(old_redirects_path):
+    os.remove(old_redirects_path)
+    print(f"Removed legacy {old_redirects_path} to avoid redirect loops.")
 
 # Overwrite dist/wrangler.json with compliant schema for Cloudflare
 dist_wrangler_path = os.path.join(dist_dir, 'wrangler.json')
@@ -507,5 +503,5 @@ print("Cloudflare Pages multi-language deployment package is 100% ready:")
 print("  - Static HTML pre-rendered for all languages (pl, en, es, hi)")
 print("  - Full hreflang alternates and canonical tags for Googlebot")
 print("  - sitemap.xml with 48 URLs (4 languages x 12 pages)")
-print("  - _redirects and 200.html SPA routing fallback")
+print("  - Native 200.html SPA routing fallback (no _redirects loops)")
 print("  - favicon.ico, robots.txt, and ads.txt at root")

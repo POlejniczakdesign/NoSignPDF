@@ -1,5 +1,0 @@
-# Cloudflare Pages SPA Routing Fallback
-# Static files and pre-rendered HTML directories (/en, /es, /hi, /wypelnij-formularz-pdf, etc.) 
-# take priority automatically in Cloudflare Pages.
-# Any non-existent routes fall back to /200.html to avoid infinite redirect loops with /index.html.
-/*    /200.html    200
