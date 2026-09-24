@@ -289,6 +289,108 @@ def generate_custom_html(tool_path, lang):
 
     # 6. Build alternate hreflang and canonical tags
     clean_tool = '' if tool_path == '/' else tool_path
+    
+    # 7. Generate JSON-LD structured data for HowTo, FAQPage, WebApplication
+    faq_data_by_lang = {
+        'pl': [
+            {"q": "Czy moje pliki są bezpieczne?", "a": "Tak, w 100% bezpieczne. W nosignpdf.com wdrożyliśmy bezpieczny silnik Client-Side — pliki otwierają się wyłącznie w pamięci RAM przeglądarki. Zero data collection / prywatność gwarantowana: nasz serwer nie widzi ani jednego bajtu."},
+            {"q": "Czy nosignpdf.com to darmowy edytor pdf bez logowania i bez znaków wodnych?", "a": "Tak! Jest to w 100% darmowy edytor pdf bez logowania, bez rejestracji i bez znaków wodnych."},
+            {"q": "Jak szybki jest edytor w porównaniu do narzędzi chmurowych?", "a": "Jest ultra szybki, ponieważ nie wymaga przesyłania plików przez internet. Wszystkie obliczenia wykonuje procesor urządzenia w ułamku sekundy."}
+        ],
+        'en': [
+            {"q": "Are my files safe?", "a": "Yes, 100% safe. At nosignpdf.com, we run everything client-side in your browser. Zero data collection / privacy guaranteed: your files never leave your device RAM."},
+            {"q": "Is nosignpdf.com really a free PDF editor with no sign-up and no watermarks?", "a": "Yes! It is completely free with no registration, no login, and no watermarks."},
+            {"q": "How fast is this editor compared to cloud tools?", "a": "It is ultra fast. Operations take place in milliseconds using your device processor without file upload waits."}
+        ],
+        'es': [
+            {"q": "¿Mis archivos están seguros?", "a": "Sí, 100% seguros y confidenciales. En nosignpdf.com todo se procesa en el navegador (Client-Side). Seguro (zero data collection / privacidad): tus archivos jamás salen de tu memoria RAM."},
+            {"q": "¿Es realmente un editor PDF gratis sin registro y sin marcas de agua?", "a": "¡Totalmente! Es un editor PDF gratis, sin registro, sin cuentas de usuario y sin marcas de agua."},
+            {"q": "¿Qué tan rápido es el procesamiento?", "a": "Es ultra rápido. El procesador de tu equipo ejecuta todo en milisegundos sin subidas de red."}
+        ],
+        'hi': [
+            {"q": "क्या मेरी फ़ाइलें सुरक्षित हैं? (Are my files safe?)", "a": "हाँ, 100% पूरी तरह सुरक्षित हैं। nosignpdf.com में क्लाइंट-साइड तकनीक से फाइलें केवल आपके ब्राउज़र की रैम में खुलती हैं। सुरक्षित (zero data collection / गोपनीयता)।"},
+            {"q": "क्या nosignpdf.com बिना लॉगिन और बिना वॉटरमार्क के मुफ्त पीडीएफ संपादक है?", "a": "हाँ! यह 100% मुफ्त पीडीएफ संपादक है बिना लॉगिन (bez logowania) और बिना वॉटरमार्क (bez znaków wodnych) के।"},
+            {"q": "क्लाउड टूल्स की तुलना में यह कितना तेज़ (szybki) है?", "a": "यह अल्ट्रा-तेज़ है क्योंकि अपलोड या डाउनलोड का इंतज़ार नहीं करना पड़ता। सारा काम डिवाइस से तुरंत होता है।"}
+        ]
+    }
+    
+    steps_data_by_lang = {
+        'pl': [
+            {"name": "Krok 1: Otwórz lub przeciągnij swój plik PDF", "text": "Upuść dokument w oknie edytora. Plik jest ładowany do pamięci RAM bez wysyłania do internetu."},
+            {"name": "Krok 2: Wypełnij, edytuj lub modyfikuj strony", "text": "Wypełniaj formularze, obracaj, usuwaj lub łącz pliki z prędkością WebAssembly."},
+            {"name": "Krok 3: Pobierz gotowy dokument PDF bez znaków wodnych", "text": "Zapisz gotowy plik na dysku w ułamku sekundy — bez logowania i bez opłat."}
+        ],
+        'en': [
+            {"name": "Step 1: Open or Drop Your PDF File", "text": "Drag and drop your document. Loaded directly into local device RAM without internet upload."},
+            {"name": "Step 2: Fill Forms, Edit or Reorder Pages", "text": "Complete AcroForms, rotate, delete pages, or merge documents with WebAssembly speed."},
+            {"name": "Step 3: Download Clean PDF With No Watermarks", "text": "Save and download directly to your disk with zero watermarks and no sign-up."}
+        ],
+        'es': [
+            {"name": "Paso 1: Abre o arrastra tu archivo PDF", "text": "Carga tu documento directamente en la memoria RAM local sin subirlo a la red."},
+            {"name": "Paso 2: Rellena formularios, edita o reorganiza páginas", "text": "Edita campos AcroForms, rota o une páginas en milisegundos con WebAssembly."},
+            {"name": "Paso 3: Descarga tu documento limpio y sin marcas de agua", "text": "Guarda tu PDF limpio sin marcas de agua y sin registro."}
+        ],
+        'hi': [
+            {"name": "चरण 1: अपनी पीडीएफ फ़ाइल चुनें या ड्रैग करें", "text": "दस्तावेज़ सीधे डिवाइस की रैम में खुलता है — इंटरनेट पर कोई फाइल नहीं भेजी जाती।"},
+            {"name": "चरण 2: फॉर्म भरें, संपादित करें या पेज व्यवस्थित करें", "text": "फॉर्म भरें, पेज घुमाएं या जोड़ें WebAssembly की अल्ट्रा-तेज़ गति से।"},
+            {"name": "चरण 3: बिना वॉटरमार्क के स्वच्छ पीडीएफ डाउनलोड करें", "text": "बिना वॉटरमार्क और बिना लॉगिन के तुरंत नया पीडीएफ डाउनलोड करें।"}
+        ]
+    }
+
+    current_faqs = faq_data_by_lang.get(lang, faq_data_by_lang['en'])
+    current_steps = steps_data_by_lang.get(lang, steps_data_by_lang['en'])
+
+    jsonld_schemas = [
+        {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": title,
+            "description": desc,
+            "inLanguage": lang,
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "position": idx + 1,
+                    "name": s["name"],
+                    "text": s["text"]
+                } for idx, s in enumerate(current_steps)
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "inLanguage": lang,
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": item["q"],
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": item["a"]
+                    }
+                } for item in current_faqs
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "NoSignPDF",
+            "url": canonical_url,
+            "applicationCategory": "UtilityApplication",
+            "operatingSystem": "All",
+            "browserRequirements": "Requires JavaScript and WebAssembly",
+            "offers": {
+                "@type": "Offer",
+                "price": "0.00",
+                "priceCurrency": "USD"
+            }
+        }
+    ]
+
+    jsonld_script = f"""    <script type="application/ld+json">
+{json.dumps(jsonld_schemas, ensure_ascii=False, indent=4)}
+    </script>"""
+
     alternates_html = f"""    <link rel="canonical" href="{canonical_url}" />
     <meta property="og:url" content="{canonical_url}" />
     <meta property="og:locale" content="{locale_map.get(lang, 'pl_PL')}" />
@@ -296,7 +398,8 @@ def generate_custom_html(tool_path, lang):
     <link rel="alternate" hreflang="en" href="{site_domain}/en{clean_tool}" />
     <link rel="alternate" hreflang="es" href="{site_domain}/es{clean_tool}" />
     <link rel="alternate" hreflang="hi" href="{site_domain}/hi{clean_tool}" />
-    <link rel="alternate" hreflang="x-default" href="{site_domain}{clean_tool or '/'}" />"""
+    <link rel="alternate" hreflang="x-default" href="{site_domain}{clean_tool or '/'}" />
+{jsonld_script}"""
 
     # Insert before </head>
     html = html.replace('</head>', f'{alternates_html}\n  </head>')

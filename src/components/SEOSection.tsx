@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ChevronDown,
   Check,
@@ -7,6 +7,10 @@ import {
   Award,
   Lock,
   Zap,
+  ShieldCheck,
+  FileCheck2,
+  Clock,
+  Sparkles,
 } from 'lucide-react';
 import { ToolRoute } from '../types';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -22,6 +26,76 @@ export const SEOSection: React.FC<SEOSectionProps> = ({ toolRoute }) => {
 
   const seoData = getSeoData(toolRoute);
   const currentTool = getToolMeta(toolRoute);
+
+  // Dynamically inject JSON-LD structured data (HowTo and FAQPage) into <head>
+  useEffect(() => {
+    const scriptId = 'nosignpdf-jsonld-schema';
+    let scriptElement = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!scriptElement) {
+      scriptElement = document.createElement('script');
+      scriptElement.id = scriptId;
+      scriptElement.type = 'application/ld+json';
+      document.head.appendChild(scriptElement);
+    }
+
+    const currentUrl = window.location.href;
+
+    const howToSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: seoData.h2Title,
+      description: seoData.intro,
+      inLanguage: language,
+      step: seoData.steps.map((step, idx) => ({
+        '@type': 'HowToStep',
+        position: idx + 1,
+        name: step.title,
+        text: step.desc,
+      })),
+    };
+
+    const faqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      inLanguage: language,
+      mainEntity: seoData.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.a,
+        },
+      })),
+    };
+
+    const softwareAppSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'NoSignPDF',
+      url: currentUrl,
+      applicationCategory: 'UtilityApplication',
+      operatingSystem: 'All',
+      browserRequirements: 'Requires JavaScript and WebAssembly support',
+      offers: {
+        '@type': 'Offer',
+        price: '0.00',
+        priceCurrency: 'USD',
+      },
+      featureList: [
+        'Client-side PDF processing',
+        'Zero data collection',
+        'No sign-up or registration required',
+        'No watermarks',
+        'Instant RAM processing',
+      ],
+    };
+
+    scriptElement.textContent = JSON.stringify([howToSchema, faqSchema, softwareAppSchema], null, 2);
+
+    return () => {
+      // Keep script updated on route/language change
+    };
+  }, [language, toolRoute, seoData]);
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndices((prev) =>
@@ -326,24 +400,43 @@ export const SEOSection: React.FC<SEOSectionProps> = ({ toolRoute }) => {
             return (
               <div
                 key={idx}
-                className="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-white dark:bg-slate-900 transition-colors"
+                className={`border rounded-2xl overflow-hidden transition-all duration-200 ${
+                  isOpen
+                    ? 'border-indigo-300 dark:border-indigo-800 bg-white dark:bg-slate-900 shadow-xs'
+                    : 'border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 hover:border-slate-300 dark:hover:border-slate-700'
+                }`}
               >
                 <button
                   type="button"
                   onClick={() => toggleFaq(idx)}
-                  className="w-full p-4 text-left flex items-center justify-between text-sm font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer"
+                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer gap-3"
+                  aria-expanded={isOpen}
                 >
-                  <span>{faq.q}</span>
-                  <ChevronDown
-                    className={`w-4 h-4 text-slate-400 transition-transform ${
-                      isOpen ? 'rotate-180 text-indigo-600' : ''
+                  <span className="flex items-center gap-2.5">
+                    <span className="w-6 h-6 rounded-full bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 text-xs font-black flex items-center justify-center shrink-0">
+                      Q
+                    </span>
+                    <span>{faq.q}</span>
+                  </span>
+                  <div
+                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                      isOpen
+                        ? 'rotate-180 bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
                     }`}
-                  />
+                  >
+                    <ChevronDown className="w-4 h-4" />
+                  </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-4 pb-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 pt-3">
-                    {faq.a}
+                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80 animate-fadeIn">
+                    <div className="flex gap-2.5 items-start mt-2">
+                      <span className="w-6 h-6 rounded-full bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 text-xs font-black flex items-center justify-center shrink-0 mt-0.5">
+                        A
+                      </span>
+                      <div className="flex-1 space-y-1">{faq.a}</div>
+                    </div>
                   </div>
                 )}
               </div>
