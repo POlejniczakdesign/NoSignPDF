@@ -29,6 +29,7 @@ import { LANGUAGES, Language } from '../i18n/translations';
 interface HeaderProps {
   currentPath: ToolRoute;
   onNavigate: (path: ToolRoute) => void;
+  onLanguageChange?: (lang: Language) => void;
   isDark: boolean;
   onToggleTheme: () => void;
 }
@@ -36,6 +37,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({
   currentPath,
   onNavigate,
+  onLanguageChange,
   isDark,
   onToggleTheme,
 }) => {
@@ -286,7 +288,11 @@ export const Header: React.FC<HeaderProps> = ({
                       id={`lang-opt-${langItem.code}`}
                       type="button"
                       onClick={() => {
-                        setLanguage(langItem.code as Language);
+                        if (onLanguageChange) {
+                          onLanguageChange(langItem.code as Language);
+                        } else {
+                          setLanguage(langItem.code as Language);
+                        }
                         setLangMenuOpen(false);
                       }}
                       className={`w-full flex items-center justify-between px-3 py-1.5 text-xs text-left transition-colors cursor-pointer ${
@@ -409,6 +415,43 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             );
           })}
+
+          <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800">
+            <div className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider px-2 pb-1.5">
+              {t.header.selectLanguage}
+            </div>
+            <div className="grid grid-cols-2 gap-1.5 px-1">
+              {LANGUAGES.map((langItem) => {
+                const isSelected = language === langItem.code;
+                return (
+                  <button
+                    key={langItem.code}
+                    id={`mobile-lang-${langItem.code}`}
+                    type="button"
+                    onClick={() => {
+                      if (onLanguageChange) {
+                        onLanguageChange(langItem.code as Language);
+                      } else {
+                        setLanguage(langItem.code as Language);
+                      }
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs transition-colors cursor-pointer ${
+                      isSelected
+                        ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 font-semibold shadow-xs'
+                        : 'bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800'
+                    }`}
+                  >
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-sm">{langItem.flag}</span>
+                      <span>{langItem.name}</span>
+                    </div>
+                    {isSelected && <Check className="w-3 h-3" />}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
           <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800">
             <a

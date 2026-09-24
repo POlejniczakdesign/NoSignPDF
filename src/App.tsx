@@ -18,12 +18,20 @@ import { ToolRoute } from './types';
 import { TOOLS } from './data/tools';
 import { downloadPdfBlob } from './lib/pdfOperations';
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
+import { Language } from './i18n/translations';
+import { parsePathname, buildLocalizedPath, updateDocumentSeo } from './lib/routing';
 
 function AppContent() {
-  const { t, getToolMeta, language } = useLanguage();
+  const { t, getToolMeta, language, setLanguage } = useLanguage();
 
-  // Routing state
-  const [currentPath, setCurrentPath] = useState<ToolRoute>('/');
+  // Routing state initialized from URL path (e.g. /es/obroc-pdf -> /obroc-pdf)
+  const [currentPath, setCurrentPath] = useState<ToolRoute>(() => {
+    if (typeof window !== 'undefined') {
+      const parsed = parsePathname(window.location.pathname);
+      return parsed.toolRoute;
+    }
+    return '/';
+  });
 
   // Theme state (default light)
   const [isDark, setIsDark] = useState<boolean>(() => {
@@ -55,39 +63,33 @@ function AppContent() {
   // Sync route on mount and browser back/forward buttons
   useEffect(() => {
     const handleLocationChange = () => {
-      const rawPath = window.location.pathname;
-      const validTool = TOOLS.find((tool) => tool.path === rawPath);
-      if (validTool) {
-        setCurrentPath(validTool.path);
-      } else {
-        setCurrentPath('/');
+      const parsed = parsePathname(window.location.pathname);
+      setCurrentPath(parsed.toolRoute);
+      if (parsed.isLangInPath && parsed.lang !== language) {
+        setLanguage(parsed.lang);
       }
     };
 
     handleLocationChange();
     window.addEventListener('popstate', handleLocationChange);
     return () => window.removeEventListener('popstate', handleLocationChange);
-  }, []);
+  }, [language, setLanguage]);
 
-  // Update dynamic document title & meta tags on route or language change for SEO
+  // Update dynamic document title, meta tags, and hreflang links on route or language change for Googlebot
   useEffect(() => {
     const currentToolMeta = getToolMeta(currentPath);
-    document.title = `${currentToolMeta.name} – PDF Studio Online`;
-
-    // Update meta description
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute(
-        'content',
-        `${currentToolMeta.name}: ${currentToolMeta.description} 100% Client-Side. ISO 32000.`
-      );
-    }
+    updateDocumentSeo(currentPath, language, currentToolMeta, 'PDF Studio Online');
   }, [currentPath, language, getToolMeta]);
 
-  // Navigate helper
-  const navigateTo = (path: ToolRoute) => {
+  // Multi-language navigate helper (keeps URL in sync with active language prefix)
+  const navigateTo = (path: ToolRoute, targetLang?: Language) => {
+    const activeLang = targetLang || language;
     setCurrentPath(path);
-    window.history.pushState({}, '', path);
+    if (targetLang && targetLang !== language) {
+      setLanguage(targetLang);
+    }
+    const localizedUrl = buildLocalizedPath(path, activeLang);
+    window.history.pushState({}, '', localizedUrl);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -224,6 +226,7 @@ function AppContent() {
       <Header
         currentPath={currentPath}
         onNavigate={navigateTo}
+        onLanguageChange={(newLang: Language) => navigateTo(currentPath, newLang)}
         isDark={isDark}
         onToggleTheme={() => setIsDark((prev) => !prev)}
       />

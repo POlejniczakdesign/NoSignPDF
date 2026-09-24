@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Language, TRANSLATIONS, TranslationDict, LANGUAGES } from './translations';
 import { SEO_TRANSLATIONS, LocalizedSeoContent } from './seoData';
 import { ToolMeta, ToolRoute } from '../types';
+import { parsePathname, SUPPORTED_LANGUAGES } from '../lib/routing';
 
 interface LanguageContextValue {
   language: Language;
@@ -488,25 +489,32 @@ const TOOL_DEFINITIONS_BY_LANG: Record<Language, ToolMeta[]> = {
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>(() => {
     if (typeof window !== 'undefined') {
-      // 1. Sprawdź parametr 'lang' z adresu URL (najwyższy priorytet dla kampanii reklamowych)
+      // 1. Sprawdź przedrostek ścieżki URL (np. /es, /hi, /en, /pl) – absolutny priorytet SEO dla Google i użytkowników
+      const parsed = parsePathname(window.location.pathname);
+      if (parsed.isLangInPath) {
+        localStorage.setItem('app_language', parsed.lang);
+        return parsed.lang;
+      }
+
+      // 2. Sprawdź parametr 'lang' z adresu URL (dla kampanii reklamowych np. ?lang=hi)
       const urlParams = new URLSearchParams(window.location.search);
       const urlLang = urlParams.get('lang')?.toLowerCase();
-      if (urlLang && (urlLang === 'pl' || urlLang === 'en' || urlLang === 'es' || urlLang === 'hi')) {
+      if (urlLang && SUPPORTED_LANGUAGES.includes(urlLang as Language)) {
         localStorage.setItem('app_language', urlLang);
         return urlLang as Language;
       }
 
-      // 2. Jeśli brak parametru w URL, sprawdź język zapisany w localStorage
+      // 3. Jeśli brak w URL, sprawdź język zapisany w localStorage
       const saved = localStorage.getItem('app_language') as Language;
-      if (saved && (saved === 'pl' || saved === 'en' || saved === 'es' || saved === 'hi')) {
+      if (saved && SUPPORTED_LANGUAGES.includes(saved)) {
         return saved;
       }
 
-      // 3. Wykryj język z przeglądarki
+      // 4. Wykryj język z przeglądarki użytkownika
       const browserLang = navigator.language?.slice(0, 2).toLowerCase();
-      if (browserLang === 'pl') return 'pl';
-      if (browserLang === 'es') return 'es';
-      if (browserLang === 'hi') return 'hi';
+      if (browserLang && SUPPORTED_LANGUAGES.includes(browserLang as Language)) {
+        return browserLang as Language;
+      }
       return 'pl'; // Domyślny język polski
     }
     return 'pl';
@@ -524,11 +532,17 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (typeof window !== 'undefined') {
       document.documentElement.lang = language;
 
-      // Obsługa nawigacji wstecz/w przód lub dynamicznej zmiany parametrów URL
+      // Obsługa nawigacji wstecz/w przód w przeglądarce
       const handleUrlChange = () => {
+        const parsed = parsePathname(window.location.pathname);
+        if (parsed.isLangInPath && parsed.lang !== language) {
+          setLanguage(parsed.lang);
+          return;
+        }
+
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang')?.toLowerCase();
-        if (urlLang && (urlLang === 'pl' || urlLang === 'en' || urlLang === 'es' || urlLang === 'hi')) {
+        if (urlLang && SUPPORTED_LANGUAGES.includes(urlLang as Language)) {
           if (urlLang !== language) {
             setLanguage(urlLang as Language);
           }
