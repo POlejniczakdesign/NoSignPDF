@@ -616,9 +616,20 @@ with open(os.path.join('public', 'sitemap.xml'), 'w', encoding='utf-8') as f:
     f.write(sitemap_content)
 print(f"Wrote {os.path.join('public', 'sitemap.xml')}")
 
-# Copy robots.txt and favicon.ico if present
-if os.path.exists(os.path.join('public', 'robots.txt')):
-    shutil.copyfile(os.path.join('public', 'robots.txt'), os.path.join(dist_dir, 'robots.txt'))
+# Write robots.txt with sitemap directives
+robots_content = """User-agent: *
+Allow: /
+
+Sitemap: https://nosignpdf.com/sitemap.xml
+Sitemap: https://nosignpdf.com
+"""
+with open(os.path.join(dist_dir, 'robots.txt'), 'w', encoding='utf-8') as f:
+    f.write(robots_content)
+with open(os.path.join('public', 'robots.txt'), 'w', encoding='utf-8') as f:
+    f.write(robots_content)
+print(f"Wrote {os.path.join(dist_dir, 'robots.txt')} and {os.path.join('public', 'robots.txt')}")
+
+# Copy favicon.ico, ads.txt, and _headers if present
 if os.path.exists(os.path.join('public', 'favicon.ico')):
     shutil.copyfile(os.path.join('public', 'favicon.ico'), os.path.join(dist_dir, 'favicon.ico'))
 if os.path.exists(os.path.join('public', 'ads.txt')):
