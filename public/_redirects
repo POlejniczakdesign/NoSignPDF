@@ -1,8 +1,5 @@
-# Cloudflare Pages Static Files
-/sitemap.xml    /sitemap.xml    200
-/robots.txt     /robots.txt     200
-/favicon.ico    /favicon.ico    200
-/ads.txt        /ads.txt        200
-
-# Cloudflare Pages SPA Routing (Multi-language SEO subpaths: /en/*, /es/*, /hi/*, /*)
-/*              /index.html     200
+# Cloudflare Pages SPA Routing Fallback
+# Static files and pre-rendered HTML directories (/en, /es, /hi, /wypelnij-formularz-pdf, etc.) 
+# take priority automatically in Cloudflare Pages.
+# Any non-existent routes fall back to /200.html to avoid infinite redirect loops with /index.html.
+/*    /200.html    200

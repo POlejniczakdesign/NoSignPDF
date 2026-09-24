@@ -12,15 +12,19 @@ if not os.path.exists(dist_dir):
     print("Error: dist directory does not exist. Run 'npm run build' first.")
     exit(1)
 
-# Ensure dist/_redirects exists and specifies SPA routing with static files pass-through
-redirects_content = """# Cloudflare Pages Static Files Pass-through
-/sitemap.xml    /sitemap.xml    200
-/robots.txt     /robots.txt     200
-/favicon.ico    /favicon.ico    200
-/ads.txt        /ads.txt        200
+# Ensure 200.html exists in dist as Cloudflare Pages native SPA fallback
+index_path = os.path.join(dist_dir, 'index.html')
+spa_fallback_path = os.path.join(dist_dir, '200.html')
+if os.path.exists(index_path):
+    shutil.copyfile(index_path, spa_fallback_path)
+    print(f"Created SPA fallback {spa_fallback_path}")
 
-# Cloudflare Pages SPA Routing (Multi-language SEO subpaths: /en/*, /es/*, /hi/*, /*)
-/*              /index.html     200
+# Ensure dist/_redirects exists and specifies safe SPA fallback routing via /200.html
+# This prevents Cloudflare Pages code 100324 infinite loop error when rewriting /* to /index.html
+redirects_content = """# Cloudflare Pages SPA Routing Fallback
+# Static assets and pre-rendered pages (/en, /es, /hi, etc.) are served directly by Cloudflare Pages.
+# Unmatched client-side routes fallback cleanly to /200.html without index stripping loops.
+/*    /200.html    200
 """
 redirects_dist_path = os.path.join(dist_dir, '_redirects')
 with open(redirects_dist_path, 'w', encoding='utf-8') as f:
@@ -40,12 +44,6 @@ final_wrangler_schema = {
 with open(dist_wrangler_path, 'w', encoding='utf-8') as f:
     json.dump(final_wrangler_schema, f, indent=2)
     f.write('\n')
-
-# Ensure 200.html exists in dist as Cloudflare Pages native SPA fallback
-index_path = os.path.join(dist_dir, 'index.html')
-spa_fallback_path = os.path.join(dist_dir, '200.html')
-if os.path.exists(index_path):
-    shutil.copyfile(index_path, spa_fallback_path)
 
 # Tools and localized metadata definitions for SEO pre-rendering
 TOOLS_METADATA = {
