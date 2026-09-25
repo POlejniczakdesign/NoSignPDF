@@ -263,6 +263,42 @@ TOOLS_METADATA = {
             'title': 'गोपनीयता नीति और नियम – PDF Studio Online (nosignpdf.com)',
             'desc': 'nosignpdf.com की सेवा शर्तें, 100% क्लाइंट-साइड गोपनीयता गारंटी और कुकी नीति।',
         }
+    },
+    '/kompresuj-pdf': {
+        'pl': {
+            'title': 'Kompresuj PDF Online – Zmniejsz Rozmiar Pliku PDF bez Utraty Jakości',
+            'desc': 'Darmowa kompresja PDF online w przeglądarce. Zmniejsz wagę dokumentu do wysyłki e-mailem lub ePUAP bez logowania i bez wysyłania plików na serwer.'
+        },
+        'en': {
+            'title': 'Compress PDF Online – Reduce PDF File Size Free No Sign-Up',
+            'desc': '100% free online PDF compressor running locally in your browser. Reduce file size for email attachment limits with zero data collection and no watermarks.'
+        },
+        'es': {
+            'title': 'Comprimir PDF Online – Reducir Tamaño de PDF Gratis Sin Registro',
+            'desc': 'Reduce el tamaño de tus documentos PDF online de forma rápida y segura. Herramienta 100% gratuita, privada en tu navegador y sin marcas de agua.'
+        },
+        'hi': {
+            'title': 'पीडीएफ कंप्रेस करें ऑनलाइन – फाइल साइज छोटा करें मुफ्त में',
+            'desc': 'अपने ब्राउज़र में स्थानीय रूप से पीडीएफ का आकार घटाएं बिना गुणवत्ता खोए। 100% मुफ्त टूल, बिना लॉगिन और बिना वॉटरमार्क।'
+        }
+    },
+    '/grafika-do-pdf': {
+        'pl': {
+            'title': 'Grafika do PDF Online – Konwertuj Zdjęcia JPG, PNG do PDF Za Darmo',
+            'desc': 'Błyskawicznie połącz zdjęcia i pliki graficzne JPG, PNG, WebP w jeden estetyczny dokument PDF. 100% prywatnie w pamięci RAM bez rejestracji.'
+        },
+        'en': {
+            'title': 'Image to PDF Online – Convert JPG and PNG to PDF Free',
+            'desc': 'Convert JPG, PNG, and WebP pictures into a clean multi-page PDF document online. Fast client-side conversion, no file size limit, and no sign-up.'
+        },
+        'es': {
+            'title': 'Imagen a PDF Online – Convertir JPG y PNG a PDF Gratis',
+            'desc': 'Combina múltiples imágenes JPG, PNG o WebP en un solo documento PDF limpio. Gratis, seguro en tu navegador y sin registros.'
+        },
+        'hi': {
+            'title': 'तस्वीर से पीडीएफ बनाएं ऑनलाइन – JPG और PNG से पीडीएफ कनवर्टर',
+            'desc': 'JPG, PNG और WebP तस्वीरों को तुरंत स्वच्छ पीडीएफ दस्तावेज़ में बदलें। सुरक्षित, तेज़ और बिना किसी पंजीकरण के पूरी तरह मुफ्त।'
+        }
     }
 }
 
@@ -334,6 +370,18 @@ PRIMARY_URLS = {
         'es': '/es/politica-privacidad',
         'hi': '/hi/privacy-policy',
     },
+    '/kompresuj-pdf': {
+        'pl': '/kompresuj-pdf',
+        'en': '/en/compress-pdf',
+        'es': '/es/comprimir-pdf',
+        'hi': '/hi/compress-pdf',
+    },
+    '/grafika-do-pdf': {
+        'pl': '/grafika-do-pdf',
+        'en': '/en/image-to-pdf',
+        'es': '/es/imagen-a-pdf',
+        'hi': '/hi/image-to-pdf',
+    },
 }
 
 # All URLs/subpaths to pre-render (including native aliases like /pl/polacz-pdf, /en/split-pdf, /es/unir-pdf)
@@ -373,6 +421,18 @@ ALL_SLUGS = {
         'en': ['/en/delete-pages', '/en/delete-pdf-pages', '/en/usun-strony-z-pdf'],
         'es': ['/es/eliminar-paginas-pdf', '/es/borrar-paginas-pdf', '/es/usun-strony-z-pdf'],
         'hi': ['/hi/delete-pages', '/hi/usun-strony-z-pdf'],
+    },
+    '/kompresuj-pdf': {
+        'pl': ['/kompresuj-pdf', '/pl/kompresuj-pdf'],
+        'en': ['/en/compress-pdf', '/en/kompresuj-pdf'],
+        'es': ['/es/comprimir-pdf', '/es/kompresuj-pdf'],
+        'hi': ['/hi/compress-pdf', '/hi/kompresuj-pdf'],
+    },
+    '/grafika-do-pdf': {
+        'pl': ['/grafika-do-pdf', '/pl/grafika-do-pdf'],
+        'en': ['/en/image-to-pdf', '/en/jpg-to-pdf', '/en/grafika-do-pdf'],
+        'es': ['/es/imagen-a-pdf', '/es/jpg-a-pdf', '/es/grafika-do-pdf'],
+        'hi': ['/hi/image-to-pdf', '/hi/grafika-do-pdf'],
     },
     '/pdf-to-word': {
         'pl': ['/pdf-to-word', '/pl/pdf-to-word'],
@@ -940,7 +1000,7 @@ sitemap_lines = [
 ]
 
 for tool_path in PRIMARY_URLS.keys():
-    priority = '1.0' if tool_path == '/' else ('0.9' if tool_path == '/wypelnij-formularz-pdf' else ('0.3' if tool_path == '/polityka-privacy' else '0.8'))
+    priority = '1.0' if tool_path == '/' else ('0.9' if tool_path in ['/wypelnij-formularz-pdf', '/kompresuj-pdf', '/grafika-do-pdf', '/polacz-pdf'] else ('0.3' if tool_path == '/polityka-privacy' else '0.8'))
 
     pl_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['pl']}" if PRIMARY_URLS[tool_path]['pl'] != '/' else f"{site_domain}/"
     en_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['en']}"

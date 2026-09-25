@@ -21,6 +21,8 @@ import {
   Table as TableIcon,
   FileUp,
   Sparkles,
+  Minimize2,
+  Images,
 } from 'lucide-react';
 import { ToolRoute } from '../types';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -90,6 +92,10 @@ export const Header: React.FC<HeaderProps> = ({
         return <TableIcon className="w-4 h-4" />;
       case 'FileUp':
         return <FileUp className="w-4 h-4" />;
+      case 'Minimize2':
+        return <Minimize2 className="w-4 h-4" />;
+      case 'Images':
+        return <Images className="w-4 h-4" />;
       default:
         return <LayoutGrid className="w-4 h-4" />;
     }
@@ -99,9 +105,15 @@ export const Header: React.FC<HeaderProps> = ({
 
   // Group tools into categories for the dropdown menu
   const primaryPageTools = localizedTools.filter((tool) =>
-    ['/wypelnij-formularz-pdf', '/usun-strony-z-pdf', '/obroc-pdf', '/polacz-pdf', '/rozdziel-pdf'].includes(
-      tool.path
-    )
+    [
+      '/wypelnij-formularz-pdf',
+      '/polacz-pdf',
+      '/kompresuj-pdf',
+      '/grafika-do-pdf',
+      '/usun-strony-z-pdf',
+      '/obroc-pdf',
+      '/rozdziel-pdf',
+    ].includes(tool.path)
   );
 
   const conversionTools = localizedTools.filter((tool) =>

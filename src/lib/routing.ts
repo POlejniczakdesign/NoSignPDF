@@ -19,6 +19,8 @@ export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/word-to-pdf': '/word-to-pdf',
   '/pdf-to-excel': '/pdf-to-excel',
   '/excel-to-pdf': '/excel-to-pdf',
+  '/kompresuj-pdf': '/kompresuj-pdf',
+  '/grafika-do-pdf': '/grafika-do-pdf',
 
   // English aliases
   '/fill-pdf-form': '/wypelnij-formularz-pdf',
@@ -27,6 +29,10 @@ export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/rotate-pdf': '/obroc-pdf',
   '/merge-pdf': '/polacz-pdf',
   '/split-pdf': '/rozdziel-pdf',
+  '/compress-pdf': '/kompresuj-pdf',
+  '/image-to-pdf': '/grafika-do-pdf',
+  '/jpg-to-pdf': '/grafika-do-pdf',
+  '/png-to-pdf': '/grafika-do-pdf',
   '/privacy-policy': '/polityka-privacy',
 
   // Spanish aliases
@@ -40,6 +46,9 @@ export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/girar-pdf': '/obroc-pdf',
   '/eliminar-paginas-pdf': '/usun-strony-z-pdf',
   '/borrar-paginas-pdf': '/usun-strony-z-pdf',
+  '/comprimir-pdf': '/kompresuj-pdf',
+  '/imagen-a-pdf': '/grafika-do-pdf',
+  '/jpg-a-pdf': '/grafika-do-pdf',
   '/pdf-a-word': '/pdf-to-word',
   '/word-a-pdf': '/word-to-pdf',
   '/pdf-a-excel': '/pdf-to-excel',
@@ -249,6 +258,58 @@ export const DEDICATED_SEO_META: Record<
       desc: 'nosignpdf.com की सेवा शर्तें, 100% क्लाइंट-साइड गोपनीयता गारंटी और कुकी नीति।',
     },
   },
+  '/kompresuj-pdf': {
+    pl: {
+      title: 'Kompresuj PDF Online – Zmniejsz Rozmiar Pliku PDF bez Utraty Jakości',
+      desc: 'Darmowa kompresja PDF online w przeglądarce. Zmniejsz wagę dokumentu do wysyłki e-mailem lub ePUAP bez logowania i bez wysyłania plików na serwer.',
+    },
+    en: {
+      title: 'Compress PDF Online – Reduce PDF File Size Free No Sign-Up',
+      desc: '100% free online PDF compressor running locally in your browser. Reduce file size for email attachment limits with zero data collection and no watermarks.',
+    },
+    es: {
+      title: 'Comprimir PDF Online – Reducir Tamaño de PDF Gratis Sin Registro',
+      desc: 'Reduce el tamaño de tus documentos PDF online de forma rápida y segura. Herramienta 100% gratuita, privada en tu navegador y sin marcas de agua.',
+    },
+    hi: {
+      title: 'पीडीएफ कंप्रेस करें ऑनलाइन – फाइल साइज छोटा करें मुफ्त में',
+      desc: 'अपने ब्राउज़र में स्थानीय रूप से पीडीएफ का आकार घटाएं बिना गुणवत्ता खोए। 100% मुफ्त टूल, बिना लॉगिन और बिना वॉटरमार्क।',
+    },
+  },
+  '/grafika-do-pdf': {
+    pl: {
+      title: 'Grafika do PDF Online – Konwertuj Zdjęcia JPG, PNG do PDF Za Darmo',
+      desc: 'Błyskawicznie połącz zdjęcia i pliki graficzne JPG, PNG, WebP w jeden estetyczny dokument PDF. 100% prywatnie w pamięci RAM bez rejestracji.',
+    },
+    en: {
+      title: 'Image to PDF Online – Convert JPG and PNG to PDF Free',
+      desc: 'Convert JPG, PNG, and WebP pictures into a clean multi-page PDF document online. Fast client-side conversion, no file size limit, and no sign-up.',
+    },
+    es: {
+      title: 'Imagen a PDF Online – Convertir JPG y PNG a PDF Gratis',
+      desc: 'Combina múltiples imágenes JPG, PNG o WebP en un solo documento PDF limpio. Gratis, seguro en tu navegador y sin registros.',
+    },
+    hi: {
+      title: 'तस्वीर से पीडीएफ बनाएं ऑनलाइन – JPG और PNG से पीडीएफ कनवर्टर',
+      desc: 'JPG, PNG और WebP तस्वीरों को तुरंत स्वच्छ पीडीएफ दस्तावेज़ में बदलें। सुरक्षित, तेज़ और बिना किसी पंजीकरण के पूरी तरह मुफ्त।',
+    },
+  },
+};
+
+export const PRIMARY_LOCALIZED_SLUGS: Record<ToolRoute, Record<Language, string>> = {
+  '/': { pl: '/', en: '/en', es: '/es', hi: '/hi' },
+  '/polacz-pdf': { pl: '/polacz-pdf', en: '/en/merge-pdf', es: '/es/unir-pdf', hi: '/hi/merge-pdf' },
+  '/rozdziel-pdf': { pl: '/rozdziel-pdf', en: '/en/split-pdf', es: '/es/dividir-pdf', hi: '/hi/split-pdf' },
+  '/wypelnij-formularz-pdf': { pl: '/wypelnij-formularz-pdf', en: '/en/fill-pdf-form', es: '/es/rellenar-formulario-pdf', hi: '/hi/fill-pdf-form' },
+  '/obroc-pdf': { pl: '/obroc-pdf', en: '/en/rotate-pdf', es: '/es/rotar-pdf', hi: '/hi/rotate-pdf' },
+  '/usun-strony-z-pdf': { pl: '/usun-strony-z-pdf', en: '/en/delete-pages', es: '/es/eliminar-paginas-pdf', hi: '/hi/delete-pages' },
+  '/kompresuj-pdf': { pl: '/kompresuj-pdf', en: '/en/compress-pdf', es: '/es/comprimir-pdf', hi: '/hi/compress-pdf' },
+  '/grafika-do-pdf': { pl: '/grafika-do-pdf', en: '/en/image-to-pdf', es: '/es/imagen-a-pdf', hi: '/hi/image-to-pdf' },
+  '/pdf-to-word': { pl: '/pdf-to-word', en: '/en/pdf-to-word', es: '/es/pdf-a-word', hi: '/hi/pdf-to-word' },
+  '/word-to-pdf': { pl: '/word-to-pdf', en: '/en/word-to-pdf', es: '/es/word-a-pdf', hi: '/hi/word-to-pdf' },
+  '/pdf-to-excel': { pl: '/pdf-to-excel', en: '/en/pdf-to-excel', es: '/es/pdf-a-excel', hi: '/hi/pdf-to-excel' },
+  '/excel-to-pdf': { pl: '/excel-to-pdf', en: '/en/excel-to-pdf', es: '/es/excel-a-pdf', hi: '/hi/excel-to-pdf' },
+  '/polityka-privacy': { pl: '/polityka-privacy', en: '/en/privacy-policy', es: '/es/politica-privacidad', hi: '/hi/privacy-policy' },
 };
 
 export interface ParsedRoute {
@@ -324,9 +385,13 @@ export function parsePathname(rawPath: string, fallbackLang: Language = DEFAULT_
 
 /**
  * Builds localized URL pathname for client-side navigation.
- * Polish is canonical at '/' and '/[tool]', other languages are prefixed with '/[lang]/[tool]'.
+ * Polish is canonical at '/' and '/[tool]', other languages use clean native localized slugs.
  */
 export function buildLocalizedPath(toolRoute: ToolRoute, lang: Language): string {
+  const localized = PRIMARY_LOCALIZED_SLUGS[toolRoute]?.[lang];
+  if (localized) {
+    return localized;
+  }
   if (lang === 'pl') {
     return toolRoute;
   }
@@ -340,6 +405,16 @@ export function buildLocalizedPath(toolRoute: ToolRoute, lang: Language): string
  * Returns canonical full URL and all alternate hreflang URLs for SEO.
  */
 export function getAlternateUrls(toolRoute: ToolRoute) {
+  const slugs = PRIMARY_LOCALIZED_SLUGS[toolRoute];
+  if (slugs) {
+    return {
+      pl: `${SITE_DOMAIN}${slugs.pl === '/' ? '/' : slugs.pl}`,
+      en: `${SITE_DOMAIN}${slugs.en}`,
+      es: `${SITE_DOMAIN}${slugs.es}`,
+      hi: `${SITE_DOMAIN}${slugs.hi}`,
+      'x-default': `${SITE_DOMAIN}${slugs.pl === '/' ? '/' : slugs.pl}`,
+    };
+  }
   const cleanTool = toolRoute === '/' ? '' : toolRoute;
   return {
     pl: `${SITE_DOMAIN}${cleanTool || '/'}`,

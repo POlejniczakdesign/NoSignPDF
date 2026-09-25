@@ -5,6 +5,8 @@ export type ToolRoute =
   | '/obroc-pdf'
   | '/polacz-pdf'
   | '/rozdziel-pdf'
+  | '/kompresuj-pdf'
+  | '/grafika-do-pdf'
   | '/polityka-privacy'
   | '/pdf-to-word'
   | '/word-to-pdf'

@@ -181,6 +181,40 @@ export const TOOLS: ToolMeta[] = [
       'raport z tabeli pdf'
     ],
   },
+  {
+    id: 'kompresuj',
+    path: '/kompresuj-pdf',
+    name: 'Kompresuj PDF Online',
+    shortName: 'Kompresuj PDF',
+    tagline: 'Zmniejsz rozmiar pliku PDF bez utraty czytelności – 100% lokalnie w przeglądarce.',
+    description: 'Odchudź dokument PDF do załącznika e-mail lub wniosku urzędowego z zachowaniem ostrego tekstu i grafiki.',
+    iconName: 'Minimize2',
+    badge: 'Nowość',
+    seoKeywords: [
+      'kompresuj pdf online',
+      'jak zmniejszyć rozmiar pdf',
+      'odchudzanie pdf bez utraty jakości',
+      'kompresja pdf bez logowania',
+      'zmniejsz wagę pliku pdf darmowo'
+    ],
+  },
+  {
+    id: 'grafika',
+    path: '/grafika-do-pdf',
+    name: 'Grafika do PDF Online',
+    shortName: 'Grafika do PDF',
+    tagline: 'Konwertuj zdjęcia i grafiki JPG, PNG, WebP do czystego pliku PDF.',
+    description: 'Połącz pojedyncze lub seryjne zdjęcia w jeden wielostronicowy dokument PDF z automatycznym dopasowaniem formatu i marginesów.',
+    iconName: 'Images',
+    badge: 'Nowość',
+    seoKeywords: [
+      'grafika do pdf online',
+      'konwertuj jpg do pdf',
+      'zdjęcia png do pdf',
+      'zrób pdf ze zdjęć za darmo',
+      'połącz zdjęcia w jeden pdf'
+    ],
+  },
 ];
 
 export interface SeoContentItem {
@@ -669,5 +703,91 @@ export const SEO_DETAILS: Record<ToolRoute, SeoContentItem> = {
       },
     ],
     extendedText: 'Konwersja tabeli z Excela do pliku PDF to idealny sposób na przesłanie oferty handlowej, cennika lub raportu sprzedażowego klientom w formacie zabezpieczonym przed przypadkową modyfikacją komórek.',
+  },
+  '/kompresuj-pdf': {
+    h2Title: 'Kompresja PDF Online – Jak skutecznie zmniejszyć rozmiar pliku bez utraty jakości?',
+    intro: 'Twój plik PDF jest zbyt duży, aby wysłać go pocztą elektroniczną lub załączyć we wniosku urzędowym (np. ePUAP)? Nasze narzędzie pozwala błyskawicznie skompresować i zoptymalizować dokument PDF bezpośrednio w pamięci przeglądarki.',
+    steps: [
+      {
+        title: '1. Wybierz lub przeciągnij plik PDF',
+        desc: 'Załaduj dokument – od razu zobaczysz jego bieżącą wagę oraz liczbę stron.',
+      },
+      {
+        title: '2. Wybierz poziom kompresji',
+        desc: 'Skorzystaj z zalecanej kompresji dla idealnego balansu ostrości lub maksymalnej kompresji dla najmniejszego pliku.',
+      },
+      {
+        title: '3. Pobierz odchudzony plik',
+        desc: 'Zobacz dokładną oszczędność w procentach i pobierz zoptymalizowany plik bez znaków wodnych.',
+      },
+    ],
+    benefits: [
+      {
+        title: 'Brak wysyłki na serwer (100% Prywatności)',
+        desc: 'Optymalizacja zachodzi lokalnie w przeglądarce, co gwarantuje pełne bezpieczeństwo poufnych umów i faktur.',
+      },
+      {
+        title: 'Wybór siły kompresji',
+        desc: 'Dopasuj stopień redukcji do własnych potrzeb: od lekkiej optymalizacji po silną kompresję do e-maili.',
+      },
+      {
+        title: 'Brak utraty czytelności czcionek',
+        desc: 'Wektory tekstowe i formularze pozostają ostre i idealne do wydruku.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'Czy jakość tekstu w dokumencie ulegnie pogorszeniu?',
+        a: 'Nie, algorytm traktuje warstwę wektorową priorytetowo, zachowując perfekcyjną ostrość liter.',
+      },
+      {
+        q: 'Czy plik po kompresji zmieści się w limitach e-mail (np. 10 MB / 25 MB)?',
+        a: 'Tak, kompresja redukuje zbędne metadane i strumienie grafik, pozwalając zaoszczędzić od 30% do nawet 70% pierwotnej wagi pliku.',
+      },
+    ],
+    extendedText: 'Redukcja objętości dokumentacji w formacie PDF jest niezbędna w codziennym funkcjonowaniu każdego biura. Zamiast instalować ciężkie programy komercyjne lub powierzać wrażliwe umowy obcym serwerom, skorzystaj z bezpiecznej technologii Client-Side.',
+  },
+  '/grafika-do-pdf': {
+    h2Title: 'Konwertuj Grafikę do PDF – Zmień JPG, PNG i WebP w gotowy dokument PDF',
+    intro: 'Masz zdjęcia dokumentów, paragonów, grafik lub slajdów w formatach JPG, PNG lub WebP? Z łatwością przekształć je w jeden wielostronicowy, profesjonalny plik PDF o wybranym formacie arkusza.',
+    steps: [
+      {
+        title: '1. Dodaj zdjęcia i grafiki',
+        desc: 'Przeciągnij jedno lub kilkanaście zdjęć jednocześnie – system natychmiast utworzy miniatury.',
+      },
+      {
+        title: '2. Ustal kolejność i parametry',
+        desc: 'Przesuwaj zdjęcia w górę i w dół, wybierz format A4 lub dopasowanie do oryginalnych wymiarów.',
+      },
+      {
+        title: '3. Pobierz gotowy dokument PDF',
+        desc: 'Kliknij przycisk generowania i pobierz gotowy plik PDF w ułamku sekundy.',
+      },
+    ],
+    benefits: [
+      {
+        title: 'Obsługa wielu formatów graficznych',
+        desc: 'Pełna zgodność z JPG, JPEG, PNG oraz nowoczesnymi plikami WebP.',
+      },
+      {
+        title: 'Łączenie seryjne',
+        desc: 'Możesz scalić nieograniczoną liczbę zdjęć w jeden dokument wielostronicowy.',
+      },
+      {
+        title: 'Automatyczne dopasowanie proporcji',
+        desc: 'Brak zniekształceń proporcji zdjęć – grafiki są idealnie wyśrodkowane na arkuszu.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'Czy mogę zmienić kolejność zdjęć przed zapisaniem PDF?',
+        a: 'Tak, każda grafika posiada przyciski zmiany kolejności (w górę/w dół), dzięki czemu możesz dowolnie ustalić chronologię stron.',
+      },
+      {
+        q: 'Czy moje zdjęcia są bezpieczne?',
+        a: 'Tak, przetwarzanie zdjęć odbywa się wyłącznie w Twojej pamięci RAM, bez przesyłania jakichkolwiek plików do chmury.',
+      },
+    ],
+    extendedText: 'Tworzenie dokumentów PDF ze zdjęć wykonanych smartfonem to najwygodniejszy sposób na przesyłanie umów, faktur, notatek ze spotkań czy dokumentacji technicznej w jednym spójnym pliku.',
   },
 };

@@ -14,6 +14,8 @@ import { Footer } from './components/Footer';
 import { PdfToWordConverter } from './components/converters/PdfToWordConverter';
 import { PdfToExcelConverter } from './components/converters/PdfToExcelConverter';
 import { TextTableToPdfConverter } from './components/converters/TextTableToPdfConverter';
+import { CompressPdfModule } from './components/CompressPdfModule';
+import { ImageToPdfModule } from './components/ImageToPdfModule';
 import { ToolRoute } from './types';
 import { TOOLS } from './data/tools';
 import { downloadPdfBlob } from './lib/pdfOperations';
@@ -161,6 +163,24 @@ function AppContent() {
       return (
         <FormFillerModule
           key="form-filler"
+          onTriggerDownload={handleTriggerDownload}
+        />
+      );
+    }
+
+    if (currentPath === '/kompresuj-pdf') {
+      return (
+        <CompressPdfModule
+          key="compress-pdf"
+          onTriggerDownload={handleTriggerDownload}
+        />
+      );
+    }
+
+    if (currentPath === '/grafika-do-pdf') {
+      return (
+        <ImageToPdfModule
+          key="image-to-pdf"
           onTriggerDownload={handleTriggerDownload}
         />
       );
