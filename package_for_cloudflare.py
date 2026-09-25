@@ -23,11 +23,15 @@ if os.path.exists(index_path):
     shutil.copyfile(index_path, spa_404_path)
     print(f"Created native SPA fallbacks {spa_fallback_path} and {spa_404_path}")
 
-# Remove any old _redirects file from dist if it exists, to prevent redirect loops on Cloudflare Pages
-old_redirects_path = os.path.join(dist_dir, '_redirects')
-if os.path.exists(old_redirects_path):
-    os.remove(old_redirects_path)
-    print(f"Removed legacy {old_redirects_path} to avoid redirect loops.")
+# Strictly ensure no _redirects file exists anywhere (dist, public, or root)
+# Native Cloudflare single-page-application handling in wrangler.json handles all SPA routing cleanly
+for red_path in ['_redirects', os.path.join('public', '_redirects'), os.path.join(dist_dir, '_redirects')]:
+    if os.path.exists(red_path):
+        try:
+            os.remove(red_path)
+            print(f"Removed {red_path} to avoid redirect loops and conflicts.")
+        except Exception:
+            pass
 
 # Generate _routes.json to explicitly exclude static files (sitemap, robots, ads, assets)
 # from Worker / Function / SPA routing intercepts on Cloudflare Pages
@@ -53,11 +57,11 @@ print("Generated _routes.json ensuring static files bypass SPA interception.")
 
 # Ensure wrangler.json is configured for static assets with SPA handling
 wrangler_config = {
+    "$schema": "node_modules/wrangler/config-schema.json",
     "name": "nosignpdf",
     "compatibility_date": "2026-09-25",
     "assets": {
         "directory": "./dist",
-        "binding": "ASSETS",
         "not_found_handling": "single-page-application"
     }
 }
