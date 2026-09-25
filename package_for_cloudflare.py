@@ -51,56 +51,14 @@ with open(os.path.join('public', '_routes.json'), 'w', encoding='utf-8') as f:
     f.write('\n')
 print("Generated _routes.json ensuring static files bypass SPA interception.")
 
-# Overwrite dist/wrangler.json and root wrangler.json with compliant schema & negative asset routing rules
-# Ensuring physical static files (sitemap.xml, robots.txt, ads.txt) are served directly
-dist_wrangler_path = os.path.join(dist_dir, 'wrangler.json')
-final_wrangler_schema = {
-    "$schema": "../node_modules/wrangler/config-schema.json",
-    "name": "nosignpdf",
-    "compatibility_date": "2026-09-15",
-    "assets": {
-        "directory": ".",
-        "html_handling": "auto-trailing-slash",
-        "not_found_handling": "404-page",
-        "run_worker_first": [
-            "/*",
-            "!/sitemap.xml",
-            "!/sitemap*.xml",
-            "!/robots.txt",
-            "!/ads.txt",
-            "!/favicon.ico",
-            "!/assets/*"
-        ]
-    }
-}
-with open(dist_wrangler_path, 'w', encoding='utf-8') as f:
-    json.dump(final_wrangler_schema, f, indent=2)
-    f.write('\n')
-
-root_wrangler_path = 'wrangler.json'
-root_wrangler_schema = {
-    "$schema": "node_modules/wrangler/config-schema.json",
-    "name": "nosignpdf",
-    "compatibility_date": "2026-09-15",
-    "pages_build_output_dir": "./dist",
-    "assets": {
-        "directory": "./dist",
-        "html_handling": "auto-trailing-slash",
-        "not_found_handling": "404-page",
-        "run_worker_first": [
-            "/*",
-            "!/sitemap.xml",
-            "!/sitemap*.xml",
-            "!/robots.txt",
-            "!/ads.txt",
-            "!/favicon.ico",
-            "!/assets/*"
-        ]
-    }
-}
-with open(root_wrangler_path, 'w', encoding='utf-8') as f:
-    json.dump(root_wrangler_schema, f, indent=2)
-    f.write('\n')
+# Ensure any legacy wrangler config files are removed so Cloudflare Pages treats this purely as native static Pages
+for cleanup_candidate in ['wrangler.json', 'wrangler.jsonc', 'wrangler.toml', os.path.join(dist_dir, 'wrangler.json')]:
+    if os.path.exists(cleanup_candidate):
+        try:
+            os.remove(cleanup_candidate)
+            print(f"Removed {cleanup_candidate} to ensure native Cloudflare Pages static build.")
+        except Exception:
+            pass
 
 # Tools and localized metadata definitions for SEO pre-rendering
 TOOLS_METADATA = {
