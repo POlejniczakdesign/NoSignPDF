@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && python3 package_for_cloudflare.py",
+    "deploy": "npm run build && npx wrangler deploy --no-interactive --yes",
     "preview": "vite preview"
   },
   "dependencies": {
