@@ -327,7 +327,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Theme switcher */}
           <button
-            id="theme-toggle-btn"
+            id="theme-toggle"
             onClick={onToggleTheme}
             aria-label={isDark ? 'Przełącz na jasny motyw' : 'Przełącz na ciemny motyw'}
             className="p-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
@@ -463,6 +463,25 @@ export const Header: React.FC<HeaderProps> = ({
                 );
               })}
             </div>
+          </div>
+
+          <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800">
+            <button
+              id="mobile-theme-toggle"
+              type="button"
+              onClick={() => {
+                onToggleTheme();
+              }}
+              className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800 cursor-pointer"
+            >
+              <div className="flex items-center gap-2">
+                {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-zinc-700" />}
+                <span>{isDark ? t.header.themeLight : t.header.themeDark}</span>
+              </div>
+              <span className="text-[10px] text-zinc-500 dark:text-zinc-400 font-semibold uppercase px-1.5 py-0.5 rounded bg-zinc-200/70 dark:bg-zinc-800">
+                {isDark ? 'Dark' : 'Light'}
+              </span>
+            </button>
           </div>
 
           <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800">

@@ -37,10 +37,25 @@ function AppContent() {
     return '/';
   });
 
-  // Theme state (default light)
+  // Theme state: read color-theme (standard) and theme (fallback)
   const [isDark, setIsDark] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') === 'dark';
+      const storedTheme = localStorage.getItem('color-theme') || localStorage.getItem('theme');
+      if (storedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+        return true;
+      }
+      if (storedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+        return false;
+      }
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        document.documentElement.classList.add('dark');
+        return true;
+      }
+      document.documentElement.classList.remove('dark');
+      return false;
     }
     return false;
   });
@@ -56,16 +71,51 @@ function AppContent() {
   // Time saved celebratory stats state
   const [celebrationStats, setCelebrationStats] = useState<TaskSavedStats | null>(null);
 
-  // Sync theme with HTML document element
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
+  // Toggle theme adhering exactly to requested pattern:
+  // Checks documentElement.classList.contains('dark'), toggles class and updates localStorage
+  const handleToggleTheme = () => {
+    if (document.documentElement.classList.contains('dark')) {
       document.documentElement.classList.remove('dark');
+      localStorage.setItem('color-theme', 'light');
       localStorage.setItem('theme', 'light');
+      setIsDark(false);
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('color-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+      setIsDark(true);
     }
-  }, [isDark]);
+  };
+
+  // Sync state if HTML class is changed externally or across tabs
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'color-theme' || e.key === 'theme') {
+        if (e.newValue === 'dark') {
+          document.documentElement.classList.add('dark');
+          setIsDark(true);
+        } else if (e.newValue === 'light') {
+          document.documentElement.classList.remove('dark');
+          setIsDark(false);
+        }
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      observer.disconnect();
+    };
+  }, []);
 
   // Sync route on mount and browser back/forward buttons
   useEffect(() => {
@@ -257,7 +307,7 @@ function AppContent() {
         onNavigate={navigateTo}
         onLanguageChange={(newLang: Language) => navigateTo(currentPath, newLang)}
         isDark={isDark}
-        onToggleTheme={() => setIsDark((prev) => !prev)}
+        onToggleTheme={handleToggleTheme}
       />
 
       {/* Workspace with Desktop Skyscraper Ad Wings */}

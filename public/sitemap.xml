@@ -49,7 +49,7 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/merge-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polacz-pdf" />
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nosignpdf.com/en/merge-pdf</loc>
@@ -59,7 +59,7 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/merge-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polacz-pdf" />
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nosignpdf.com/es/unir-pdf</loc>
@@ -69,7 +69,7 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/merge-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polacz-pdf" />
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nosignpdf.com/hi/merge-pdf</loc>
@@ -79,7 +79,7 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/merge-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polacz-pdf" />
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nosignpdf.com/rozdziel-pdf</loc>
@@ -440,5 +440,85 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/polityka-privacy" />
     <changefreq>weekly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/kompresuj-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/kompresuj-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/compress-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/comprimir-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/compress-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/kompresuj-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/en/compress-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/kompresuj-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/compress-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/comprimir-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/compress-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/kompresuj-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/es/comprimir-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/kompresuj-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/compress-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/comprimir-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/compress-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/kompresuj-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/hi/compress-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/kompresuj-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/compress-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/comprimir-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/compress-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/kompresuj-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/grafika-do-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/grafika-do-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/image-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/imagen-a-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/image-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/grafika-do-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/en/image-to-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/grafika-do-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/image-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/imagen-a-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/image-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/grafika-do-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/es/imagen-a-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/grafika-do-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/image-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/imagen-a-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/image-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/grafika-do-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nosignpdf.com/hi/image-to-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nosignpdf.com/grafika-do-pdf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nosignpdf.com/en/image-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nosignpdf.com/es/imagen-a-pdf" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://nosignpdf.com/hi/image-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nosignpdf.com/grafika-do-pdf" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
