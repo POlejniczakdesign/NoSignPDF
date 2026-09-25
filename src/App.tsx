@@ -16,12 +16,14 @@ import { PdfToExcelConverter } from './components/converters/PdfToExcelConverter
 import { TextTableToPdfConverter } from './components/converters/TextTableToPdfConverter';
 import { CompressPdfModule } from './components/CompressPdfModule';
 import { ImageToPdfModule } from './components/ImageToPdfModule';
+import { TimeSavedCard } from './components/TimeSavedCard';
 import { ToolRoute } from './types';
 import { TOOLS } from './data/tools';
 import { downloadPdfBlob } from './lib/pdfOperations';
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
 import { Language } from './i18n/translations';
 import { parsePathname, buildLocalizedPath, updateDocumentSeo } from './lib/routing';
+import { recordCompletedTask, TaskSavedStats } from './lib/timeSavedTracker';
 
 function AppContent() {
   const { t, getToolMeta, language, setLanguage } = useLanguage();
@@ -50,6 +52,9 @@ function AppContent() {
     blobUrl?: string;
     fileName: string;
   } | null>(null);
+
+  // Time saved celebratory stats state
+  const [celebrationStats, setCelebrationStats] = useState<TaskSavedStats | null>(null);
 
   // Sync theme with HTML document element
   useEffect(() => {
@@ -124,12 +129,16 @@ function AppContent() {
       }
       setPendingDownload(null);
 
+      // Record time saved & update stats
+      const stats = recordCompletedTask(currentPath);
+      setCelebrationStats(stats);
+
       // Trigger celebratory confetti
       try {
         confetti({
-          particleCount: 50,
-          spread: 60,
-          origin: { y: 0.7 },
+          particleCount: 65,
+          spread: 70,
+          origin: { y: 0.6 },
         });
       } catch (e) {
         // ignore
@@ -280,6 +289,14 @@ function AppContent() {
                 {activeToolMeta.tagline}
               </span>
             </div>
+          )}
+
+          {/* Celebratory Virtual Time-Saved Card (Animates upon download completion) */}
+          {celebrationStats && (
+            <TimeSavedCard
+              stats={celebrationStats}
+              onClose={() => setCelebrationStats(null)}
+            />
           )}
 
           {/* Active Working Module: Focused Workspace */}

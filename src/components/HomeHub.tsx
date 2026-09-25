@@ -16,10 +16,12 @@ import {
   FileUp,
   Sparkles,
   ChevronDown,
+  Clock,
 } from 'lucide-react';
 import { ToolRoute, ToolMeta } from '../types';
 import { FileUploader } from './FileUploader';
 import { useLanguage } from '../i18n/LanguageContext';
+import { getCumulativeStats, formatTimeSaved } from '../lib/timeSavedTracker';
 
 interface HomeHubProps {
   onNavigate: (path: ToolRoute) => void;
@@ -29,6 +31,7 @@ interface HomeHubProps {
 export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
   const { t, localizedTools, language } = useLanguage();
   const [moreToolsOpen, setMoreToolsOpen] = useState(false);
+  const [cumulativeStats] = useState(() => getCumulativeStats());
 
   // The 6 prominent hero tools required
   const HERO_TOOL_ROUTES: ToolRoute[] = [
@@ -170,9 +173,26 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
     <div id="home-hub-view" className="w-full space-y-12">
       {/* Hero Presentation */}
       <div className="text-center max-w-3xl mx-auto space-y-4 pt-2">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-bold border border-emerald-200 dark:border-emerald-800 shadow-2xs">
-          <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-          <span>{t.home.heroBadge}</span>
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-bold border border-emerald-200 dark:border-emerald-800 shadow-2xs">
+            <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+            <span>{t.home.heroBadge}</span>
+          </div>
+
+          {cumulativeStats.totalSavedSeconds > 0 && (
+            <div
+              id="hero-cumulative-time-badge"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-linear-to-r from-amber-500/10 via-indigo-500/10 to-emerald-500/10 text-zinc-800 dark:text-zinc-200 text-xs font-bold border border-amber-300/40 dark:border-amber-600/30 shadow-2xs"
+            >
+              <Clock className="w-4 h-4 text-amber-500 shrink-0" />
+              <span>
+                {language === 'pl' && `Łącznie na nosignpdf.com zaoszczędziłeś już ${formatTimeSaved(cumulativeStats.totalSavedSeconds, 'pl')}!`}
+                {language === 'en' && `Total time saved on nosignpdf.com: ${formatTimeSaved(cumulativeStats.totalSavedSeconds, 'en')}!`}
+                {language === 'es' && `¡Tiempo total ahorrado en nosignpdf.com: ${formatTimeSaved(cumulativeStats.totalSavedSeconds, 'es')}!`}
+                {language === 'hi' && `nosignpdf.com पर अब तक कुल बचाया गया समय: ${formatTimeSaved(cumulativeStats.totalSavedSeconds, 'hi')}!`}
+              </span>
+            </div>
+          )}
         </div>
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight leading-tight">
