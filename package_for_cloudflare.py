@@ -24,7 +24,7 @@ if os.path.exists(index_path):
     print(f"Created native SPA fallbacks {spa_fallback_path} and {spa_404_path}")
 
 # Strictly ensure no _redirects file exists anywhere (dist, public, or root)
-# Native Cloudflare single-page-application handling in wrangler.json handles all SPA routing cleanly
+# Native Cloudflare Pages 200.html handles all SPA routing cleanly without redirect loops
 for red_path in ['_redirects', os.path.join('public', '_redirects'), os.path.join(dist_dir, '_redirects')]:
     if os.path.exists(red_path):
         try:
