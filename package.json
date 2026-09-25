@@ -1,11 +1,13 @@
 {
-  "name": "react-example",
+  "name": "pdf-studio-online",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && python3 package_for_cloudflare.py",
+    "build": "vite build",
+    "lint": "tsc --noEmit",
+    "package:cloudflare": "vite build && python3 package_for_cloudflare.py",
     "preview": "vite preview"
   },
   "dependencies": {
