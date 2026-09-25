@@ -55,20 +55,14 @@ with open(os.path.join('public', '_routes.json'), 'w', encoding='utf-8') as f:
     f.write('\n')
 print("Generated _routes.json ensuring static files bypass SPA interception.")
 
-# Ensure wrangler.json is configured for static assets with SPA handling
-wrangler_config = {
-    "$schema": "node_modules/wrangler/config-schema.json",
-    "name": "nosignpdf",
-    "compatibility_date": "2026-09-25",
-    "assets": {
-        "directory": "./dist",
-        "not_found_handling": "single-page-application"
-    }
-}
-with open('wrangler.json', 'w', encoding='utf-8') as f:
-    json.dump(wrangler_config, f, indent=2)
-    f.write('\n')
-print("Configured wrangler.json with assets.directory pointing to ./dist.")
+# Clean up any wrangler config files so Cloudflare Pages treats this purely as a native static Pages project
+for cleanup_candidate in ['wrangler.json', 'wrangler.jsonc', 'wrangler.toml', os.path.join(dist_dir, 'wrangler.json')]:
+    if os.path.exists(cleanup_candidate):
+        try:
+            os.remove(cleanup_candidate)
+            print(f"Removed {cleanup_candidate} so Cloudflare Pages builds as native static assets.")
+        except Exception:
+            pass
 
 # Tools and localized metadata definitions for SEO pre-rendering
 TOOLS_METADATA = {
