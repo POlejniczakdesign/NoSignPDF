@@ -512,6 +512,26 @@ export const SEO_TRANSLATIONS: Record<Language, Partial<Record<ToolRoute, Locali
       extendedText: 'Wysyłanie surowego arkusza kalkulacyjnego klientowi stwarza ryzyko przypadkowego usunięcia formuł lub naruszenia struktury danych. Konwersja tabeli do pliku PDF tworzy niezmienny, elegancki dokument gotowy do prezentacji lub druku.',
       keywords: ['excel do pdf online', 'wklej tabele do pdf', 'konwertuj csv do pdf', 'arkusz kalkulacyjny do pdf', 'tabela w pdf'],
     },
+    '/wyczysc-metadane-pdf': {
+      h2Title: 'Usuwanie Metadanych z PDF Online – Bezpieczne Czyszczenie Ukrytych Danych',
+      intro: 'Każdy dokument PDF utworzony w edytorach tekstu (Microsoft Word, Google Docs) lub programach graficznych zawiera ukryte metadane: autora, nazwę programu, model komputera, daty edycji oraz tagi XMP. Nasze narzędzie pozwala trwale wymazać wszystkie te ślady bezpośrednio w Twojej przeglądarce.',
+      steps: [
+        { title: '1. Dodaj plik PDF', desc: 'Przeciągnij dokument do okna przeglądarki – silnik automatycznie przeskanuje słownik Info i strumień XMP.' },
+        { title: '2. Przejrzyj raport audytu', desc: 'Zobacz dokładną listę wykrytych parametrów: autora, wersję oprogramowania i historię zmian.' },
+        { title: '3. Wyczyść metadane', desc: 'Kliknij przycisk oczyszczania i pobierz w 100% anonimowy plik PDF bez żadnych cyfrowych śladów.' },
+      ],
+      benefits: [
+        { title: '100% Client-Side Privacy', desc: 'Pliki są analizowane i czyszczone wyłącznie w pamięci RAM urządzenia.' },
+        { title: 'Głębokie czyszczenie XMP i PieceInfo', desc: 'Usuwamy nie tylko standardowe pola, ale również ukryte strumienie XML i dane programów.' },
+        { title: 'Brak utraty jakości', desc: 'Warstwa tekstowa, grafiki, czcionki i układ stron pozostają w 100% nienaruszone.' },
+      ],
+      faqs: [
+        { q: 'Jakie informacje są ukryte w plikach PDF?', a: 'Standardowy plik PDF może zawierać: imię i nazwisko autora, login systemowy, nazwę programu (np. Word 2021), nazwę komputera oraz daty utworzenia i edycji.' },
+        { q: 'Czy czyszczenie metadanych zmienia wygląd dokumentu?', a: 'Nie, proces czyszczenia dotyczy wyłącznie ukrytych struktur nagłówkowych. Widoczna treść pozostaje identyczna.' },
+      ],
+      extendedText: 'Anonimizacja i czyszczenie metadanych w formacie PDF to kluczowy element dbania o poufność umów, pism prawnych i ofert handlowych.',
+      keywords: ['usuń metadane z pdf', 'czyszczenie metadanych pdf online', 'jak usunąć autora z pdf', 'usuwanie xmp pdf bez programu', 'anonimizacja dokumentu pdf'],
+    },
   },
   en: {
     '/': {
@@ -782,6 +802,26 @@ export const SEO_TRANSLATIONS: Record<Language, Partial<Record<ToolRoute, Locali
       extendedText: 'Extracting key chapters, invoices, or statements from comprehensive PDF archives is smooth and secure with PDF Studio Online.',
       keywords: ['split pdf online', 'extract pages from pdf', 'separate pdf pages free', 'divide pdf document', 'split pdf range'],
     },
+    '/wyczysc-metadane-pdf': {
+      h2Title: 'Remove PDF Metadata Online – Free PDF Metadata Stripper',
+      intro: 'PDF documents created with Microsoft Word, InDesign, or Google Docs contain invisible metadata: author names, software versions, computer names, timestamps, and raw XMP streams. Strip all hidden traces permanently in your browser without software installations.',
+      steps: [
+        { title: '1. Upload PDF File', desc: 'Drop your document into the browser to instantly scan the Info dictionary and XMP metadata stream.' },
+        { title: '2. Inspect Discovered Traces', desc: 'Review the privacy audit report showing detected authors, creation apps, and revision dates.' },
+        { title: '3. Strip Metadata & Download', desc: 'Click to permanently sanitize the PDF and download a 100% clean, anonymous document.' },
+      ],
+      benefits: [
+        { title: '100% Client-Side Privacy', desc: 'Documents are analyzed and scrubbed in local device RAM. Zero bytes are uploaded to servers.' },
+        { title: 'Deep XMP & Dictionary Scrubbing', desc: 'Removes catalog XMP streams, PieceInfo, and private application parameters.' },
+        { title: 'Zero Quality Loss', desc: 'Text, vectors, fonts, and page layouts remain completely untouched.' },
+      ],
+      faqs: [
+        { q: 'What hidden metadata is stored inside PDF files?', a: 'PDF files frequently store author full names, operating system usernames, software identifiers, printer versions, and editing histories.' },
+        { q: 'Does stripping metadata modify document contents?', a: 'No, only internal hidden header streams are cleaned. Visual pages and typography remain 100% identical.' },
+      ],
+      extendedText: 'Sanitizing PDF metadata is essential before submitting bids, contracts, legal briefs, or confidential resumes.',
+      keywords: ['remove pdf metadata online', 'strip pdf metadata free', 'delete author from pdf', 'clean xmp pdf in browser', 'sanitize pdf file'],
+    },
   },
   es: {
     '/': {
@@ -901,6 +941,25 @@ export const SEO_TRANSLATIONS: Record<Language, Partial<Record<ToolRoute, Locali
       extendedText: 'Separa capítulos, contratos o recibos en archivos independientes con total comodidad.',
       keywords: ['dividir pdf online', 'extraer paginas pdf', 'separar hojas pdf gratis', 'split pdf'],
     },
+    '/wyczysc-metadane-pdf': {
+      h2Title: 'Eliminar metadatos de PDF online – Limpieza de datos ocultos gratis',
+      intro: 'Los documentos PDF almacenan datos invisibles como autor, programa de creación (Word, InDesign), equipo y marcas de tiempo. Elimina de forma permanente todos los rastros en tu navegador sin subir archivos.',
+      steps: [
+        { title: '1. Sube tu documento', desc: 'Arrastra el PDF para analizar la estructura de metadatos y el flujo XMP.' },
+        { title: '2. Revisa el informe', desc: 'Comprueba los datos ocultos detectados como autor, software y fechas.' },
+        { title: '3. Limpia y descarga', desc: 'Elimina todos los metadatos y descarga un PDF 100% limpio y confidencial.' },
+      ],
+      benefits: [
+        { title: 'Privacidad 100% local', desc: 'Todo el procesamiento se ejecuta en la memoria RAM de tu equipo.' },
+        { title: 'Limpieza profunda de XMP', desc: 'Elimina flujos XML, identificadores UUID y datos privados de software.' },
+        { title: 'Sin pérdida de calidad', desc: 'El contenido visual y el texto permanecen inalterados.' },
+      ],
+      faqs: [
+        { q: '¿Qué información oculta tienen los PDFs?', a: 'Pueden contener el nombre del autor, usuario del sistema operativo, programa de creación y fechas de modificación.' },
+      ],
+      extendedText: 'Garantiza la confidencialidad de tus contratos y presupuestos eliminando metadatos antes de enviarlos.',
+      keywords: ['eliminar metadatos pdf', 'limpiar metadatos pdf online', 'quitar autor de pdf gratis', 'desinfectar pdf'],
+    },
   },
   hi: {
     '/': {
@@ -1014,6 +1073,24 @@ export const SEO_TRANSLATIONS: Record<Language, Partial<Record<ToolRoute, Locali
       ],
       extendedText: 'लंबे दस्तावेजों से जरूरी पन्ने अलग करने का सबसे सुरक्षित तरीका।',
       keywords: ['पीडीएफ अलग करें', 'स्प्लिट पीडीएफ', 'पीडीएफ पेज निकालें'],
+    },
+    '/wyczysc-metadane-pdf': {
+      h2Title: 'पीडीएफ मेटाडेटा हटाएं ऑनलाइन – छिपे हुए डेटा मिटाएं',
+      intro: 'पीडीएफ दस्तावेजों में छिपा हुआ डेटा जैसे लेखक का नाम, सॉफ्टवेयर विवरण और समय दर्ज होता है। बिना सर्वर पर फाइल भेजे इसे पूरी तरह साफ़ करें।',
+      steps: [
+        { title: '1. फ़ाइल चुनें', desc: 'दस्तावेज़ को ब्राउज़र में खोलें और मेटाडेटा की जांच करें।' },
+        { title: '2. पहचाने गए डेटा देखें', desc: 'लेखक, सॉफ्टवेयर और संपादन समय की सूची देखें।' },
+        { title: '3. साफ़ करें और डाउनलोड करें', desc: 'सभी छिपे हुए विवरण हटाकर सुरक्षित पीडीएफ प्राप्त करें।' },
+      ],
+      benefits: [
+        { title: '100% स्थानीय सुरक्षा', desc: 'फाइलें केवल आपकी डिवाइस मेमोरी में प्रोसेस होती हैं।' },
+        { title: 'पूर्ण सफाई', desc: 'XMP स्ट्रीम और आंतरिक पहचान कोड पूरी तरह हटाए जाते हैं।' },
+      ],
+      faqs: [
+        { q: 'क्या इससे दस्तावेज़ की सामग्री बदलती है?', a: 'नहीं, केवल छिपे हुए हेडर हटाए जाते हैं; मुख्य सामग्री वैसी ही रहती है।' },
+      ],
+      extendedText: 'संवेदनशील दस्तावेजों को भेजने से पहले मेटाडेटा हटाना एक बेहतरीन सुरक्षा उपाय है।',
+      keywords: ['पीडीएफ मेटाडेटा हटाएं', 'मेटाडेटा क्लीनर', 'पीडीएफ से लेखक हटाएं'],
     },
   },
 };

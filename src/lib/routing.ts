@@ -21,6 +21,7 @@ export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/excel-to-pdf': '/excel-to-pdf',
   '/kompresuj-pdf': '/kompresuj-pdf',
   '/grafika-do-pdf': '/grafika-do-pdf',
+  '/wyczysc-metadane-pdf': '/wyczysc-metadane-pdf',
 
   // English aliases
   '/fill-pdf-form': '/wypelnij-formularz-pdf',
@@ -33,6 +34,9 @@ export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/image-to-pdf': '/grafika-do-pdf',
   '/jpg-to-pdf': '/grafika-do-pdf',
   '/png-to-pdf': '/grafika-do-pdf',
+  '/remove-pdf-metadata': '/wyczysc-metadane-pdf',
+  '/strip-pdf-metadata': '/wyczysc-metadane-pdf',
+  '/clean-pdf-metadata': '/wyczysc-metadane-pdf',
   '/privacy-policy': '/polityka-privacy',
 
   // Spanish aliases
@@ -49,6 +53,8 @@ export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/comprimir-pdf': '/kompresuj-pdf',
   '/imagen-a-pdf': '/grafika-do-pdf',
   '/jpg-a-pdf': '/grafika-do-pdf',
+  '/limpiar-metadatos-pdf': '/wyczysc-metadane-pdf',
+  '/eliminar-metadatos-pdf': '/wyczysc-metadane-pdf',
   '/pdf-a-word': '/pdf-to-word',
   '/word-a-pdf': '/word-to-pdf',
   '/pdf-a-excel': '/pdf-to-excel',
@@ -294,6 +300,24 @@ export const DEDICATED_SEO_META: Record<
       desc: 'JPG, PNG और WebP तस्वीरों को तुरंत स्वच्छ पीडीएफ दस्तावेज़ में बदलें। सुरक्षित, तेज़ और बिना किसी पंजीकरण के पूरी तरह मुफ्त।',
     },
   },
+  '/wyczysc-metadane-pdf': {
+    pl: {
+      title: 'Usuń Metadane z PDF Online – Bezpieczne Czyszczenie Ukrytych Danych',
+      desc: 'Usuń ukryte metadane, autora, wersję programu Word i historię edycji z pliku PDF. 100% bezpłatnie i lokalnie w przeglądarce bez logowania i rejestracji.',
+    },
+    en: {
+      title: 'Remove PDF Metadata Online – Free PDF Metadata Stripper',
+      desc: 'Strip hidden author names, creation software, editing dates, and XMP metadata from PDF files in your browser. 100% private, free, and no sign-up.',
+    },
+    es: {
+      title: 'Eliminar Metadatos de PDF Online – Limpiar Datos Ocultos Gratis',
+      desc: 'Elimina autor, software de creación, fechas y metadatos XMP de tus archivos PDF online. 100% privado en tu navegador y sin registro.',
+    },
+    hi: {
+      title: 'पीडीएफ मेटाडेटा हटाएं ऑनलाइन – छिपे हुए डेटा मिटाएं मुफ्त में',
+      desc: 'अपने पीडीएफ दस्तावेज़ से लेखक का नाम, सॉफ्टवेयर विवरण और मेटाडेटा आसानी से हटाएं। 100% सुरक्षित और मुफ्त बिना लॉगिन।',
+    },
+  },
 };
 
 export const PRIMARY_LOCALIZED_SLUGS: Record<ToolRoute, Record<Language, string>> = {
@@ -309,6 +333,7 @@ export const PRIMARY_LOCALIZED_SLUGS: Record<ToolRoute, Record<Language, string>
   '/word-to-pdf': { pl: '/word-to-pdf', en: '/en/word-to-pdf', es: '/es/word-a-pdf', hi: '/hi/word-to-pdf' },
   '/pdf-to-excel': { pl: '/pdf-to-excel', en: '/en/pdf-to-excel', es: '/es/pdf-a-excel', hi: '/hi/pdf-to-excel' },
   '/excel-to-pdf': { pl: '/excel-to-pdf', en: '/en/excel-to-pdf', es: '/es/excel-a-pdf', hi: '/hi/excel-to-pdf' },
+  '/wyczysc-metadane-pdf': { pl: '/wyczysc-metadane-pdf', en: '/en/remove-pdf-metadata', es: '/es/limpiar-metadatos-pdf', hi: '/hi/remove-pdf-metadata' },
   '/polityka-privacy': { pl: '/polityka-privacy', en: '/en/privacy-policy', es: '/es/politica-privacidad', hi: '/hi/privacy-policy' },
 };
 

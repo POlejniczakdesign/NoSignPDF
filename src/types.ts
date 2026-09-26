@@ -11,7 +11,31 @@ export type ToolRoute =
   | '/pdf-to-word'
   | '/word-to-pdf'
   | '/pdf-to-excel'
-  | '/excel-to-pdf';
+  | '/excel-to-pdf'
+  | '/wyczysc-metadane-pdf';
+
+export interface PdfMetadataItem {
+  key: string;
+  label: string;
+  value: string;
+  isPrivate: boolean;
+}
+
+export interface PdfMetadataDetails {
+  title?: string;
+  author?: string;
+  subject?: string;
+  keywords?: string[];
+  creator?: string;
+  producer?: string;
+  creationDate?: Date;
+  modificationDate?: Date;
+  hasXmp: boolean;
+  hasPieceInfo: boolean;
+  customKeys: { key: string; value: string }[];
+  totalFound: number;
+  items: PdfMetadataItem[];
+}
 
 export interface ToolMeta {
   id: string;

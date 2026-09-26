@@ -299,6 +299,24 @@ TOOLS_METADATA = {
             'title': 'तस्वीर से पीडीएफ बनाएं ऑनलाइन – JPG और PNG से पीडीएफ कनवर्टर',
             'desc': 'JPG, PNG और WebP तस्वीरों को तुरंत स्वच्छ पीडीएफ दस्तावेज़ में बदलें। सुरक्षित, तेज़ और बिना किसी पंजीकरण के पूरी तरह मुफ्त।'
         }
+    },
+    '/wyczysc-metadane-pdf': {
+        'pl': {
+            'title': 'Usuń Metadane z PDF Online – Bezpieczne Czyszczenie Ukrytych Danych',
+            'desc': 'Bezpieczne czyszczenie ukrytych danych z plików PDF. Usuń autora, wersję programu, model komputera i tagi XMP w 100% lokalnie w przeglądarce bez logowania.'
+        },
+        'en': {
+            'title': 'Remove PDF Metadata Online – Free PDF Metadata Stripper',
+            'desc': 'Safely strip hidden metadata from PDF files online. Remove author names, creation software, editing history, and XMP streams client-side with no sign-up.'
+        },
+        'es': {
+            'title': 'Eliminar Metadatos de PDF Online – Limpieza de Datos Ocultos',
+            'desc': 'Limpia datos ocultos de tus archivos PDF de forma segura. Borra autor, software de creación y fechas de modificación 100% local en tu navegador sin registro.'
+        },
+        'hi': {
+            'title': 'पीडीएफ मेटाडेटा हटाएं ऑनलाइन – छिपे हुए डेटा सुरक्षित मिटाएं',
+            'desc': 'दस्तावेज़ से लेखक, सॉफ्टवेयर का नाम और संपादन इतिहास सुरक्षित रूप से मिटाएं। 100% मुफ्त व निजी बिना लॉगिन।'
+        }
     }
 }
 
@@ -382,6 +400,12 @@ PRIMARY_URLS = {
         'es': '/es/imagen-a-pdf',
         'hi': '/hi/image-to-pdf',
     },
+    '/wyczysc-metadane-pdf': {
+        'pl': '/wyczysc-metadane-pdf',
+        'en': '/en/remove-pdf-metadata',
+        'es': '/es/limpiar-metadatos-pdf',
+        'hi': '/hi/remove-pdf-metadata',
+    },
 }
 
 # All URLs/subpaths to pre-render (including native aliases like /pl/polacz-pdf, /en/split-pdf, /es/unir-pdf)
@@ -433,6 +457,12 @@ ALL_SLUGS = {
         'en': ['/en/image-to-pdf', '/en/jpg-to-pdf', '/en/grafika-do-pdf'],
         'es': ['/es/imagen-a-pdf', '/es/jpg-a-pdf', '/es/grafika-do-pdf'],
         'hi': ['/hi/image-to-pdf', '/hi/grafika-do-pdf'],
+    },
+    '/wyczysc-metadane-pdf': {
+        'pl': ['/wyczysc-metadane-pdf', '/pl/wyczysc-metadane-pdf'],
+        'en': ['/en/remove-pdf-metadata', '/en/strip-pdf-metadata', '/en/clean-pdf-metadata', '/en/wyczysc-metadane-pdf'],
+        'es': ['/es/limpiar-metadatos-pdf', '/es/eliminar-metadatos-pdf', '/es/wyczysc-metadane-pdf'],
+        'hi': ['/hi/remove-pdf-metadata', '/hi/wyczysc-metadane-pdf'],
     },
     '/pdf-to-word': {
         'pl': ['/pdf-to-word', '/pl/pdf-to-word'],
@@ -1000,7 +1030,7 @@ sitemap_lines = [
 ]
 
 for tool_path in PRIMARY_URLS.keys():
-    priority = '1.0' if tool_path == '/' else ('0.9' if tool_path in ['/wypelnij-formularz-pdf', '/kompresuj-pdf', '/grafika-do-pdf', '/polacz-pdf'] else ('0.3' if tool_path == '/polityka-privacy' else '0.8'))
+    priority = '1.0' if tool_path == '/' else ('0.9' if tool_path in ['/wypelnij-formularz-pdf', '/kompresuj-pdf', '/grafika-do-pdf', '/polacz-pdf', '/wyczysc-metadane-pdf'] else ('0.3' if tool_path == '/polityka-privacy' else '0.8'))
 
     pl_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['pl']}" if PRIMARY_URLS[tool_path]['pl'] != '/' else f"{site_domain}/"
     en_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['en']}"

@@ -33,10 +33,11 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
   const [moreToolsOpen, setMoreToolsOpen] = useState(false);
   const [cumulativeStats] = useState(() => getCumulativeStats());
 
-  // The 6 prominent hero tools required
+  // The prominent hero tools required
   const HERO_TOOL_ROUTES: ToolRoute[] = [
     '/wypelnij-formularz-pdf',
     '/polacz-pdf',
+    '/wyczysc-metadane-pdf',
     '/usun-strony-z-pdf',
     '/obroc-pdf',
     '/kompresuj-pdf',
@@ -58,6 +59,8 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
         return <FileSignature className="w-7 h-7 text-indigo-600 dark:text-indigo-400" />;
       case '/polacz-pdf':
         return <FileStack className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />;
+      case '/wyczysc-metadane-pdf':
+        return <ShieldCheck className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />;
       case '/usun-strony-z-pdf':
         return <FileX className="w-7 h-7 text-rose-600 dark:text-rose-400" />;
       case '/obroc-pdf':
@@ -86,6 +89,8 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
       case '/wypelnij-formularz-pdf':
         return 'bg-indigo-50 dark:bg-indigo-950/60 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/60';
       case '/polacz-pdf':
+        return 'bg-emerald-50 dark:bg-emerald-950/60 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/60';
+      case '/wyczysc-metadane-pdf':
         return 'bg-emerald-50 dark:bg-emerald-950/60 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/60';
       case '/usun-strony-z-pdf':
         return 'bg-rose-50 dark:bg-rose-950/60 group-hover:bg-rose-100 dark:group-hover:bg-rose-900/60';
@@ -220,7 +225,10 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {heroTools.map((tool) => {
-            const isNew = tool.path === '/kompresuj-pdf' || tool.path === '/grafika-do-pdf';
+            const isNew =
+              tool.path === '/wyczysc-metadane-pdf' ||
+              tool.path === '/kompresuj-pdf' ||
+              tool.path === '/grafika-do-pdf';
             const iconBg = getIconBg(tool.path);
 
             return (

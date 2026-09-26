@@ -16,6 +16,8 @@ import { PdfToExcelConverter } from './components/converters/PdfToExcelConverter
 import { TextTableToPdfConverter } from './components/converters/TextTableToPdfConverter';
 import { CompressPdfModule } from './components/CompressPdfModule';
 import { ImageToPdfModule } from './components/ImageToPdfModule';
+import { MetadataStripperModule } from './components/MetadataStripperModule';
+import { SmartNextStepsCard } from './components/SmartNextStepsCard';
 import { TimeSavedCard } from './components/TimeSavedCard';
 import { ToolRoute } from './types';
 import { TOOLS } from './data/tools';
@@ -24,6 +26,7 @@ import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
 import { Language } from './i18n/translations';
 import { parsePathname, buildLocalizedPath, updateDocumentSeo } from './lib/routing';
 import { recordCompletedTask, TaskSavedStats } from './lib/timeSavedTracker';
+import { recordOperationHistory } from './lib/retentionHistory';
 
 function AppContent() {
   const { t, getToolMeta, language, setLanguage } = useLanguage();
@@ -70,6 +73,15 @@ function AppContent() {
 
   // Time saved celebratory stats state
   const [celebrationStats, setCelebrationStats] = useState<TaskSavedStats | null>(null);
+
+  // In-memory working file passed seamlessly between tools without re-uploading
+  const [workingFile, setWorkingFile] = useState<{
+    name: string;
+    bytes: Uint8Array;
+    size: number;
+    pageCount?: number;
+  } | null>(null);
+  const [lastActionRoute, setLastActionRoute] = useState<ToolRoute | null>(null);
 
   // Toggle theme adhering exactly to requested pattern:
   // Checks documentElement.classList.contains('dark'), toggles class and updates localStorage
@@ -153,12 +165,19 @@ function AppContent() {
   // Handler for download request from PDF modules (bytes)
   const handleTriggerDownload = (bytes: Uint8Array, fileName: string) => {
     setPendingDownload({ bytes, fileName });
+    setWorkingFile({
+      name: fileName,
+      bytes,
+      size: bytes.byteLength,
+    });
+    setLastActionRoute(currentPath);
     setInterstitialOpen(true);
   };
 
   // Handler for download request from converter modules (blob URLs)
   const handleTriggerBlobDownload = (blobUrl: string, fileName: string) => {
     setPendingDownload({ blobUrl, fileName });
+    setLastActionRoute(currentPath);
     setInterstitialOpen(true);
   };
 
@@ -177,6 +196,15 @@ function AppContent() {
       } else if (pendingDownload.bytes) {
         downloadPdfBlob(pendingDownload.bytes, pendingDownload.fileName);
       }
+
+      // Record in invisible localStorage history
+      recordOperationHistory({
+        fileName: pendingDownload.fileName,
+        toolRoute: currentPath,
+        fileSizeBytes: pendingDownload.bytes?.byteLength || 0,
+        pageCount: workingFile?.pageCount,
+      });
+
       setPendingDownload(null);
 
       // Record time saved & update stats
@@ -200,6 +228,9 @@ function AppContent() {
   const handleHubFileDrop = (
     files: { name: string; bytes: Uint8Array; size: number }[]
   ) => {
+    if (files.length > 0) {
+      setWorkingFile(files[0]);
+    }
     if (files.length > 1) {
       navigateTo('/polacz-pdf');
     } else {
@@ -222,6 +253,17 @@ function AppContent() {
       return (
         <FormFillerModule
           key="form-filler"
+          initialFile={workingFile}
+          onTriggerDownload={handleTriggerDownload}
+        />
+      );
+    }
+
+    if (currentPath === '/wyczysc-metadane-pdf') {
+      return (
+        <MetadataStripperModule
+          key="metadata-stripper"
+          initialFile={workingFile}
           onTriggerDownload={handleTriggerDownload}
         />
       );
@@ -231,6 +273,7 @@ function AppContent() {
       return (
         <CompressPdfModule
           key="compress-pdf"
+          initialFile={workingFile}
           onTriggerDownload={handleTriggerDownload}
         />
       );
@@ -292,6 +335,7 @@ function AppContent() {
       <PageManagerGrid
         key={currentPath}
         toolRoute={currentPath}
+        initialFile={workingFile}
         onTriggerDownload={handleTriggerDownload}
       />
     );
@@ -346,6 +390,17 @@ function AppContent() {
             <TimeSavedCard
               stats={celebrationStats}
               onClose={() => setCelebrationStats(null)}
+            />
+          )}
+
+          {/* Smart Contextual Next Steps Card (Recommendations with zero re-upload) */}
+          {celebrationStats && workingFile && (
+            <SmartNextStepsCard
+              lastRoute={lastActionRoute || currentPath}
+              workingFile={workingFile}
+              onSelectAction={(targetRoute) => {
+                navigateTo(targetRoute);
+              }}
             />
           )}
 

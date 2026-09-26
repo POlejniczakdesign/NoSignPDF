@@ -21,11 +21,17 @@ import { useLanguage } from '../i18n/LanguageContext';
 interface PageManagerGridProps {
   toolRoute: ToolRoute;
   onTriggerDownload: (bytes: Uint8Array, fileName: string) => void;
+  initialFile?: {
+    name: string;
+    bytes: Uint8Array;
+    size: number;
+  } | null;
 }
 
 export const PageManagerGrid: React.FC<PageManagerGridProps> = ({
   toolRoute,
   onTriggerDownload,
+  initialFile,
 }) => {
   const { t } = useLanguage();
 
@@ -41,6 +47,13 @@ export const PageManagerGrid: React.FC<PageManagerGridProps> = ({
 
   // Hidden file input for adding more files
   const addMoreInputRef = useRef<HTMLInputElement>(null);
+
+  // Auto-load initial file if provided from smart next-step recommendation
+  useEffect(() => {
+    if (initialFile && pages.length === 0) {
+      handleFilesLoaded([initialFile]);
+    }
+  }, [initialFile]);
 
   // Load files into page thumbnail list
   const handleFilesLoaded = async (

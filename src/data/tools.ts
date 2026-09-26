@@ -215,6 +215,23 @@ export const TOOLS: ToolMeta[] = [
       'połącz zdjęcia w jeden pdf'
     ],
   },
+  {
+    id: 'metadane',
+    path: '/wyczysc-metadane-pdf',
+    name: 'Czyszczenie Metadanych PDF',
+    shortName: 'Usuń Metadane',
+    tagline: 'Trwale usuń ukryte informacje, autora, nazwę programu i historię edycji z pliku PDF.',
+    description: 'Wykryj i wyczyść ukryte metadane (nazwa programu Word/InDesign, autor, model komputera, daty modyfikacji, tagi XMP) w 100% lokalnie w przeglądarce.',
+    iconName: 'ShieldCheck',
+    badge: '100% Privacy',
+    seoKeywords: [
+      'usuń metadane z pdf',
+      'czyszczenie metadanych pdf online',
+      'jak usunąć autora z pdf',
+      'usuwanie xmp pdf bez programu',
+      'anonimizacja dokumentu pdf'
+    ],
+  },
 ];
 
 export interface SeoContentItem {
@@ -789,5 +806,52 @@ export const SEO_DETAILS: Record<ToolRoute, SeoContentItem> = {
       },
     ],
     extendedText: 'Tworzenie dokumentów PDF ze zdjęć wykonanych smartfonem to najwygodniejszy sposób na przesyłanie umów, faktur, notatek ze spotkań czy dokumentacji technicznej w jednym spójnym pliku.',
+  },
+  '/wyczysc-metadane-pdf': {
+    h2Title: 'Usuwanie Metadanych z PDF Online – Bezpieczne Czyszczenie Ukrytych Danych',
+    intro: 'Każdy dokument PDF utworzony w edytorach tekstu (Microsoft Word, Google Docs, LibreOffice) lub programach graficznych (Adobe InDesign, Photoshop, Canva) zawiera niewidoczne na pierwszy rzut oka metadane. Mogą one ujawniać Twoje imię i nazwisko, nazwę firmy, nazwę komputera, ścieżki plików na dysku, dokładny czas pracy oraz unikalne identyfikatory XMP. Nasze narzędzie pozwala trwale wymazać wszystkie te ślady bezpośrednio w pamięci podręcznej przeglądarki.',
+    steps: [
+      {
+        title: '1. Dodaj plik PDF do analizy',
+        desc: 'Przeciągnij dokument do okna przeglądarki – silnik automatycznie przeskanuje słownik Info i strumień XMP.',
+      },
+      {
+        title: '2. Przejrzyj raport audytu prywatności',
+        desc: 'Zobacz dokładną listę wykrytych parametrów: autora, wersję oprogramowania, sterowniki drukarek i daty modyfikacji.',
+      },
+      {
+        title: '3. Wyczyść metadane jednym kliknięciem',
+        desc: 'Kliknij przycisk oczyszczania i pobierz w 100% anonimowy plik PDF bez żadnych cyfrowych śladów.',
+      },
+    ],
+    benefits: [
+      {
+        title: '100% Client-Side Privacy',
+        desc: 'Pliki są analizowane i czyszczone wyłącznie w pamięci RAM urządzenia. Żadne poufne dane nie opuszczają Twojego komputera.',
+      },
+      {
+        title: 'Głębokie czyszczenie XMP i PieceInfo',
+        desc: 'Usuwamy nie tylko standardowe pola tytułu i autora, ale również ukryte strumienie XML (XMP) i dane robocze programów.',
+      },
+      {
+        title: 'Brak utraty jakości dokumentu',
+        desc: 'Warstwa tekstowa, grafiki, czcionki i układ stron pozostają w 100% nienaruszone.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'Jakie informacje są ukryte w plikach PDF?',
+        a: 'Standardowy plik PDF może zawierać: pełne imię i nazwisko autora, login użytkownika w systemie Windows lub macOS, nazwę programu, w którym powstał plik (np. Word 2021), nazwę komputera w sieci, datę utworzenia i każdej edycji, a także wersje sterowników urządzeń.',
+      },
+      {
+        q: 'Dlaczego warto usuwać metadane przed wysłaniem pliku?',
+        a: 'Wysyłając oferty handlowe, umowy, pisma procesowe lub CV, ujawnienie historii zmian, nazwisk współpracowników czy wersji oprogramowania może stanowić ryzyko wycieku tajemnicy przedsiębiorstwa lub naruszenia prywatności.',
+      },
+      {
+        q: 'Czy czyszczenie metadanych zmienia wygląd lub treść dokumentu?',
+        a: 'Nie, proces czyszczenia dotyczy wyłącznie ukrytych struktur nagłówkowych dokumentu. Wszystkie widoczne teksty, tabele, obrazy i podpisy pozostają dokładnie takie same.',
+      },
+    ],
+    extendedText: 'Anonimizacja i czyszczenie metadanych w formacie PDF (PDF Metadata Stripper) to podstawowa praktyka w pracy kancelarii prawnych, biur księgowych, dziennikarzy śledczych oraz osób dbających o higienę cyfrową. Zamiast instalować kosztowne narzędzia komercyjne, skorzystaj z bezpłatnego, działającego w 100% lokalnie kombajnu PDF Studio Online.',
   },
 };

@@ -15,15 +15,23 @@ import { useLanguage } from '../i18n/LanguageContext';
 
 interface CompressPdfModuleProps {
   onTriggerDownload: (bytes: Uint8Array, fileName: string) => void;
+  initialFile?: {
+    name: string;
+    bytes: Uint8Array;
+    size: number;
+  } | null;
 }
 
-export const CompressPdfModule: React.FC<CompressPdfModuleProps> = ({ onTriggerDownload }) => {
+export const CompressPdfModule: React.FC<CompressPdfModuleProps> = ({
+  onTriggerDownload,
+  initialFile,
+}) => {
   const { t, language } = useLanguage();
   const [selectedFile, setSelectedFile] = useState<{
     name: string;
     bytes: Uint8Array;
     size: number;
-  } | null>(null);
+  } | null>(initialFile || null);
 
   const [compressionLevel, setCompressionLevel] = useState<CompressionLevel>('medium');
   const [isProcessing, setIsProcessing] = useState<boolean>(false);

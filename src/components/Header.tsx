@@ -108,6 +108,7 @@ export const Header: React.FC<HeaderProps> = ({
     [
       '/wypelnij-formularz-pdf',
       '/polacz-pdf',
+      '/wyczysc-metadane-pdf',
       '/kompresuj-pdf',
       '/grafika-do-pdf',
       '/usun-strony-z-pdf',

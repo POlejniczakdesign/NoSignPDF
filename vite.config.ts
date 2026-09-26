@@ -5,18 +5,21 @@ import fs from 'fs';
 import {defineConfig} from 'vite';
 
 const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://sitemaps.org">
-  <url><loc>https://nosignpdf.com</loc><priority>1.0</priority></url>
-  <url><loc>https://nosignpdf.comwypelnij-formularz-pdf</loc><priority>0.9</priority></url>
-  <url><loc>https://nosignpdf.comusun-strony-z-pdf</loc><priority>0.8</priority></url>
-  <url><loc>https://nosignpdf.comobroc-pdf</loc><priority>0.8</priority></url>
-  <url><loc>https://nosignpdf.compolacz-pdf</loc><priority>0.8</priority></url>
-  <url><loc>https://nosignpdf.comrozdziel-pdf</loc><priority>0.8</priority></url>
-  <url><loc>https://nosignpdf.compdf-to-word</loc><priority>0.8</priority></url>
-  <url><loc>https://nosignpdf.comword-to-pdf</loc><priority>0.8</priority></url>
-  <url><loc>https://nosignpdf.compdf-to-excel</loc><priority>0.8</priority></url>
-  <url><loc>https://nosignpdf.comexcel-to-pdf</loc><priority>0.8</priority></url>
-  <url><loc>https://nosignpdf.compolityka-privacy</loc><priority>0.3</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://nosignpdf.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://nosignpdf.com/wypelnij-formularz-pdf</loc><priority>0.9</priority></url>
+  <url><loc>https://nosignpdf.com/polacz-pdf</loc><priority>0.9</priority></url>
+  <url><loc>https://nosignpdf.com/wyczysc-metadane-pdf</loc><priority>0.9</priority></url>
+  <url><loc>https://nosignpdf.com/kompresuj-pdf</loc><priority>0.9</priority></url>
+  <url><loc>https://nosignpdf.com/grafika-do-pdf</loc><priority>0.9</priority></url>
+  <url><loc>https://nosignpdf.com/usun-strony-z-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.com/obroc-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.com/rozdziel-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.com/pdf-to-word</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.com/word-to-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.com/pdf-to-excel</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.com/excel-to-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://nosignpdf.com/polityka-privacy</loc><priority>0.3</priority></url>
 </urlset>
 `;
 

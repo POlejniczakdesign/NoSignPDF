@@ -36,6 +36,8 @@ export function calculateSavedSeconds(toolRoute: ToolRoute): number {
       return 210 + randInt(12, 45); // ~3m 42s to 4m 15s
     case '/grafika-do-pdf':
       return 215 + randInt(10, 40); // ~3m 45s to 4m 15s
+    case '/wyczysc-metadane-pdf':
+      return 195 + randInt(10, 40); // ~3m 25s to 3m 55s
     case '/pdf-to-word':
       return 225 + randInt(15, 45); // ~4m 00s to 4m 30s
     case '/pdf-to-excel':

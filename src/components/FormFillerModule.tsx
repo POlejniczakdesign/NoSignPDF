@@ -34,11 +34,19 @@ import { useLanguage } from '../i18n/LanguageContext';
 
 interface FormFillerModuleProps {
   onTriggerDownload: (bytes: Uint8Array, fileName: string) => void;
+  initialFile?: {
+    name: string;
+    bytes: Uint8Array;
+    size: number;
+  } | null;
 }
 
 type ActiveTool = 'pointer' | 'text' | 'checkbox';
 
-export const FormFillerModule: React.FC<FormFillerModuleProps> = ({ onTriggerDownload }) => {
+export const FormFillerModule: React.FC<FormFillerModuleProps> = ({
+  onTriggerDownload,
+  initialFile,
+}) => {
   const { t } = useLanguage();
 
   const [fileBytes, setFileBytes] = useState<Uint8Array | null>(null);
@@ -65,6 +73,13 @@ export const FormFillerModule: React.FC<FormFillerModuleProps> = ({ onTriggerDow
   const [isDetecting, setIsDetecting] = useState<boolean>(false);
   const [isConvertingXfa, setIsConvertingXfa] = useState<boolean>(false);
   const [xfaNotice, setXfaNotice] = useState<string | null>(null);
+
+  // Auto-load initialFile if provided
+  useEffect(() => {
+    if (initialFile && !fileBytes) {
+      handleFileLoaded(initialFile.bytes, initialFile.name);
+    }
+  }, [initialFile]);
 
   // Auto-dismiss snapped feedback toast
   useEffect(() => {
