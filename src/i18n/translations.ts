@@ -135,6 +135,7 @@ export interface TranslationDict {
     privacyPolicy: string;
     termsOfService: string;
     privacyAndTerms: string;
+    cookiePolicy: string;
     copyright: string;
     engine: string;
   };
@@ -262,6 +263,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       privacyPolicy: 'Polityka Prywatności',
       termsOfService: 'Regulamin Serwisu',
       privacyAndTerms: 'Regulamin i Polityka Prywatności',
+      cookiePolicy: 'Polityka Cookies (Pliki Cookie)',
       copyright: 'Wszelkie prawa zastrzeżone.',
       engine: '100% Client-Side Engine • Powered by pdf-lib & pdfjs-dist',
     },
@@ -387,6 +389,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       privacyPolicy: 'Privacy Policy',
       termsOfService: 'Terms of Service',
       privacyAndTerms: 'Privacy Policy & Terms',
+      cookiePolicy: 'Cookie Policy',
       copyright: 'All rights reserved.',
       engine: '100% Client-Side Engine • Powered by pdf-lib & pdfjs-dist',
     },
@@ -512,6 +515,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       privacyPolicy: 'Política de Privacidad',
       termsOfService: 'Términos de Servicio',
       privacyAndTerms: 'Política de Privacidad y Términos',
+      cookiePolicy: 'Política de Cookies',
       copyright: 'Todos los derechos reservados.',
       engine: '100% Client-Side Engine • Desarrollado con pdf-lib y pdfjs-dist',
     },
@@ -637,6 +641,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       privacyPolicy: 'गोपनीयता नीति (Privacy Policy)',
       termsOfService: 'उपयोग की शर्तें (Terms of Service)',
       privacyAndTerms: 'गोपनीयता नीति और नियम',
+      cookiePolicy: 'कुकी नीति (Cookie Policy)',
       copyright: 'सर्वाधिकार सुरक्षित।',
       engine: '100% Client-Side Engine • Powered by pdf-lib & pdfjs-dist',
     },

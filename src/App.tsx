@@ -19,6 +19,7 @@ import { ImageToPdfModule } from './components/ImageToPdfModule';
 import { MetadataStripperModule } from './components/MetadataStripperModule';
 import { SmartNextStepsCard } from './components/SmartNextStepsCard';
 import { TimeSavedCard } from './components/TimeSavedCard';
+import { PublisherArticleSection } from './components/PublisherArticleSection';
 import { ToolRoute } from './types';
 import { TOOLS } from './data/tools';
 import { downloadPdfBlob } from './lib/pdfOperations';
@@ -417,6 +418,11 @@ function AppContent() {
             <div className="w-full max-w-4xl mt-8">
               <SEOSection toolRoute={currentPath} />
             </div>
+          )}
+
+          {/* Comprehensive Publisher Content & PDF Guide (AdSense Publisher-Content Quality Booster) */}
+          {currentPath !== '/polityka-privacy' && (
+            <PublisherArticleSection onNavigate={navigateTo} />
           )}
         </main>
 

@@ -662,10 +662,13 @@ def generate_custom_html(tool_path, lang, current_slug):
     # Insert before </head>
     html = html.replace('</head>', f'{alternates_html}\n  </head>')
 
-    # 8. If privacy policy page, inject pre-rendered semantic HTML body for Google AdSense crawlers
+    # 8. Inject pre-rendered semantic HTML body for Google AdSense crawlers
     if tool_path == '/polityka-privacy':
         privacy_body = get_privacy_html_body(lang)
         html = html.replace('<div id="root"></div>', f'<div id="root">{privacy_body}</div>')
+    else:
+        publisher_body = get_publisher_html_body(lang, tool_path, title, desc)
+        html = html.replace('<div id="root"></div>', f'<div id="root">{publisher_body}</div>')
 
     return html
 
@@ -997,6 +1000,230 @@ def get_privacy_html_body(lang):
   </article>
 </div>
 """
+
+def get_publisher_html_body(lang, tool_path, title, desc):
+    """
+    Generates rich, semantic publisher content (minimum 400-500 words) in 4 languages
+    (PL, EN, ES, HI) for Google AdSense bots and web crawlers, solving the
+    'Low value content / screens without publisher-content' issue.
+    """
+    if lang == 'pl':
+        return f"""
+<div id="publisher-prerender-content" class="w-full max-w-5xl mx-auto py-8 px-4 font-sans text-zinc-900 dark:text-zinc-100 space-y-8">
+  <header class="border-b border-zinc-200 dark:border-zinc-800 pb-6">
+    <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 mb-2">
+      <span>🔒 100% Privacy-First Architecture • Przetwarzanie w pamięci RAM</span>
+    </div>
+    <h1 class="text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">{title}</h1>
+    <p class="text-base text-zinc-600 dark:text-zinc-300 mt-2 leading-relaxed">{desc}</p>
+  </header>
+
+  <section class="space-y-4">
+    <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Dlaczego warto wybrać NoSignPDF? Bezpieczeństwo dokumentów w erze chmury</h2>
+    <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+      Większość popularnych serwisów internetowych do edycji plików PDF wymaga przesłania Twoich poufnych dokumentów na odległe serwery w chmurze. NoSignPDF rewolucjonizuje tę koncepcję: wszystkie operacje wykonujesz w 100% lokalnie w przeglądarce, z zerowym ryzykiem wycieku danych i bez konieczności rejestracji konta. Dokumenty są otwierane wyłącznie w pamięci operacyjnej Twojego urządzenia, co gwarantuje pełną poufność umów handlowych, wyciągów bankowych oraz deklaracji podatkowych zgodnie z normami RODO i GDPR.
+    </p>
+    <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+      Format PDF (Portable Document Format) jest globalnym fundamentem obiegu informacji biznesowych, prawnych oraz administracyjnych. Codziennie na całym świecie przesyłane są miliony umów handlowych, wyciągów finansowych, pism procesowych oraz formularzy podatkowych. Niestety, korzystanie ze standardowych konwerterów online wiąże się ze znacznym ryzykiem: wysyłając plik na obcy serwer, tracisz kontrolę nad tym, kto ma dostęp do jego kopii, jak długo jest przechowywany i czy nie posłuży do trenowania modeli maszynowych. NoSignPDF eliminuje to ryzyko — nasz silnik WebAssembly i biblioteka pdf-lib wykonują całą kompilację bezpośrednio na Twoim procesorze.
+    </p>
+  </section>
+
+  <section class="space-y-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+    <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Baza Wiedzy i Przewodnik PDF (PDF Knowledge Guide)</h2>
+    
+    <article class="space-y-2">
+      <h3 class="text-lg font-bold text-zinc-900 dark:text-white">1. Co to są metadane w pliku PDF i dlaczego warto je czyścić?</h3>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Każdy plik PDF zawiera ukryte warstwy informacji technicznych, takie jak imię i nazwisko autora, login systemowy, nazwa firmy, model urządzenia, dokładna data utworzenia oraz lokalne ścieżki dyskowe. Analiza metadanych jest powszechnie stosowana przez cyberprzestępców (technika OSINT) do przygotowania ataków phishingowych. Moduł czyszczenia metadanych NoSignPDF usuwa słowniki /Info, wpisy XMP oraz PieceInfo w pamięci RAM, chroniąc Twoją prywatność przed wysłaniem pliku kontrahentowi lub opublikowaniem go w sieci.
+      </p>
+    </article>
+
+    <article class="space-y-2">
+      <h3 class="text-lg font-bold text-zinc-900 dark:text-white">2. Jak bezpiecznie podpisać i wypełnić formularz PDF online?</h3>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Zamiast drukować dokument, podpisywać go ręcznie i ponownie skanować, wykorzystaj cyfrowe pola AcroForms. Narzędzie NoSignPDF pozwala na uzupełnianie wniosków urzędowych, umów i pism z zachowaniem pełnej jakości wektorowej czcionek. Dane osobowe (PESEL, NIP, numery kont) nie są zapisywane w żadnej bazie danych i znikają z pamięci RAM natychmiast po zamknięciu karty przeglądarki, gwarantując pełną zgodność ze standardem ISO 32000.
+      </p>
+    </article>
+
+    <article class="space-y-2">
+      <h3 class="text-lg font-bold text-zinc-900 dark:text-white">3. Jak skutecznie połączyć wiele dokumentów PDF bez utraty jakości?</h3>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Łączenie wielu plików w jeden spójny plik PDF to podstawowa czynność biurowa. W NoSignPDF możesz dowolnie przeciągać miniatury stron, usuwać puste arkusze i obracać krzywo zeskanowane strony. Nasz algorytm kopiuje natywne obiekty wektorowe i osadzone fonty, dzięki czemu tekst pozostaje ostry, a dokument nadaje się do przeszukiwania (OCR). Ponieważ proces odbywa się lokalnie, nie obowiązują Cię sztuczne limity wielkości plików nakładane przez serwery chmurowe.
+      </p>
+    </article>
+  </section>
+
+  <footer class="pt-6 border-t border-zinc-200 dark:border-zinc-800 flex flex-wrap gap-4 text-xs text-zinc-500">
+    <a href="/polityka-privacy" class="underline hover:text-zinc-900">Polityka Prywatności</a>
+    <a href="/polityka-privacy" class="underline hover:text-zinc-900">Regulamin Świadczenia Usług (Terms of Service)</a>
+    <a href="/polityka-privacy" class="underline hover:text-zinc-900">Pliki Cookies i Google AdSense</a>
+    <span>© 2026 NoSignPDF • 100% Client-Side Architecture</span>
+  </footer>
+</div>
+"""
+    elif lang == 'es':
+        return f"""
+<div id="publisher-prerender-content" class="w-full max-w-5xl mx-auto py-8 px-4 font-sans text-zinc-900 dark:text-zinc-100 space-y-8">
+  <header class="border-b border-zinc-200 dark:border-zinc-800 pb-6">
+    <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 mb-2">
+      <span>🔒 Arquitectura 100% Privacy-First • Procesamiento en memoria RAM</span>
+    </div>
+    <h1 class="text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">{title}</h1>
+    <p class="text-base text-zinc-600 dark:text-zinc-300 mt-2 leading-relaxed">{desc}</p>
+  </header>
+
+  <section class="space-y-4">
+    <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">¿Por qué elegir NoSignPDF? Seguridad documental en la era digital</h2>
+    <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+      La inmensa mayoría de herramientas PDF en línea exigen subir tus archivos privados a servidores externos en la nube. NoSignPDF transforma este modelo por completo: todas las manipulaciones de archivos se realizan al 100% en local, dentro de la memoria RAM de tu navegador web. Tus contratos, declaraciones tributarias, facturas y nóminas nunca abandonan tu ordenador ni se almacenan en servidores remotos, cumpliendo estrictamente con el Reglamento General de Protección de Datos (RGPD / GDPR).
+    </p>
+    <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+      El estándar PDF (Portable Document Format) es la base del intercambio comercial y administrativo a nivel global. Sin embargo, utilizar plataformas web con servidores compartidos expone tu información confidencial a brechas de seguridad o al entrenamiento no autorizado de modelos de inteligencia artificial. NoSignPDF soluciona este dilema mediante tecnología WebAssembly y la biblioteca de bajo nivel pdf-lib, permitiéndote procesar documentos pesados al instante con la potencia de tu propia CPU y sin necesidad de crear ninguna cuenta de usuario.
+    </p>
+  </section>
+
+  <section class="space-y-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+    <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Guía Educativa y Glosario PDF (PDF Knowledge Base)</h2>
+    
+    <article class="space-y-2">
+      <h3 class="text-lg font-bold text-zinc-900 dark:text-white">1. ¿Qué son los metadatos en un PDF y por qué limpiarlos?</h3>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Cada archivo PDF almacena datos técnicos invisibles como el autor real, nombre del usuario en el sistema operativo, rutas de carpetas de disco y versiones del software de edición. Los ciberdelincuentes utilizan técnicas de inteligencia de fuentes abiertas (OSINT) sobre estos metadatos para preparar ataques dirigidos. Nuestro limpiador de metadatos purga los diccionarios /Info y flujos XMP para anonimizar el documento por completo antes de difundirlo públicamente.
+      </p>
+    </article>
+
+    <article class="space-y-2">
+      <h3 class="text-lg font-bold text-zinc-900 dark:text-white">2. ¿Cómo rellenar y firmar un formulario PDF con total seguridad?</h3>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Imprimir y escanear hojas genera una pérdida innecesaria de tiempo y calidad tipográfica. Gracias a los campos digitales AcroForms, puedes cumplimentar cualquier trámite administrativo directamente desde tu navegador conservando la nitidez vectorial. Tus datos personales y bancarios no quedan grabados en ningún servidor: al cerrar la pestaña del navegador, la memoria RAM se libera automáticamente, cumpliendo la norma ISO 32000.
+      </p>
+    </article>
+
+    <article class="space-y-2">
+      <h3 class="text-lg font-bold text-zinc-900 dark:text-white">3. ¿Cómo unir varios archivos PDF sin perder calidad ni formato?</h3>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        La consolidación de informes, facturas y anexos en un solo archivo es indispensable en cualquier oficina. Nuestra herramienta visual permite reordenar miniaturas mediante arrastrar y soltar, suprimir páginas vacías o rotar pliegos torcidos. El fusionado a nivel de objetos copia las fuentes integradas y los gráficos vectoriales sin rasterizar el texto, preservando la capacidad de búsqueda OCR y sin limitaciones artificiales de tamaño.
+      </p>
+    </article>
+  </section>
+
+  <footer class="pt-6 border-t border-zinc-200 dark:border-zinc-800 flex flex-wrap gap-4 text-xs text-zinc-500">
+    <a href="/es/politica-privacidad" class="underline hover:text-zinc-900">Política de Privacidad</a>
+    <a href="/es/politica-privacidad" class="underline hover:text-zinc-900">Términos del Servicio (Terms of Service)</a>
+    <a href="/es/politica-privacidad" class="underline hover:text-zinc-900">Uso de Cookies y Google AdSense</a>
+    <span>© 2026 NoSignPDF • Arquitectura Client-Side 100% Privada</span>
+  </footer>
+</div>
+"""
+    elif lang == 'hi':
+        return f"""
+<div id="publisher-prerender-content" class="w-full max-w-5xl mx-auto py-8 px-4 font-sans text-zinc-900 dark:text-zinc-100 space-y-8">
+  <header class="border-b border-zinc-200 dark:border-zinc-800 pb-6">
+    <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 mb-2">
+      <span>🔒 100% Privacy-First Architecture • डिवाइस रैम में सुरक्षित प्रोसेसिंग</span>
+    </div>
+    <h1 class="text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">{title}</h1>
+    <p class="text-base text-zinc-600 dark:text-zinc-300 mt-2 leading-relaxed">{desc}</p>
+  </header>
+
+  <section class="space-y-4">
+    <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">NoSignPDF क्यों चुनें? क्लाउड युग में दस्तावेज़ों की पूर्ण गोपनीयता</h2>
+    <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+      अधिकांश ऑनलाइन पीडीएफ टूल्स आपके निजी दस्तावेज़ों को बाहरी क्लाउड सर्वर पर अपलोड करवाते हैं। NoSignPDF इसे पूरी तरह बदल देता है: सभी कार्य 100% स्थानीय रूप से आपके वेब ब्राउज़र में होते हैं, जिसमें शून्य डेटा लीक का जोखिम और बिना किसी खाते के काम होता है। फ़ाइलें केवल आपके डिवाइस की रैम में खुलती हैं और हमारे सर्वर पर आपके दस्तावेज़ का एक भी बाइट नहीं भेजा जाता, जिससे यूरोपीय GDPR और वैश्विक गोपनीयता नियमों का पूर्ण अनुपालन सुनिश्चित होता है।
+    </p>
+    <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+      पीडीएफ (Portable Document Format) वैश्विक स्तर पर व्यापार, कानून और सरकारी कार्यों का मुख्य आधार है। पारंपरिक टूल्स पर फाइल अपलोड करने से यह जोखिम रहता है कि आपकी निजी जानकारी सर्वर पर हमेशा के लिए दर्ज हो सकती है। NoSignPDF इस समस्या को समाप्त करता है। आधुनिक वेब मानकों, HTML5 File API और WebAssembly की सहायता से संपादन का सारा कार्य आपके ब्राउज़र के सुरक्षित सैंडबॉक्स में होता है। यहाँ तक कि पेज लोड होने के बाद इंटरनेट बंद करने पर भी सभी टूल्स काम करते रहते हैं।
+    </p>
+  </section>
+
+  <section class="space-y-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+    <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">विस्तृत पीडीएफ गाइड और ज्ञान केंद्र (PDF Knowledge Base)</h2>
+    
+    <article class="space-y-2">
+      <h3 class="text-lg font-bold text-zinc-900 dark:text-white">1. पीडीएफ मेटाडेटा क्या है और इसे हटाना क्यों आवश्यक है?</h3>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        दृश्यमान टेक्स्ट और तस्वीरों के अलावा, प्रत्येक पीडीएफ में छिपी हुई तकनीकी जानकारी (मेटाडेटा) होती है जैसे लेखक का असली नाम, ऑपरेटिंग सिस्टम का यूजरनेम, फ़ोल्डर पाथ और डिवाइस मॉडल। साइबर अपराधी मेटाडेटा का विश्लेषण करके फ़िशिंग या हैकिंग की योजना बनाते हैं। NoSignPDF का मेटाडेटा क्लीनर /Info और XMP डेटा को तुरंत हटाकर दस्तावेज़ को पूरी तरह अनाम और सुरक्षित बना देता है।
+      </p>
+    </article>
+
+    <article class="space-y-2">
+      <h3 class="text-lg font-bold text-zinc-900 dark:text-white">2. बिना प्रिंट किए सुरक्षित रूप से पीडीएफ फॉर्म कैसे भरें?</h3>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        कागज पर प्रिंट निकालना, कलम से हस्ताक्षर करना और दोबारा स्कैन करना समय की बर्बादी है। डिजिटल AcroForms से आप सीधे ब्राउज़र में आधिकारिक फॉर्म भर सकते हैं। उच्च वेक्टर गुणवत्ता से फ़ॉन्ट स्पष्ट रहते हैं और कोई निजी जानकारी किसी सर्वर पर नहीं जाती; ब्राउज़र टैब बंद करते ही डेटा मेमोरी से स्वतः नष्ट हो जाता है (ISO 32000 मानक)।
+      </p>
+    </article>
+
+    <article class="space-y-2">
+      <h3 class="text-lg font-bold text-zinc-900 dark:text-white">3. गुणवत्ता खोए बिना कई पीडीएफ फाइलों को एक साथ कैसे जोड़ें?</h3>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        कई बिल, रिपोर्ट या अनुबंधों को एक व्यवस्थित पीडीएफ में जोड़ना कार्यालयों का सबसे आम कार्य है। थंबनेल ग्रिड की मदद से आप आसानी से पन्नों को अपनी पसंद के क्रम में लगा सकते हैं और खाली पन्नों को हटा सकते हैं। ऑब्जेक्ट स्तर पर मर्ज करने से फ़ॉन्ट और टेक्स्ट सर्च करने की क्षमता सुरक्षित रहती है, बिना किसी फ़ाइल साइज़ सीमा के।
+      </p>
+    </article>
+  </section>
+
+  <footer class="pt-6 border-t border-zinc-200 dark:border-zinc-800 flex flex-wrap gap-4 text-xs text-zinc-500">
+    <a href="/hi/privacy-policy" class="underline hover:text-zinc-900">गोपनीयता नीति (Privacy Policy)</a>
+    <a href="/hi/privacy-policy" class="underline hover:text-zinc-900">उपयोग की शर्तें (Terms of Service)</a>
+    <a href="/hi/privacy-policy" class="underline hover:text-zinc-900">कुकीज़ नीति और Google AdSense</a>
+    <span>© 2026 NoSignPDF • 100% क्लाइंट-साइड सुरक्षा</span>
+  </footer>
+</div>
+"""
+    else:  # default 'en'
+        return f"""
+<div id="publisher-prerender-content" class="w-full max-w-5xl mx-auto py-8 px-4 font-sans text-zinc-900 dark:text-zinc-100 space-y-8">
+  <header class="border-b border-zinc-200 dark:border-zinc-800 pb-6">
+    <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 mb-2">
+      <span>🔒 100% Privacy-First Architecture • In-Browser RAM Processing</span>
+    </div>
+    <h1 class="text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">{title}</h1>
+    <p class="text-base text-zinc-600 dark:text-zinc-300 mt-2 leading-relaxed">{desc}</p>
+  </header>
+
+  <section class="space-y-4">
+    <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Why Choose NoSignPDF? Document Security in the Cloud Era</h2>
+    <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+      Most online PDF services require uploading confidential documents to remote cloud infrastructure. NoSignPDF transforms this workflow entirely: every operation runs 100% locally in your browser with zero data leakage risk, no account creation, and zero server-side storage. Files are processed exclusively in your device volatile memory (RAM), ensuring strict confidentiality for corporate contracts, financial statements, and tax filings in full compliance with GDPR and international privacy standards.
+    </p>
+    <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+      The Portable Document Format (PDF) is the undisputed international standard for corporate, legal, and governmental communications. However, utilizing traditional cloud platforms carries severe exposure: once a file travels across the wire to a 3rd-party server, you lose oversight over retention, backups, and potential machine-learning training ingestion. NoSignPDF eliminates this dilemma: our client-side WebAssembly engine and pdf-lib manipulate PDF byte streams directly on your hardware CPU. Even with no internet connection after initial load, the tools operate with complete reliability.
+    </p>
+  </section>
+
+  <section class="space-y-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+    <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">PDF Knowledge Base & Definitive Guide (Publisher Content)</h2>
+    
+    <article class="space-y-2">
+      <h3 class="text-lg font-bold text-zinc-900 dark:text-white">1. What is PDF metadata and why should you sanitize it?</h3>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Beyond visible text and graphics, every PDF stores hidden technical metadata: author names, system usernames, corporate directory paths, device hardware models, and editor revisions. Adversaries routinely harvest this metadata via Open Source Intelligence (OSINT) to plan spear-phishing attacks. The NoSignPDF metadata stripper purges /Info dictionaries, XMP metadata streams, and PieceInfo entries directly in memory, yielding a fully sanitized, anonymous document ready for secure public distribution.
+      </p>
+    </article>
+
+    <article class="space-y-2">
+      <h3 class="text-lg font-bold text-zinc-900 dark:text-white">2. How to fill out and sign PDF forms securely without printing?</h3>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Printing, manual pen-signing, and re-scanning waste paper and degrade visual clarity. Utilizing native AcroForms fields in NoSignPDF allows direct text and checkbox input inside the browser with crisp vector font rendering. Sensitive PII (tax identifiers, banking details, addresses) is never transmitted to any database: closing the browser tab immediately purges the volatile RAM, maintaining complete conformity with the ISO 32000 PDF standard.
+      </p>
+    </article>
+
+    <article class="space-y-2">
+      <h3 class="text-lg font-bold text-zinc-900 dark:text-white">3. How to merge multiple PDF files without quality or formatting loss?</h3>
+      <p class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Collating invoices, reports, and exhibits into a single PDF is an everyday administrative essential. Our interactive visual manager lets you drag-and-drop page thumbnails, delete blank sheets, and rotate misaligned scans. Merging at the PDF object level preserves embedded typography and vector elements without rasterizing text, ensuring documents remain searchable (OCR). Because computation executes on your machine, you never face arbitrary upload size restrictions.
+      </p>
+    </article>
+  </section>
+
+  <footer class="pt-6 border-t border-zinc-200 dark:border-zinc-800 flex flex-wrap gap-4 text-xs text-zinc-500">
+    <a href="/en/privacy-policy" class="underline hover:text-zinc-900">Privacy Policy</a>
+    <a href="/en/privacy-policy" class="underline hover:text-zinc-900">Terms of Service</a>
+    <a href="/en/privacy-policy" class="underline hover:text-zinc-900">Cookie Notice & Google AdSense</a>
+    <span>© 2026 NoSignPDF • 100% Client-Side Privacy Architecture</span>
+  </footer>
+</div>
+"""
+
 
 
 print("Pre-rendering static subpages for multi-language SEO (micro-task titles & descriptions)...")

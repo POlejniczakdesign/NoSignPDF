@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
               {t.footer.securityDesc}
             </p>
-            <div className="pt-1 flex flex-col sm:flex-row gap-2">
+            <div className="pt-1 flex flex-col sm:flex-row flex-wrap gap-2">
               <button
                 id="footer-privacy-policy-link"
                 onClick={() => onNavigate('/polityka-privacy')}
@@ -78,6 +78,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-xs font-semibold text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
               >
                 <span>{t.footer.termsOfService}</span>
+              </button>
+              <button
+                id="footer-cookie-link"
+                onClick={() => onNavigate('/polityka-privacy')}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-xs font-semibold text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
+              >
+                <span>{t.footer.cookiePolicy}</span>
               </button>
             </div>
           </div>
@@ -103,6 +110,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors cursor-pointer underline decoration-zinc-300 dark:decoration-zinc-700 underline-offset-2"
             >
               {t.footer.termsOfService}
+            </button>
+            <span>•</span>
+            <button
+              id="footer-bottom-cookies-link"
+              onClick={() => onNavigate('/polityka-privacy')}
+              className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors cursor-pointer underline decoration-zinc-300 dark:decoration-zinc-700 underline-offset-2"
+            >
+              {t.footer.cookiePolicy}
             </button>
             <span>•</span>
             <span>100% Client-Side Engine</span>
