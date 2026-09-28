@@ -23,6 +23,10 @@ if os.path.exists(index_path):
     shutil.copyfile(index_path, spa_404_path)
     print(f"Created native SPA fallbacks {spa_fallback_path} and {spa_404_path}")
 
+# Read clean base HTML once before any index.html files are modified
+with open(index_path, 'r', encoding='utf-8') as f:
+    clean_base_html = f.read()
+
 # Strictly ensure no _redirects file exists anywhere (dist, public, or root)
 # Native Cloudflare Pages 200.html handles all SPA routing cleanly without redirect loops
 for red_path in ['_redirects', os.path.join('public', '_redirects'), os.path.join(dist_dir, '_redirects')]:
@@ -317,6 +321,96 @@ TOOLS_METADATA = {
             'title': 'पीडीएफ मेटाडेटा हटाएं ऑनलाइन – छिपे हुए डेटा सुरक्षित मिटाएं',
             'desc': 'दस्तावेज़ से लेखक, सॉफ्टवेयर का नाम और संपादन इतिहास सुरक्षित रूप से मिटाएं। 100% मुफ्त व निजी बिना लॉगिन।'
         }
+    },
+    '/wyciagnij-grafiki-z-pdf': {
+        'pl': {
+            'title': 'Wyciągnij Grafiki z PDF Online – Darmowe Pobieranie Obrazów z PDF',
+            'desc': 'Wyodrębnij i pobierz wszystkie zdjęcia, ilustracje i grafiki osadzone w pliku PDF w oryginalnej jakości. 100% lokalnie w przeglądarce bez logowania.'
+        },
+        'en': {
+            'title': 'Extract Images from PDF Online – Download Embedded Photos Free',
+            'desc': 'Extract and download all photos, images, and graphics embedded inside PDF files in original resolution. 100% private, free, and no sign-up.'
+        },
+        'es': {
+            'title': 'Extraer Imágenes de PDF Online – Descargar Fotos de PDF Gratis',
+            'desc': 'Extrae y descarga todas las fotos, imágenes y gráficos incrustados en archivos PDF con calidad original. Seguro, online y sin registro.'
+        },
+        'hi': {
+            'title': 'पीडीएफ से फोटो निकालें ऑनलाइन – तस्वीरें व ग्राफिक्स डाउनलोड करें मुफ्त',
+            'desc': 'पीडीएफ दस्तावेज़ से सभी अंतर्निहित तस्वीरें और ग्राफिक्स मूल गुणवत्ता में निकालें। 100% मुफ्त, सुरक्षित और बिना लॉगिन।'
+        }
+    },
+    '/zabezpiecz-pdf-haslem': {
+        'pl': {
+            'title': 'Zabezpiecz PDF Hasłem Online – Szyfrowanie Dokumentów PDF Za Darmo',
+            'desc': 'Zaszyfruj poufny plik PDF silnym hasłem dostępu bezpośrednio w przeglądarce. Chroń umowy i dane finansowe bez wysyłania plików na serwer.'
+        },
+        'en': {
+            'title': 'Protect PDF with Password Online – Free PDF Encryption Tool',
+            'desc': 'Encrypt your confidential PDF files with a strong password directly in your browser. Protect contracts and sensitive data with zero uploads.'
+        },
+        'es': {
+            'title': 'Proteger PDF con Contraseña Online – Encriptar PDF Gratis',
+            'desc': 'Protege y encripta tus documentos PDF con contraseña de forma segura en tu navegador. Máxima privacidad sin subir tus archivos.'
+        },
+        'hi': {
+            'title': 'पीडीएफ पासवर्ड सुरक्षित करें ऑनलाइन – पीडीएफ पर पासवर्ड लगाएं मुफ्त',
+            'desc': 'अपने महत्वपूर्ण पीडीएफ दस्तावेज़ को पासवर्ड से सुरक्षित और एन्क्रिप्ट करें सीधे ब्राउज़र में। 100% सुरक्षित और बिना लॉगिन।'
+        }
+    },
+    '/usun-haslo-z-pdf': {
+        'pl': {
+            'title': 'Usuń Hasło z PDF Online – Szybkie Odblokowywanie PDF bez Logowania',
+            'desc': 'Trwale usuń zabezpieczenie hasłem i ograniczenia edycji z pliku PDF. Odblokuj swój dokument w 100% prywatnie w pamięci RAM urządzenia.'
+        },
+        'en': {
+            'title': 'Unlock PDF Online – Remove Password from PDF Free No Sign-Up',
+            'desc': 'Permanently remove password security and permissions restrictions from PDF files. Unlock your PDF locally in memory with zero data collection.'
+        },
+        'es': {
+            'title': 'Desbloquear PDF Online – Quitar Contraseña de PDF Gratis Sin Registro',
+            'desc': 'Elimina la contraseña y restricciones de tus archivos PDF online de forma permanente. Seguro, rápido en tu navegador y sin registro.'
+        },
+        'hi': {
+            'title': 'पीडीएफ पासवर्ड हटाएं ऑनलाइन – पीडीएफ अनलॉक करें मुफ्त में',
+            'desc': 'पीडीएफ फाइल से पासवर्ड सुरक्षा और प्रतिबंध हटाएं सीधे ब्राउज़र में। 100% मुफ्त, तेज़ और बिना किसी पंजीकरण के।'
+        }
+    },
+    '/zmien-pdf-na-czarno-bialy': {
+        'pl': {
+            'title': 'Zmień PDF na Czarno-Biały Online – Konwersja do Skali Szarości',
+            'desc': 'Przekonwertuj kolorowy plik PDF do odcieni szarości (monochromatyczny) online. Zmniejsz zużycie tuszu drukarki i wagę pliku bez rejestracji.'
+        },
+        'en': {
+            'title': 'Convert PDF to Grayscale Online – Black and White PDF Free',
+            'desc': 'Convert color PDF documents to clean black and white grayscale online. Save printer ink and toner client-side with no sign-up.'
+        },
+        'es': {
+            'title': 'Convertir PDF a Blanco y Negro Online – PDF en Escala de Grises',
+            'desc': 'Convierte documentos PDF a color en escala de grises blanco y negro. Ahorra tinta de impresión de forma 100% gratuita y privada.'
+        },
+        'hi': {
+            'title': 'पीडीएफ ब्लैक एंड व्हाइट करें ऑनलाइन – ग्रेस्केल कनवर्टर मुफ्त',
+            'desc': 'रंगीन पीडीएफ दस्तावेज़ को ब्लैक एंड व्हाइट (ग्रेस्केल) में बदलें। प्रिंटर स्याही बचाएं और फाइल साइज घटाएं बिना लॉगिन।'
+        }
+    },
+    '/ponumeruj-strony-pdf': {
+        'pl': {
+            'title': 'Ponumeruj Strony w PDF Online – Dodaj Numery Stron do Dokumentu',
+            'desc': 'Automatycznie dodaj estetyczną numerację stron (np. 1 z N) do pliku PDF. Wybierz pozycję i format numerów w przeglądarce bez logowania.'
+        },
+        'en': {
+            'title': 'Add Page Numbers to PDF Online – Number PDF Pages for Free',
+            'desc': 'Easily insert custom page numbering (e.g. Page 1 of N) into your PDF files online. Fast, clean formatting in your browser with no sign-up.'
+        },
+        'es': {
+            'title': 'Numerar Páginas de PDF Online – Insertar Números de Página Gratis',
+            'desc': 'Añade números de página personalizados a tus documentos PDF online fácilmente. Rápido, seguro en tu navegador y sin registro.'
+        },
+        'hi': {
+            'title': 'पीडीएफ में पेज नंबर जोड़ें ऑनलाइन – पृष्ठ क्रमांक लगाएं मुफ्त में',
+            'desc': 'अपने पीडीएफ दस्तावेज़ के पेजों पर क्रमांक (उदा. 1, 2, 3) आसानी से लगाएं। सुंदर फॉर्मेटिंग सीधे ब्राउज़र में बिना लॉगिन।'
+        }
     }
 }
 
@@ -406,6 +500,36 @@ PRIMARY_URLS = {
         'es': '/es/limpiar-metadatos-pdf',
         'hi': '/hi/remove-pdf-metadata',
     },
+    '/wyciagnij-grafiki-z-pdf': {
+        'pl': '/wyciagnij-grafiki-z-pdf',
+        'en': '/en/extract-images-from-pdf',
+        'es': '/es/extraer-imagenes-pdf',
+        'hi': '/hi/extract-images-from-pdf',
+    },
+    '/zabezpiecz-pdf-haslem': {
+        'pl': '/zabezpiecz-pdf-haslem',
+        'en': '/en/protect-pdf',
+        'es': '/es/proteger-pdf',
+        'hi': '/hi/protect-pdf',
+    },
+    '/usun-haslo-z-pdf': {
+        'pl': '/usun-haslo-z-pdf',
+        'en': '/en/unlock-pdf',
+        'es': '/es/desbloquear-pdf',
+        'hi': '/hi/unlock-pdf',
+    },
+    '/zmien-pdf-na-czarno-bialy': {
+        'pl': '/zmien-pdf-na-czarno-bialy',
+        'en': '/en/pdf-to-grayscale',
+        'es': '/es/pdf-a-blanco-y-negro',
+        'hi': '/hi/pdf-to-grayscale',
+    },
+    '/ponumeruj-strony-pdf': {
+        'pl': '/ponumeruj-strony-pdf',
+        'en': '/en/add-page-numbers-to-pdf',
+        'es': '/es/numerar-paginas-pdf',
+        'hi': '/hi/add-page-numbers-to-pdf',
+    },
 }
 
 # All URLs/subpaths to pre-render (including native aliases like /pl/polacz-pdf, /en/split-pdf, /es/unir-pdf)
@@ -464,6 +588,36 @@ ALL_SLUGS = {
         'es': ['/es/limpiar-metadatos-pdf', '/es/eliminar-metadatos-pdf', '/es/wyczysc-metadane-pdf'],
         'hi': ['/hi/remove-pdf-metadata', '/hi/wyczysc-metadane-pdf'],
     },
+    '/wyciagnij-grafiki-z-pdf': {
+        'pl': ['/wyciagnij-grafiki-z-pdf', '/pl/wyciagnij-grafiki-z-pdf'],
+        'en': ['/en/extract-images-from-pdf', '/en/extract-pdf-images', '/en/wyciagnij-grafiki-z-pdf'],
+        'es': ['/es/extraer-imagenes-pdf', '/es/wyciagnij-grafiki-z-pdf'],
+        'hi': ['/hi/extract-images-from-pdf', '/hi/wyciagnij-grafiki-z-pdf'],
+    },
+    '/zabezpiecz-pdf-haslem': {
+        'pl': ['/zabezpiecz-pdf-haslem', '/pl/zabezpiecz-pdf-haslem'],
+        'en': ['/en/protect-pdf', '/en/protect-pdf-with-password', '/en/zabezpiecz-pdf-haslem'],
+        'es': ['/es/proteger-pdf', '/es/proteger-pdf-con-contrasena', '/es/zabezpiecz-pdf-haslem'],
+        'hi': ['/hi/protect-pdf', '/hi/zabezpiecz-pdf-haslem'],
+    },
+    '/usun-haslo-z-pdf': {
+        'pl': ['/usun-haslo-z-pdf', '/pl/usun-haslo-z-pdf'],
+        'en': ['/en/unlock-pdf', '/en/remove-pdf-password', '/en/usun-haslo-z-pdf'],
+        'es': ['/es/desbloquear-pdf', '/es/quitar-contrasena-pdf', '/es/usun-haslo-z-pdf'],
+        'hi': ['/hi/unlock-pdf', '/hi/usun-haslo-z-pdf'],
+    },
+    '/zmien-pdf-na-czarno-bialy': {
+        'pl': ['/zmien-pdf-na-czarno-bialy', '/pl/zmien-pdf-na-czarno-bialy'],
+        'en': ['/en/pdf-to-grayscale', '/en/grayscale-pdf', '/en/zmien-pdf-na-czarno-bialy'],
+        'es': ['/es/pdf-a-blanco-y-negro', '/es/pdf-escala-de-grises', '/es/zmien-pdf-na-czarno-bialy'],
+        'hi': ['/hi/pdf-to-grayscale', '/hi/zmien-pdf-na-czarno-bialy'],
+    },
+    '/ponumeruj-strony-pdf': {
+        'pl': ['/ponumeruj-strony-pdf', '/pl/ponumeruj-strony-pdf'],
+        'en': ['/en/add-page-numbers-to-pdf', '/en/number-pdf-pages', '/en/ponumeruj-strony-pdf'],
+        'es': ['/es/numerar-paginas-pdf', '/es/ponumeruj-strony-pdf'],
+        'hi': ['/hi/add-page-numbers-to-pdf', '/hi/ponumeruj-strony-pdf'],
+    },
     '/pdf-to-word': {
         'pl': ['/pdf-to-word', '/pl/pdf-to-word'],
         'en': ['/en/pdf-to-word'],
@@ -504,12 +658,9 @@ locale_map = {
     'hi': 'hi_IN'
 }
 
-# Read base index.html
-with open(index_path, 'r', encoding='utf-8') as f:
-    base_html = f.read()
-
 def generate_custom_html(tool_path, lang, current_slug):
-    html = base_html
+    # Always start from pristine clean_base_html
+    html = clean_base_html
     # 1. Update lang attribute
     html = re.sub(r'<html\s+lang="[^"]*"', f'<html lang="{lang}"', html)
 
@@ -1257,7 +1408,7 @@ sitemap_lines = [
 ]
 
 for tool_path in PRIMARY_URLS.keys():
-    priority = '1.0' if tool_path == '/' else ('0.9' if tool_path in ['/wypelnij-formularz-pdf', '/kompresuj-pdf', '/grafika-do-pdf', '/polacz-pdf', '/wyczysc-metadane-pdf'] else ('0.3' if tool_path == '/polityka-privacy' else '0.8'))
+    priority = '1.0' if tool_path == '/' else ('0.9' if tool_path in ['/wypelnij-formularz-pdf', '/kompresuj-pdf', '/grafika-do-pdf', '/polacz-pdf', '/wyczysc-metadane-pdf', '/wyciagnij-grafiki-z-pdf', '/zabezpiecz-pdf-haslem', '/usun-haslo-z-pdf', '/zmien-pdf-na-czarno-bialy', '/ponumeruj-strony-pdf'] else ('0.3' if tool_path == '/polityka-privacy' else '0.8'))
 
     pl_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['pl']}" if PRIMARY_URLS[tool_path]['pl'] != '/' else f"{site_domain}/"
     en_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['en']}"

@@ -22,6 +22,11 @@ export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/kompresuj-pdf': '/kompresuj-pdf',
   '/grafika-do-pdf': '/grafika-do-pdf',
   '/wyczysc-metadane-pdf': '/wyczysc-metadane-pdf',
+  '/wyciagnij-grafiki-z-pdf': '/wyciagnij-grafiki-z-pdf',
+  '/zabezpiecz-pdf-haslem': '/zabezpiecz-pdf-haslem',
+  '/usun-haslo-z-pdf': '/usun-haslo-z-pdf',
+  '/zmien-pdf-na-czarno-bialy': '/zmien-pdf-na-czarno-bialy',
+  '/ponumeruj-strony-pdf': '/ponumeruj-strony-pdf',
 
   // English aliases
   '/fill-pdf-form': '/wypelnij-formularz-pdf',
@@ -37,6 +42,16 @@ export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/remove-pdf-metadata': '/wyczysc-metadane-pdf',
   '/strip-pdf-metadata': '/wyczysc-metadane-pdf',
   '/clean-pdf-metadata': '/wyczysc-metadane-pdf',
+  '/extract-images-from-pdf': '/wyciagnij-grafiki-z-pdf',
+  '/extract-pdf-images': '/wyciagnij-grafiki-z-pdf',
+  '/protect-pdf': '/zabezpiecz-pdf-haslem',
+  '/protect-pdf-with-password': '/zabezpiecz-pdf-haslem',
+  '/unlock-pdf': '/usun-haslo-z-pdf',
+  '/remove-pdf-password': '/usun-haslo-z-pdf',
+  '/pdf-to-grayscale': '/zmien-pdf-na-czarno-bialy',
+  '/grayscale-pdf': '/zmien-pdf-na-czarno-bialy',
+  '/add-page-numbers-to-pdf': '/ponumeruj-strony-pdf',
+  '/number-pdf-pages': '/ponumeruj-strony-pdf',
   '/privacy-policy': '/polityka-privacy',
 
   // Spanish aliases
@@ -55,6 +70,14 @@ export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/jpg-a-pdf': '/grafika-do-pdf',
   '/limpiar-metadatos-pdf': '/wyczysc-metadane-pdf',
   '/eliminar-metadatos-pdf': '/wyczysc-metadane-pdf',
+  '/extraer-imagenes-pdf': '/wyciagnij-grafiki-z-pdf',
+  '/proteger-pdf': '/zabezpiecz-pdf-haslem',
+  '/proteger-pdf-con-contrasena': '/zabezpiecz-pdf-haslem',
+  '/desbloquear-pdf': '/usun-haslo-z-pdf',
+  '/quitar-contrasena-pdf': '/usun-haslo-z-pdf',
+  '/pdf-a-blanco-y-negro': '/zmien-pdf-na-czarno-bialy',
+  '/pdf-escala-de-grises': '/zmien-pdf-na-czarno-bialy',
+  '/numerar-paginas-pdf': '/ponumeruj-strony-pdf',
   '/pdf-a-word': '/pdf-to-word',
   '/word-a-pdf': '/word-to-pdf',
   '/pdf-a-excel': '/pdf-to-excel',
@@ -318,6 +341,96 @@ export const DEDICATED_SEO_META: Record<
       desc: 'अपने पीडीएफ दस्तावेज़ से लेखक का नाम, सॉफ्टवेयर विवरण और मेटाडेटा आसानी से हटाएं। 100% सुरक्षित और मुफ्त बिना लॉगिन।',
     },
   },
+  '/wyciagnij-grafiki-z-pdf': {
+    pl: {
+      title: 'Wyciągnij Grafiki z PDF Online – Darmowe Pobieranie Obrazów z PDF',
+      desc: 'Wyodrębnij i pobierz wszystkie zdjęcia, ilustracje i grafiki osadzone w pliku PDF w oryginalnej jakości. 100% lokalnie w przeglądarce bez logowania.',
+    },
+    en: {
+      title: 'Extract Images from PDF Online – Download Embedded Photos Free',
+      desc: 'Extract and download all photos, images, and graphics embedded inside PDF files in original resolution. 100% private, free, and no sign-up.',
+    },
+    es: {
+      title: 'Extraer Imágenes de PDF Online – Descargar Fotos de PDF Gratis',
+      desc: 'Extrae y descarga todas las fotos, imágenes y gráficos incrustados en archivos PDF con calidad original. Seguro, online y sin registro.',
+    },
+    hi: {
+      title: 'पीडीएफ से फोटो निकालें ऑनलाइन – तस्वीरें व ग्राफिक्स डाउनलोड करें मुफ्त',
+      desc: 'पीडीएफ दस्तावेज़ से सभी अंतर्निहित तस्वीरें और ग्राफिक्स मूल गुणवत्ता में निकालें। 100% मुफ्त, सुरक्षित और बिना लॉगिन।',
+    },
+  },
+  '/zabezpiecz-pdf-haslem': {
+    pl: {
+      title: 'Zabezpiecz PDF Hasłem Online – Szyfrowanie Dokumentów PDF Za Darmo',
+      desc: 'Zaszyfruj poufny plik PDF silnym hasłem dostępu bezpośrednio w przeglądarce. Chroń umowy i dane finansowe bez wysyłania plików na serwer.',
+    },
+    en: {
+      title: 'Protect PDF with Password Online – Free PDF Encryption Tool',
+      desc: 'Encrypt your confidential PDF files with a strong password directly in your browser. Protect contracts and sensitive data with zero uploads.',
+    },
+    es: {
+      title: 'Proteger PDF con Contraseña Online – Encriptar PDF Gratis',
+      desc: 'Protege y encripta tus documentos PDF con contraseña de forma segura en tu navegador. Máxima privacidad sin subir tus archivos.',
+    },
+    hi: {
+      title: 'पीडीएफ पासवर्ड सुरक्षित करें ऑनलाइन – पीडीएफ पर पासवर्ड लगाएं मुफ्त',
+      desc: 'अपने महत्वपूर्ण पीडीएफ दस्तावेज़ को पासवर्ड से सुरक्षित और एन्क्रिप्ट करें सीधे ब्राउज़र में। 100% सुरक्षित और बिना लॉगिन।',
+    },
+  },
+  '/usun-haslo-z-pdf': {
+    pl: {
+      title: 'Usuń Hasło z PDF Online – Szybkie Odblokowywanie PDF bez Logowania',
+      desc: 'Trwale usuń zabezpieczenie hasłem i ograniczenia edycji z pliku PDF. Odblokuj swój dokument w 100% prywatnie w pamięci RAM urządzenia.',
+    },
+    en: {
+      title: 'Unlock PDF Online – Remove Password from PDF Free No Sign-Up',
+      desc: 'Permanently remove password security and permissions restrictions from PDF files. Unlock your PDF locally in memory with zero data collection.',
+    },
+    es: {
+      title: 'Desbloquear PDF Online – Quitar Contraseña de PDF Gratis Sin Registro',
+      desc: 'Elimina la contraseña y restricciones de tus archivos PDF online de forma permanente. Seguro, rápido en tu navegador y sin registro.',
+    },
+    hi: {
+      title: 'पीडीएफ पासवर्ड हटाएं ऑनलाइन – पीडीएफ अनलॉक करें मुफ्त में',
+      desc: 'पीडीएफ फाइल से पासवर्ड सुरक्षा और प्रतिबंध हटाएं सीधे ब्राउज़र में। 100% मुफ्त, तेज़ और बिना किसी पंजीकरण के।',
+    },
+  },
+  '/zmien-pdf-na-czarno-bialy': {
+    pl: {
+      title: 'Zmień PDF na Czarno-Biały Online – Konwersja do Skali Szarości',
+      desc: 'Przekonwertuj kolorowy plik PDF do odcieni szarości (monochromatyczny) online. Zmniejsz zużycie tuszu drukarki i wagę pliku bez rejestracji.',
+    },
+    en: {
+      title: 'Convert PDF to Grayscale Online – Black and White PDF Free',
+      desc: 'Convert color PDF documents to clean black and white grayscale online. Save printer ink and toner client-side with no sign-up.',
+    },
+    es: {
+      title: 'Convertir PDF a Blanco y Negro Online – PDF en Escala de Grises',
+      desc: 'Convierte documentos PDF a color en escala de grises blanco y negro. Ahorra tinta de impresión de forma 100% gratuita y privada.',
+    },
+    hi: {
+      title: 'पीडीएफ ब्लैक एंड व्हाइट करें ऑनलाइन – ग्रेस्केल कनवर्टर मुफ्त',
+      desc: 'रंगीन पीडीएफ दस्तावेज़ को ब्लैक एंड व्हाइट (ग्रेस्केल) में बदलें। प्रिंटर स्याही बचाएं और फाइल साइज घटाएं बिना लॉगिन।',
+    },
+  },
+  '/ponumeruj-strony-pdf': {
+    pl: {
+      title: 'Ponumeruj Strony w PDF Online – Dodaj Numery Stron do Dokumentu',
+      desc: 'Automatycznie dodaj estetyczną numerację stron (np. 1 z N) do pliku PDF. Wybierz pozycję i format numerów w przeglądarce bez logowania.',
+    },
+    en: {
+      title: 'Add Page Numbers to PDF Online – Number PDF Pages for Free',
+      desc: 'Easily insert custom page numbering (e.g. Page 1 of N) into your PDF files online. Fast, clean formatting in your browser with no sign-up.',
+    },
+    es: {
+      title: 'Numerar Páginas de PDF Online – Insertar Números de Página Gratis',
+      desc: 'Añade números de página personalizados a tus documentos PDF online fácilmente. Rápido, seguro en tu navegador y sin registro.',
+    },
+    hi: {
+      title: 'पीडीएफ में पेज नंबर जोड़ें ऑनलाइन – पृष्ठ क्रमांक लगाएं मुफ्त में',
+      desc: 'अपने पीडीएफ दस्तावेज़ के पेजों पर क्रमांक (उदा. 1, 2, 3) आसानी से लगाएं। सुंदर फॉर्मेटिंग सीधे ब्राउज़र में बिना लॉगिन।',
+    },
+  },
 };
 
 export const PRIMARY_LOCALIZED_SLUGS: Record<ToolRoute, Record<Language, string>> = {
@@ -334,6 +447,11 @@ export const PRIMARY_LOCALIZED_SLUGS: Record<ToolRoute, Record<Language, string>
   '/pdf-to-excel': { pl: '/pdf-to-excel', en: '/en/pdf-to-excel', es: '/es/pdf-a-excel', hi: '/hi/pdf-to-excel' },
   '/excel-to-pdf': { pl: '/excel-to-pdf', en: '/en/excel-to-pdf', es: '/es/excel-a-pdf', hi: '/hi/excel-to-pdf' },
   '/wyczysc-metadane-pdf': { pl: '/wyczysc-metadane-pdf', en: '/en/remove-pdf-metadata', es: '/es/limpiar-metadatos-pdf', hi: '/hi/remove-pdf-metadata' },
+  '/wyciagnij-grafiki-z-pdf': { pl: '/wyciagnij-grafiki-z-pdf', en: '/en/extract-images-from-pdf', es: '/es/extraer-imagenes-pdf', hi: '/hi/extract-images-from-pdf' },
+  '/zabezpiecz-pdf-haslem': { pl: '/zabezpiecz-pdf-haslem', en: '/en/protect-pdf', es: '/es/proteger-pdf', hi: '/hi/protect-pdf' },
+  '/usun-haslo-z-pdf': { pl: '/usun-haslo-z-pdf', en: '/en/unlock-pdf', es: '/es/desbloquear-pdf', hi: '/hi/unlock-pdf' },
+  '/zmien-pdf-na-czarno-bialy': { pl: '/zmien-pdf-na-czarno-bialy', en: '/en/pdf-to-grayscale', es: '/es/pdf-a-blanco-y-negro', hi: '/hi/pdf-to-grayscale' },
+  '/ponumeruj-strony-pdf': { pl: '/ponumeruj-strony-pdf', en: '/en/add-page-numbers-to-pdf', es: '/es/numerar-paginas-pdf', hi: '/hi/add-page-numbers-to-pdf' },
   '/polityka-privacy': { pl: '/polityka-privacy', en: '/en/privacy-policy', es: '/es/politica-privacidad', hi: '/hi/privacy-policy' },
 };
 

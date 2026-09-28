@@ -854,4 +854,99 @@ export const SEO_DETAILS: Record<ToolRoute, SeoContentItem> = {
     ],
     extendedText: 'Anonimizacja i czyszczenie metadanych w formacie PDF (PDF Metadata Stripper) to podstawowa praktyka w pracy kancelarii prawnych, biur księgowych, dziennikarzy śledczych oraz osób dbających o higienę cyfrową. Zamiast instalować kosztowne narzędzia komercyjne, skorzystaj z bezpłatnego, działającego w 100% lokalnie kombajnu PDF Studio Online.',
   },
+  '/wyciagnij-grafiki-z-pdf': {
+    h2Title: 'Wyciągnij Grafiki z PDF Online – Szybkie Pobieranie Obrazów',
+    intro: 'Potrzebujesz odzyskać zdjęcia, schematy lub wykresy zapisane wewnątrz dokumentu PDF? Nasze narzędzie pozwala na wyodrębnienie wszystkich osadzonych grafik w oryginalnej rozdzielczości bez kompresji stratnej.',
+    steps: [
+      { title: '1. Wybierz plik PDF', desc: 'Przeciągnij plik PDF zawierający zdjęcia do okna edytora.' },
+      { title: '2. Przeskanuj zasoby', desc: 'Silnik automatycznie odnajduje strumienie graficzne osadzone na poszczególnych stronach.' },
+      { title: '3. Pobierz obrazy', desc: 'Zapisz wyekstrahowane grafiki na dysku w oryginalnym formacie.' },
+    ],
+    benefits: [
+      { title: 'Oryginalna jakość', desc: 'Wyciągane obrazy zachowują 100% pierwotnej ostrości i profilu kolorów.' },
+      { title: 'Bezpieczeństwo RAM', desc: 'Żadne zdjęcia nie trafiają na zewnętrzne serwery w chmurze.' },
+      { title: 'Brak limitów', desc: 'Pobieraj nieograniczoną liczbę obrazów z wielostronicowych dokumentów.' },
+    ],
+    faqs: [
+      { q: 'W jakich formatach zapisywane są wyciągnięte grafiki?', a: 'Obrazy są wyodrębniane w natywnych formatach osadzonych w dokumencie PDF (zwykle JPG, PNG).' },
+      { q: 'Czy tekst dokumentu jest zmieniany?', a: 'Nie, plik PDF pozostaje nienaruszony.' },
+    ],
+    extendedText: 'Wyodrębnianie grafik z PDF to idealne rozwiązanie, gdy nie posiadasz już plików źródłowych zdjęć użytych w prezentacji, umowie czy raporcie.',
+  },
+  '/zabezpiecz-pdf-haslem': {
+    h2Title: 'Zabezpiecz PDF Hasłem Online – Szyfrowanie Dokumentów',
+    intro: 'Chroń poufne dokumenty przed nieautoryzowanym otwarciem. Zaszyfruj swój plik PDF silnym hasłem dostępu bezpośrednio w przeglądarce internetowej.',
+    steps: [
+      { title: '1. Wgraj plik PDF', desc: 'Otwórz dokument, który chcesz zabezpieczyć.' },
+      { title: '2. Wpisz silne hasło', desc: 'Wprowadź hasło dostępu wymagane do otwarcia pliku.' },
+      { title: '3. Pobierz zabezpieczony PDF', desc: 'Zapisz zaszyfrowany plik – od tej pory do jego otwarcia wymagane będzie hasło.' },
+    ],
+    benefits: [
+      { title: 'Silne szyfrowanie', desc: 'Dokument jest chroniony algorytmem zgodnym ze standardem PDF.' },
+      { title: '100% Prywatności', desc: 'Hasło i plik nie opuszczają Twojego urządzenia.' },
+      { title: 'Uniwersalna zgodność', desc: 'Zabezpieczony plik otworzy się w każdym programie czytnika PDF (Adobe, Edge, Chrome).' },
+    ],
+    faqs: [
+      { q: 'Czy ktoś może podejrzeć moje hasło na serwerze?', a: 'Nie, szyfrowanie odbywa się lokalnie w pamięci RAM Twojego komputera.' },
+      { q: 'Co się stanie, jeśli zapomnę hasła?', a: 'Bezpieczeństwo kryptograficzne uniemożliwia otwarcie pliku bez poprawnego hasła, dlatego warto je zapamiętać.' },
+    ],
+    extendedText: 'Zabezpieczanie umów handlowych, wyciągów bankowych i danych osobowych hasłem to kluczowy element cyberhigieny w nowoczesnym biznesie.',
+  },
+  '/usun-haslo-z-pdf': {
+    h2Title: 'Usuń Hasło z PDF Online – Szybkie Odblokowywanie Dokumentu',
+    intro: 'Posiadasz zabezpieczony plik PDF i chcesz trwale usunąć z niego konieczność wpisywania hasła przy każdym otwarciu? Usuń hasło szybko i w 100% lokalnie.',
+    steps: [
+      { title: '1. Otwórz zabezpieczony plik', desc: 'Upuść zaszyfrowany plik PDF w oknie narzędzia.' },
+      { title: '2. Autoryzuj odblokowanie', desc: 'Podaj aktualne hasło właściciela lub użytkownika pliku.' },
+      { title: '3. Zapisz plik bez hasła', desc: 'Pobierz odblokowany dokument bez żadnych ograniczeń.' },
+    ],
+    benefits: [
+      { title: 'Trwałe odblokowanie', desc: 'Plik nie będzie już wymagał hasła przy kolejnych otwarciach.' },
+      { title: 'Poufność danych', desc: 'Odszyfrowywanie następuje wyłącznie w pamięci podręcznej przeglądarki.' },
+      { title: 'Swoboda edycji', desc: 'Odblokowany dokument możesz swobodnie łączyć, dzielić i drukować.' },
+    ],
+    faqs: [
+      { q: 'Czy do usunięcia hasła muszę znać pierwotne hasło?', a: 'Tak, w celach bezpieczeństwa i ochrony praw autorskich konieczne jest jednorazowe podanie poprawnego hasła.' },
+      { q: 'Czy usuwanie hasła obniża jakość pliku?', a: 'Nie, struktura pliku, czcionki i grafiki pozostają w 100% nienaruszone.' },
+    ],
+    extendedText: 'Odblokowywanie plików PDF eliminuje konieczność uciążliwego wpisywania haseł przy codziennej pracy z własnymi dokumentami archiwalnymi.',
+  },
+  '/zmien-pdf-na-czarno-bialy': {
+    h2Title: 'Zmień PDF na Czarno-Biały Online – Konwersja do Odcieni Szarości',
+    intro: 'Przekonwertuj kolorowy plik PDF do skali szarości. Oszczędzaj toner i tusz w drukarce oraz przygotuj czytelne dokumenty do oficjalnych archiwów.',
+    steps: [
+      { title: '1. Dodaj kolorowy PDF', desc: 'Przeciągnij dokument do okna konwertera.' },
+      { title: '2. Konwersja do monochromii', desc: 'Wszystkie kolory są automatycznie przeliczane na harmonijne odcienie szarości.' },
+      { title: '3. Pobierz czarno-biały PDF', desc: 'Zapisz gotowy dokument zoptymalizowany pod kątem druku monochromatycznego.' },
+    ],
+    benefits: [
+      { title: 'Oszczędność tuszu i tonera', desc: 'Druk dokumentu czarno-białego jest znacznie tańszy niż wydruk kolorowy.' },
+      { title: 'Wysoki kontrast tekstu', desc: 'Teksty i tabele zachowują doskonałą czytelność.' },
+      { title: 'Mniejszy rozmiar pliku', desc: 'Monochromatyczne grafiki zajmują mniej miejsca w pamięci.' },
+    ],
+    faqs: [
+      { q: 'Czy czarno-biały PDF będzie poprawnie wydrukowany na zwykłej drukarce?', a: 'Tak, plik w odcieniach szarości jest idealnie przygotowany do druku na każdej drukarce laserowej i atramentowej.' },
+      { q: 'Czy tekst pozostaje przeszukiwalny (OCR)?', a: 'Tak, konwersja do szarości nie niszczy cyfrowej warstwy tekstowej.' },
+    ],
+    extendedText: 'Konwersja PDF do skali szarości to częsty wymóg uczelni, sądów i instytucji państwowych przyjmujących dokumentację w formie znormalizowanej.',
+  },
+  '/ponumeruj-strony-pdf': {
+    h2Title: 'Ponumeruj Strony w PDF Online – Wstawianie Numeracji Stron',
+    intro: 'Uporządkuj wielostronicowy dokument dodając automatyczną, estetyczną numerację stron. Idealne rozwiązanie do umów, prac dyplomowych i raportów.',
+    steps: [
+      { title: '1. Wgraj dokument PDF', desc: 'Wybierz wielostronicowy plik, który chcesz ponumerować.' },
+      { title: '2. Dostosuj format i układ', desc: 'Wybierz pozycję numeru (dolny róg, środek) oraz styl (np. Strona X z Y).' },
+      { title: '3. Pobierz ponumerowany PDF', desc: 'Zapisz gotowy dokument z czytelną paginacją.' },
+    ],
+    benefits: [
+      { title: 'Precyzyjna paginacja', desc: 'Automatyczne i równe naniesienie numerów na każdym arkuszu.' },
+      { title: 'Elegancki wygląd', desc: 'Dopasowana czcionka i estetyczne marginesy.' },
+      { title: 'Bez rejestracji', desc: 'Wstawiaj numery stron błyskawicznie bez zakupu drogiego oprogramowania.' },
+    ],
+    faqs: [
+      { q: 'Czy mogę pominąć numerację na pierwszej stronie (okładce)?', a: 'Tak, numerację można łatwo skonfigurować tak, aby nie zasłaniała strony tytułowej.' },
+      { q: 'Czy numeracja zasłoni treść dokumentu?', a: 'Numery są umieszczane w bezpiecznych marginesach stopki dokumentu.' },
+    ],
+    extendedText: 'Numerowanie stron w plikach PDF to kluczowy etap profesjonalnego przygotowania dokumentacji przetargowej, prac naukowych i pism prawnych.',
+  },
 };

@@ -12,7 +12,12 @@ export type ToolRoute =
   | '/word-to-pdf'
   | '/pdf-to-excel'
   | '/excel-to-pdf'
-  | '/wyczysc-metadane-pdf';
+  | '/wyczysc-metadane-pdf'
+  | '/wyciagnij-grafiki-z-pdf'
+  | '/zabezpiecz-pdf-haslem'
+  | '/usun-haslo-z-pdf'
+  | '/zmien-pdf-na-czarno-bialy'
+  | '/ponumeruj-strony-pdf';
 
 export interface PdfMetadataItem {
   key: string;
