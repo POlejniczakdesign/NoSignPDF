@@ -340,6 +340,116 @@ export function getSmartNextStep(
     };
   }
 
+  // Portuguese (pt)
+  if (lang === 'pt') {
+    if (lastRoute === '/polacz-pdf') {
+      return {
+        title: 'O que deseja fazer agora?',
+        message: `Seu novo arquivo tem ${pages > 1 ? `${pages} páginas` : 'múltiplas páginas'}. Deseja excluir páginas desnecessárias ou higienizar metadados antes de enviar?`,
+        primaryAction: {
+          label: 'Excluir páginas extras',
+          route: '/usun-strony-z-pdf',
+          explanation: 'Remova folhas em branco do PDF unificado',
+          badge: 'Próximo passo sugerido',
+        },
+        secondaryAction: {
+          label: 'Limpar metadados do PDF',
+          route: '/wyczysc-metadane-pdf',
+        },
+        hasWorkingFile: true,
+      };
+    }
+
+    if (lastRoute === '/wypelnij-formularz-pdf') {
+      return {
+        title: 'O que deseja fazer agora?',
+        message: 'Seu formulário foi preenchido com sucesso! Deseja remover metadados ocultos para proteger sua privacidade e conformidade com a LGPD?',
+        primaryAction: {
+          label: 'Limpar metadados PDF',
+          route: '/wyczysc-metadane-pdf',
+          explanation: 'Remova dados do autor, computador e histórico de edição',
+          badge: 'Proteção de Privacidade',
+        },
+        secondaryAction: {
+          label: 'Comprimir arquivo para e-mail',
+          route: '/kompresuj-pdf',
+        },
+        hasWorkingFile: true,
+      };
+    }
+
+    return {
+      title: 'O que deseja fazer agora?',
+      message: 'Seu arquivo está pronto! Deseja remover metadados ocultos para garantir total privacidade antes de compartilhar?',
+      primaryAction: {
+        label: 'Limpar metadados PDF',
+        route: '/wyczysc-metadane-pdf',
+        explanation: 'Exclua autor, software e datas de criação',
+        badge: '100% Privacidade',
+      },
+      secondaryAction: {
+        label: 'Comprimir PDF',
+        route: '/kompresuj-pdf',
+      },
+      hasWorkingFile: true,
+    };
+  }
+
+  // Russian (ru)
+  if (lang === 'ru') {
+    if (lastRoute === '/polacz-pdf') {
+      return {
+        title: 'Что вы хотите сделать дальше?',
+        message: `В новом документе ${pages} стр. Хотите удалить лишние листы или очистить метаданные перед отправкой партнерам?`,
+        primaryAction: {
+          label: 'Удалить лишние страницы',
+          route: '/usun-strony-z-pdf',
+          explanation: 'Удалите пустые листы или лишние сканы',
+          badge: 'Рекомендуемый шаг',
+        },
+        secondaryAction: {
+          label: 'Очистить метаданные',
+          route: '/wyczysc-metadane-pdf',
+        },
+        hasWorkingFile: true,
+      };
+    }
+
+    if (lastRoute === '/wypelnij-formularz-pdf') {
+      return {
+        title: 'Что вы хотите сделать дальше?',
+        message: 'Форма успешно заполнена! Желаете очистить скрытые метаданные перед отправкой для защиты персональных данных?',
+        primaryAction: {
+          label: 'Очистить метаданные PDF',
+          route: '/wyczysc-metadane-pdf',
+          explanation: 'Удалите имя автора, версию программы и дату правки',
+          badge: 'Конфиденциальность',
+        },
+        secondaryAction: {
+          label: 'Сжать файл для почты',
+          route: '/kompresuj-pdf',
+        },
+        hasWorkingFile: true,
+      };
+    }
+
+    return {
+      title: 'Что вы хотите сделать дальше?',
+      message: 'Ваш файл готов! Желаете удалить скрытые метаданные для полной конфиденциальности?',
+      primaryAction: {
+        label: 'Очистить метаданные PDF',
+        route: '/wyczysc-metadane-pdf',
+        explanation: 'Стереть имя автора, программное обеспечение и теги',
+        badge: '100% Безопасно',
+      },
+      secondaryAction: {
+        label: 'Сжать файл PDF',
+        route: '/kompresuj-pdf',
+      },
+      hasWorkingFile: true,
+    };
+  }
+
   // Hindi
   if (lastRoute === '/polacz-pdf') {
     return {

@@ -46,6 +46,16 @@ export function calculateSavedSeconds(toolRoute: ToolRoute): number {
       return 145 + randInt(10, 30); // ~2m 35s to 2m 55s
     case '/excel-to-pdf':
       return 165 + randInt(10, 35); // ~2m 55s to 3m 20s
+    case '/wyciagnij-grafiki-z-pdf':
+      return 175 + randInt(10, 35); // ~3m 05s to 3m 30s
+    case '/zabezpiecz-pdf-haslem':
+      return 155 + randInt(10, 30); // ~2m 45s to 3m 05s
+    case '/usun-haslo-z-pdf':
+      return 160 + randInt(10, 35); // ~2m 50s to 3m 15s
+    case '/zmien-pdf-na-czarno-bialy':
+      return 140 + randInt(10, 25); // ~2m 30s to 2m 45s
+    case '/ponumeruj-strony-pdf':
+      return 165 + randInt(10, 35); // ~2m 55s to 3m 20s
     default:
       return 150 + randInt(10, 35);
   }
@@ -121,6 +131,24 @@ function pluralizePl(n: number, one: string, few: string, many: string): string 
 }
 
 /**
+ * Helper to pluralize in Russian: 1 час, 2-4 часа, 5-20 часов...
+ */
+function pluralizeRu(n: number, one: string, few: string, many: string): string {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod100 >= 11 && mod100 <= 19) {
+    return `${n} ${many}`;
+  }
+  if (mod10 === 1) {
+    return `${n} ${one}`;
+  }
+  if (mod10 >= 2 && mod10 <= 4) {
+    return `${n} ${few}`;
+  }
+  return `${n} ${many}`;
+}
+
+/**
  * Formats a duration in seconds into natural localized language text.
  * e.g. "4 minuty i 18 sekund", "1 godzina i 24 minuty"
  */
@@ -187,6 +215,46 @@ export function formatTimeSaved(totalSec: number, lang: Language): string {
       return mStr;
     }
     return `${seconds} ${seconds === 1 ? 'segundo' : 'segundos'}`;
+  }
+
+  if (lang === 'pt') {
+    if (hours > 0) {
+      const hStr = `${hours} ${hours === 1 ? 'hora' : 'horas'}`;
+      if (minutes > 0) {
+        const mStr = `${minutes} ${minutes === 1 ? 'minuto' : 'minutos'}`;
+        return `${hStr} e ${mStr}`;
+      }
+      return hStr;
+    }
+    if (minutes > 0) {
+      const mStr = `${minutes} ${minutes === 1 ? 'minuto' : 'minutos'}`;
+      if (seconds > 0) {
+        const sStr = `${seconds} ${seconds === 1 ? 'segundo' : 'segundos'}`;
+        return `${mStr} e ${sStr}`;
+      }
+      return mStr;
+    }
+    return `${seconds} ${seconds === 1 ? 'segundo' : 'segundos'}`;
+  }
+
+  if (lang === 'ru') {
+    if (hours > 0) {
+      const hStr = pluralizeRu(hours, 'час', 'часа', 'часов');
+      if (minutes > 0) {
+        const mStr = pluralizeRu(minutes, 'минута', 'минуты', 'минут');
+        return `${hStr} и ${mStr}`;
+      }
+      return hStr;
+    }
+    if (minutes > 0) {
+      const mStr = pluralizeRu(minutes, 'минута', 'минуты', 'минут');
+      if (seconds > 0) {
+        const sStr = pluralizeRu(seconds, 'секунда', 'секунды', 'секунд');
+        return `${mStr} и ${sStr}`;
+      }
+      return mStr;
+    }
+    return pluralizeRu(seconds, 'секунда', 'секунды', 'секунд');
   }
 
   // Hindi (hi)

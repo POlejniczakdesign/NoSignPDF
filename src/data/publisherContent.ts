@@ -453,4 +453,218 @@ export const PUBLISHER_CONTENT: Record<Language, PublisherContentDict> = {
       },
     ],
   },
+  pt: {
+    sectionAriaLabel: 'Base de conhecimento e guia completo sobre manipulação segura de PDF',
+    whyBadge: 'Arquitetura Privacy-First & 100% Segurança',
+    whyReadingTime: 'Tempo de leitura: 4 minutos • Compêndio de conhecimento',
+    whyTitle: 'Por que escolher o NoSignPDF? Segurança de documentos na era da nuvem',
+    whyLead:
+      'A maioria dos conversores e editores online exige que você envie seus contratos, faturas e documentos pessoais para servidores remotos na nuvem. O NoSignPDF revoluciona essa abordagem: todas as operações ocorrem 100% localmente no seu navegador, com risco zero de vazamento de dados e sem necessidade de cadastro.',
+    whyPillars: [
+      {
+        title: 'Zero Upload e Memória RAM',
+        desc: 'Os documentos são abertos exclusivamente na memória volátil do seu dispositivo. Nosso servidor nunca recebe sequer um byte dos seus arquivos.',
+      },
+      {
+        title: 'Privacidade de Contratos e Faturas',
+        desc: 'Dados confidenciais (CPF, CNPJ, dados bancários, salários) permanecem sob seu controle direto, em total conformidade com a LGPD e o GDPR.',
+      },
+      {
+        title: 'Velocidade Máxima sem Filas',
+        desc: 'Sem tempo de espera para upload de arquivos pesados pela internet. O motor WebAssembly e pdf-lib processa as páginas instantaneamente no seu processador.',
+      },
+    ],
+    whyParagraphs: [
+      'O formato PDF (Portable Document Format) é a espinha dorsal da troca de informações em empresas, escritórios jurídicos e órgãos públicos no Brasil e no mundo. Diariamente, circulam milhões de declarações de imposto de renda, demonstrativos financeiros, procurações e propostas comerciais. No entanto, o uso de ferramentas tradicionais na nuvem impõe sérios riscos de conformidade: ao enviar um arquivo para um servidor desconhecido, perde-se a governança sobre quem tem acesso à cópia e quanto tempo ela permanece arquivada.',
+      'O NoSignPDF resolve esse desafio fundamental de cibersegurança. Utilizando as tecnologias modernas da Web aberta como HTML5 File API, WebAssembly e a biblioteca pdf-lib, todo o processamento dos objetos binários do PDF é executado na sandbox segura do seu próprio navegador. Isso significa que, mesmo se você desconectar a internet após carregar a página, as ferramentas continuam funcionando perfeitamente em modo offline.',
+      'A ausência de cadastro e login não é apenas uma conveniência para economizar tempo, mas um princípio de higiene digital. Não coletamos seu e-mail, não criamos rastreadores de perfil e não cobramos assinaturas para remover marcas d’água. Seus arquivos saem do seu computador apenas quando você decide enviá-los ao destinatário final.',
+    ],
+    guideBadge: 'Guia Educativo e Glossário Essencial de PDF',
+    guideTitle: 'Educação e Boas Práticas: Como gerenciar arquivos PDF com segurança',
+    guideSubtitle: 'Orientações práticas de especialistas sobre metadados, formulários digitais e união de documentos',
+    guideArticles: [
+      {
+        title: 'O que são metadados em arquivos PDF e por que limpá-los antes do envio?',
+        lead: 'Além do texto visível e das imagens, todo documento PDF armazena informações técnicas invisíveis chamadas metadados, gravadas automaticamente por softwares como Microsoft Word e Adobe Acrobat.',
+        bulletPoints: [
+          {
+            label: 'Identificação do Autor:',
+            desc: 'Os metadados podem revelar seu nome completo, login de usuário no sistema e nome da empresa.',
+          },
+          {
+            label: 'Caminhos de Disco e Versões:',
+            desc: 'Caminhos internos de pastas do computador (ex: C:\\Users\\Nome\\Documentos) e versão do editor utilizado ficam gravados.',
+          },
+          {
+            label: 'Vulnerabilidade em Licitações e Contratos:',
+            desc: 'Especialistas em cibersegurança e concorrentes utilizam técnicas de OSINT para extrair inteligência a partir de metadados desprotegidos.',
+          },
+          {
+            label: 'Higienização no NoSignPDF:',
+            desc: 'Nosso módulo remove dicionários /Info, metadados XMP e PieceInfo na memória, gerando um PDF 100% higienizado e anônimo.',
+          },
+        ],
+        conclusion: 'A limpeza de metadados é uma recomendação essencial de conformidade com a LGPD antes de compartilhar contratos comerciais e propostas de licitação.',
+        actionLabel: 'Limpar metadados do seu PDF agora',
+        actionRoute: '/wyczysc-metadane-pdf',
+      },
+      {
+        title: 'Como preencher e assinar formulários PDF sem imprimir em papel?',
+        lead: 'Imprimir, assinar à mão com caneta e digitalizar novamente gera custos com papel e perda de nitidez visual. O fluxo moderno de trabalho utiliza formulários digitais interativos AcroForms.',
+        bulletPoints: [
+          {
+            label: 'Campos Nativos AcroForms:',
+            desc: 'Formulários oficiais possuem campos interativos que aceitam digitação direta com fontes vetoriais nítidas.',
+          },
+          {
+            label: 'Preservação de Resolução:',
+            desc: 'A digitação digital mantém o alinhamento perfeito e a nitidez em qualquer tela ou impressão física.',
+          },
+          {
+            label: 'Sigilo de Dados Sensíveis:',
+            desc: 'Dados como CPF, dados bancários e endereço nunca são salvos em bancos de dados na nuvem; ao fechar a aba, a memória é liberada.',
+          },
+          {
+            label: 'Compatibilidade com Padrão ISO 32000:',
+            desc: 'Os arquivos gerados pelo NoSignPDF são aceitos por tribunais, prefeituras e órgãos fiscais como a Receita Federal.',
+          },
+        ],
+        conclusion: 'Com o NoSignPDF você preenche qualquer requerimento oficial em poucos segundos sem precisar de softwares caros.',
+        actionLabel: 'Preencher formulário PDF online',
+        actionRoute: '/wypelnij-formularz-pdf',
+      },
+      {
+        title: 'Como juntar múltiplos arquivos PDF mantendo a qualidade e formatação?',
+        lead: 'Combinar relatórios, anexos e comprovantes em um único PDF organizado é uma tarefa rotineira em escritórios. A integridade visual das páginas é fundamental.',
+        bulletPoints: [
+          {
+            label: 'Reorganização Visual:',
+            desc: 'A grade interativa de miniaturas permite arrastar e soltar páginas para organizar a sequência correta dos anexos.',
+          },
+          {
+            label: 'Fontes e Vetores Preservados:',
+            desc: 'A união em nível de objetos binários mantém o texto pesquisável (OCR) sem transformar letras em imagens pixeladas.',
+          },
+          {
+            label: 'Remoção de Páginas Vazias:',
+            desc: 'Elimine facilmente folhas em branco ou digitalizações incorretas antes de gerar o arquivo final consolidado.',
+          },
+          {
+            label: 'Sem Restrição de Tamanho:',
+            desc: 'Como o processamento usa a memória do seu próprio computador, você pode juntar documentos extensos sem limites artificiais.',
+          },
+        ],
+        conclusion: 'Após juntar os documentos, você pode utilizar o módulo de compressão para adequar o tamanho do arquivo a envios por e-mail.',
+        actionLabel: 'Juntar arquivos PDF agora',
+        actionRoute: '/polacz-pdf',
+      },
+    ],
+  },
+  ru: {
+    sectionAriaLabel: 'База знаний и руководство по безопасной работе с файлами PDF',
+    whyBadge: 'Архитектура Privacy-First и 100% Безопасность',
+    whyReadingTime: 'Время чтения: 4 минуты • Полный справочник',
+    whyTitle: 'Почему выбирают NoSignPDF? Безопасность документов в эпоху облаков',
+    whyLead:
+      'Большинство популярных веб-сервисов требуют отправки ваших конфиденциальных договоров, счетов и паспортных данных на удаленные серверы. NoSignPDF меняет правила: все операции выполняются на 100% локально в вашем браузере, без риска утечки информации и без регистрации учетной записи.',
+    whyPillars: [
+      {
+        title: 'Zero Upload и память RAM',
+        desc: 'Файлы открываются исключительно в оперативной памяти вашего устройства. Наш сервер не получает ни единого байта содержимого документов.',
+      },
+      {
+        title: 'Конфиденциальность договоров',
+        desc: 'Персональные данные, ИНН, банковские реквизиты и финансовые отчеты остаются только у вас в соответствии с нормами GDPR.',
+      },
+      {
+        title: 'Максимальная скорость без очередей',
+        desc: 'Вам не нужно тратить время на передачу тяжелых файлов по сети. Движок WebAssembly и pdf-lib мгновенно обрабатывает страницы силами процессора вашего устройства.',
+      },
+    ],
+    whyParagraphs: [
+      'Формат PDF (Portable Document Format) служит международным стандартом документооборота в бизнесе, юриспруденции и государственном секторе. Ежедневно пересылаются миллионы договоров, бухгалтерских актов, судебных исков и налоговых деклараций. Использование стандартных облачных конвертеров несет высокие риски: загружая файл на чужой сервер, вы теряете контроль над тем, сколько копий сохранено в журнале и кто имеет к ним доступ.',
+      'NoSignPDF надежно устраняет эту проблему информационной безопасности. Благодаря веб-стандартам HTML5 File API, WebAssembly и библиотеке pdf-lib все математические преобразования структуры документа производятся в изолированной песочнице (sandbox) вашего веб-браузера. Это гарантирует, что даже при полном отключении интернета после загрузки страницы все инструменты продолжают стабильно работать.',
+      'Отсутствие обязательной регистрации — это не только экономия времени, но и ключевой фактор цифровой гигиены. Мы не собираем адреса электронной почты, не формируем профили пользователей и не требуем оплату за снятие водяных знаков. Документ покидает ваше устройство только тогда, когда вы сами отправляете его партнеру.',
+    ],
+    guideBadge: 'Экспертное Руководство и Словарь Терминов PDF',
+    guideTitle: 'Обучение и Лучшие Практики: Как безопасно работать с PDF',
+    guideSubtitle: 'Ответы экспертов по информационной безопасности на главные вопросы об очистке метаданных, заполнении форм и слиянии файлов',
+    guideArticles: [
+      {
+        title: 'Что такое метаданные в PDF и почему их нужно удалять перед отправкой?',
+        lead: 'Каждый PDF-файл, помимо видимого текста и изображений, содержит скрытый слой технической информации (метаданные), который автоматически записывается офисными программами.',
+        bulletPoints: [
+          {
+            label: 'Имя автора и учетная запись:',
+            desc: 'В метаданных часто сохраняются реальное имя пользователя, системный логин и название организации.',
+          },
+          {
+            label: 'Пути к файлам на диске:',
+            desc: 'В свойствах документа остаются внутренние пути к папкам (например, C:\\Users\\Имя\\Договоры) и версии программ.',
+          },
+          {
+            label: 'Риски для бизнеса (OSINT):',
+            desc: 'Анализ скрытых метаданных — стандартная техника разведки конкурентов и злоумышленников перед фишинговыми атаками.',
+          },
+          {
+            label: 'Очистка в NoSignPDF:',
+            desc: 'Наш модуль удаляет блоки /Info, потоки XMP и PieceInfo в памяти, формируя полностью анонимный документ.',
+          },
+        ],
+        conclusion: 'Очистка метаданных настоятельно рекомендуется юристами и специалистами по кибербезопасности перед отправкой тендерной документации и конфиденциальных соглашений.',
+        actionLabel: 'Очистить метаданные в файле',
+        actionRoute: '/wyczysc-metadane-pdf',
+      },
+      {
+        title: 'Как безопасно заполнить форму PDF без распечатки на принтере?',
+        lead: 'Печать на бумаге, ручное заполнение ручкой и повторное сканирование отнимают время и ухудшают качество документа. Современный документооборот построен на интерактивных AcroForms.',
+        bulletPoints: [
+          {
+            label: 'Нативные поля AcroForms:',
+            desc: 'Официальные бланки содержат цифровые интерактивные поля, позволяющие вводить текст прямо в окне браузера.',
+          },
+          {
+            label: 'Идеальное качество шрифта:',
+            desc: 'Векторный ввод текста сохраняет идеальную резкость и аккуратность шрифта при печати и просмотре.',
+          },
+          {
+            label: 'Защита персональных данных:',
+            desc: 'Паспортные данные, ИНН и номера счетов никогда не сохраняются в сетевых базах данных; при закрытии вкладки память очищается.',
+          },
+          {
+            label: 'Соответствие стандарту ISO 32000:',
+            desc: 'Созданные в NoSignPDF файлы полностью совместимы с Adobe Acrobat и государственными порталами.',
+          },
+        ],
+        conclusion: 'С помощью NoSignPDF вы заполните любое официальное заявление за считанные минуты без покупки дорогих офисных пакетов.',
+        actionLabel: 'Заполнить форму PDF онлайн',
+        actionRoute: '/wypelnij-formularz-pdf',
+      },
+      {
+        title: 'Как качественно объединить несколько файлов PDF в один документ?',
+        lead: 'Сборка отчетов, договоров и приложений в один упорядоченный PDF — одна из самых частых офисных задач. Важно сохранить исходное качество графики и текста.',
+        bulletPoints: [
+          {
+            label: 'Удобный визуальный порядок:',
+            desc: 'Сетка миниатюр позволяет быстро перетаскивать страницы мышью, формируя правильную структуру многостраничного тома.',
+          },
+          {
+            label: 'Сохранение векторного текста:',
+            desc: 'Слияние на уровне бинарных объектов PDF сохраняет возможность текстового поиска (OCR) без растеризации в картинку.',
+          },
+          {
+            label: 'Удаление лишних листов:',
+            desc: 'В процессе объединения можно в один клик удалить пустые листы или ошибочные сканы.',
+          },
+          {
+            label: 'Без ограничений по объему:',
+            desc: 'Так как вся обработка происходит на вашем компьютере, вы можете объединять объемные архивы документов.',
+          },
+        ],
+        conclusion: 'После объединения страниц вы можете дополнительно сжать файл или удалить метаданные для безопасной отправки.',
+        actionLabel: 'Объединить файлы PDF сейчас',
+        actionRoute: '/polacz-pdf',
+      },
+    ],
+  },
 };

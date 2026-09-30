@@ -170,6 +170,22 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
       hideMore: 'सूची बंद करें',
       quickDropTitle: 'या सीधे काम शुरू करने के लिए यहाँ पीडीएफ फ़ाइल छोड़ें',
     },
+    pt: {
+      gridTitle: 'Escolha uma ferramenta para seus arquivos PDF',
+      gridSubtitle: 'Todas as operações são executadas 100% na memória RAM do seu navegador',
+      moreTitle: 'Mais ferramentas úteis (Dividir, Conversores)',
+      showMore: 'Mostrar ferramentas adicionais',
+      hideMore: 'Ocultar lista',
+      quickDropTitle: 'Ou arraste um arquivo PDF aqui para começar de imediato',
+    },
+    ru: {
+      gridTitle: 'Выберите инструмент для работы с PDF',
+      gridSubtitle: 'Все операции выполняются на 100% локально в памяти вашего браузера',
+      moreTitle: 'Другие полезные инструменты (Разделение, Конвертеры)',
+      showMore: 'Показать остальные инструменты',
+      hideMore: 'Свернуть список',
+      quickDropTitle: 'Или перетащите PDF-файл сюда, чтобы начать работу',
+    },
   };
 
   const copy = sectionHeadings[language] || sectionHeadings.en;
@@ -195,6 +211,8 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
                 {language === 'en' && `Total time saved on nosignpdf.com: ${formatTimeSaved(cumulativeStats.totalSavedSeconds, 'en')}!`}
                 {language === 'es' && `¡Tiempo total ahorrado en nosignpdf.com: ${formatTimeSaved(cumulativeStats.totalSavedSeconds, 'es')}!`}
                 {language === 'hi' && `nosignpdf.com पर अब तक कुल बचाया गया समय: ${formatTimeSaved(cumulativeStats.totalSavedSeconds, 'hi')}!`}
+                {language === 'pt' && `Tempo total economizado no nosignpdf.com: ${formatTimeSaved(cumulativeStats.totalSavedSeconds, 'pt')}!`}
+                {language === 'ru' && `Всего сэкономлено времени на nosignpdf.com: ${formatTimeSaved(cumulativeStats.totalSavedSeconds, 'ru')}!`}
               </span>
             </div>
           )}

@@ -1,11 +1,11 @@
 import { ToolRoute, ToolMeta } from '../types';
 import { Language, LANGUAGES } from '../i18n/translations';
 
-export const SUPPORTED_LANGUAGES: Language[] = ['pl', 'en', 'es', 'hi'];
+export const SUPPORTED_LANGUAGES: Language[] = ['pl', 'en', 'es', 'hi', 'pt', 'ru'];
 export const DEFAULT_LANGUAGE: Language = 'pl';
 export const SITE_DOMAIN = 'https://nosignpdf.com';
 
-// Aliases for tool paths (supporting English & Spanish equivalents for SEO flexibility)
+// Aliases for tool paths (supporting English, Spanish, Portuguese, Russian equivalents for SEO flexibility)
 export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/': '/',
   // Polish canonical
@@ -83,6 +83,53 @@ export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/pdf-a-excel': '/pdf-to-excel',
   '/excel-a-pdf': '/excel-to-pdf',
   '/politica-privacidad': '/polityka-privacy',
+
+  // Portuguese aliases (PT-BR)
+  '/juntar-pdf': '/polacz-pdf',
+  '/preencher-formulario-pdf': '/wypelnij-formularz-pdf',
+  '/rotacionar-pdf': '/obroc-pdf',
+  '/excluir-paginas-pdf': '/usun-strony-z-pdf',
+  '/remover-paginas-pdf': '/usun-strony-z-pdf',
+  '/imagem-para-pdf': '/grafika-do-pdf',
+  '/remover-metadados-pdf': '/wyczysc-metadane-pdf',
+  '/extrair-imagens-pdf': '/wyciagnij-grafiki-z-pdf',
+  '/proteger-pdf-com-senha': '/zabezpiecz-pdf-haslem',
+  '/remover-senha-pdf': '/usun-haslo-z-pdf',
+  '/pdf-preto-e-branco': '/zmien-pdf-na-czarno-bialy',
+  '/pdf-em-escala-de-cinza': '/zmien-pdf-na-czarno-bialy',
+  '/pdf-para-word': '/pdf-to-word',
+  '/word-para-pdf': '/word-to-pdf',
+  '/pdf-para-excel': '/pdf-to-excel',
+  '/excel-para-pdf': '/excel-to-pdf',
+  '/politica-de-privacidade': '/polityka-privacy',
+
+  // Russian aliases (transliterated slugs)
+  '/obedinit-pdf': '/polacz-pdf',
+  '/soedinit-pdf': '/polacz-pdf',
+  '/skleit-pdf': '/polacz-pdf',
+  '/razdelit-pdf': '/rozdziel-pdf',
+  '/zapolnit-formu-pdf': '/wypelnij-formularz-pdf',
+  '/povernut-pdf': '/obroc-pdf',
+  '/udalit-stranicy-pdf': '/usun-strony-z-pdf',
+  '/szhat-pdf': '/kompresuj-pdf',
+  '/kompressiya-pdf': '/kompresuj-pdf',
+  '/kartinki-v-pdf': '/grafika-do-pdf',
+  '/jpg-v-pdf': '/grafika-do-pdf',
+  '/udalit-metadannye-pdf': '/wyczysc-metadane-pdf',
+  '/ochistit-metadannye-pdf': '/wyczysc-metadane-pdf',
+  '/izvlech-kartinki-iz-pdf': '/wyciagnij-grafiki-z-pdf',
+  '/zashchitit-pdf-parolem': '/zabezpiecz-pdf-haslem',
+  '/postavit-parol-na-pdf': '/zabezpiecz-pdf-haslem',
+  '/snyat-parol-s-pdf': '/usun-haslo-z-pdf',
+  '/razblokirovat-pdf': '/usun-haslo-z-pdf',
+  '/cherno-belyj-pdf': '/zmien-pdf-na-czarno-bialy',
+  '/pdf-v-ottenkah-serogo': '/zmien-pdf-na-czarno-bialy',
+  '/pronumerovat-stranicy-pdf': '/ponumeruj-strony-pdf',
+  '/pdf-v-word': '/pdf-to-word',
+  '/word-v-pdf': '/word-to-pdf',
+  '/pdf-v-excel': '/pdf-to-excel',
+  '/excel-v-pdf': '/excel-to-pdf',
+  '/politika-konfidencialnosti': '/polityka-privacy',
 };
 
 export const DEDICATED_SEO_META: Record<
@@ -106,6 +153,14 @@ export const DEDICATED_SEO_META: Record<
       title: 'मुफ्त ऑनलाइन पीडीएफ संपादक – बिना लॉगिन, 100% सुरक्षित और निजी',
       desc: 'ब्राउज़र में स्थानीय रूप से चलने वाला 100% मुफ्त पीडीएफ एडिटर। बिना रजिस्ट्रेशन पीडीएफ फाइलें जोड़ें, अलग करें, घुमाएं और फॉर्म भरें बिना सर्वर पर फाइल भेजे।',
     },
+    pt: {
+      title: 'Editor de PDF Online Grátis – Sem Cadastro, Seguro no Navegador',
+      desc: 'Editor de PDF online 100% gratuito e privado que roda direto no seu navegador sem cadastro. Junte, divida, gire, exclua páginas e preencha formulários PDF sem enviar arquivos para a nuvem.',
+    },
+    ru: {
+      title: 'Бесплатный Онлайн PDF Редактор – Без Регистрации, Приватно в Браузере',
+      desc: '100% бесплатный онлайн-редактор PDF прямо в вашем браузере. Объединяйте, разделяйте, поворачивайте, удаляйте страницы и заполняйте формы без отправки файлов на сервер.',
+    },
   },
   '/polacz-pdf': {
     pl: {
@@ -123,6 +178,14 @@ export const DEDICATED_SEO_META: Record<
     hi: {
       title: 'पीडीएफ जोड़ें ऑनलाइन – मुफ्त में कई पीडीएफ एक करें (No Sign-Up)',
       desc: 'कई पीडीएफ फाइलों को एक दस्तावेज़ में सुरक्षित रूप से ऑनलाइन जोड़ें। 100% मुफ्त टूल, बिना लॉगिन और बिना वॉटरमार्क के।',
+    },
+    pt: {
+      title: 'Juntar PDF Online – Combinar Arquivos PDF Grátis sem Cadastro',
+      desc: 'Junte múltiplos arquivos PDF em um único documento online com rapidez e segurança. Ferramenta 100% gratuita, sem limites, sem registro e sem marca d’água.',
+    },
+    ru: {
+      title: 'Объединить PDF Онлайн – Бесплатное Слияние Файлов PDF Без Регистрации',
+      desc: 'Быстро и безопасно объединяйте несколько файлов PDF в один документ онлайн. 100% бесплатно, без регистрации, водяных знаков и лимитов на размер.',
     },
   },
   '/rozdziel-pdf': {
@@ -142,6 +205,14 @@ export const DEDICATED_SEO_META: Record<
       title: 'पीडीएफ अलग करें ऑनलाइन – पेज निकालें व विभाजित करें मुफ्त में',
       desc: 'पीडीएफ फाइल को अलग-अलग पेजों में तुरंत विभाजित करें या अपनी पसंद के पेज निकालें। 100% मुफ्त, बिना पंजीकरण और पूर्ण सुरक्षा के साथ।',
     },
+    pt: {
+      title: 'Dividir PDF Online – Separar e Extrair Páginas de PDF Grátis',
+      desc: 'Extraia páginas específicas ou divida documentos PDF pesados em arquivos menores no seu navegador. Rápido, seguro e sem enviar nada para a nuvem.',
+    },
+    ru: {
+      title: 'Разделить PDF Онлайн – Извлечь Страницы из PDF Бесплатно',
+      desc: 'Извлекайте нужные диапазоны страниц или разделяйте большие PDF на части прямо в браузере. 100% конфиденциально без загрузки в облако.',
+    },
   },
   '/wypelnij-formularz-pdf': {
     pl: {
@@ -159,6 +230,14 @@ export const DEDICATED_SEO_META: Record<
     hi: {
       title: 'पीडीएफ फॉर्म भरें ऑनलाइन – बिना प्रिंट और बिना लॉगिन के मुफ्त',
       desc: 'सरकारी आवेदन, अनुबंध और फॉर्म सीधे अपने ब्राउज़र में भरें। टेक्स्ट टाइप करें, चेकबॉक्स टिक करें और बिना लॉगिन तुरंत डाउनलोड करें।',
+    },
+    pt: {
+      title: 'Preencher Formulário PDF Online – Escrever e Assinar PDF Grátis',
+      desc: 'Preencha formulários oficiais, requerimentos e contratos PDF com suporte a campos nativos AcroForm e texto livre sem precisar imprimir.',
+    },
+    ru: {
+      title: 'Заполнить Форму PDF Онлайн – Редактировать Бланки и Заявления',
+      desc: 'Заполняйте официальные бланки, заявления и договоры онлайн с нативной поддержкой AcroForm без печати на бумаге и сканирования.',
     },
   },
   '/obroc-pdf': {
@@ -178,6 +257,14 @@ export const DEDICATED_SEO_META: Record<
       title: 'पीडीएफ घुमाएं ऑनलाइन – 90 या 180 डिग्री पेज रोटेट करें मुफ्त',
       desc: 'उल्टे या तिरछे स्कैन किए गए पीडीएफ पेजों को 90°, 180° या 270° घुमाएं। बिना लॉगिन और पूरी तरह सुरक्षित अपने ब्राउज़र में ठीक करें।',
     },
+    pt: {
+      title: 'Girar PDF Online – Rotacionar Páginas de PDF em 90°, 180° e 270°',
+      desc: 'Gire páginas individuais ou todo o documento PDF para corrigir digitalizações tortas. Salve permanentemente no navegador com um clique.',
+    },
+    ru: {
+      title: 'Повернуть PDF Онлайн – Поворот Страниц PDF на 90, 180 и 270 Градусов',
+      desc: 'Поворачивайте отдельные страницы или весь документ PDF для исправления сканов. Сохраняйте файл локально в браузере за один клик.',
+    },
   },
   '/usun-strony-z-pdf': {
     pl: {
@@ -195,6 +282,14 @@ export const DEDICATED_SEO_META: Record<
     hi: {
       title: 'पीडीएफ से पेज हटाएं ऑनलाइन – अवांछित पेज मिटाएं मुफ्त में',
       desc: 'अपने पीडीएफ दस्तावेज़ से खाली या अनावश्यक पेज एक क्लिक में हटाएं। सुरक्षित, तेज़ और बिना किसी पंजीकरण के पूरी तरह मुफ्त।',
+    },
+    pt: {
+      title: 'Excluir Páginas de PDF Online – Remover Páginas Desnecessárias Grátis',
+      desc: 'Remova páginas em branco ou desnecessárias de qualquer documento PDF instantaneamente. Baixe o arquivo limpo e otimizado sem cadastro.',
+    },
+    ru: {
+      title: 'Удалить Страницы из PDF Онлайн – Вырезать Листы из Документа',
+      desc: 'Мгновенно удаляйте пустые или лишние страницы из файла PDF. Быстро, просто и полностью безопасно в вашем браузере.',
     },
   },
   '/pdf-to-word': {
@@ -214,6 +309,14 @@ export const DEDICATED_SEO_META: Record<
       title: 'पीडीएफ से वर्ड (.docx) बदलें ऑनलाइन – मुफ्त कनवर्टर बिना लॉगिन',
       desc: 'पीडीएफ दस्तावेज़ को संपादन योग्य वर्ड (.docx) फाइल में आसानी से बदलें। बिना सर्वर पर अपलोड किए स्थानीय रूप से टेक्स्ट निकालें।',
     },
+    pt: {
+      title: 'Converter PDF para Word Online – PDF para DOCX Grátis no Navegador',
+      desc: 'Extraia texto de arquivos PDF e salve como documento do Word (.docx) ou texto sem enviar nada para servidores externos.',
+    },
+    ru: {
+      title: 'Конвертировать PDF в Word Онлайн – PDF в DOCX Бесплатно',
+      desc: 'Извлечение текста и конвертация документов PDF в редактируемый формат Word (.docx) локально в браузере.',
+    },
   },
   '/word-to-pdf': {
     pl: {
@@ -231,6 +334,14 @@ export const DEDICATED_SEO_META: Record<
     hi: {
       title: 'वर्ड से पीडीएफ बनाएं ऑनलाइन – टेक्स्ट से पीडीएफ कनवर्टर मुफ्त',
       desc: 'टेक्स्ट या नोट्स से सुंदर और पेशेवर पीडीएफ तैयार करें। तुरंत स्थानीय रूप से जनरेट करें बिना किसी लॉगिन या शुल्क के।',
+    },
+    pt: {
+      title: 'Converter Word para PDF Online – Criar Documento PDF a partir de Texto',
+      desc: 'Cole seu texto ou importe arquivo e gere um documento PDF limpo com tipografia clara de forma rápida e 100% gratuita.',
+    },
+    ru: {
+      title: 'Конвертировать Word в PDF Онлайн – Создать PDF из Текста',
+      desc: 'Вставьте текст или загрузите файл для быстрой генерации чистого PDF-документа прямо в браузере.',
     },
   },
   '/pdf-to-excel': {
@@ -250,6 +361,14 @@ export const DEDICATED_SEO_META: Record<
       title: 'पीडीएफ से एक्सेल बदलें ऑनलाइन – टेबल और डेटा सीएसवी में निकालें',
       desc: 'पीडीएफ से टेबल और संख्यात्मक डेटा आसानी से एक्सेल के अनुकूल सीएसवी में निकालें। पूरी तरह सुरक्षित और मुफ्त ऑनलाइन टूल।',
     },
+    pt: {
+      title: 'Converter PDF para Excel Online – Extrair Tabelas para Planilha CSV',
+      desc: 'Extraia dados, linhas e tabelas de arquivos PDF para planilhas CSV e Excel compatíveis sem upload para a nuvem.',
+    },
+    ru: {
+      title: 'Конвертировать PDF в Excel Онлайн – Извлечь Таблицы в CSV',
+      desc: 'Экспорт таблиц и строк из документов PDF в чистый формат Excel CSV с кодировкой UTF-8.',
+    },
   },
   '/excel-to-pdf': {
     pl: {
@@ -267,6 +386,14 @@ export const DEDICATED_SEO_META: Record<
     hi: {
       title: 'एक्सेल से पीडीएफ बदलें ऑनलाइन – टेबल से पीडीएफ रिपोर्ट बनाएं',
       desc: 'एक्सेल या गूगल शीट्स से डेटा पेस्ट करें और सुंदर टेबल वाला पीडीएफ दस्तावेज़ तैयार करें। बिना लॉगिन तुरंत मुफ्त बनाएं।',
+    },
+    pt: {
+      title: 'Converter Excel para PDF Online – Gerar Relatório PDF de Tabela',
+      desc: 'Cole células de planilhas Excel ou carregue CSV para gerar relatórios em PDF formatados e organizados com facilidade.',
+    },
+    ru: {
+      title: 'Конвертировать Excel в PDF Онлайн – Таблицы в PDF',
+      desc: 'Превратите данные из таблиц Excel или файлов CSV в аккуратный PDF-отчет с сеткой данных.',
     },
   },
   '/polityka-privacy': {
@@ -286,6 +413,14 @@ export const DEDICATED_SEO_META: Record<
       title: 'गोपनीयता नीति और नियम – PDF Studio Online (nosignpdf.com)',
       desc: 'nosignpdf.com की सेवा शर्तें, 100% क्लाइंट-साइड गोपनीयता गारंटी और कुकी नीति।',
     },
+    pt: {
+      title: 'Política de Privacidade e Termos de Uso – NoSignPDF',
+      desc: 'Termos de serviço, política de privacidade, conformidade com LGPD/GDPR e diretrizes de cookies e publicidade do NoSignPDF.',
+    },
+    ru: {
+      title: 'Политика Конфиденциальности и Условия Использования – NoSignPDF',
+      desc: 'Официальные правила сервиса, политика конфиденциальности, соответствие GDPR и регламент использования файлов cookie Google AdSense.',
+    },
   },
   '/kompresuj-pdf': {
     pl: {
@@ -303,6 +438,14 @@ export const DEDICATED_SEO_META: Record<
     hi: {
       title: 'पीडीएफ कंप्रेस करें ऑनलाइन – फाइल साइज छोटा करें मुफ्त में',
       desc: 'अपने ब्राउज़र में स्थानीय रूप से पीडीएफ का आकार घटाएं बिना गुणवत्ता खोए। 100% मुफ्त टूल, बिना लॉगिन और बिना वॉटरमार्क।',
+    },
+    pt: {
+      title: 'Comprimir PDF Online – Reduzir Tamanho de Arquivo PDF sem Perda',
+      desc: 'Reduza o tamanho de arquivos PDF pesados para enviar por e-mail ou órgãos públicos mantendo a nitidez do texto e das imagens.',
+    },
+    ru: {
+      title: 'Сжать PDF Онлайн – Уменьшить Размер Файла PDF Без Потери Качества',
+      desc: 'Эффективно уменьшайте вес документов PDF для отправки по почте или загрузки на госпорталы с сохранением четкости текста.',
     },
   },
   '/grafika-do-pdf': {
@@ -322,6 +465,14 @@ export const DEDICATED_SEO_META: Record<
       title: 'तस्वीर से पीडीएफ बनाएं ऑनलाइन – JPG और PNG से पीडीएफ कनवर्टर',
       desc: 'JPG, PNG और WebP तस्वीरों को तुरंत स्वच्छ पीडीएफ दस्तावेज़ में बदलें। सुरक्षित, तेज़ और बिना किसी पंजीकरण के पूरी तरह मुफ्त।',
     },
+    pt: {
+      title: 'Imagem para PDF Online – Converter JPG, PNG e WebP em PDF Grátis',
+      desc: 'Converta fotos e imagens JPG, PNG ou WebP em um documento PDF limpo com ajuste automático de proporções e margens.',
+    },
+    ru: {
+      title: 'Картинки в PDF Онлайн – Конвертировать JPG и PNG в PDF Бесплатно',
+      desc: 'Преобразуйте фотографии и изображения JPG, PNG, WebP в единый многостраничный PDF-документ прямо в браузере.',
+    },
   },
   '/wyczysc-metadane-pdf': {
     pl: {
@@ -339,6 +490,14 @@ export const DEDICATED_SEO_META: Record<
     hi: {
       title: 'पीडीएफ मेटाडेटा हटाएं ऑनलाइन – छिपे हुए डेटा मिटाएं मुफ्त में',
       desc: 'अपने पीडीएफ दस्तावेज़ से लेखक का नाम, सॉफ्टवेयर विवरण और मेटाडेटा आसानी से हटाएं। 100% सुरक्षित और मुफ्त बिना लॉगिन।',
+    },
+    pt: {
+      title: 'Remover Metadados de PDF Online – Limpeza de Dados Ocultos e Autor',
+      desc: 'Remova informações confidenciais ocultas, nome do autor, software e histórico de edição de arquivos PDF com total privacidade.',
+    },
+    ru: {
+      title: 'Удалить Метаданные из PDF Онлайн – Очистка Скрытых Данных и Автора',
+      desc: 'Полное удаление скрытых метаданных, имени автора, программы Word и истории изменений из PDF-файла 100% локально.',
     },
   },
   '/wyciagnij-grafiki-z-pdf': {
@@ -358,6 +517,14 @@ export const DEDICATED_SEO_META: Record<
       title: 'पीडीएफ से फोटो निकालें ऑनलाइन – तस्वीरें व ग्राफिक्स डाउनलोड करें मुफ्त',
       desc: 'पीडीएफ दस्तावेज़ से सभी अंतर्निहित तस्वीरें और ग्राफिक्स मूल गुणवत्ता में निकालें। 100% मुफ्त, सुरक्षित और बिना लॉगिन।',
     },
+    pt: {
+      title: 'Extrair Imagens de PDF Online – Salvar Fotos de Documento em Alta Resolução',
+      desc: 'Extraia todas as fotos e ilustrações incorporadas em arquivos PDF no formato JPG e PNG original sem perda de qualidade e sem cadastro.',
+    },
+    ru: {
+      title: 'Извлечь Картинки из PDF Онлайн – Сохранить Фото в Высоком Качестве',
+      desc: 'Быстро извлекайте встроенные изображения и фото из документов PDF в оригинальном качестве JPG/PNG без регистрации.',
+    },
   },
   '/zabezpiecz-pdf-haslem': {
     pl: {
@@ -375,6 +542,14 @@ export const DEDICATED_SEO_META: Record<
     hi: {
       title: 'पीडीएफ पासवर्ड सुरक्षित करें ऑनलाइन – पीडीएफ पर पासवर्ड लगाएं मुफ्त',
       desc: 'अपने महत्वपूर्ण पीडीएफ दस्तावेज़ को पासवर्ड से सुरक्षित और एन्क्रिप्ट करें सीधे ब्राउज़र में। 100% सुरक्षित और बिना लॉगिन।',
+    },
+    pt: {
+      title: 'Proteger PDF com Senha Online – Criptografar Documento com Segurança',
+      desc: 'Bloqueie e proteja arquivos PDF confidenciais com senha e criptografia forte diretamente no seu navegador sem enviar dados à nuvem.',
+    },
+    ru: {
+      title: 'Защитить PDF Паролем Онлайн – Надежное Шифрование Документов',
+      desc: 'Установите надежный пароль и шифрование на ваш PDF-документ прямо в браузере без передачи конфиденциальных данных в сеть.',
     },
   },
   '/usun-haslo-z-pdf': {
@@ -394,6 +569,14 @@ export const DEDICATED_SEO_META: Record<
       title: 'पीडीएफ पासवर्ड हटाएं ऑनलाइन – पीडीएफ अनलॉक करें मुफ्त में',
       desc: 'पीडीएफ फाइल से पासवर्ड सुरक्षा और प्रतिबंध हटाएं सीधे ब्राउज़र में। 100% मुफ्त, तेज़ और बिना किसी पंजीकरण के।',
     },
+    pt: {
+      title: 'Desbloquear PDF Online – Remover Senha de PDF Rápido e Grátis',
+      desc: 'Remova senhas e restrições de documentos PDF protegidos com facilidade. Acesse e imprima seus arquivos sem travas e sem cadastro.',
+    },
+    ru: {
+      title: 'Снять Пароль с PDF Онлайн – Разблокировать Защищенный Документ',
+      desc: 'Быстрое снятие пароля и ограничений с защищенных PDF-файлов онлайн. Скачивайте свободный документ без блокировок.',
+    },
   },
   '/zmien-pdf-na-czarno-bialy': {
     pl: {
@@ -411,6 +594,14 @@ export const DEDICATED_SEO_META: Record<
     hi: {
       title: 'पीडीएफ ब्लैक एंड व्हाइट करें ऑनलाइन – ग्रेस्केल कनवर्टर मुफ्त',
       desc: 'रंगीन पीडीएफ दस्तावेज़ को ब्लैक एंड व्हाइट (ग्रेस्केल) में बदलें। प्रिंटर स्याही बचाएं और फाइल साइज घटाएं बिना लॉगिन।',
+    },
+    pt: {
+      title: 'PDF em Preto e Branco Online – Converter PDF Colorido para Tons de Cinza',
+      desc: 'Converta arquivos PDF coloridos para escala de cinza monocromática online. Economize tinta de impressora e reduza o tamanho do arquivo.',
+    },
+    ru: {
+      title: 'Черно-Белый PDF Онлайн – Конвертировать PDF в Оттенки Серого',
+      desc: 'Преобразуйте цветной PDF-документ в черно-белый формат (градации серого) онлайн. Экономьте тонер принтера и уменьшайте размер.',
     },
   },
   '/ponumeruj-strony-pdf': {
@@ -430,29 +621,37 @@ export const DEDICATED_SEO_META: Record<
       title: 'पीडीएफ में पेज नंबर जोड़ें ऑनलाइन – पृष्ठ क्रमांक लगाएं मुफ्त में',
       desc: 'अपने पीडीएफ दस्तावेज़ के पेजों पर क्रमांक (उदा. 1, 2, 3) आसानी से लगाएं। सुंदर फॉर्मेटिंग सीधे ब्राउज़र में बिना लॉगिन।',
     },
+    pt: {
+      title: 'Numerar Páginas de PDF Online – Inserir Números de Página Grátis',
+      desc: 'Adicione numeração de página personalizada e profissional (ex: Página 1 de N) aos seus documentos PDF com total facilidade.',
+    },
+    ru: {
+      title: 'Пронумеровать Страницы PDF Онлайн – Вставить Номера Страниц в PDF',
+      desc: 'Автоматически добавьте аккуратную нумерацию страниц (напр. 1 из N) в документ PDF. Настраивайте формат и позицию без регистрации.',
+    },
   },
 };
 
 export const PRIMARY_LOCALIZED_SLUGS: Record<ToolRoute, Record<Language, string>> = {
-  '/': { pl: '/', en: '/en', es: '/es', hi: '/hi' },
-  '/polacz-pdf': { pl: '/polacz-pdf', en: '/en/merge-pdf', es: '/es/unir-pdf', hi: '/hi/merge-pdf' },
-  '/rozdziel-pdf': { pl: '/rozdziel-pdf', en: '/en/split-pdf', es: '/es/dividir-pdf', hi: '/hi/split-pdf' },
-  '/wypelnij-formularz-pdf': { pl: '/wypelnij-formularz-pdf', en: '/en/fill-pdf-form', es: '/es/rellenar-formulario-pdf', hi: '/hi/fill-pdf-form' },
-  '/obroc-pdf': { pl: '/obroc-pdf', en: '/en/rotate-pdf', es: '/es/rotar-pdf', hi: '/hi/rotate-pdf' },
-  '/usun-strony-z-pdf': { pl: '/usun-strony-z-pdf', en: '/en/delete-pages', es: '/es/eliminar-paginas-pdf', hi: '/hi/delete-pages' },
-  '/kompresuj-pdf': { pl: '/kompresuj-pdf', en: '/en/compress-pdf', es: '/es/comprimir-pdf', hi: '/hi/compress-pdf' },
-  '/grafika-do-pdf': { pl: '/grafika-do-pdf', en: '/en/image-to-pdf', es: '/es/imagen-a-pdf', hi: '/hi/image-to-pdf' },
-  '/pdf-to-word': { pl: '/pdf-to-word', en: '/en/pdf-to-word', es: '/es/pdf-a-word', hi: '/hi/pdf-to-word' },
-  '/word-to-pdf': { pl: '/word-to-pdf', en: '/en/word-to-pdf', es: '/es/word-a-pdf', hi: '/hi/word-to-pdf' },
-  '/pdf-to-excel': { pl: '/pdf-to-excel', en: '/en/pdf-to-excel', es: '/es/pdf-a-excel', hi: '/hi/pdf-to-excel' },
-  '/excel-to-pdf': { pl: '/excel-to-pdf', en: '/en/excel-to-pdf', es: '/es/excel-a-pdf', hi: '/hi/excel-to-pdf' },
-  '/wyczysc-metadane-pdf': { pl: '/wyczysc-metadane-pdf', en: '/en/remove-pdf-metadata', es: '/es/limpiar-metadatos-pdf', hi: '/hi/remove-pdf-metadata' },
-  '/wyciagnij-grafiki-z-pdf': { pl: '/wyciagnij-grafiki-z-pdf', en: '/en/extract-images-from-pdf', es: '/es/extraer-imagenes-pdf', hi: '/hi/extract-images-from-pdf' },
-  '/zabezpiecz-pdf-haslem': { pl: '/zabezpiecz-pdf-haslem', en: '/en/protect-pdf', es: '/es/proteger-pdf', hi: '/hi/protect-pdf' },
-  '/usun-haslo-z-pdf': { pl: '/usun-haslo-z-pdf', en: '/en/unlock-pdf', es: '/es/desbloquear-pdf', hi: '/hi/unlock-pdf' },
-  '/zmien-pdf-na-czarno-bialy': { pl: '/zmien-pdf-na-czarno-bialy', en: '/en/pdf-to-grayscale', es: '/es/pdf-a-blanco-y-negro', hi: '/hi/pdf-to-grayscale' },
-  '/ponumeruj-strony-pdf': { pl: '/ponumeruj-strony-pdf', en: '/en/add-page-numbers-to-pdf', es: '/es/numerar-paginas-pdf', hi: '/hi/add-page-numbers-to-pdf' },
-  '/polityka-privacy': { pl: '/polityka-privacy', en: '/en/privacy-policy', es: '/es/politica-privacidad', hi: '/hi/privacy-policy' },
+  '/': { pl: '/', en: '/en', es: '/es', hi: '/hi', pt: '/pt', ru: '/ru' },
+  '/polacz-pdf': { pl: '/polacz-pdf', en: '/en/merge-pdf', es: '/es/unir-pdf', hi: '/hi/merge-pdf', pt: '/pt/unir-pdf', ru: '/ru/obedinit-pdf' },
+  '/rozdziel-pdf': { pl: '/rozdziel-pdf', en: '/en/split-pdf', es: '/es/dividir-pdf', hi: '/hi/split-pdf', pt: '/pt/dividir-pdf', ru: '/ru/razdelit-pdf' },
+  '/wypelnij-formularz-pdf': { pl: '/wypelnij-formularz-pdf', en: '/en/fill-pdf-form', es: '/es/rellenar-formulario-pdf', hi: '/hi/fill-pdf-form', pt: '/pt/preencher-formulario-pdf', ru: '/ru/zapolnit-formu-pdf' },
+  '/obroc-pdf': { pl: '/obroc-pdf', en: '/en/rotate-pdf', es: '/es/rotar-pdf', hi: '/hi/rotate-pdf', pt: '/pt/girar-pdf', ru: '/ru/povernut-pdf' },
+  '/usun-strony-z-pdf': { pl: '/usun-strony-z-pdf', en: '/en/delete-pages', es: '/es/eliminar-paginas-pdf', hi: '/hi/delete-pages', pt: '/pt/excluir-paginas-pdf', ru: '/ru/udalit-stranicy-pdf' },
+  '/kompresuj-pdf': { pl: '/kompresuj-pdf', en: '/en/compress-pdf', es: '/es/comprimir-pdf', hi: '/hi/compress-pdf', pt: '/pt/comprimir-pdf', ru: '/ru/szhat-pdf' },
+  '/grafika-do-pdf': { pl: '/grafika-do-pdf', en: '/en/image-to-pdf', es: '/es/imagen-a-pdf', hi: '/hi/image-to-pdf', pt: '/pt/imagem-para-pdf', ru: '/ru/kartinki-v-pdf' },
+  '/pdf-to-word': { pl: '/pdf-to-word', en: '/en/pdf-to-word', es: '/es/pdf-a-word', hi: '/hi/pdf-to-word', pt: '/pt/pdf-para-word', ru: '/ru/pdf-v-word' },
+  '/word-to-pdf': { pl: '/word-to-pdf', en: '/en/word-to-pdf', es: '/es/word-a-pdf', hi: '/hi/word-to-pdf', pt: '/pt/word-para-pdf', ru: '/ru/word-v-pdf' },
+  '/pdf-to-excel': { pl: '/pdf-to-excel', en: '/en/pdf-to-excel', es: '/es/pdf-a-excel', hi: '/hi/pdf-to-excel', pt: '/pt/pdf-para-excel', ru: '/ru/pdf-v-excel' },
+  '/excel-to-pdf': { pl: '/excel-to-pdf', en: '/en/excel-to-pdf', es: '/es/excel-a-pdf', hi: '/hi/excel-to-pdf', pt: '/pt/excel-para-pdf', ru: '/ru/excel-v-pdf' },
+  '/wyczysc-metadane-pdf': { pl: '/wyczysc-metadane-pdf', en: '/en/remove-pdf-metadata', es: '/es/limpiar-metadatos-pdf', hi: '/hi/remove-pdf-metadata', pt: '/pt/remover-metadados-pdf', ru: '/ru/udalit-metadannye-pdf' },
+  '/wyciagnij-grafiki-z-pdf': { pl: '/wyciagnij-grafiki-z-pdf', en: '/en/extract-images-from-pdf', es: '/es/extraer-imagenes-pdf', hi: '/hi/extract-images-from-pdf', pt: '/pt/extrair-imagens-pdf', ru: '/ru/izvlech-kartinki-iz-pdf' },
+  '/zabezpiecz-pdf-haslem': { pl: '/zabezpiecz-pdf-haslem', en: '/en/protect-pdf', es: '/es/proteger-pdf', hi: '/hi/protect-pdf', pt: '/pt/proteger-pdf-com-senha', ru: '/ru/zashchitit-pdf-parolem' },
+  '/usun-haslo-z-pdf': { pl: '/usun-haslo-z-pdf', en: '/en/unlock-pdf', es: '/es/desbloquear-pdf', hi: '/hi/unlock-pdf', pt: '/pt/desbloquear-pdf', ru: '/ru/snyat-parol-s-pdf' },
+  '/zmien-pdf-na-czarno-bialy': { pl: '/zmien-pdf-na-czarno-bialy', en: '/en/pdf-to-grayscale', es: '/es/pdf-a-blanco-y-negro', hi: '/hi/pdf-to-grayscale', pt: '/pt/pdf-preto-e-branco', ru: '/ru/cherno-belyj-pdf' },
+  '/ponumeruj-strony-pdf': { pl: '/ponumeruj-strony-pdf', en: '/en/add-page-numbers-to-pdf', es: '/es/numerar-paginas-pdf', hi: '/hi/add-page-numbers-to-pdf', pt: '/pt/numerar-paginas-pdf', ru: '/ru/pronumerovat-stranicy-pdf' },
+  '/polityka-privacy': { pl: '/polityka-privacy', en: '/en/privacy-policy', es: '/es/politica-privacidad', hi: '/hi/privacy-policy', pt: '/pt/politica-de-privacidade', ru: '/ru/politika-konfidencialnosti' },
 };
 
 export interface ParsedRoute {
@@ -555,6 +754,8 @@ export function getAlternateUrls(toolRoute: ToolRoute) {
       en: `${SITE_DOMAIN}${slugs.en}`,
       es: `${SITE_DOMAIN}${slugs.es}`,
       hi: `${SITE_DOMAIN}${slugs.hi}`,
+      pt: `${SITE_DOMAIN}${slugs.pt}`,
+      ru: `${SITE_DOMAIN}${slugs.ru}`,
       'x-default': `${SITE_DOMAIN}${slugs.pl === '/' ? '/' : slugs.pl}`,
     };
   }
@@ -564,6 +765,8 @@ export function getAlternateUrls(toolRoute: ToolRoute) {
     en: `${SITE_DOMAIN}/en${cleanTool}`,
     es: `${SITE_DOMAIN}/es${cleanTool}`,
     hi: `${SITE_DOMAIN}/hi${cleanTool}`,
+    pt: `${SITE_DOMAIN}/pt${cleanTool}`,
+    ru: `${SITE_DOMAIN}/ru${cleanTool}`,
     'x-default': `${SITE_DOMAIN}${cleanTool || '/'}`,
   };
 }
@@ -636,6 +839,8 @@ export function updateDocumentSeo(
     en: 'en_US',
     es: 'es_ES',
     hi: 'hi_IN',
+    pt: 'pt_BR',
+    ru: 'ru_RU',
   };
 
   setMetaProperty('og:title', title);
