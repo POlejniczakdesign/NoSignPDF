@@ -63,6 +63,8 @@ export const TimeSavedCard: React.FC<TimeSavedCardProps> = ({ stats, onClose }) 
       badgeClientSide: '100% lokalnie w RAM',
       badgeInstant: 'Zero oczekiwania na serwer',
       dismiss: 'Zamknij powiadomienie',
+      ariaLabel: 'Statystyki zaoszczędzonego czasu',
+      storedLocally: 'Zapisano w pamięci',
     },
     en: {
       congrats: 'Great job!',
@@ -73,6 +75,8 @@ export const TimeSavedCard: React.FC<TimeSavedCardProps> = ({ stats, onClose }) 
       badgeClientSide: '100% Client-Side RAM',
       badgeInstant: 'Zero server queue wait',
       dismiss: 'Dismiss',
+      ariaLabel: 'Time saved statistics',
+      storedLocally: 'Saved in memory',
     },
     es: {
       congrats: '¡Excelente trabajo!',
@@ -83,6 +87,8 @@ export const TimeSavedCard: React.FC<TimeSavedCardProps> = ({ stats, onClose }) 
       badgeClientSide: '100% local en tu RAM',
       badgeInstant: 'Sin colas en servidores',
       dismiss: 'Cerrar',
+      ariaLabel: 'Estadísticas de tiempo ahorrado',
+      storedLocally: 'Guardado en memoria',
     },
     hi: {
       congrats: 'शानदार काम!',
@@ -93,6 +99,8 @@ export const TimeSavedCard: React.FC<TimeSavedCardProps> = ({ stats, onClose }) 
       badgeClientSide: '100% डिवाइस में सुरक्षित',
       badgeInstant: 'तुरंत परिणाम बिना इंतज़ार',
       dismiss: 'बंद करें',
+      ariaLabel: 'बचाए गए समय के आंकड़े',
+      storedLocally: 'मेमोरी में सुरक्षित',
     },
     pt: {
       congrats: 'Excelente trabalho!',
@@ -103,6 +111,8 @@ export const TimeSavedCard: React.FC<TimeSavedCardProps> = ({ stats, onClose }) 
       badgeClientSide: '100% local na sua RAM',
       badgeInstant: 'Zero espera em servidores',
       dismiss: 'Fechar',
+      ariaLabel: 'Estatísticas de tempo economizado',
+      storedLocally: 'Salvo na memória local',
     },
     ru: {
       congrats: 'Отличная работа!',
@@ -113,6 +123,8 @@ export const TimeSavedCard: React.FC<TimeSavedCardProps> = ({ stats, onClose }) 
       badgeClientSide: '100% локально в RAM',
       badgeInstant: 'Без ожидания очереди на сервере',
       dismiss: 'Закрыть',
+      ariaLabel: 'Статистика сэкономленного времени',
+      storedLocally: 'Сохранено в памяти',
     },
   }[language] || {
     congrats: 'Great job!',
@@ -123,6 +135,8 @@ export const TimeSavedCard: React.FC<TimeSavedCardProps> = ({ stats, onClose }) 
     badgeClientSide: '100% Client-Side RAM',
     badgeInstant: 'Zero server queue wait',
     dismiss: 'Dismiss',
+    ariaLabel: 'Time saved statistics',
+    storedLocally: 'Saved in memory',
   };
 
   const currentFormatted = formatTimeSaved(animatedSeconds, language);
@@ -132,7 +146,7 @@ export const TimeSavedCard: React.FC<TimeSavedCardProps> = ({ stats, onClose }) 
     <div
       id="time-saved-celebration-card"
       role="region"
-      aria-label="Statystyki zaoszczędzonego czasu"
+      aria-label={copy.ariaLabel}
       className="w-full max-w-4xl mx-auto my-6 animate-in fade-in slide-in-from-top-4 duration-300"
     >
       <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-indigo-900 via-zinc-900 to-slate-950 text-white p-6 sm:p-8 shadow-xl border border-indigo-500/30">
@@ -213,7 +227,7 @@ export const TimeSavedCard: React.FC<TimeSavedCardProps> = ({ stats, onClose }) 
               <span>nosignpdf.com</span>
               <span className="flex items-center gap-1 text-emerald-400 font-semibold">
                 <CheckCircle2 className="w-3 h-3" />
-                Zapisano w pamięci
+                {copy.storedLocally}
               </span>
             </div>
           </div>

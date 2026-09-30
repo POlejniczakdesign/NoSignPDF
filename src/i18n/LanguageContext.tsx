@@ -15,7 +15,7 @@ interface LanguageContextValue {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-const TOOL_DEFINITIONS_BY_LANG: Record<Language, ToolMeta[]> = {
+export const TOOL_DEFINITIONS_BY_LANG: Record<Language, ToolMeta[]> = {
   pl: [
     {
       id: 'hub',

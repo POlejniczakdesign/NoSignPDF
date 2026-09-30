@@ -1093,4 +1093,522 @@ export const SEO_TRANSLATIONS: Record<Language, Partial<Record<ToolRoute, Locali
       keywords: ['पीडीएफ मेटाडेटा हटाएं', 'मेटाडेटा क्लीनर', 'पीडीएफ से लेखक हटाएं'],
     },
   },
+  pt: {
+    '/': {
+      h2Title: 'Por que o NoSignPDF é o editor de PDF mais seguro da internet?',
+      intro: 'A maioria dos conversores online envia seus contratos e documentos confidenciais para servidores na nuvem. O NoSignPDF funciona de forma totalmente oposta: todo o processamento ocorre 100% no seu navegador com tecnologias WebAssembly e JavaScript (pdf-lib, pdfjs-dist).',
+      steps: [
+        { title: '1. Escolha a ferramenta', desc: 'Preencha formulários, gire, junte, divida, exclua páginas ou comprima PDFs.' },
+        { title: '2. Arraste seu arquivo PDF', desc: 'O documento é aberto diretamente na memória RAM sem envio pela internet.' },
+        { title: '3. Salve o arquivo final', desc: 'Baixe o documento gerado instantaneamente no seu computador ou celular.' },
+      ],
+      benefits: [
+        { title: '100% de Privacidade e LGPD', desc: 'Zero risco de vazamento. Nenhum servidor tem acesso aos seus dados.' },
+        { title: 'Sem Limite de Tamanho', desc: 'O limite é apenas a memória do seu próprio dispositivo.' },
+        { title: 'Funciona Offline', desc: 'Você pode continuar editando mesmo sem conexão com a internet.' },
+      ],
+      faqs: [
+        { q: 'Meus arquivos estão realmente seguros?', a: 'Sim, 100% protegidos. No nosignpdf.com tudo é executado localmente (Client-Side). Seus documentos nunca saem da memória RAM.' },
+        { q: 'É gratuito e sem marcas d’água?', a: 'Sim! É 100% grátis, sem necessidade de cadastro, sem limites ocultos e sem marcas d’água.' },
+        { q: 'Qual a velocidade em comparação com a nuvem?', a: 'É ultrarrápido, pois não há fila de envio nem espera de download pela internet.' },
+      ],
+      extendedText: 'O NoSignPDF é a solução ideal para manipular contratos empresariais, relatórios financeiros e documentos pessoais com total soberania e segurança digital.',
+      keywords: ['editor de pdf online grátis', 'pdf seguro no navegador', 'ferramentas pdf sem cadastro', 'pdf studio online'],
+    },
+    '/wypelnij-formularz-pdf': {
+      h2Title: 'Preenchedor de Formulários PDF – Preencha AcroForms Oficiais sem Imprimir',
+      intro: 'Preencha requerimentos governamentais, declarações e contratos. Esta ferramenta reconhece campos digitais nativos AcroForms e permite inserir textos e caixas de seleção.',
+      steps: [
+        { title: '1. Abra o arquivo PDF', desc: 'Selecione o documento para carregar os campos digitais interativos.' },
+        { title: '2. Digite os dados', desc: 'Clique nos campos para preencher ou insira novas caixas de texto.' },
+        { title: '3. Salve e baixe', desc: 'Gere o PDF final formatado no padrão oficial AcroForm.' },
+      ],
+      benefits: [
+        { title: 'Campos AcroForm Oficiais', desc: 'Totalmente compatível com Adobe Acrobat e órgãos públicos.' },
+        { title: 'Economia de Papel e Tempo', desc: 'Elimine a necessidade de imprimir, assinar à mão e escanear.' },
+        { title: 'Privacidade Total (LGPD)', desc: 'CPF, dados bancários e valores nunca são salvos em servidores.' },
+      ],
+      faqs: [
+        { q: 'Posso preencher documentos escaneados?', a: 'Sim, use a ferramenta de adicionar texto para clicar em qualquer linha do scan e digitar.' },
+      ],
+      extendedText: 'Preencha qualquer requerimento oficial com rapidez e mantenha a formatação tipográfica perfeita.',
+      keywords: ['preencher formulario pdf online', 'como preencher requerimento pdf', 'editor de texto pdf gratis', 'acroforms'],
+    },
+    '/usun-strony-z-pdf': {
+      h2Title: 'Excluir páginas de PDF online – Remova folhas indesejadas com segurança',
+      intro: 'Livre-se de páginas em branco, capas publicitárias ou folhas digitalizadas por engano em poucos cliques.',
+      steps: [
+        { title: '1. Carregue o PDF', desc: 'Visualize a grade com miniaturas de todas as páginas.' },
+        { title: '2. Selecione as folhas', desc: 'Clique no ícone da lixeira nas páginas que deseja eliminar.' },
+        { title: '3. Baixe o PDF limpo', desc: 'Obtenha o documento enxuto sem as páginas excluídas.' },
+      ],
+      benefits: [
+        { title: 'Qualidade Intacta', desc: 'Cópia sem perda (lossless): textos e vetores permanecem nítidos.' },
+        { title: 'Redução de Tamanho', desc: 'Eliminar gráficos e páginas extras reduz o peso do arquivo para e-mail.' },
+      ],
+      faqs: [
+        { q: 'Posso recuperar uma página excluída por engano?', a: 'Sim, basta recarregar o arquivo ou desfazer antes de compilar.' },
+      ],
+      extendedText: 'Organize seus relatórios e anexos removendo páginas supérfluas com facilidade e rapidez.',
+      keywords: ['excluir paginas de pdf', 'como remover paginas do pdf', 'apagar folhas do pdf gratis'],
+    },
+    '/obroc-pdf': {
+      h2Title: 'Girar páginas de PDF online – Corrija a orientação de documentos',
+      intro: 'Corrija documentos escaneados de cabeça para baixo ou páginas em modo paisagem que deveriam estar em modo retrato.',
+      steps: [
+        { title: '1. Selecione o arquivo', desc: 'Visualize a orientação de cada folha na grade de miniaturas.' },
+        { title: '2. Gire as páginas', desc: 'Gire folhas avulsas ou todas as páginas de uma vez em 90°, 180° ou 270°.' },
+        { title: '3. Salve o PDF alinhado', desc: 'Baixe o documento com a rotação gravada na especificação do PDF.' },
+      ],
+      benefits: [
+        { title: 'Rotação Permanente', desc: 'O ângulo correto é salvo e abre perfeitamente em qualquer leitor.' },
+        { title: 'Giro Independente', desc: 'Gire apenas a página com tabela larga sem alterar o restante.' },
+      ],
+      faqs: [
+        { q: 'Girar reduz a resolução da imagem?', a: 'Não. Apenas modificamos a tag de orientação do PDF sem recompilar a imagem.' },
+      ],
+      extendedText: 'Elimine erros de digitalização em segundos sem precisar de softwares caros instalados.',
+      keywords: ['girar pdf online', 'rotacionar paginas pdf', 'virar pdf 90 graus', 'corrigir orientacao pdf'],
+    },
+    '/polacz-pdf': {
+      h2Title: 'Juntar arquivos PDF (Merge PDF) – Una múltiplos documentos em um só',
+      intro: 'Una vários contratos, recibos ou relatórios em um único documento organizado com facilidade de arrastar e soltar.',
+      steps: [
+        { title: '1. Envie os arquivos', desc: 'Selecione dois ou mais documentos PDF do seu dispositivo.' },
+        { title: '2. Ordene as páginas', desc: 'Arraste as miniaturas para definir a sequência perfeita.' },
+        { title: '3. Junte e baixe', desc: 'Gere o arquivo consolidado em poucos segundos.' },
+      ],
+      benefits: [
+        { title: 'Sem Limite de Arquivos', desc: 'Junte quantos PDFs precisar, limitado apenas pela memória do seu aparelho.' },
+        { title: 'Preservação de Fontes', desc: 'Mantém a formatação vetorial e textos pesquisáveis (OCR).' },
+        { title: 'Privacidade LGPD', desc: 'Nenhum contrato é transmitido para servidores de terceiros.' },
+      ],
+      faqs: [
+        { q: 'Posso remover páginas antes de unir?', a: 'Sim, você pode girar ou excluir páginas avulsas antes de baixar.' },
+      ],
+      extendedText: 'Consolide anexos de processos e relatórios comerciais em um documento profissional.',
+      keywords: ['juntar pdf online gratis', 'combinar arquivos pdf', 'unir pdf sem limite', 'merge pdf'],
+    },
+    '/rozdziel-pdf': {
+      h2Title: 'Dividir e extrair páginas de PDF – Separe folhas com rapidez',
+      intro: 'Extraia intervalos específicos de páginas (ex: 1-3, 7) de arquivos extensos e salve em um novo documento limpo.',
+      steps: [
+        { title: '1. Abra o PDF', desc: 'Carregue o arquivo do qual deseja extrair as páginas.' },
+        { title: '2. Indique o intervalo', desc: 'Digite os números de página ou selecione nas miniaturas.' },
+        { title: '3. Baixe o novo arquivo', desc: 'Receba o documento extraído e leve instantaneamente.' },
+      ],
+      benefits: [
+        { title: 'Intervalos Flexíveis', desc: 'Selecione páginas avulsas e intervalos contínuos simultaneamente.' },
+        { title: 'Nitidez Preservada', desc: 'As páginas conservam a qualidade original sem compressão destrutiva.' },
+      ],
+      faqs: [
+        { q: 'Meu arquivo original é alterado?', a: 'Não, seu arquivo permanece intacto no computador; geramos uma nova cópia.' },
+      ],
+      extendedText: 'Separe capítulos, contracheques ou faturas individuais com máxima comodidade.',
+      keywords: ['dividir pdf online', 'extrair paginas pdf', 'separar folhas pdf gratis', 'split pdf'],
+    },
+    '/kompresuj-pdf': {
+      h2Title: 'Comprimir PDF online – Reduza o tamanho mantendo a nitidez',
+      intro: 'Diminua o peso em megabytes dos seus documentos PDF para enviar por e-mail ou fazer upload em órgãos governamentais.',
+      steps: [
+        { title: '1. Selecione o arquivo', desc: 'Arraste o PDF para análise das imagens e estruturas internas.' },
+        { title: '2. Otimize os dados', desc: 'Nosso motor remove bytes desnecessários sem degradar o texto.' },
+        { title: '3. Baixe o PDF leve', desc: 'Obtenha o documento compactado pronto para compartilhamento.' },
+      ],
+      benefits: [
+        { title: 'Texto Sempre Legível', desc: 'Fontes vetoriais continuam nítidas mesmo com alta compressão de imagens.' },
+        { title: 'Ideal para E-mails', desc: 'Adequado para limites comuns de provedores como 10 MB ou 25 MB.' },
+      ],
+      faqs: [
+        { q: 'A compressão altera o conteúdo do texto?', a: 'Não, o texto vetorial permanece idêntico e selecionável.' },
+      ],
+      extendedText: 'Economize espaço em disco e simplifique o envio de documentos pesados.',
+      keywords: ['comprimir pdf online', 'reduzir tamanho de pdf', 'otimizar pdf para email'],
+    },
+    '/wyczysc-metadane-pdf': {
+      h2Title: 'Remover metadados de PDF online – Higienização de dados ocultos grátis',
+      intro: 'Arquivos PDF armazenam informações invisíveis como nome do autor, software de criação, caminhos de disco e histórico. Apague tudo localmente.',
+      steps: [
+        { title: '1. Abra o documento', desc: 'Carregue o PDF para inspeção dos dicionários /Info e streams XMP.' },
+        { title: '2. Verifique os dados', desc: 'Confira as informações identificadas sobre autor e sistema.' },
+        { title: '3. Baixe higienizado', desc: 'Exclua os metadados e obtenha um PDF totalmente anônimo.' },
+      ],
+      benefits: [
+        { title: 'Privacidade 100% Local', desc: 'O processamento roda na memória RAM do seu dispositivo.' },
+        { title: 'Limpeza Completa', desc: 'Remove identificadores únicos UUID e rastros de softwares de edição.' },
+      ],
+      faqs: [
+        { q: 'Quais dados ocultos são eliminados?', a: 'Nome do autor, login do computador, versões de software e datas de edição.' },
+      ],
+      extendedText: 'Garanta a confidencialidade de propostas comerciais e documentos jurídicos antes do envio.',
+      keywords: ['remover metadados pdf', 'limpar metadados pdf online', 'apagar autor do pdf'],
+    },
+    '/grafika-do-pdf': {
+      h2Title: 'Converter imagens para PDF online – Junte fotos JPG, PNG e WebP',
+      intro: 'Transforme fotos e imagens digitalizadas em um documento PDF profissional com ajuste de margens e orientação.',
+      steps: [
+        { title: '1. Selecione as imagens', desc: 'Escolha uma ou mais imagens nos formatos JPG, PNG ou WebP.' },
+        { title: '2. Ajuste a ordem', desc: 'Organize a sequência das fotos na grade interativa.' },
+        { title: '3. Gere o PDF', desc: 'Baixe seu novo arquivo PDF consolidado com qualidade máxima.' },
+      ],
+      benefits: [
+        { title: 'Vários Formatos Suportados', desc: 'Compatível com JPG, JPEG, PNG e WebP.' },
+        { title: 'Ajuste Automático', desc: 'As imagens são enquadradas perfeitamente no formato de página A4.' },
+      ],
+      faqs: [
+        { q: 'Quantas fotos posso juntar em um único PDF?', a: 'Tantas quanto a memória RAM do seu aparelho suportar, sem restrições.' },
+      ],
+      extendedText: 'Converta recibos, documentos de identidade e fotos em PDFs elegantes prontos para impressão.',
+      keywords: ['imagem para pdf', 'converter jpg para pdf', 'fotos em pdf online'],
+    },
+    '/wyciagnij-grafiki-z-pdf': {
+      h2Title: 'Extrair imagens de PDF online – Salve fotos em alta resolução grátis',
+      intro: 'Extraia e baixe todas as fotos, ilustrações e imagens contidas em arquivos PDF na resolução original JPG ou PNG.',
+      steps: [
+        { title: '1. Carregue o arquivo', desc: 'Abra o PDF para varredura de fluxos de imagem incorporados.' },
+        { title: '2. Visualize as fotos', desc: 'Confira as imagens encontradas no documento.' },
+        { title: '3. Baixe os arquivos', desc: 'Salve as fotos extraídas individualmente ou em conjunto.' },
+      ],
+      benefits: [
+        { title: 'Qualidade Original', desc: 'Extração direta dos dados binários sem recomprimir.' },
+        { title: 'Sem Perda de Detalhes', desc: 'Ideal para recuperar fotos antigas ou diagramas de manuais.' },
+      ],
+      faqs: [
+        { q: 'As imagens perdem qualidade?', a: 'Não, o arquivo é extraído em seus bytes originais exatos.' },
+      ],
+      extendedText: 'Recupere facilmente ilustrações e fotos de documentos PDF sem precisar tirar prints da tela.',
+      keywords: ['extrair imagens de pdf', 'salvar fotos do pdf', 'baixar imagens de pdf'],
+    },
+    '/zabezpiecz-pdf-haslem': {
+      h2Title: 'Proteger PDF com senha online – Criptografia forte sem envio à nuvem',
+      intro: 'Bloqueie a abertura do seu documento PDF confidencial com uma senha de alta segurança diretamente no navegador.',
+      steps: [
+        { title: '1. Abra o arquivo PDF', desc: 'Carregue o documento que deseja criptografar.' },
+        { title: '2. Defina uma senha forte', desc: 'Digite e confirme a senha de proteção.' },
+        { title: '3. Baixe o PDF protegido', desc: 'Obtenha o arquivo criptografado que exigirá senha para abertura.' },
+      ],
+      benefits: [
+        { title: 'Criptografia Local', desc: 'A senha é aplicada no seu dispositivo, sem trafegar pela internet.' },
+        { title: 'Segurança Padrão', desc: 'Compatível com todos os leitores como Adobe Acrobat e navegadores.' },
+      ],
+      faqs: [
+        { q: 'O nosignpdf.com armazena minha senha?', a: 'Não! O processamento ocorre localmente e nunca conhecemos sua senha.' },
+      ],
+      extendedText: 'Proteja declarações de renda, contratos e extratos bancários contra acessos não autorizados.',
+      keywords: ['proteger pdf com senha', 'criptografar pdf online', 'bloquear pdf com senha'],
+    },
+    '/usun-haslo-z-pdf': {
+      h2Title: 'Desbloquear PDF online – Remova a senha de arquivos protegidos',
+      intro: 'Elimine permanentemente senhas e travas de permissão de documentos PDF para facilitar a impressão e edição.',
+      steps: [
+        { title: '1. Carregue o PDF travado', desc: 'Selecione o arquivo protegido por senha.' },
+        { title: '2. Digite a senha atual', desc: 'Insira a chave de acesso para liberar o documento.' },
+        { title: '3. Salve desbloqueado', desc: 'Baixe uma cópia livre de senhas para uso contínuo.' },
+      ],
+      benefits: [
+        { title: 'Remoção Permanente', desc: 'O novo documento abre diretamente sem solicitar senha novamente.' },
+        { title: 'Liberação de Recursos', desc: 'Permite cópia de texto, anotações e impressão irrestrita.' },
+      ],
+      faqs: [
+        { q: 'Preciso saber a senha para desbloquear?', a: 'Sim, a senha atual é necessária para descriptografar os dados legalmente.' },
+      ],
+      extendedText: 'Desbloqueie faturas recorrentes e demonstrativos para arquivamento ágil no seu computador.',
+      keywords: ['desbloquear pdf online', 'remover senha de pdf', 'tirar senha pdf'],
+    },
+    '/zmien-pdf-na-czarno-bialy': {
+      h2Title: 'PDF em preto e branco online – Converta cores em escala de cinza',
+      intro: 'Converta documentos PDF coloridos para escala de cinza monocromática e economize tinta e toner na impressão.',
+      steps: [
+        { title: '1. Abra o arquivo colorido', desc: 'Carregue o PDF que deseja converter.' },
+        { title: '2. Aplique a escala de cinza', desc: 'Nosso algoritmo converte canais RGB para luminância monocromática.' },
+        { title: '3. Baixe o PDF PB', desc: 'Obtenha um arquivo otimizado para impressoras a laser ou jato de tinta.' },
+      ],
+      benefits: [
+        { title: 'Economia de Tinta', desc: 'Reduz custos operacionais de impressão no escritório ou em casa.' },
+        { title: 'Alto Contraste', desc: 'Garante excelente legibilidade de textos e gráficos.' },
+      ],
+      faqs: [
+        { q: 'O arquivo fica mais leve?', a: 'Sim, na maioria dos casos a conversão para cinza reduz o tamanho do documento.' },
+      ],
+      extendedText: 'Prepare apostilas e contratos para impressão econômica com máxima nitidez visual.',
+      keywords: ['pdf preto e branco online', 'converter pdf escala de cinza', 'pdf monocromatico'],
+    },
+    '/ponumeruj-strony-pdf': {
+      h2Title: 'Numerar páginas de PDF online – Insira números de página personalizados',
+      intro: 'Adicione numeração de página elegante e profissional (ex: Página 1 de N) a relatórios, teses e contratos.',
+      steps: [
+        { title: '1. Carregue o documento', desc: 'Abra o PDF de várias páginas que deseja numerar.' },
+        { title: '2. Escolha o formato', desc: 'Selecione a posição (rodapé, cabeçalho) e o estilo de numeração.' },
+        { title: '3. Baixe o PDF numerado', desc: 'Receba seu documento organizado e pronto para encadernação.' },
+      ],
+      benefits: [
+        { title: 'Formatação Elegante', desc: 'Tipografia nítida que não sobrepõe o conteúdo existente.' },
+        { title: 'Padrão Profissional', desc: 'Facilita referências em tribunais, universidades e reuniões.' },
+      ],
+      faqs: [
+        { q: 'Posso escolher onde colocar o número?', a: 'Sim, você pode posicionar no canto inferior direito, centro ou superior.' },
+      ],
+      extendedText: 'Mantenha seus documentos em ordem e prontos para apresentação com paginação precisa.',
+      keywords: ['numerar paginas pdf', 'adicionar numero de pagina pdf', 'inserir paginacao pdf'],
+    },
+  },
+  ru: {
+    '/': {
+      h2Title: 'Почему NoSignPDF — самый безопасный редактор PDF в сети?',
+      intro: 'Большинство популярных онлайн-сервисов отправляют конфиденциальные договоры, акты и паспортные данные на чужие сервера. В NoSignPDF вся обработка происходит на 100% в вашем веб-браузере на технологиях WebAssembly и JavaScript (pdf-lib, pdfjs-dist).',
+      steps: [
+        { title: '1. Выберите инструмент', desc: 'Заполняйте формы, объединяйте, разделяйте, поворачивайте, удаляйте листы или сжимайте файлы.' },
+        { title: '2. Перетащите файл PDF', desc: 'Документ открывается прямо в оперативной памяти (RAM) без отправки в сеть.' },
+        { title: '3. Сохраните результат', desc: 'Мгновенно скачайте готовый документ на свой компьютер или телефон.' },
+      ],
+      benefits: [
+        { title: '100% Конфиденциальность (GDPR)', desc: 'Нулевой риск утечки данных. Ни один сервер не имеет доступа к содержимому файлов.' },
+        { title: 'Без Лимитов на Размер', desc: 'Ограничение определяется только объемом оперативной памяти вашего устройства.' },
+        { title: 'Работает Офлайн', desc: 'Вы можете продолжать обработку файлов даже при отключении от Интернета.' },
+      ],
+      faqs: [
+        { q: 'Безопасны ли мои файлы?', a: 'Да, на 100% безопасны. В nosignpdf.com всё выполняется на стороне клиента (Client-Side). Ваши документы никогда не покидают память RAM.' },
+        { q: 'Действительно ли сервис бесплатен и без водяных знаков?', a: 'Да! Все инструменты на 100% бесплатны, без регистрации, скрытых тарифов и без водяных знаков.' },
+        { q: 'Какова скорость работы?', a: 'Мгновенно, так как нет сетевой очереди на загрузку и скачивание тяжелых файлов.' },
+      ],
+      extendedText: 'NoSignPDF — идеальный выбор для юристов, бухгалтеров и предпринимателей, работающих с коммерческой тайной и личными данными.',
+      keywords: ['бесплатный редактор pdf онлайн', 'безопасный pdf в браузере', 'pdf инструменты без регистрации', 'pdf studio online'],
+    },
+    '/wypelnij-formularz-pdf': {
+      h2Title: 'Заполнение Форм PDF – Заполняйте Официальные AcroForms без Печати',
+      intro: 'Заполняйте официальные бланки, заявления и договоры. Инструмент распознает интерактивные поля AcroForms и позволяет вводить текст и чекбоксы.',
+      steps: [
+        { title: '1. Откройте файл PDF', desc: 'Загрузите документ для автоматического распознавания цифровых полей.' },
+        { title: '2. Введите данные', desc: 'Кликайте по полям для заполнения или добавьте новые текстовые блоки.' },
+        { title: '3. Сохраните и скачайте', desc: 'Получите готовый файл в официальном формате AcroForm.' },
+      ],
+      benefits: [
+        { title: 'Официальные поля AcroForm', desc: 'Полная совместимость с Adobe Acrobat и государственными порталами.' },
+        { title: 'Экономия Бумаги и Времени', desc: 'Забудьте о печати на принтере, ручном заполнении ручкой и повторном сканировании.' },
+        { title: 'Защита Персональных Данных', desc: 'Паспортные данные и номера счетов никогда не сохраняются на сервере.' },
+      ],
+      faqs: [
+        { q: 'Можно ли заполнять отсканированные бланки?', a: 'Да, используйте инструмент добавления текста и кликайте в любую строчку скана.' },
+      ],
+      extendedText: 'Быстрое и аккуратное заполнение официальных заявлений с идеальной типографикой.',
+      keywords: ['заполнить форму pdf онлайн', 'как заполнить заявление pdf', 'редактор форм pdf', 'acroforms'],
+    },
+    '/usun-strony-z-pdf': {
+      h2Title: 'Удаление страниц из PDF онлайн – Удаляйте лишние листы безопасно',
+      intro: 'Быстро избавьтесь от пустых листов, рекламных обложек или ошибочно отсканированных страниц в один клик.',
+      steps: [
+        { title: '1. Загрузите PDF', desc: 'Ознакомьтесь с сеткой миниатюр всех страниц документа.' },
+        { title: '2. Выберите листы', desc: 'Нажмите значок корзины на страницах, которые нужно удалить.' },
+        { title: '3. Скачайте чистый PDF', desc: 'Получите оптимизированный документ без ненужных страниц.' },
+      ],
+      benefits: [
+        { title: 'Сохранение Качества', desc: 'Прямое копирование без пережатия (lossless): текст и графика остаются четкими.' },
+        { title: 'Уменьшение Размера', desc: 'Удаление лишних страниц снижает вес документа для отправки по почте.' },
+      ],
+      faqs: [
+        { q: 'Можно ли вернуть случайно удаленную страницу?', a: 'Да, перезагрузите файл или сбросьте выбор до нажатия кнопки компиляции.' },
+      ],
+      extendedText: 'Удобное редактирование структуры договоров и каталогов без установки программ.',
+      keywords: ['удалить страницы из pdf', 'как убрать лист из pdf', 'вырезать страницы pdf бесплатно'],
+    },
+    '/obroc-pdf': {
+      h2Title: 'Поворот страниц PDF онлайн – Исправляйте ориентацию документов',
+      intro: 'Легко исправляйте перевернутые сканы и приводите альбомные таблицы к правильному книжному виду.',
+      steps: [
+        { title: '1. Выберите файл', desc: 'Проверьте ориентацию каждого листа в сетке миниатюр.' },
+        { title: '2. Поверните страницы', desc: 'Поворачивайте отдельные листы или весь документ на 90°, 180° или 270°.' },
+        { title: '3. Сохраните выровненный PDF', desc: 'Скачайте файл с корректно записанным углом поворота.' },
+      ],
+      benefits: [
+        { title: 'Постоянный Поворот', desc: 'Правильный угол сохраняется в спецификации PDF и отображается во всех читалках.' },
+        { title: 'Независимый Поворот', desc: 'Поворачивайте только лист с широкой таблицей, не затрагивая остальные.' },
+      ],
+      faqs: [
+        { q: 'Ухудшается ли четкость при повороте?', a: 'Нет. Мы меняем только системный тег ориентации страницы без рекомпрессии.' },
+      ],
+      extendedText: 'Устраняйте ошибки офисных сканеров за считанные секунды прямо в браузере.',
+      keywords: ['повернуть pdf онлайн', 'поворот страниц pdf', 'развернуть скан pdf 90 градусов'],
+    },
+    '/polacz-pdf': {
+      h2Title: 'Объединение файлов PDF (Merge PDF) – Склейка нескольких документов в один',
+      intro: 'Соберите договоры, акты, сметы и приложения в единый упорядоченный том простым перетаскиванием мыши.',
+      steps: [
+        { title: '1. Добавьте файлы', desc: 'Выберите два или более PDF-файла на своем компьютере или телефоне.' },
+        { title: '2. Настройте порядок', desc: 'Перетаскивайте миниатюры страниц, формируя идеальную последовательность.' },
+        { title: '3. Склейте и скачайте', desc: 'Сгенерируйте и скачайте объединенный файл за несколько секунд.' },
+      ],
+      benefits: [
+        { title: 'Без Ограничений на Количество', desc: 'Объединяйте любое количество документов без платных подписок.' },
+        { title: 'Сохранение Шрифтов и Поиска', desc: 'Векторные шрифты и текстовый слой (OCR) сохраняются без растрирования.' },
+        { title: 'Приватность GDPR', desc: 'Файлы не отправляются на удаленные серверы третьих лиц.' },
+      ],
+      faqs: [
+        { q: 'Можно ли удалить или повернуть страницы во время слияния?', a: 'Да, в сетке миниатюр можно поворачивать или удалять любые листы перед скачиванием.' },
+      ],
+      extendedText: 'Быстрое и надежное слияние рабочей документации для отправки партнерам или в суд.',
+      keywords: ['объединить pdf онлайн бесплатно', 'склеить pdf файлы', 'соединить документы pdf', 'merge pdf'],
+    },
+    '/rozdziel-pdf': {
+      h2Title: 'Разделение PDF и извлечение страниц – Быстрое выделение листов',
+      intro: 'Извлекайте нужные страницы (например, 1-3, 7) из объемного файла и сохраняйте в отдельный легкий документ.',
+      steps: [
+        { title: '1. Загрузите PDF', desc: 'Откройте файл, из которого необходимо извлечь листы.' },
+        { title: '2. Укажите диапазон', desc: 'Введите номера страниц или выберите нужные миниатюры кликом.' },
+        { title: '3. Скачайте новый файл', desc: 'Получите отдельный чистый документ моментально.' },
+      ],
+      benefits: [
+        { title: 'Гибкие Диапазоны', desc: 'Выбирайте отдельные листы и непрерывные диапазоны одновременно.' },
+        { title: 'Исходная Резкость', desc: 'Качество текста и графики остается без малейших потерь.' },
+      ],
+      faqs: [
+        { q: 'Изменяется ли исходный файл на диске?', a: 'Нет, исходный документ остается нетронутым; создается новая копия.' },
+      ],
+      extendedText: 'Разбивайте большие книги, договоры и выписки на отдельные главы с удобством.',
+      keywords: ['разделить pdf онлайн', 'извлечь страницы из pdf', 'разбить файл pdf бесплатно', 'split pdf'],
+    },
+    '/kompresuj-pdf': {
+      h2Title: 'Сжатие PDF онлайн – Уменьшайте размер файла с сохранением резкости',
+      intro: 'Уменьшайте вес PDF-документов в мегабайтах для быстрой отправки по электронной почте или загрузки на порталы.',
+      steps: [
+        { title: '1. Выберите файл', desc: 'Перетащите PDF для анализа внутренней структуры и изображений.' },
+        { title: '2. Оптимизируйте данные', desc: 'Алгоритм удаляет избыточный код без ухудшения читаемости текста.' },
+        { title: '3. Скачайте легкий PDF', desc: 'Получите оптимизированный документ, готовый к отправке.' },
+      ],
+      benefits: [
+        { title: 'Четкий Текст', desc: 'Векторные шрифты не размываются даже при сильной компрессии картинок.' },
+        { title: 'Для Почтовых Лимитов', desc: 'Легко укладывайтесь в стандарты почтовых сервисов (10 МБ или 25 МБ).' },
+      ],
+      faqs: [
+        { q: 'Меняется ли текст при сжатии?', a: 'Нет, текст остается полностью векторным, четким и доступным для поиска.' },
+      ],
+      extendedText: 'Экономьте дисковое пространство и легко передавайте тяжелые отчеты коллегам.',
+      keywords: ['сжать pdf онлайн', 'уменьшить размер pdf', 'оптимизация pdf для почты'],
+    },
+    '/wyczysc-metadane-pdf': {
+      h2Title: 'Удаление метаданных из PDF онлайн – Полная очистка скрытых данных бесплатно',
+      intro: 'Документы PDF сохраняют скрытые следы: имя автора, программу создания, пути к папкам и дату правок. Сотрите их локально.',
+      steps: [
+        { title: '1. Откройте документ', desc: 'Загрузите PDF для сканирования словарей /Info и потоков XMP.' },
+        { title: '2. Ознакомьтесь с отчетом', desc: 'Проверьте обнаруженные параметры создателя и системы.' },
+        { title: '3. Скачайте анонимный PDF', desc: 'Удалите все метаданные и получите 100% чистый документ.' },
+      ],
+      benefits: [
+        { title: '100% Локальная Приватность', desc: 'Вся процедура выполняется исключительно в оперативной памяти устройства.' },
+        { title: 'Глубокая Очистка XMP', desc: 'Удаляются скрытые идентификаторы UUID и данные офисных редакторов.' },
+      ],
+      faqs: [
+        { q: 'Какие скрытые данные удаляются?', a: 'Имя автора, логин в ОС, названия программ, даты редактирования и внутренние пути.' },
+      ],
+      extendedText: 'Обеспечьте абсолютную конфиденциальность коммерческих предложений перед отправкой партнерам.',
+      keywords: ['удалить метаданные pdf', 'очистить метаданные pdf онлайн', 'стереть автора из pdf'],
+    },
+    '/grafika-do-pdf': {
+      h2Title: 'Конвертация картинок в PDF онлайн – Объединение фото JPG, PNG и WebP',
+      intro: 'Преобразуйте фотографии и сканы в аккуратный многостраничный PDF с автоматическим подбором формата листа.',
+      steps: [
+        { title: '1. Выберите изображения', desc: 'Добавьте одну или несколько картинок JPG, PNG или WebP.' },
+        { title: '2. Настройте порядок', desc: 'Расположите кадры в нужной последовательности на интерактивной сетке.' },
+        { title: '3. Создайте PDF', desc: 'Скачайте готовый документ высокого качества.' },
+      ],
+      benefits: [
+        { title: 'Поддержка Всех Форматов', desc: 'Работает с JPG, JPEG, PNG и современным WebP.' },
+        { title: 'Автоматическая Верстка', desc: 'Изображения аккуратно центрируются на страницах стандарта А4.' },
+      ],
+      faqs: [
+        { q: 'Сколько фото можно объединить в один PDF?', a: 'Сколько угодно, ограничение зависит лишь от оперативной памяти устройства.' },
+      ],
+      extendedText: 'Создавайте аккуратные PDF-файлы из чеков, квитанций и снимков документов за секунды.',
+      keywords: ['картинки в pdf', 'jpg в pdf онлайн', 'фото в pdf бесплатно'],
+    },
+    '/wyciagnij-grafiki-z-pdf': {
+      h2Title: 'Извлечь картинки из PDF онлайн – Сохранение фото в оригинальном качестве',
+      intro: 'Быстро извлекайте и скачивайте все встроенные иллюстрации и фото из файлов PDF в исходном разрешении JPG/PNG.',
+      steps: [
+        { title: '1. Загрузите файл', desc: 'Откройте PDF для поиска встроенных графических потоков.' },
+        { title: '2. Просмотрите фото', desc: 'Ознакомьтесь с найденными в документе изображениями.' },
+        { title: '3. Скачайте графику', desc: 'Сохраняйте картинки по отдельности или все сразу.' },
+      ],
+      benefits: [
+        { title: 'Исходное Разрешение', desc: 'Прямое извлечение бинарных данных без повторного сжатия.' },
+        { title: 'Без Потери Деталей', desc: 'Идеально для восстановления фото из презентаций и инструкций.' },
+      ],
+      faqs: [
+        { q: 'Теряется ли качество картинок?', a: 'Нет, изображения сохраняются в точных исходных байтах.' },
+      ],
+      extendedText: 'Удобное извлечение графического контента из PDF без необходимости делать скриншоты экрана.',
+      keywords: ['извлечь картинки из pdf', 'сохранить фото из pdf', 'скачать изображения из pdf'],
+    },
+    '/zabezpiecz-pdf-haslem': {
+      h2Title: 'Защитить PDF паролем онлайн – Надежное шифрование без отправки в сеть',
+      intro: 'Установите надежный пароль на конфиденциальный PDF-документ прямо в веб-браузере для защиты от чужих глаз.',
+      steps: [
+        { title: '1. Откройте PDF', desc: 'Загрузите документ, который хотите зашифровать.' },
+        { title: '2. Задайте надежный пароль', desc: 'Введите и подтвердите секретный ключ доступа.' },
+        { title: '3. Скачайте защищенный файл', desc: 'Получите зашифрованный PDF, требующий пароль при открытии.' },
+      ],
+      benefits: [
+        { title: 'Локальное Шифрование', desc: 'Пароль применяется на вашем процессоре без передачи в Интернет.' },
+        { title: 'Мировой Стандарт', desc: 'Открывается во всех браузерах и программах вроде Adobe Acrobat.' },
+      ],
+      faqs: [
+        { q: 'Сохраняет ли nosignpdf.com мой пароль?', a: 'Нет! Обработка выполняется локально, и мы не имеем доступа к вашим паролям.' },
+      ],
+      extendedText: 'Надежная защита налоговых деклараций, контрактов и банковских выписок от несанкционированного доступа.',
+      keywords: ['защитить pdf паролем', 'зашифровать pdf онлайн', 'поставить пароль на pdf'],
+    },
+    '/usun-haslo-z-pdf': {
+      h2Title: 'Снять пароль с PDF онлайн – Быстрая разблокировка защищенных файлов',
+      intro: 'Навсегда снимите пароль и ограничения прав доступа с PDF-документов для удобной печати и редактирования.',
+      steps: [
+        { title: '1. Загрузите закрытый PDF', desc: 'Выберите файл, защищенный паролем.' },
+        { title: '2. Введите текущий пароль', desc: 'Укажите ключ доступа для законной расшифровки.' },
+        { title: '3. Сохраните открытый файл', desc: 'Скачайте копию без пароля для свободного использования.' },
+      ],
+      benefits: [
+        { title: 'Постоянная Разблокировка', desc: 'Новый документ открывается сразу без повторного ввода пароля.' },
+        { title: 'Разблокировка Функций', desc: 'Открывает копирование текста, аннотации и свободную печать.' },
+      ],
+      faqs: [
+        { q: 'Нужно ли знать пароль для разблокировки?', a: 'Да, текущий пароль требуется для легальной расшифровки данных.' },
+      ],
+      extendedText: 'Снимайте пароли с регулярных счетов и выписок для удобного архивирования на компьютере.',
+      keywords: ['снять пароль с pdf онлайн', 'разблокировать pdf', 'удалить пароль pdf'],
+    },
+    '/zmien-pdf-na-czarno-bialy': {
+      h2Title: 'Черно-белый PDF онлайн – Конвертация цветов в градации серого',
+      intro: 'Преобразуйте цветные документы PDF в оттенки серого и экономьте тонер и краску при печати на принтере.',
+      steps: [
+        { title: '1. Откройте цветной файл', desc: 'Загрузите PDF, который хотите обесцветить.' },
+        { title: '2. Примените фильтр', desc: 'Алгоритм преобразует цветовые каналы RGB в монохромную яркость.' },
+        { title: '3. Скачайте ЧБ PDF', desc: 'Получите документ, оптимизированный для лазерных и струйных принтеров.' },
+      ],
+      benefits: [
+        { title: 'Экономия Тонера', desc: 'Снижает эксплуатационные расходы на печать в офисе и дома.' },
+        { title: 'Высокая Контрастность', desc: 'Гарантирует четкую различимость текста и схем.' },
+      ],
+      faqs: [
+        { q: 'Становится ли файл легче?', a: 'Да, в большинстве случаев монохромный документ весит меньше оригинала.' },
+      ],
+      extendedText: 'Подготавливайте пособия, конспекты и договоры к экономичной печати с максимальной резкостью.',
+      keywords: ['черно белый pdf онлайн', 'конвертировать pdf градации серого', 'монохромный pdf'],
+    },
+    '/ponumeruj-strony-pdf': {
+      h2Title: 'Пронумеровать страницы PDF онлайн – Вставка аккуратных номеров страниц',
+      intro: 'Добавьте профессиональную нумерацию страниц (например, Стр. 1 из N) в отчеты, диссертации и договоры.',
+      steps: [
+        { title: '1. Загрузите документ', desc: 'Откройте многостраничный PDF, который необходимо пронумеровать.' },
+        { title: '2. Выберите формат', desc: 'Укажите расположение (внизу, вверху) и стиль отображения номеров.' },
+        { title: '3. Скачайте готовый PDF', desc: 'Получите аккуратно пронумерованный документ для сдачи и печати.' },
+      ],
+      benefits: [
+        { title: 'Элегантный Вид', desc: 'Четкая типографика, гармонично дополняющая существующий текст.' },
+        { title: 'Стандарт для Документов', desc: 'Облегчает цитирование и навигацию по разделам в судах и вузах.' },
+      ],
+      faqs: [
+        { q: 'Можно ли выбрать положение номера?', a: 'Да, вы можете разместить номер снизу справа, по центру или вверху.' },
+      ],
+      extendedText: 'Поддерживайте идеальный порядок в документации благодаря точной и настраиваемой нумерации страниц.',
+      keywords: ['пронумеровать страницы pdf', 'добавить номера страниц pdf', 'нумерация страниц pdf'],
+    },
+  },
 };

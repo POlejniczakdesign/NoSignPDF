@@ -346,4 +346,154 @@ export const PRIVACY_CONTENT: Record<Language, LocalizedPrivacyDoc> = {
     updatedLabel: 'Google AdSense सत्यापन के लिए अद्यतन: ',
     adminLabel: 'वेबसाइट प्रशासक: nosignpdf.com',
   },
+  pt: {
+    backBtn: 'Voltar para ferramentas PDF',
+    badge: 'Conformidade com Google AdSense, LGPD e GDPR',
+    tagline: 'nosignpdf.com – Segurança, Privacidade e Transparência',
+    title: 'Política de Privacidade e Termos de Serviço',
+    intro: 'Este documento estabelece as diretrizes de tratamento de dados, a integração de anúncios publicitários do Google AdSense e os termos de uso do serviço nosignpdf.com. Nosso compromisso absoluto é com a sua privacidade: a aplicação roda 100% no navegador do usuário (Client-Side) e nunca faz upload, armazena ou processa seus documentos PDF ou dados pessoais em servidores externos remotos.',
+    tabs: {
+      all: 'Todos os Documentos',
+      privacy: 'Política de Privacidade e Cookies',
+      terms: 'Termos de Serviço',
+    },
+    highlights: {
+      ramTitle: '100% na Memória RAM Local',
+      ramDesc: 'Seus arquivos nunca saem do seu computador ou celular. Zero upload para a nuvem.',
+      adsTitle: 'Google AdSense e Cookies',
+      adsDesc: 'Cookies utilizados exclusivamente para publicidade segura e monetização transparente.',
+      logsTitle: 'Zero Cadastro, Sem Bancos de Dados',
+      logsDesc: 'Sem contas de usuário, sem login e sem rastreamento do conteúdo dos seus documentos.',
+    },
+    privacyHeading: 'Política de Privacidade e Segurança Local (Zero-Upload)',
+    privacySections: [
+      {
+        title: '1. Processamento Local no Navegador (Arquitetura Privacy-First)',
+        points: [
+          'Todas as operações técnicas (preenchimento de formulários AcroForms, união, divisão, rotação, exclusão de páginas, compressão e higienização de metadados) são executadas com exclusividade na sandbox do seu navegador via WebAssembly e JavaScript (pdf-lib, pdfjs-dist).',
+          'Seus documentos PDF, campos preenchidos, dados sensíveis (CPF, CNPJ, dados bancários, salários, endereços) e imagens NUNCA são transmitidos aos nossos servidores ou a terceiros.',
+          'Os arquivos existem apenas na memória volátil (RAM) do seu dispositivo e são liberados imediatamente ao fechar a aba ou finalizar o trabalho.',
+        ],
+      },
+      {
+        title: '2. Direitos do Titular de Dados e Conformidade com a LGPD e GDPR',
+        points: [
+          'Em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018) e com o Regulamento Geral sobre a Proteção de Dados da UE (GDPR 2016/679), você mantém total soberania sobre suas informações.',
+          'Como o nosignpdf.com não coleta, não salva e não analisa arquivos em servidores, o risco de vazamento de dados por nossa infraestrutura é nulo.',
+        ],
+      },
+    ],
+    adsHeading: 'Monetização, Anúncios Google AdSense e Política de Cookies',
+    adsText: [
+      'Para cobrir custos de infraestrutura e manter todas as ferramentas gratuitas sem assinaturas pagas ou cobranças ocultas, o nosignpdf.com exibe anúncios da rede Google AdSense.',
+      'Fornecedores terceirizados, incluindo o Google, utilizam cookies para veicular anúncios com base em visitas anteriores dos usuários a este site ou a outros sites na internet.',
+      'Os cookies de publicidade permitem ao Google e aos seus parceiros exibir anúncios relevantes aos usuários com base em sua navegação no nosignpdf.com e/ou em outros endereços online.',
+    ],
+    adsOptOutLabel: 'Opção de desativação de anúncios personalizados:',
+    googleSettingsLabel: 'Configurações de Anúncios do Google (Google Ads Settings)',
+    aboutAdsLabel: 'Portal de Escolha do Consumidor em www.aboutads.info',
+    logsHeading: 'Registros Técnicos de Rede do Servidor de Hospedagem',
+    logsText: 'Nosso provedor de entrega estática (Cloudflare Pages) pode registrar metadados técnicos de requisições web (endereço IP, tipo de navegador, data/hora) estritamente para mitigação de ataques DDoS e estabilidade da rede. Nenhum conteúdo de arquivo PDF é jamais incluído nesses registros.',
+    termsHeading: 'Termos de Serviço (Terms of Service)',
+    termsIntro: 'Ao utilizar os recursos e ferramentas gratuitas do nosignpdf.com, você concorda expressamente com os seguintes termos.',
+    termsSections: [
+      {
+        title: '1. Natureza do Serviço Gratuito ("No Estado em que se Encontra")',
+        points: [
+          'O nosignpdf.com é disponibilizado gratuitamente no modelo "As Is", como uma ferramenta técnica de utilidade para manipulação de arquivos.',
+          'O serviço não constitui consultoria jurídica, tributária ou fiscal.',
+        ],
+      },
+      {
+        title: '2. Isenção e Limitação de Responsabilidade',
+        points: [
+          'O usuário é o único e exclusivo responsável pela veracidade e exatidão dos dados inseridos em formulários oficiais e declarações fiscais.',
+          'O desenvolvedor e operador da plataforma não se responsabilizam por eventuais rejeições de documentos por órgãos públicos, cartórios ou instituições financeiras.',
+        ],
+      },
+      {
+        title: '3. Uso Adequado e Lícito',
+        points: [
+          'É estritamente proibido utilizar o serviço para propósitos ilegais, fraudulentos ou de violação de direitos autorais de terceiros.',
+        ],
+      },
+    ],
+    updatedLabel: 'Atualizado para verificação do Google AdSense: ',
+    adminLabel: 'Administrador do Site: nosignpdf.com',
+  },
+  ru: {
+    backBtn: 'Назад к инструментам PDF',
+    badge: 'Соответствие стандартам Google AdSense и GDPR',
+    tagline: 'nosignpdf.com – Безопасность, Приватность и Прозрачность',
+    title: 'Политика Конфиденциальности и Условия Использования',
+    intro: 'Настоящий документ регламентирует правила обработки данных, показ рекламы Google AdSense и условия использования сервиса nosignpdf.com. Наш фундаментальный приоритет — абсолютная конфиденциальность: приложение работает на 100% локально в веб-браузере пользователя (Client-Side) и никогда не загружает, не хранит и не передает ваши PDF-файлы или персональные данные на сторонние удаленные серверы.',
+    tabs: {
+      all: 'Все Документы',
+      privacy: 'Политика Конфиденциальности и Cookies',
+      terms: 'Условия Использования',
+    },
+    highlights: {
+      ramTitle: '100% в Оперативной Памяти (RAM)',
+      ramDesc: 'Файлы не покидают ваше устройство. Никаких удаленных серверов или облаков.',
+      adsTitle: 'Google AdSense и Файлы Cookie',
+      adsDesc: 'Cookie применяются исключительно для безопасной монетизации и показа рекламы.',
+      logsTitle: 'Без Регистрации и Баз Данных',
+      logsDesc: 'Никаких учетных записей, паролей и слежения за содержимым ваших файлов.',
+    },
+    privacyHeading: 'Политика Конфиденциальности и Безопасность (Zero-Upload)',
+    privacySections: [
+      {
+        title: '1. Локальная Обработка в Браузере (Архитектура Privacy-First)',
+        points: [
+          'Все технические операции (заполнение форм AcroForms, объединение, разделение, поворот, удаление страниц, сжатие и очистка метаданных) выполняются изолированно в песочнице браузера с использованием WebAssembly и JavaScript (pdf-lib, pdfjs-dist).',
+          'Ваши PDF-файлы, введенные в формы данные (паспортные данные, ИНН, банковские счета, договоры) и графика НИКОГДА не передаются на наш сервер.',
+          'Документы открываются только в оперативной памяти (RAM) и мгновенно уничтожаются при закрытии вкладки или завершении сеанса.',
+        ],
+      },
+      {
+        title: '2. Права Пользователя и Соответствие GDPR',
+        points: [
+          'В полном согласии с европейским регламентом GDPR (2016/679) вы сохраняете полный контроль над своими персональными данными.',
+          'Поскольку nosignpdf.com не передает файлы на сервера, риск утечки персональных данных со стороны сервиса равен нулю.',
+        ],
+      },
+    ],
+    adsHeading: 'Монетизация, Реклама Google AdSense и Политика Cookies',
+    adsText: [
+      'Для покрытия расходов на хостинг и поддержания бесплатного доступа без подписок и скрытых платежей, nosignpdf.com показывает объявления рекламной сети Google AdSense.',
+      'Сторонние поставщики, включая компанию Google, используют файлы cookie для показа объявлений с учетом предыдущих посещений пользователем этого и других веб-сайтов.',
+      'Рекламные файлы cookie позволяют Google и партнерам подбирать релевантные объявления на основе посещений nosignpdf.com и других ресурсов в сети Интернет.',
+    ],
+    adsOptOutLabel: 'Возможность отключения персонализированной рекламы:',
+    googleSettingsLabel: 'Настройки рекламных предпочтений Google (Google Ads Settings)',
+    aboutAdsLabel: 'Портал потребительского выбора www.aboutads.info',
+    logsHeading: 'Технические Логи Хостинга и Сетевая Безопасность',
+    logsText: 'Сервис статического хостинга (Cloudflare Pages) может фиксировать стандартные анонимные технические сетевые параметры (IP-адрес, тип браузера, время запроса) исключительно в целях защиты от DDoS-атак и поддержания стабильности сети. Содержимое документов PDF никогда не попадает в эти журналы.',
+    termsHeading: 'Условия Использования Сервиса (Terms of Service)',
+    termsIntro: 'Используя бесплатные инструменты nosignpdf.com, вы соглашаетесь со следующими условиями.',
+    termsSections: [
+      {
+        title: '1. Характер Бесплатной Услуги («Как Есть»)',
+        points: [
+          'Сервис nosignpdf.com предоставляется бесплатно на условиях «As Is» как технический вспомогательный инструмент.',
+          'Сервис не является юридической, бухгалтерской или налоговой консультацией.',
+        ],
+      },
+      {
+        title: '2. Ограничение Ответственности',
+        points: [
+          'Пользователь несет единоличную ответственность за правильность данных, вносимых в официальные бланки и налоговые формы.',
+          'Разработчик и оператор сервиса не несут ответственности за отказ в приеме документов государственными органами или банками.',
+        ],
+      },
+      {
+        title: '3. Добросовестное Использование',
+        points: [
+          'Запрещается использовать сервис для совершения противоправных действий или нарушения авторских прав третьих лиц.',
+        ],
+      },
+    ],
+    updatedLabel: 'Обновлено для верификации Google AdSense: ',
+    adminLabel: 'Администратор веб-ресурса: nosignpdf.com',
+  },
 };

@@ -372,4 +372,168 @@ export const PUBLISHER_CONTENT: Record<Language, PublisherContentSection> = {
       author: 'सुरक्षा इंजीनियरिंग टीम, nosignpdf.com',
     },
   },
+  pt: {
+    badge: '100% Segurança e Privacidade · Padrão Corporativo',
+    mainHeading: 'Por que o NoSignPDF? A Revolução no Processamento Seguro de Documentos',
+    subHeading: 'A gestão moderna de documentos exige proteção inegociável do sigilo profissional, dados pessoais (LGPD) e confidencialidade comercial.',
+    whyUsIntro: [
+      'A grande maioria das ferramentas online de PDF (como iLovePDF, SmallPDF ou Adobe Acrobat Online) baseia-se na nuvem. Isso significa que qualquer documento enviado — seja um contrato com cláusulas confidenciais, balancete contábil, extrato bancário ou declaração com CPF e dados fiscais — é transferido pela internet aberta para servidores remotos, onde é gravado em disco e processado externamente.',
+      'Para advogados, contadores, médicos, peritos e empresas de todos os portes no Brasil, o envio de arquivos sigilosos a servidores desconhecidos impõe sérios riscos de conformidade com a LGPD (Lei Geral de Proteção de Dados), quebra de segredo industrial e potenciais penalidades civis. O nosignpdf.com foi concebido exatamente para sanar essa vulnerabilidade.',
+      'Desenvolvemos um motor de execução 100% Client-Side impulsionado por WebAssembly e JavaScript de alta performance (pdf-lib, pdfjs-dist). Todas as ações — preenchimento de AcroForms, união, divisão, rotação, exclusão de páginas, compressão e higienização de metadados — ocorrem exclusivamente na memória RAM do seu computador ou smartphone. Nenhum byte do seu arquivo sai do seu navegador.',
+    ],
+    pillars: [
+      {
+        title: 'Zero Cadastro e Sem Rastro Digital',
+        description: 'Você não precisa criar conta, informar e-mail ou fornecer cartão de crédito. Ao fechar a aba do navegador, a memória RAM é liberada instantaneamente.',
+      },
+      {
+        title: 'Segurança Jurídica e LGPD / GDPR',
+        description: 'Seus arquivos jamais tocam servidores na nuvem, garantindo risco zero de vazamento de dados, espionagem industrial ou incidentes de segurança.',
+      },
+      {
+        title: 'Velocidade Local sem Espera de Upload',
+        description: 'Não espere uploads lentos de arquivos grandes. As operações utilizam o processador da sua máquina, concluindo tarefas em frações de segundo.',
+      },
+      {
+        title: 'Livre de Marcas d’Água e Cobranças',
+        description: 'Baixe documentos limpos, profissionais e sem restrições arbitrárias de páginas ou limites diários de uso.',
+      },
+    ],
+    businessSafetyTitle: 'Proteção de Contratos Empresariais, Balanços e Notas Fiscais',
+    businessSafetyParagraphs: [
+      'No ecossistema corporativo atual, o formato PDF (Portable Document Format) é a espinha dorsal de propostas comerciais, demonstrativos contábeis, procurações e processos jurídicos.',
+      'Poucos sabem que um documento PDF armazena não apenas o texto visível, mas também metadados ocultos, identificadores de máquina, caminhos de pastas e histórico de edições. O upload desses arquivos para sites na nuvem expõe inteligência sensível a concorrentes e softwares espiões.',
+      'Com o NoSignPDF, a governança dos seus dados permanece intacta: contratos com sócios, folhas de pagamento e relatórios confidenciais são manipulados exclusivamente dentro da sandbox segura do seu dispositivo.',
+    ],
+    guideTitle: 'Base de Conhecimento e Guia Técnico de PDF: Boas Práticas',
+    guideSubtitle: 'Entenda os princípios de engenharia, padrões de segurança e dicas de manipulação documental.',
+    guideArticles: [
+      {
+        id: 'metadata-guide',
+        iconName: 'ShieldAlert',
+        title: 'O que são metadados em arquivos PDF e por que higienizá-los?',
+        summary: 'Metadados são informações técnicas invisíveis gravadas no arquivo que revelam nome do autor, software e versões.',
+        content: [
+          'Documentos criados no Word ou exportados de editores armazenam nome completo do usuário, login da rede corporativa, versão do sistema operacional e carimbos de data/hora.',
+          'Em concorrências públicas, processos judiciais ou propostas comerciais, o vazamento desses dados pode prejudicar estratégias de negócio. O higienizador de metadados do nosignpdf.com limpa dicionários /Info e streams XMP localmente num clique.',
+        ],
+      },
+      {
+        id: 'sign-forms-guide',
+        iconName: 'FileSignature',
+        title: 'Como preencher formulários PDF sem imprimir nem perder qualidade?',
+        summary: 'Imprimir em papel para preencher com caneta e redigitalizar gera custos e perda de nitidez visual.',
+        content: [
+          'Nosso preenchedor reconhece automaticamente campos digitais interativos AcroForms de órgãos públicos e formulários oficiais, permitindo digitação direta com fontes vetoriais nítidas.',
+          'Para formulários digitalizados (scans), basta clicar no documento para adicionar caixas de texto e caixas de seleção, gerando um PDF oficial aceito por tribunais e órgãos fiscais.',
+        ],
+      },
+      {
+        id: 'merge-guide',
+        iconName: 'FileStack',
+        title: 'Como juntar múltiplos arquivos PDF mantendo fontes e vetores?',
+        summary: 'Consolide laudos, faturas e relatórios em um único documento organizado.',
+        content: [
+          'Conversores comuns na internet transformam as páginas em imagens rasterizadas de baixa resolução, resultando em textos borrados e arquivos inchados.',
+          'O nosignpdf.com une objetos binários no nível estrutural do PDF, preservando fontes embutidas, nitidez de impressão e capacidade de pesquisa de texto (OCR). A grade de miniaturas facilita reordenar anexos.',
+        ],
+      },
+      {
+        id: 'compression-guide',
+        iconName: 'Minimize2',
+        title: 'Como comprimir PDF preservando a legibilidade para envio por e-mail?',
+        summary: 'Adequar documentos aos limites de anexos de e-mail (10 a 25 MB) sem transformar letras em borrões.',
+        content: [
+          'Nosso algoritmo otimiza estruturas internas redundantes e compacta imagens com parâmetros inteligentes, reduzindo significativamente o peso em megabytes.',
+          'O texto vetorial permanece 100% nítido e legível, mesmo em níveis altos de ampliação ou quando impresso em papel sulfite.',
+        ],
+      },
+    ],
+    quote: {
+      text: 'A verdadeira soberania digital começa quando seus documentos jamais abandonam o seu computador. O NoSignPDF entrega a segurança que empresas e profissionais merecem.',
+      author: 'Equipe de Engenharia e Segurança, nosignpdf.com',
+    },
+  },
+  ru: {
+    badge: '100% Безопасность и Конфиденциальность · Корпоративный Стандарт',
+    mainHeading: 'Почему NoSignPDF? Революция в Безопасной Обработке Документов',
+    subHeading: 'Современный электронный документооборот требует абсолютной защиты коммерческой тайны, персональных данных (GDPR) и финансовых сведений.',
+    whyUsIntro: [
+      'Большинство популярных веб-сервисов для работы с PDF (например, iLovePDF, SmallPDF или Adobe Acrobat Online) построены на облачной архитектуре. Это означает, что любой загруженный документ — будь то секретный коммерческий договор, бухгалтерский баланс, выписка по счету или заявление с паспортными данными — отправляется через открытый Интернет на удаленный сервер, где сохраняется на диске и обрабатывается сторонними процессами.',
+      'Для юристов, адвокатов, налоговых консультантов, бухгалтеров, врачей и владельцев бизнеса отправка конфиденциальных файлов на неизвестные сервера несет колоссальные правовые риски, угрозу нарушения адвокатской или врачебной тайны и штрафы за утечку персональных данных. Сервис nosignpdf.com был создан с целью полностью устранить эти угрозы.',
+      'Мы разработали инновационный движок Client-Side на основе технологий WebAssembly и высокопроизводительного JavaScript (pdf-lib, pdfjs-dist). Все манипуляции — заполнение AcroForms, слияние, разделение, поворот, удаление страниц, сжатие и удаление скрытых метаданных — выполняются на 100% локально в оперативной памяти (RAM) вашего компьютера или смартфона. Ни единого байта информации не покидает ваш браузер.',
+    ],
+    pillars: [
+      {
+        title: 'Без Регистрации и Цифрового Следа',
+        description: 'Вам не нужно создавать учетную запись, вводить адрес почты или привязывать карту. При закрытии вкладки память RAM очищается мгновенно.',
+      },
+      {
+        title: 'Абсолютная Правовая Безопасность и GDPR',
+        description: 'Ваши документы никогда не попадают на сетевые серверы, что исключает риск перехвата, промышленного шпионажа или утечки баз данных.',
+      },
+      {
+        title: 'Скорость Процессора и Работа Офлайн',
+        description: 'Забудьте о долгом ожидании отправки тяжелых файлов. Инструменты задействуют вычислительную мощность вашего устройства и работают за доли секунды.',
+      },
+      {
+        title: 'Без Водяных Знаков и Ограничений',
+        description: 'Скачивайте аккуратные, профессиональные документы без рекламных водяных знаков и искусственных лимитов на количество страниц.',
+      },
+    ],
+    businessSafetyTitle: 'Защита Корпоративных Договоров, Отчетов и Счетов',
+    businessSafetyParagraphs: [
+      'В современном бизнесе формат PDF (Portable Document Format) является мировым стандартом для договоров, бухгалтерских актов, судебных исков и налоговой отчетности.',
+      'Мало кто знает, что обычный файл PDF содержит не только видимый текст, но и скрытые метаданные: имя автора, логин в операционной системе, пути к локальным папкам и историю изменений. Загрузка таких файлов в ненадежные облака несет риск утечки закрытой информации конкурентам.',
+      'С NoSignPDF контроль над данными всегда остается у вас: соглашения с партнерами, зарплатные ведомости и тендерные заявки обрабатываются строго в изолированной песочнице вашего браузера.',
+    ],
+    guideTitle: 'База Знаний и Руководство по PDF: Практические Советы',
+    guideSubtitle: 'Узнайте об инженерных основах формата PDF, стандартах безопасности и эффективной работе с документами.',
+    guideArticles: [
+      {
+        id: 'metadata-guide',
+        iconName: 'ShieldAlert',
+        title: 'Что такое метаданные в PDF и почему их необходимо удалять?',
+        summary: 'Метаданные — это скрытая техническая информация, сохраняющая имя автора, программу и время правок.',
+        content: [
+          'Файлы, созданные в офисных редакторах, содержат системный логин создателя, название организации, версию ПО и пути на диске.',
+          'В судебных спорах или тендерах раскрытие таких данных может ослабить позицию стороны. Инструмент очистки метаданных в nosignpdf.com локально удаляет блоки /Info и потоки XMP в один клик.',
+        ],
+      },
+      {
+        id: 'sign-forms-guide',
+        iconName: 'FileSignature',
+        title: 'Как заполнять формы PDF без распечатки на принтере?',
+        summary: 'Печать на бумаге, ручное заполнение ручкой и повторное сканирование отнимают время и портят качество.',
+        content: [
+          'Наш модуль автоматически распознает нативные цифровые поля AcroForms официальных бланков и заявлений, обеспечивая идеальную четкость векторного шрифта.',
+          'Для обычных сканированных документов достаточно кликнуть в нужном месте, чтобы добавить текстовое поле или чекбокс, сформировав документ по стандарту ISO 32000.',
+        ],
+      },
+      {
+        id: 'merge-guide',
+        iconName: 'FileStack',
+        title: 'Как объединить файлы PDF с сохранением четкости шрифтов?',
+        summary: 'Соберите договоры, счета и приложения в единый упорядоченный том.',
+        content: [
+          'Некачественные облачные конвертеры нередко превращают страницы в растровые картинки, делая текст размытым при печати и увеличивая размер файла.',
+          'nosignpdf.com объединяет бинарные объекты на уровне структуры PDF, сохраняя векторные шрифты, резкость печати и возможность поиска (OCR). Сетка миниатюр позволяет быстро настроить порядок листов.',
+        ],
+      },
+      {
+        id: 'compression-guide',
+        iconName: 'Minimize2',
+        title: 'Как сжать PDF без потери читаемости для отправки по почте?',
+        summary: 'Уменьшайте размер файлов для соответствия лимитам почтовых серверов (10–25 МБ).',
+        content: [
+          'Наш локальный алгоритм оптимизирует внутреннюю структуру и аккуратно сжимает встроенные иллюстрации без ущерба для разборчивости.',
+          'Векторный текст остается безупречно четким даже при сильном увеличении масштаба или выводе на печать.',
+        ],
+      },
+    ],
+    quote: {
+      text: 'Подлинная цифровая независимость начинается тогда, когда ваши файлы не покидают ваше устройство. NoSignPDF дает надежную защиту, необходимую профессионалам.',
+      author: 'Команда информационной безопасности, nosignpdf.com',
+    },
+  },
 };

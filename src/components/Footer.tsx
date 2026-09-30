@@ -120,8 +120,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               {t.footer.cookiePolicy}
             </button>
             <span>•</span>
-            <span>100% Client-Side Engine</span>
-            <span>•</span>
             <span>{t.footer.engine}</span>
           </div>
         </div>
