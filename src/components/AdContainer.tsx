@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Language } from '../i18n/translations';
 
 interface AdContainerProps {
   type:
@@ -12,8 +13,28 @@ interface AdContainerProps {
   className?: string;
 }
 
+const SPONSOR_LABELS: Record<Language, string> = {
+  pl: 'Sponsor',
+  en: 'Sponsor',
+  es: 'Patrocinador',
+  hi: 'प्रायोजक',
+  pt: 'Patrocinador',
+  ru: 'Спонсор',
+};
+
+const BANNER_BOTTOM_TITLES: Record<Language, string> = {
+  pl: 'Miejsce na reklamę (Bottom Leaderboard)',
+  en: 'Advertisement Placement (Bottom Leaderboard)',
+  es: 'Espacio publicitario inferior (Leaderboard)',
+  hi: 'निचला विज्ञापन स्थान (Bottom Leaderboard)',
+  pt: 'Espaço Publicitário Inferior (Leaderboard)',
+  ru: 'Нижний рекламный блок (Leaderboard)',
+};
+
 export const AdContainer: React.FC<AdContainerProps> = ({ type, className = '' }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const sponsorText = SPONSOR_LABELS[language] || SPONSOR_LABELS.en;
+  const bottomTitle = BANNER_BOTTOM_TITLES[language] || BANNER_BOTTOM_TITLES.en;
 
   if (type === 'banner-top') {
     return (
@@ -22,15 +43,15 @@ export const AdContainer: React.FC<AdContainerProps> = ({ type, className = '' }
         aria-label={t.ads.adLabel}
         className={`w-full max-w-4xl mx-auto my-3 ${className}`}
       >
-        <div className="border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-900/30 rounded-lg py-2 px-4 text-center min-h-[50px] flex items-center justify-between text-xs text-zinc-400 dark:text-zinc-500">
-          <span className="text-[10px] tracking-wider uppercase font-medium">
+        <div className="rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/40 py-3 px-6 text-center min-h-[50px] flex items-center justify-between text-xs text-neutral-400 dark:text-neutral-500 transition-colors shadow-2xs">
+          <span className="text-[10px] tracking-widest uppercase font-semibold text-neutral-400 dark:text-neutral-500">
             {t.ads.adLabel}
           </span>
-          <span className="text-[11px] font-normal text-zinc-400 dark:text-zinc-500">
+          <span className="text-[11px] font-medium text-neutral-500 dark:text-neutral-400 text-center">
             {t.ads.bannerTopTitle} (728×90)
           </span>
-          <span className="text-[10px] text-zinc-400 dark:text-zinc-600">
-            Sponsor
+          <span className="text-[10px] tracking-wider uppercase font-semibold text-neutral-400 dark:text-neutral-500">
+            {sponsorText}
           </span>
         </div>
       </aside>
@@ -41,23 +62,20 @@ export const AdContainer: React.FC<AdContainerProps> = ({ type, className = '' }
     return (
       <aside
         id="ad-banner-bottom"
-        aria-label="Reklama dolna"
+        aria-label={t.ads.adLabel}
         className={`w-full max-w-4xl mx-auto my-6 ${className}`}
       >
-        <div className="border border-dashed border-zinc-300 dark:border-zinc-700 bg-zinc-50/60 dark:bg-zinc-900/40 rounded-xl py-4 px-6 text-center min-h-[90px] flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400 shadow-2xs">
-          <span className="text-[10px] tracking-wider uppercase font-semibold text-zinc-400">
-            {t.ads.adLabel}
-          </span>
-          <div className="flex flex-col items-center">
-            <span className="text-xs sm:text-sm font-medium text-zinc-700 dark:text-zinc-300">
-              Miejsce na reklamę (Bottom Leaderboard)
-            </span>
-            <span className="text-[10px] text-zinc-400 dark:text-zinc-500">
-              728×90 / 970×90 Leaderboard
-            </span>
+        <div className="rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/40 py-6 px-6 text-center min-h-[96px] flex flex-col items-center justify-center gap-1.5 transition-colors shadow-2xs">
+          <div className="flex items-center justify-center gap-2 text-[10px] tracking-widest uppercase font-semibold text-neutral-400 dark:text-neutral-500">
+            <span>{t.ads.adLabel}</span>
+            <span>•</span>
+            <span>{sponsorText}</span>
           </div>
-          <span className="text-[10px] text-zinc-400 dark:text-zinc-500 font-medium">
-            Sponsor
+          <span className="text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-300">
+            {bottomTitle}
+          </span>
+          <span className="text-[11px] text-neutral-400 dark:text-neutral-500">
+            728×90 / 970×90 Leaderboard · Google AdSense
           </span>
         </div>
       </aside>
@@ -69,23 +87,23 @@ export const AdContainer: React.FC<AdContainerProps> = ({ type, className = '' }
     return (
       <aside
         id={isLeft ? 'ad-skyscraper-left' : 'ad-skyscraper-right'}
-        aria-label={isLeft ? 'Reklama boczna lewa' : 'Reklama boczna prawa'}
+        aria-label={isLeft ? t.ads.sidebarLeftTitle : t.ads.sidebarRightTitle}
         className={`hidden xl:flex flex-col w-[160px] shrink-0 ${className}`}
       >
-        <div className="sticky top-20 border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-900/30 rounded-xl p-3 text-center min-h-[600px] flex flex-col justify-between items-center text-xs text-zinc-400 dark:text-zinc-500 shadow-2xs">
-          <span className="text-[10px] tracking-wider uppercase font-semibold text-zinc-400 dark:text-zinc-500">
+        <div className="sticky top-20 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/40 p-4 text-center min-h-[600px] flex flex-col justify-between items-center text-xs text-neutral-400 dark:text-neutral-500 shadow-2xs transition-colors">
+          <span className="text-[10px] tracking-widest uppercase font-semibold text-neutral-400 dark:text-neutral-500">
             {t.ads.adLabel}
           </span>
-          <div className="space-y-3 my-auto">
-            <div className="w-9 h-9 rounded-lg bg-zinc-100 dark:bg-zinc-800 mx-auto flex items-center justify-center text-zinc-500 text-xs font-semibold">
+          <div className="space-y-3 my-auto flex flex-col items-center">
+            <div className="w-10 h-10 rounded-xl bg-neutral-200/70 dark:bg-neutral-800 flex items-center justify-center text-neutral-600 dark:text-neutral-300 text-xs font-bold">
               160×600
             </div>
-            <p className="text-[11px] font-medium text-zinc-600 dark:text-zinc-400 leading-snug">
-              Miejsce na reklamę (Skyscraper 160×600)
+            <p className="text-[11px] font-medium text-neutral-600 dark:text-neutral-400 leading-snug max-w-[130px]">
+              {isLeft ? t.ads.sidebarLeftTitle : t.ads.sidebarRightTitle}
             </p>
           </div>
-          <span className="text-[10px] text-zinc-400 dark:text-zinc-600">
-            Sponsor
+          <span className="text-[10px] tracking-wider uppercase font-semibold text-neutral-400 dark:text-neutral-500">
+            {sponsorText}
           </span>
         </div>
       </aside>
@@ -96,24 +114,26 @@ export const AdContainer: React.FC<AdContainerProps> = ({ type, className = '' }
     return (
       <div
         id="ad-modal-square-300x250"
-        className={`w-[300px] h-[250px] mx-auto border border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-zinc-950/60 rounded-xl p-4 flex flex-col items-center justify-between text-center shadow-2xs ${className}`}
+        className={`w-[300px] h-[250px] mx-auto rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/80 dark:bg-neutral-900/60 p-5 flex flex-col items-center justify-between text-center shadow-2xs transition-colors ${className}`}
       >
-        <span className="text-[10px] tracking-wider uppercase font-semibold text-zinc-400">
-          {t.ads.adLabel}
-        </span>
+        <div className="flex items-center justify-center gap-1.5 text-[10px] tracking-widest uppercase font-semibold text-neutral-400 dark:text-neutral-500">
+          <span>{t.ads.adLabel}</span>
+          <span>•</span>
+          <span>{sponsorText}</span>
+        </div>
         <div className="space-y-2">
-          <div className="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800 mx-auto flex items-center justify-center text-zinc-500 text-xs font-bold">
+          <div className="w-10 h-10 rounded-xl bg-neutral-200/70 dark:bg-neutral-800 mx-auto flex items-center justify-center text-neutral-600 dark:text-neutral-300 text-xs font-bold">
             300×250
           </div>
-          <p className="text-xs font-semibold text-zinc-700 dark:text-zinc-200 max-w-[220px]">
-            Miejsce na reklamę - Pop-up / Interstitial 300x250
+          <p className="text-xs font-semibold text-neutral-700 dark:text-neutral-300 max-w-[220px]">
+            {t.ads.interstitialTitle}
           </p>
-          <p className="text-[10px] text-zinc-400">
-            Medium Rectangle Ad Unit
+          <p className="text-[10px] text-neutral-400 dark:text-neutral-500">
+            Medium Rectangle Ad Unit · Google AdSense
           </p>
         </div>
-        <span className="text-[10px] text-zinc-400 font-medium">
-          Sponsor
+        <span className="text-[10px] tracking-wider uppercase font-semibold text-neutral-400 dark:text-neutral-500">
+          {sponsorText}
         </span>
       </div>
     );
@@ -123,18 +143,19 @@ export const AdContainer: React.FC<AdContainerProps> = ({ type, className = '' }
   return (
     <div
       id="ad-interstitial-modal"
-      className={`w-full max-w-[340px] mx-auto border border-zinc-200 dark:border-zinc-800 bg-zinc-50/60 dark:bg-zinc-900/40 rounded-xl p-4 text-center flex flex-col items-center justify-center min-h-[200px] ${className}`}
+      className={`w-full max-w-[340px] mx-auto rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/40 p-5 text-center flex flex-col items-center justify-center min-h-[200px] transition-colors ${className}`}
     >
-      <span className="text-[10px] tracking-wider uppercase font-medium text-zinc-400 dark:text-zinc-500 mb-2">
-        {t.ads.adLabel}
-      </span>
-      <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500 text-xs font-semibold mb-2">
+      <div className="flex items-center justify-center gap-1.5 text-[10px] tracking-widest uppercase font-semibold text-neutral-400 dark:text-neutral-500 mb-3">
+        <span>{t.ads.adLabel}</span>
+        <span>•</span>
+        <span>{sponsorText}</span>
+      </div>
+      <div className="w-9 h-9 rounded-xl bg-neutral-200/70 dark:bg-neutral-800 flex items-center justify-center text-neutral-600 dark:text-neutral-300 text-xs font-bold mb-2">
         Ad
       </div>
-      <p className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
+      <p className="text-xs font-medium text-neutral-600 dark:text-neutral-400 max-w-[240px]">
         {t.ads.interstitialTitle}
       </p>
     </div>
   );
 };
-
