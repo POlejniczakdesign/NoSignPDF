@@ -90,7 +90,7 @@ export const Header: React.FC<HeaderProps> = ({
 
   const categories = CATEGORY_NAMES[language] || CATEGORY_NAMES.en;
 
-  // Close menus on outside click
+  // Close dropdowns on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
@@ -143,40 +143,45 @@ export const Header: React.FC<HeaderProps> = ({
 
   const currentLangObj = LANGUAGES.find((l) => l.code === language) || LANGUAGES[0];
 
-  // Group tools into categories for dropdown & desktop navigation
-  const primaryPageTools = localizedTools.filter((tool) =>
-    [
-      '/wypelnij-formularz-pdf',
-      '/polacz-pdf',
-      '/wyczysc-metadane-pdf',
-      '/kompresuj-pdf',
-      '/grafika-do-pdf',
-      '/usun-strony-z-pdf',
-      '/obroc-pdf',
-      '/rozdziel-pdf',
-    ].includes(tool.path)
+  // The 4 prominent navigation links requested by user
+  const primaryNavRoutes: ToolRoute[] = [
+    '/wypelnij-formularz-pdf',
+    '/usun-strony-z-pdf',
+    '/obroc-pdf',
+    '/polacz-pdf',
+  ];
+
+  // Additional tools grouped for dropdown
+  const otherPageTools = localizedTools.filter(
+    (tool) =>
+      !primaryNavRoutes.includes(tool.path) &&
+      tool.path !== '/' &&
+      tool.path !== '/polityka-privacy' &&
+      !['/pdf-to-word', '/word-to-pdf', '/pdf-to-excel', '/excel-to-pdf'].includes(tool.path)
   );
 
   const conversionTools = localizedTools.filter((tool) =>
     ['/pdf-to-word', '/word-to-pdf', '/pdf-to-excel', '/excel-to-pdf'].includes(tool.path)
   );
 
-  const isConversionActive = conversionTools.some((t) => t.path === currentPath);
+  const isMoreActive =
+    otherPageTools.some((t) => t.path === currentPath) ||
+    conversionTools.some((t) => t.path === currentPath);
 
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-white/90 dark:bg-neutral-950/90 border-b border-neutral-200/80 dark:border-neutral-800/80 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
-        {/* Left: Minimalist Logo (SVG Document with Shield) + NoSignPDF Wordmark */}
+    <header className="sticky top-0 z-40 w-full bg-white dark:bg-zinc-900 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+        {/* Left: Minimalist Logo + NoSignPDF Wordmark */}
         <div
           id="brand-logo"
           onClick={() => {
             onNavigate('/');
             setMobileMenuOpen(false);
           }}
-          className="flex items-center gap-2.5 cursor-pointer group select-none shrink-0"
+          className="flex items-center gap-3 cursor-pointer group select-none shrink-0"
         >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-600 via-indigo-600 to-indigo-700 dark:from-indigo-500 dark:to-indigo-600 text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform duration-200">
-            {/* Custom SVG Document with integrated Security Shield */}
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-blue-600 to-indigo-700 dark:from-blue-500 dark:to-indigo-600 text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-200">
+            {/* Elegant SVG Document with Integrated Security Shield */}
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -198,7 +203,7 @@ export const Header: React.FC<HeaderProps> = ({
               <path
                 d="M12 11c1.8 0 3.2.9 3.2 2.3 0 2.2-3.2 4.2-3.2 4.2s-3.2-2-3.2-4.2c0-1.4 1.4-2.3 3.2-2.3z"
                 fill="currentColor"
-                fillOpacity="0.28"
+                fillOpacity="0.3"
                 strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -212,25 +217,28 @@ export const Header: React.FC<HeaderProps> = ({
             </svg>
           </div>
           <div className="flex items-center">
-            <span className="font-extrabold text-xl tracking-tight text-neutral-900 dark:text-white flex items-center">
-              NoSign<span className="text-indigo-600 dark:text-indigo-400">PDF</span>
+            <span className="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white flex items-center">
+              NoSign<span className="text-blue-600 dark:text-blue-400">PDF</span>
             </span>
           </div>
         </div>
 
-        {/* Center: Discreet Quick Tool Tabs + "All Tools" Dropdown */}
-        <nav className="hidden lg:flex items-center p-1 rounded-xl bg-neutral-100/80 dark:bg-neutral-900/80 border border-neutral-200/60 dark:border-neutral-800/80 text-xs">
-          {primaryPageTools.slice(0, 4).map((tool) => {
-            const isActive = currentPath === tool.path;
+        {/* Center: Spacious, High-Contrast Navigation Links */}
+        <nav className="hidden lg:flex items-center gap-1.5">
+          {primaryNavRoutes.map((route) => {
+            const tool = localizedTools.find((t) => t.path === route);
+            if (!tool) return null;
+            const isActive = currentPath === route;
+
             return (
               <button
                 key={tool.id}
                 id={`nav-${tool.id}`}
                 onClick={() => onNavigate(tool.path)}
-                className={`relative px-3 py-1.5 text-xs font-medium rounded-lg transition-all cursor-pointer ${
+                className={`px-3.5 py-2 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
                   isActive
-                    ? 'bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white shadow-2xs font-semibold'
-                    : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-200 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50'
+                    ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50/80 dark:bg-blue-950/40'
+                    : 'text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
               >
                 <span>{tool.shortName}</span>
@@ -238,25 +246,22 @@ export const Header: React.FC<HeaderProps> = ({
             );
           })}
 
-          {/* "All Tools" Dropdown Toggle */}
+          {/* "Więcej Narzędzi" / "All Tools" Dropdown */}
           <div className="relative" ref={toolsDropdownRef}>
             <button
               id="all-tools-dropdown-btn"
               type="button"
               onClick={() => setToolsMenuOpen(!toolsMenuOpen)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-all cursor-pointer ${
-                toolsMenuOpen || isConversionActive
-                  ? 'bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white shadow-2xs font-semibold'
-                  : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-200 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50'
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
+                toolsMenuOpen || isMoreActive
+                  ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50/80 dark:bg-blue-950/40'
+                  : 'text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800'
               }`}
             >
-              <LayoutGrid className="w-3.5 h-3.5" />
+              <LayoutGrid className="w-4 h-4" />
               <span>{categories.allTools}</span>
-              {isConversionActive && (
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-              )}
               <ChevronDown
-                className={`w-3 h-3 transition-transform duration-200 ${
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${
                   toolsMenuOpen ? 'rotate-180' : ''
                 }`}
               />
@@ -266,16 +271,16 @@ export const Header: React.FC<HeaderProps> = ({
             {toolsMenuOpen && (
               <div
                 id="all-tools-dropdown-menu"
-                className="absolute left-1/2 -translate-x-1/2 mt-2 w-[520px] bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-xl p-4 z-50 animate-in fade-in zoom-in-95 duration-150"
+                className="absolute left-1/2 -translate-x-1/2 mt-2 w-[520px] bg-white dark:bg-zinc-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl p-4 z-50 animate-in fade-in zoom-in-95 duration-150"
               >
                 <div className="grid grid-cols-2 gap-4">
                   {/* Column 1: Document & Page tools */}
                   <div className="space-y-1">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 dark:text-neutral-500 px-2 py-1 flex items-center gap-1.5">
-                      <FileSignature className="w-3 h-3" />
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-2 py-1 flex items-center gap-1.5">
+                      <FileSignature className="w-3.5 h-3.5" />
                       <span>{categories.pagesAndForms}</span>
                     </div>
-                    {primaryPageTools.map((tool) => {
+                    {otherPageTools.map((tool) => {
                       const isActive = currentPath === tool.path;
                       return (
                         <button
@@ -286,11 +291,11 @@ export const Header: React.FC<HeaderProps> = ({
                           }}
                           className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl text-left transition-colors cursor-pointer ${
                             isActive
-                              ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white font-semibold'
-                              : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800/70'
+                              ? 'bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 font-semibold'
+                              : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
                           }`}
                         >
-                          <div className="p-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300">
+                          <div className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                             {getToolIcon(tool.iconName)}
                           </div>
                           <div className="min-w-0 flex-1">
@@ -302,10 +307,10 @@ export const Header: React.FC<HeaderProps> = ({
                   </div>
 
                   {/* Column 2: Conversion & utility tools */}
-                  <div className="space-y-1 border-l border-neutral-100 dark:border-neutral-800 pl-3">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 px-2 py-1 flex items-center justify-between">
+                  <div className="space-y-1 border-l border-slate-100 dark:border-slate-800 pl-3">
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 px-2 py-1 flex items-center justify-between">
                       <span className="flex items-center gap-1.5">
-                        <Sparkles className="w-3 h-3" />
+                        <Sparkles className="w-3.5 h-3.5" />
                         <span>{categories.conversionAndExtra}</span>
                       </span>
                     </div>
@@ -322,11 +327,11 @@ export const Header: React.FC<HeaderProps> = ({
                           }}
                           className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl text-left transition-colors cursor-pointer ${
                             isActive
-                              ? 'bg-indigo-50 dark:bg-indigo-950/60 text-indigo-900 dark:text-indigo-100 font-semibold'
-                              : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800/70'
+                              ? 'bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 font-semibold'
+                              : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
                           }`}
                         >
-                          <div className="p-1 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400">
+                          <div className="p-1.5 rounded-lg bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400">
                             {getToolIcon(tool.iconName)}
                           </div>
                           <div className="min-w-0 flex-1">
@@ -342,24 +347,24 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </nav>
 
-        {/* Right side: Modern Language Switcher & Circular Theme Toggle */}
-        <div className="flex items-center gap-2">
-          {/* Elegant Rounded Language Switcher */}
+        {/* Right side: Modern Language Dropdown (6 Flags) & Theme Switcher */}
+        <div className="flex items-center gap-3">
+          {/* Modern Language Selector Dropdown (Clean, No "PL PL" duplicate) */}
           <div className="relative" ref={langDropdownRef}>
             <button
               id="language-switcher-btn"
               type="button"
               onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-50/80 dark:bg-neutral-900/80 text-neutral-700 dark:text-neutral-200 text-xs font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer shadow-2xs"
+              className="flex items-center gap-2 px-3.5 py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-medium transition-colors cursor-pointer shadow-xs"
               title={t.header.selectLanguage}
             >
-              <Globe className="w-3.5 h-3.5 text-neutral-500 dark:text-neutral-400 shrink-0" />
+              <Globe className="w-4 h-4 text-slate-500 dark:text-slate-400 shrink-0" />
               <span className="text-sm leading-none">{currentLangObj.flag}</span>
-              <span className="font-mono uppercase text-[11px] font-bold tracking-wider">
-                {currentLangObj.code}
+              <span className="font-semibold text-xs text-slate-800 dark:text-slate-100">
+                {currentLangObj.nativeName}
               </span>
               <ChevronDown
-                className={`w-3 h-3 text-neutral-400 transition-transform duration-200 ${
+                className={`w-3.5 h-3.5 text-slate-400 dark:text-slate-400 transition-transform duration-200 ${
                   langMenuOpen ? 'rotate-180' : ''
                 }`}
               />
@@ -368,9 +373,9 @@ export const Header: React.FC<HeaderProps> = ({
             {langMenuOpen && (
               <div
                 id="language-dropdown-menu"
-                className="absolute right-0 mt-2 w-52 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-xl p-1.5 z-50 animate-in fade-in zoom-in-95 duration-150"
+                className="absolute right-0 mt-2 w-52 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl p-1.5 z-50 animate-in fade-in zoom-in-95 duration-150"
               >
-                <div className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-neutral-400 dark:text-neutral-500 border-b border-neutral-100 dark:border-neutral-800 mb-1">
+                <div className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 border-b border-slate-100 dark:border-slate-800 mb-1">
                   {t.header.selectLanguage}
                 </div>
                 {LANGUAGES.map((langItem) => {
@@ -388,18 +393,18 @@ export const Header: React.FC<HeaderProps> = ({
                         }
                         setLangMenuOpen(false);
                       }}
-                      className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs text-left transition-colors cursor-pointer ${
+                      className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-medium text-left transition-colors cursor-pointer ${
                         isSelected
-                          ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white font-semibold'
-                          : 'text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800'
+                          ? 'bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 font-semibold'
+                          : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
                       }`}
                     >
                       <div className="flex items-center gap-2.5">
                         <span className="text-base leading-none">{langItem.flag}</span>
-                        <span className="font-medium">{langItem.nativeName}</span>
+                        <span>{langItem.nativeName}</span>
                       </div>
                       {isSelected && (
-                        <Check className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+                        <Check className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       )}
                     </button>
                   );
@@ -408,37 +413,37 @@ export const Header: React.FC<HeaderProps> = ({
             )}
           </div>
 
-          {/* Minimalist Circular Theme Toggle */}
+          {/* Aesthetic Theme Switcher (Delicate circular button) */}
           <button
             id="theme-toggle"
             onClick={onToggleTheme}
             aria-label={isDark ? t.header.themeLight : t.header.themeDark}
             title={isDark ? t.header.themeLight : t.header.themeDark}
-            className="w-9 h-9 rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-50/80 dark:bg-neutral-900/80 flex items-center justify-center text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer shadow-2xs"
+            className="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-colors cursor-pointer shadow-xs"
           >
             {isDark ? (
-              <Sun className="w-4 h-4 text-amber-500 transition-transform duration-200 hover:rotate-45" />
+              <Sun className="w-5 h-5 text-amber-500 transition-transform duration-200 hover:rotate-45" />
             ) : (
-              <Moon className="w-4 h-4 text-neutral-600 dark:text-neutral-300 transition-transform duration-200 hover:-rotate-12" />
+              <Moon className="w-5 h-5 text-slate-700 dark:text-slate-300 transition-transform duration-200 hover:-rotate-12" />
             )}
           </button>
 
-          {/* Mobile menu toggle button */}
+          {/* Mobile Menu Toggle Button */}
           <button
             id="mobile-menu-toggle-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
-            className="lg:hidden w-9 h-9 rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-50/80 dark:bg-neutral-900/80 flex items-center justify-center text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
+            className="lg:hidden w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-colors cursor-pointer shadow-xs"
           >
-            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 px-4 pt-3 pb-6 space-y-2 shadow-lg max-h-[80vh] overflow-y-auto">
-          <p className="text-[10px] font-semibold text-neutral-400 uppercase tracking-wider px-2 mb-2">
+        <div className="lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-zinc-900 px-4 pt-3 pb-6 space-y-2 shadow-lg max-h-[80vh] overflow-y-auto">
+          <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider px-2 mb-2">
             {t.header.menuTools}
           </p>
 
@@ -457,16 +462,16 @@ export const Header: React.FC<HeaderProps> = ({
                     }}
                     className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left transition-colors cursor-pointer ${
                       isActive
-                        ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white font-semibold'
-                        : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800'
+                        ? 'bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 font-semibold'
+                        : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
                     }`}
                   >
-                    <div className="p-1.5 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">
+                    <div className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                       {getToolIcon(tool.iconName)}
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="text-xs font-medium truncate">{tool.name}</div>
-                      <div className="text-[11px] text-neutral-400 dark:text-neutral-500 truncate">
+                      <div className="text-[11px] text-slate-400 dark:text-slate-500 truncate">
                         {tool.tagline}
                       </div>
                     </div>
@@ -476,22 +481,22 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Mobile Theme Switcher */}
-          <div className="pt-3 border-t border-neutral-200 dark:border-neutral-800">
+          <div className="pt-3 border-t border-slate-200 dark:border-slate-800">
             <button
               onClick={() => {
                 onToggleTheme();
               }}
-              className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 cursor-pointer"
+              className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
             >
               <div className="flex items-center gap-2">
                 {isDark ? (
                   <Sun className="w-4 h-4 text-amber-500" />
                 ) : (
-                  <Moon className="w-4 h-4 text-neutral-600" />
+                  <Moon className="w-4 h-4 text-slate-600" />
                 )}
                 <span>{isDark ? t.header.themeLight : t.header.themeDark}</span>
               </div>
-              <span className="text-[10px] text-neutral-500 dark:text-neutral-400 font-semibold uppercase px-2 py-0.5 rounded-full bg-neutral-200/70 dark:bg-neutral-800">
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 font-semibold uppercase px-2 py-0.5 rounded-full bg-slate-200/70 dark:bg-slate-800">
                 {isDark ? 'Dark' : 'Light'}
               </span>
             </button>

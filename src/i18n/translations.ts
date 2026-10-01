@@ -9,10 +9,10 @@ export interface LanguageOption {
 
 export const LANGUAGES: LanguageOption[] = [
   { code: 'pl', name: 'Polski', nativeName: 'Polski', flag: '🇵🇱' },
-  { code: 'en', name: 'English', nativeName: 'English', flag: '🇬🇧' },
+  { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' },
   { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' },
   { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', flag: '🇮🇳' },
-  { code: 'pt', name: 'Português', nativeName: 'Português (Brasil)', flag: '🇧🇷' },
+  { code: 'pt', name: 'Português', nativeName: 'Português', flag: '🇵🇹' },
   { code: 'ru', name: 'Русский', nativeName: 'Русский', flag: '🇷🇺' },
 ];
 
