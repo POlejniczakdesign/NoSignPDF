@@ -161,7 +161,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       menuTools: 'Narzędzia PDF Studio',
     },
     ads: {
-      adLabel: 'Reklama',
+      adLabel: 'Narzędzia sponsorowane',
       bannerTopTitle: 'Miejsce na baner reklamowy (Google AdSense / Ezoic Leaderboard)',
       sidebarLeftTitle: 'Reklama boczna lewa (Skyscraper 160x600 / 300x600)',
       sidebarRightTitle: 'Reklama boczna prawa (Skyscraper 160x600 / 300x600)',
@@ -287,7 +287,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       menuTools: 'PDF Studio Tools',
     },
     ads: {
-      adLabel: 'Advertisement',
+      adLabel: 'Sponsored tools',
       bannerTopTitle: 'Ad Placement (Google AdSense / Ezoic Leaderboard)',
       sidebarLeftTitle: 'Sidebar Ad Left (Skyscraper 160x600 / 300x600)',
       sidebarRightTitle: 'Sidebar Ad Right (Skyscraper 160x600 / 300x600)',
@@ -413,7 +413,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       menuTools: 'Herramientas PDF Studio',
     },
     ads: {
-      adLabel: 'Publicidad',
+      adLabel: 'Herramientas patrocinadas',
       bannerTopTitle: 'Espacio publicitario superior (Google AdSense / Ezoic Leaderboard)',
       sidebarLeftTitle: 'Publicidad lateral izquierda (Skyscraper 160x600 / 300x600)',
       sidebarRightTitle: 'Publicidad lateral derecha (Skyscraper 160x600 / 300x600)',
@@ -539,7 +539,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       menuTools: 'पीडीएफ टूल्स मेनू',
     },
     ads: {
-      adLabel: 'विज्ञापन',
+      adLabel: 'प्रायोजित उपकरण',
       bannerTopTitle: 'शीर्ष विज्ञापन स्थान (Google AdSense / Ezoic Leaderboard)',
       sidebarLeftTitle: 'बायां साइडबार विज्ञापन (Skyscraper 160x600 / 300x600)',
       sidebarRightTitle: 'दायां साइडबार विज्ञापन (Skyscraper 160x600 / 300x600)',
@@ -665,7 +665,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       menuTools: 'Ferramentas PDF Studio',
     },
     ads: {
-      adLabel: 'Publicidade',
+      adLabel: 'Ferramentas patrocinadas',
       bannerTopTitle: 'Anúncio Superior (Google AdSense / Ezoic Leaderboard)',
       sidebarLeftTitle: 'Anúncio Lateral Esquerdo (Skyscraper 160x600 / 300x600)',
       sidebarRightTitle: 'Anúncio Lateral Direito (Skyscraper 160x600 / 300x600)',
@@ -791,7 +791,7 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       menuTools: 'Инструменты PDF Studio',
     },
     ads: {
-      adLabel: 'Реклама',
+      adLabel: 'Спонсорские инструменты',
       bannerTopTitle: 'Рекламный блок (Google AdSense / Ezoic Leaderboard)',
       sidebarLeftTitle: 'Боковой баннер слева (160x600 / 300x600)',
       sidebarRightTitle: 'Боковой баннер справа (160x600 / 300x600)',

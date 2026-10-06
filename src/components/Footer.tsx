@@ -2,16 +2,47 @@ import React from 'react';
 import { FileText, Lock, ShieldCheck } from 'lucide-react';
 import { ToolRoute } from '../types';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Language } from '../i18n/translations';
+import { buildLocalizedPath } from '../lib/routing';
 
 interface FooterProps {
   onNavigate: (path: ToolRoute) => void;
 }
 
+const FOOTER_SEO_INDEX_TITLES: Record<Language, string> = {
+  pl: 'Szybki indeks modułów PDF',
+  en: 'PDF Tools Index',
+  es: 'Índice de herramientas PDF',
+  hi: 'पीडीएफ टूल्स अनुक्रमणिका',
+  pt: 'Índice de ferramentas PDF',
+  ru: 'Индекс инструментов PDF',
+};
+
+const CORE_11_TOOL_IDS = [
+  'wypelnij',
+  'usun',
+  'obroc',
+  'polacz',
+  'rozdziel',
+  'pdf-to-word',
+  'word-to-pdf',
+  'pdf-to-excel',
+  'excel-to-pdf',
+  'kompresuj',
+  'grafika',
+];
+
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
-  const { t, localizedTools } = useLanguage();
+  const { t, language, localizedTools } = useLanguage();
+
+  const seoIndexTitle = FOOTER_SEO_INDEX_TITLES[language] || FOOTER_SEO_INDEX_TITLES.en;
+  const nicheTools = localizedTools.filter((tool) => CORE_11_TOOL_IDS.includes(tool.id));
 
   return (
-    <footer id="main-footer" className="w-full bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 py-12 transition-colors mt-auto">
+    <footer
+      id="main-footer"
+      className="w-full bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 py-12 transition-colors mt-auto"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-zinc-100 dark:border-zinc-800">
           {/* Col 1: About */}
@@ -21,7 +52,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <FileText className="w-4 h-4" />
               </div>
               <span className="text-base font-extrabold text-zinc-900 dark:text-white">
-                PDF Studio Online
+                NoSignPDF
               </span>
             </div>
             <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 max-w-sm leading-relaxed">
@@ -39,19 +70,24 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               {t.footer.toolsTitle}
             </h4>
             <ul className="space-y-1.5 text-xs">
-              {localizedTools
-                .filter((tool) => tool.id !== 'privacy' && tool.id !== 'hub')
-                .map((tool) => (
+              {nicheTools.map((tool) => {
+                const localizedHref = buildLocalizedPath(tool.path, language);
+                return (
                   <li key={tool.id}>
-                    <button
+                    <a
                       id={`footer-link-${tool.id}`}
-                      onClick={() => onNavigate(tool.path)}
-                      className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors cursor-pointer text-left"
+                      href={localizedHref}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onNavigate(tool.path);
+                      }}
+                      className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors cursor-pointer text-left block"
                     >
                       {tool.name}
-                    </button>
+                    </a>
                   </li>
-                ))}
+                );
+              })}
             </ul>
           </div>
 
@@ -90,10 +126,40 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* Bottom copyright */}
+        {/* Discreet SEO Text Links Grid (Discreet Crawl Booster for Googlebot across all 11 niche subpages) */}
+        <div className="pt-8 pb-6 border-b border-zinc-100 dark:border-zinc-800">
+          <div className="text-[10px] font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-3">
+            {seoIndexTitle}
+          </div>
+          <nav
+            aria-label={seoIndexTitle}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-2 text-[11px]"
+          >
+            {nicheTools.map((tool) => {
+              const localizedHref = buildLocalizedPath(tool.path, language);
+              return (
+                <a
+                  key={`seo-grid-${tool.id}`}
+                  id={`footer-seo-link-${tool.id}`}
+                  href={localizedHref}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate(tool.path);
+                  }}
+                  className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors truncate"
+                  title={tool.name}
+                >
+                  {tool.name}
+                </a>
+              );
+            })}
+          </nav>
+        </div>
+
+        {/* Bottom copyright and compliance */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-400 dark:text-zinc-500 gap-4">
           <div>
-            © {new Date().getFullYear()} PDF Studio Online. {t.footer.copyright}
+            © {new Date().getFullYear()} NoSignPDF. {t.footer.copyright}
           </div>
           <div className="flex flex-wrap items-center gap-3 text-[11px]">
             <button

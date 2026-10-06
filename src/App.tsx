@@ -412,9 +412,10 @@ function AppContent() {
           {/* Large Modern .ZIP Package Download CTA (Directly under workspace) */}
           <DownloadZipPackageCta />
 
-          {/* Standard Bottom Ad banner placeholder */}
-          <div className="w-full max-w-4xl mt-8">
-            <AdContainer type="banner-bottom" />
+          {/* Dual Intelligent Ad Containers (Google Auto Ads & Responsive Ad Units) */}
+          <div className="w-full max-w-4xl mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <AdContainer type="bottom-slot-1" />
+            <AdContainer type="bottom-slot-2" />
           </div>
 
           {/* Structured SEO Content Section (tools and home only) */}
