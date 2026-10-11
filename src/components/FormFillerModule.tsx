@@ -43,11 +43,21 @@ interface FormFillerModuleProps {
 
 type ActiveTool = 'pointer' | 'text' | 'checkbox';
 
+const SAVE_BUTTON_TEXT: Record<string, { saving: string; saveAndDownload: string }> = {
+  pl: { saving: 'Zapisywanie...', saveAndDownload: 'Zapisz i pobierz PDF' },
+  en: { saving: 'Saving...', saveAndDownload: 'Save & Download PDF' },
+  es: { saving: 'Guardando...', saveAndDownload: 'Guardar y descargar PDF' },
+  hi: { saving: 'सहेजा जा रहा है...', saveAndDownload: 'सहेजें और PDF डाउनलोड करें' },
+  pt: { saving: 'Salvando...', saveAndDownload: 'Salvar e baixar PDF' },
+  ru: { saving: 'Сохранение...', saveAndDownload: 'Сохранить и скачать PDF' },
+};
+
 export const FormFillerModule: React.FC<FormFillerModuleProps> = ({
   onTriggerDownload,
   initialFile,
 }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const saveText = SAVE_BUTTON_TEXT[language] || SAVE_BUTTON_TEXT.en;
 
   const [fileBytes, setFileBytes] = useState<Uint8Array | null>(null);
   const [originalRawBytes, setOriginalRawBytes] = useState<Uint8Array | null>(null);
@@ -617,23 +627,23 @@ export const FormFillerModule: React.FC<FormFillerModuleProps> = ({
             </button>
           </div>
 
-          {/* Przycisk główny "Zapisz i pobierz PDF" - duży, wyraźny, czarny w jasnym motywie */}
+          {/* Przycisk główny "Zapisz i pobierz PDF" - duży, wyraźny, soczysty CTA */}
           <button
             id="save-download-acro-btn"
             type="button"
             onClick={handleSavePdf}
             disabled={isSaving}
-            className="flex items-center gap-2 px-4 py-2 bg-zinc-900 hover:bg-black text-white dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100 text-xs sm:text-sm font-medium rounded-lg shadow-xs hover:shadow-sm active:scale-[0.98] transition-all cursor-pointer disabled:opacity-50"
+            className="flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white text-xs sm:text-sm font-bold rounded-2xl shadow-md shadow-emerald-600/25 hover:shadow-lg hover:shadow-emerald-600/35 active:scale-[0.98] transition-all cursor-pointer disabled:opacity-50"
           >
             {isSaving ? (
               <>
                 <div className="w-3.5 h-3.5 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                <span>Zapisywanie...</span>
+                <span>{saveText.saving}</span>
               </>
             ) : (
               <>
                 <Download className="w-4 h-4" />
-                <span>Zapisz i pobierz PDF</span>
+                <span>{saveText.saveAndDownload}</span>
               </>
             )}
           </button>

@@ -20,7 +20,6 @@ import { MetadataStripperModule } from './components/MetadataStripperModule';
 import { SmartNextStepsCard } from './components/SmartNextStepsCard';
 import { TimeSavedCard } from './components/TimeSavedCard';
 import { PublisherArticleSection } from './components/PublisherArticleSection';
-import { DownloadZipPackageCta } from './components/DownloadZipPackageCta';
 import { ToolRoute } from './types';
 import { TOOLS } from './data/tools';
 import { downloadPdfBlob } from './lib/pdfOperations';
@@ -408,9 +407,6 @@ function AppContent() {
 
           {/* Active Working Module: Focused Workspace */}
           <div className="w-full flex justify-center">{renderActiveModule()}</div>
-
-          {/* Large Modern .ZIP Package Download CTA (Directly under workspace) */}
-          <DownloadZipPackageCta />
 
           {/* Dual Intelligent Ad Containers (Google Auto Ads & Responsive Ad Units) */}
           <div className="w-full max-w-4xl mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">

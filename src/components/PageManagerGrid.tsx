@@ -377,12 +377,13 @@ export const PageManagerGrid: React.FC<PageManagerGridProps> = ({
             </button>
           </div>
 
-          {/* Right: Compile & Download Button (prominent, rounded-lg, black in light mode) */}
+          {/* Right: Compile & Download Button (prominent, juicy CTA) */}
           <div className="flex items-center gap-2">
             <button
+              id="compile-download-pdf-btn"
               onClick={handleCompileAndDownload}
               disabled={isCompiling || pages.length === 0}
-              className="px-4 py-2 rounded-lg bg-zinc-900 hover:bg-black text-white dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100 text-xs sm:text-sm font-medium shadow-xs hover:shadow-sm active:scale-[0.98] flex items-center gap-2 transition-all disabled:opacity-50 cursor-pointer"
+              className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white text-xs sm:text-sm font-bold shadow-md shadow-emerald-600/25 hover:shadow-lg hover:shadow-emerald-600/35 active:scale-[0.98] flex items-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               <Download className="w-4 h-4" />
               <span>{t.common.downloadPdf}</span>
