@@ -84,261 +84,261 @@ for cleanup_candidate in ['wrangler.json', 'wrangler.jsonc', 'wrangler.toml', os
 TOOLS_METADATA = {
     "/": {
         "pl": {
-            "title": "Edytor PDF Online – 100% Darmowy, Bez Logowania i Bezpieczny",
+            "title": "Darmowy Edytor PDF (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Darmowy edytor PDF online działający w Twojej przeglądarce bez logowania i rejestracji. Łącz, dziel, obracaj, usuwaj strony i wypełniaj formularze PDF bez wysyłania plików na serwer."
         },
         "en": {
-            "title": "Free Online PDF Editor – No Sign-Up, Private & In-Browser",
+            "title": "100% FREE PDF Editor (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "100% free online PDF editor running client-side in your browser. Merge, split, rotate, delete pages, and fill PDF forms with zero sign-up and no watermarks."
         },
         "es": {
-            "title": "Editor PDF Gratis Online – Sin Registro, Seguro y en Navegador",
+            "title": "Editor PDF 100% Gratis (Sin Registro, Sin Límites) - nosignpdf.com",
             "desc": "Editor PDF online 100% gratis y privado que funciona en tu navegador sin registro. Une, divide, gira, elimina páginas y rellena formularios PDF sin subir tus archivos."
         },
         "hi": {
-            "title": "मुफ्त ऑनलाइन पीडीएफ संपादक – बिना लॉगिन, 100% सुरक्षित और निजी",
+            "title": "100% मुफ्त पीडीएफ एडिटर (बिना लॉगिन, बिना सीमा) - nosignpdf.com",
             "desc": "ब्राउज़र में स्थानीय रूप से चलने वाला 100% मुफ्त पीडीएफ एडिटर। बिना रजिस्ट्रेशन पीडीएफ फाइलें जोड़ें, अलग करें, घुमाएं और फॉर्म भरें बिना सर्वर पर फाइल भेजे।"
         },
         "pt": {
-            "title": "Editor de PDF Online Grátis – Sem Cadastro, Seguro no Navegador",
+            "title": "Editor de PDF 100% Grátis (Sem Cadastro, Sem Limites) - nosignpdf.com",
             "desc": "Editor de PDF online 100% gratuito e privado que roda direto no seu navegador sem cadastro. Junte, divida, gire, exclua páginas e preencha formulários PDF sem enviar arquivos para a nuvem."
         },
         "ru": {
-            "title": "Бесплатный Онлайн PDF Редактор – Без Регистрации, Приватно в Браузере",
+            "title": "100% Бесплатный PDF Редактор (Без Регистрации и Лимитов) - nosignpdf.com",
             "desc": "100% бесплатный онлайн-редактор PDF прямо в вашем браузере. Объединяйте, разделяйте, поворачивайте, удаляйте страницы и заполняйте формы без отправки файлов на сервер."
         }
     },
     "/polacz-pdf": {
         "pl": {
-            "title": "Połącz PDF Online – Darmowe Łączenie Plików PDF bez Logowania",
+            "title": "Darmowy Edytor PDF: Połącz PDF (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Szybko i bezpiecznie połącz wiele plików PDF w jeden dokument online. W 100% darmowe narzędzie, bez rejestracji i bez znaku wodnego."
         },
         "en": {
-            "title": "Merge PDF Online – Free PDF Joiner with No Sign-Up",
+            "title": "100% FREE PDF Editor: Merge PDF (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Combine multiple PDF files into one single document online quickly and securely. 100% free tool, no registration, no file size limits, and no watermarks."
         },
         "es": {
-            "title": "Unir PDF Online – Combinar Archivos PDF Gratis Sin Registro",
+            "title": "Editor PDF 100% Gratis: Unir PDF (Sin Registro, Sin Límites) - nosignpdf.com",
             "desc": "Une múltiples archivos PDF en un solo documento online de forma rápida y segura. Herramienta 100% gratis, sin registro y sin marcas de agua."
         },
         "hi": {
-            "title": "पीडीएफ जोड़ें ऑनलाइन – मुफ्त में कई पीडीएफ एक करें (No Sign-Up)",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ जोड़ें (बिना लॉगिन, बिना सीमा) - nosignpdf.com",
             "desc": "कई पीडीएफ फाइलों को एक दस्तावेज़ में सुरक्षित रूप से ऑनलाइन जोड़ें। 100% मुफ्त टूल, बिना लॉगिन और बिना वॉटरमार्क के।"
         },
         "pt": {
-            "title": "Juntar PDF Online – Combinar Arquivos PDF Grátis sem Cadastro",
+            "title": "Editor de PDF 100% Grátis: Juntar PDF (Sem Cadastro, Sem Limites) - nosignpdf.com",
             "desc": "Junte múltiplos arquivos PDF em um único documento online com rapidez e segurança. Ferramenta 100% gratuita, sem limites, sem registro e sem marca d’água."
         },
         "ru": {
-            "title": "Объединить PDF Онлайн – Бесплатное Слияние Файлов PDF Без Регистрации",
-            "desc": "Быстро и безопасно объединяйте несколько файлов PDF в один документ онлайн. 100% бесплатно, без регистрации, водяных знаков и лимитов на размер."
+            "title": "100% Бесплатный PDF Редактор: Объединить PDF (Без Регистрации) - nosignpdf.com",
+            "desc": "Быстро и безопасно объединяйте несколько файлов PDF в один документ online. 100% бесплатно, без регистрации, водяных знаков и лимитов на размер."
         }
     },
     "/rozdziel-pdf": {
         "pl": {
-            "title": "Rozdziel PDF Online – Darmowe Wyodrębnianie Stron z PDF",
+            "title": "Darmowy Edytor PDF: Rozdziel PDF (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Błyskawicznie podziel plik PDF na pojedyncze strony lub wyodrębnij wybrany zakres arkuszy. Całkowicie za darmo, bez rejestracji i bez limitów."
         },
         "en": {
-            "title": "Split PDF Online – Extract Pages from PDF for Free",
+            "title": "100% FREE PDF Editor: Split PDF (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Instantly split PDF documents into single pages or extract custom page ranges online. 100% free, client-side private, with no sign-up required."
         },
         "es": {
-            "title": "Dividir PDF Online – Extraer Páginas de PDF Gratis Sin Registro",
+            "title": "Editor PDF 100% Gratis: Dividir PDF (Sin Registro, Sin Límites) - nosignpdf.com",
             "desc": "Divide documentos PDF en páginas sueltas o extrae rangos específicos online. 100% gratis, sin registro y con total privacidad en tu navegador."
         },
         "hi": {
-            "title": "पीडीएफ अलग करें ऑनलाइन – पेज निकालें व विभाजित करें मुफ्त में",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ अलग करें (बिना लॉगिन, बिना सीमा) - nosignpdf.com",
             "desc": "पीडीएफ फाइल को अलग-अलग पेजों में तुरंत विभाजित करें या अपनी पसंद के पेज निकालें। 100% मुफ्त, बिना पंजीकरण और पूर्ण सुरक्षा के साथ।"
         },
         "pt": {
-            "title": "Dividir PDF Online – Separar e Extrair Páginas de PDF Grátis",
+            "title": "Editor de PDF 100% Grátis: Dividir PDF (Sem Cadastro, Sem Limites) - nosignpdf.com",
             "desc": "Extraia páginas específicas ou divida documentos PDF pesados em arquivos menores no seu navegador. Rápido, seguro e sem enviar nada para a nuvem."
         },
         "ru": {
-            "title": "Разделить PDF Онлайн – Извлечь Страницы из PDF Бесплатно",
+            "title": "100% Бесплатный PDF Редактор: Разделить PDF (Без Регистрации) - nosignpdf.com",
             "desc": "Извлекайте нужные диапазоны страниц или разделяйте большие PDF на части прямо в браузере. 100% конфиденциально без загрузки в облако."
         }
     },
     "/wypelnij-formularz-pdf": {
         "pl": {
-            "title": "Wypełnij Formularz PDF Online – Bez Drukowania i Logowania",
+            "title": "Darmowy Edytor PDF: Wypełnij Formularz PDF (Bez Logowania) - nosignpdf.com",
             "desc": "Uzupełniaj wnioski urzędowe, pisma i formularze PDF bezpośrednio w przeglądarce. Wpisuj tekst, zaznaczaj pola, podpisuj i zapisuj plik bez rejestracji."
         },
         "en": {
-            "title": "Fill PDF Form Online – Free PDF Form Filler No Sign-Up",
+            "title": "100% FREE PDF Editor: Fill PDF Form (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Fill out applications, contracts, and official PDF forms directly in your browser. Type text, tick checkboxes, and download instantly without printing or sign-up."
         },
         "es": {
-            "title": "Rellenar Formulario PDF Online – Gratis, Sin Imprimir y Sin Registro",
+            "title": "Editor PDF 100% Gratis: Rellenar Formulario PDF (Sin Registro) - nosignpdf.com",
             "desc": "Completa formularios, contratos y solicitudes oficiales PDF directamente en tu navegador. Escribe texto, marca casillas y guarda sin registro."
         },
         "hi": {
-            "title": "पीडीएफ फॉर्म भरें ऑनलाइन – बिना प्रिंट और बिना लॉगिन के मुफ्त",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ फॉर्म भरें (बिना लॉगिन) - nosignpdf.com",
             "desc": "सरकारी आवेदन, अनुबंध और फॉर्म सीधे अपने ब्राउज़र में भरें। टेक्स्ट टाइप करें, चेकबॉक्स टिक करें और बिना लॉगिन तुरंत डाउनलोड करें।"
         },
         "pt": {
-            "title": "Preencher Formulário PDF Online – Escrever e Assinar PDF Grátis",
+            "title": "Editor de PDF 100% Grátis: Preencher Formulário PDF (Sem Cadastro) - nosignpdf.com",
             "desc": "Preencha formulários oficiais, requerimentos e contratos PDF com suporte a campos nativos AcroForm e texto livre sem precisar imprimir."
         },
         "ru": {
-            "title": "Заполнить Форму PDF Онлайн – Редактировать Бланки и Заявления",
+            "title": "100% Бесплатный PDF Редактор: Заполнить Форму PDF (Без Регистрации) - nosignpdf.com",
             "desc": "Заполняйте официальные бланки, заявления и договоры онлайн с нативной поддержкой AcroForm без печати на бумаге и сканирования."
         }
     },
     "/obroc-pdf": {
         "pl": {
-            "title": "Obróć PDF Online – Obracanie Stron PDF o 90, 180 Stopni Za Darmo",
+            "title": "Darmowy Edytor PDF: Obróć PDF (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Trwale obróć krzywe lub odwrócone strony PDF o 90°, 180° lub 270°. Napraw skany dokumentów w pamięci przeglądarki bez logowania i bez opłat."
         },
         "en": {
-            "title": "Rotate PDF Online – Turn PDF Pages 90 or 180 Degrees Free",
+            "title": "100% FREE PDF Editor: Rotate PDF (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Permanently rotate single pages or entire PDF files by 90, 180, or 270 degrees. Fix upside-down scans instantly in your browser with no sign-up."
         },
         "es": {
-            "title": "Rotar PDF Online – Girar Páginas PDF 90 o 180 Grados Gratis",
+            "title": "Editor PDF 100% Gratis: Rotar PDF (Sin Registro, Sin Límites) - nosignpdf.com",
             "desc": "Gira páginas individuales o todo el archivo PDF a 90°, 180° o 270° de forma permanente. Arregla escaneos invertidos online sin registro."
         },
         "hi": {
-            "title": "पीडीएफ घुमाएं ऑनलाइन – 90 या 180 डिग्री पेज रोटेट करें मुफ्त",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ घुमाएं (बिना लॉगिन, बिना सीमा) - nosignpdf.com",
             "desc": "उल्टे या तिरछे स्कैन किए गए पीडीएफ पेजों को 90°, 180° या 270° घुमाएं। बिना लॉगिन और पूरी तरह सुरक्षित अपने ब्राउज़र में ठीक करें।"
         },
         "pt": {
-            "title": "Girar PDF Online – Rotacionar Páginas de PDF em 90°, 180° e 270°",
+            "title": "Editor de PDF 100% Grátis: Girar PDF (Sem Cadastro, Sem Limites) - nosignpdf.com",
             "desc": "Gire páginas individuais ou todo o documento PDF para corrigir digitalizações tortas. Salve permanentemente no navegador com um clique."
         },
         "ru": {
-            "title": "Повернуть PDF Онлайн – Поворот Страниц PDF на 90, 180 и 270 Градусов",
+            "title": "100% Бесплатный PDF Редактор: Повернуть PDF (Без Регистрации) - nosignpdf.com",
             "desc": "Поворачивайте отдельные страницы или весь документ PDF для исправления сканов. Сохраняйте файл локально в браузере за один клик."
         }
     },
     "/usun-strony-z-pdf": {
         "pl": {
-            "title": "Usuń Strony z PDF Online – Wytnij Zbędne Strony z Pliku PDF",
+            "title": "Darmowy Edytor PDF: Usuń Strony z PDF (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Wybierz i usuń niepotrzebne strony lub puste arkusze ze swojego dokumentu PDF za pomocą jednego kliknięcia. Szybko, za darmo i bez wysyłania do chmury."
         },
         "en": {
-            "title": "Delete Pages from PDF Online – Remove PDF Pages for Free",
+            "title": "100% FREE PDF Editor: Delete PDF Pages (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Select and remove unwanted or blank pages from your PDF file with one click. Fast, free, client-side, and no registration required."
         },
         "es": {
-            "title": "Eliminar Páginas de PDF Online – Borrar Páginas Gratis",
+            "title": "Editor PDF 100% Gratis: Eliminar Páginas PDF (Sin Registro) - nosignpdf.com",
             "desc": "Selecciona y elimina hojas no deseadas o páginas en blanco de tu documento PDF con un solo clic. Gratis, rápido y 100% privado."
         },
         "hi": {
-            "title": "पीडीएफ से पेज हटाएं ऑनलाइन – अवांछित पेज मिटाएं मुफ्त में",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ से पेज हटाएं (बिना लॉगिन) - nosignpdf.com",
             "desc": "अपने पीडीएफ दस्तावेज़ से खाली या अनावश्यक पेज एक क्लिक में हटाएं। सुरक्षित, तेज़ और बिना किसी पंजीकरण के पूरी तरह मुफ्त।"
         },
         "pt": {
-            "title": "Excluir Páginas de PDF Online – Remover Páginas Desnecessárias Grátis",
+            "title": "Editor de PDF 100% Grátis: Excluir Páginas de PDF (Sem Cadastro) - nosignpdf.com",
             "desc": "Remova páginas em branco ou desnecessárias de qualquer documento PDF instantaneamente. Baixe o arquivo limpo e otimizado sem cadastro."
         },
         "ru": {
-            "title": "Удалить Страницы из PDF Онлайн – Вырезать Листы из Документа",
+            "title": "100% Бесплатный PDF Редактор: Удалить Страницы PDF (Без Регистрации) - nosignpdf.com",
             "desc": "Мгновенно удаляйте пустые или лишние страницы из файла PDF. Быстро, просто и полностью безопасно в вашем браузере."
         }
     },
     "/pdf-to-word": {
         "pl": {
-            "title": "Konwertuj PDF do Word Online (.docx) – Darmowa Konwersja bez Logowania",
+            "title": "Darmowy Edytor PDF: PDF do Word DOCX (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Przekonwertuj dokument PDF na edytowalny plik Word (.docx) bezpośrednio w przeglądarce. Ekstrakcja tekstu bez wysyłania plików na serwer."
         },
         "en": {
-            "title": "Convert PDF to Word Online (.docx) – Free Converter No Sign-Up",
+            "title": "100% FREE PDF Editor: PDF to Word DOCX (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Convert PDF documents into editable Word (.docx) files directly in your browser. Fast client-side text extraction with no file upload to servers."
         },
         "es": {
-            "title": "Convertir PDF a Word Online (.docx) – Gratis y Sin Registro",
+            "title": "Editor PDF 100% Gratis: PDF a Word DOCX (Sin Registro, Sin Límites) - nosignpdf.com",
             "desc": "Convierte tus documentos PDF a archivos editables de Word (.docx) directamente en tu navegador. Extracción de texto local 100% privada."
         },
         "hi": {
-            "title": "पीडीएफ से वर्ड (.docx) बदलें ऑनलाइन – मुफ्त कनवर्टर बिना लॉगिन",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ से वर्ड DOCX (बिना लॉगिन) - nosignpdf.com",
             "desc": "पीडीएफ दस्तावेज़ को संपादन योग्य वर्ड (.docx) फाइल में आसानी से बदलें। बिना सर्वर पर अपलोड किए स्थानीय रूप से टेक्स्ट निकालें।"
         },
         "pt": {
-            "title": "Converter PDF para Word Online – PDF para DOCX Grátis no Navegador",
+            "title": "Editor de PDF 100% Grátis: PDF para Word DOCX (Sem Cadastro) - nosignpdf.com",
             "desc": "Extraia texto de arquivos PDF e salve como documento do Word (.docx) ou texto sem enviar nada para servidores externos."
         },
         "ru": {
-            "title": "Конвертировать PDF в Word Онлайн – PDF в DOCX Бесплатно",
+            "title": "100% Бесплатный PDF Редактор: PDF в Word DOCX (Без Регистрации) - nosignpdf.com",
             "desc": "Извлечение текста и конвертация документов PDF в редактируемый формат Word (.docx) локально в браузере."
         }
     },
     "/word-to-pdf": {
         "pl": {
-            "title": "Konwertuj Word do PDF Online – Wklej Tekst i Utwórz Dokument PDF",
+            "title": "Darmowy Edytor PDF: Word do PDF (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Stwórz profesjonalny plik PDF z tekstu lub notatek. Wbudowany edytor tekstu, czysty format i natychmiastowe pobieranie pliku PDF za darmo."
         },
         "en": {
-            "title": "Convert Word / Text to PDF Online – Free PDF Creator",
+            "title": "100% FREE PDF Editor: Word to PDF (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Turn text, notes, and documents into a clean formatted PDF. Built-in editor, zero sign-up, and instant local generation in your browser."
         },
         "es": {
-            "title": "Convertir Word a PDF Online – Creador de PDF Gratis",
+            "title": "Editor PDF 100% Gratis: Word a PDF (Sin Registro, Sin Límites) - nosignpdf.com",
             "desc": "Crea documentos PDF profesionales a partir de texto o notas. Editor integrado, descarga inmediata y 100% gratis sin registro."
         },
         "hi": {
-            "title": "वर्ड से पीडीएफ बनाएं ऑनलाइन – टेक्स्ट से पीडीएफ कनवर्टर मुफ्त",
+            "title": "100% मुफ्त पीडीएफ एडिटर: वर्ड से पीडीएफ (बिना लॉगिन, बिना सीमा) - nosignpdf.com",
             "desc": "टेक्स्ट या नोट्स से सुंदर और पेशेवर पीडीएफ तैयार करें। तुरंत स्थानीय रूप से जनरेट करें बिना किसी लॉगिन या शुल्क के।"
         },
         "pt": {
-            "title": "Converter Word para PDF Online – Criar Documento PDF a partir de Texto",
+            "title": "Editor de PDF 100% Grátis: Word para PDF (Sem Cadastro, Sem Limites) - nosignpdf.com",
             "desc": "Cole seu texto ou importe arquivo e gere um documento PDF limpo com tipografia clara de forma rápida e 100% gratuita."
         },
         "ru": {
-            "title": "Конвертировать Word в PDF Онлайн – Создать PDF из Текста",
+            "title": "100% Бесплатный PDF Редактор: Word в PDF (Без Регистрации) - nosignpdf.com",
             "desc": "Вставьте текст или загрузите файл для быстрой генерации чистого PDF-документа прямо в браузере."
         }
     },
     "/pdf-to-excel": {
         "pl": {
-            "title": "Konwertuj PDF do Excel Online – Ekstrakcja Tabel i Danych do CSV",
+            "title": "Darmowy Edytor PDF: PDF do Excel CSV (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Błyskawicznie wyodrębnij tabele i dane liczbowe z pliku PDF do formatu CSV / Excel. Bezpieczne przetwarzanie w pamięci RAM bez logowania."
         },
         "en": {
-            "title": "Convert PDF to Excel Online – Extract Tables to CSV / Excel Free",
+            "title": "100% FREE PDF Editor: PDF to Excel CSV (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Extract tables and financial data from PDF files directly into Excel-compatible CSV sheets. Fast, accurate, and completely private."
         },
         "es": {
-            "title": "Convertir PDF a Excel Online – Extraer Tablas a CSV / Excel Gratis",
+            "title": "Editor PDF 100% Gratis: PDF a Excel CSV (Sin Registro, Sin Límites) - nosignpdf.com",
             "desc": "Extrae tablas y datos numéricos de tus archivos PDF a hojas de cálculo CSV compatibles con Excel. Rápido, gratis y sin subir archivos."
         },
         "hi": {
-            "title": "पीडीएफ से एक्सेल बदलें ऑनलाइन – टेबल और डेटा सीएसवी में निकालें",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ से एक्सेल CSV (बिना लॉगिन) - nosignpdf.com",
             "desc": "पीडीएफ से टेबल और संख्यात्मक डेटा आसानी से एक्सेल के अनुकूल सीएसवी में निकालें। पूरी तरह सुरक्षित और मुफ्त ऑनलाइन टूल।"
         },
         "pt": {
-            "title": "Converter PDF para Excel Online – Extrair Tabelas para Planilha CSV",
+            "title": "Editor de PDF 100% Grátis: PDF para Excel CSV (Sem Cadastro) - nosignpdf.com",
             "desc": "Extraia dados, linhas e tabelas de arquivos PDF para planilhas CSV e Excel compatíveis sem upload para a nuvem."
         },
         "ru": {
-            "title": "Конвертировать PDF в Excel Онлайн – Извлечь Таблицы в CSV",
+            "title": "100% Бесплатный PDF Редактор: PDF в Excel CSV (Без Регистрации) - nosignpdf.com",
             "desc": "Экспорт таблиц и строк из документов PDF в чистый формат Excel CSV с кодировкой UTF-8."
         }
     },
     "/excel-to-pdf": {
         "pl": {
-            "title": "Konwertuj Excel do PDF Online – Generuj Raport Tabelaryczny PDF",
+            "title": "Darmowy Edytor PDF: Excel do PDF (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Wklej dane tabelaryczne z programu Excel lub Arkuszy Google i wygeneruj czytelny raport PDF z siatką danych. 100% darmowe narzędzie."
         },
         "en": {
-            "title": "Convert Excel to PDF Online – Table to PDF Report Generator",
+            "title": "100% FREE PDF Editor: Excel to PDF (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Paste table rows and columns from Excel or Google Sheets to generate a clean, formatted PDF table report instantly for free."
         },
         "es": {
-            "title": "Convertir Excel a PDF Online – Generador de Reportes PDF desde Tablas",
+            "title": "Editor PDF 100% Gratis: Excel a PDF (Sin Registro, Sin Límites) - nosignpdf.com",
             "desc": "Pega filas y columnas de Excel o Google Sheets para generar un informe PDF bien formateado y con cuadrícula al instante."
         },
         "hi": {
-            "title": "एक्सेल से पीडीएफ बदलें ऑनलाइन – टेबल से पीडीएफ रिपोर्ट बनाएं",
+            "title": "100% मुफ्त पीडीएफ एडिटर: एक्सेल से पीडीएफ (बिना लॉगिन, बिना सीमा) - nosignpdf.com",
             "desc": "एक्सेल या गूगल शीट्स से डेटा पेस्ट करें और सुंदर टेबल वाला पीडीएफ दस्तावेज़ तैयार करें। बिना लॉगिन तुरंत मुफ्त बनाएं।"
         },
         "pt": {
-            "title": "Converter Excel para PDF Online – Gerar Relatório PDF de Tabela",
+            "title": "Editor de PDF 100% Grátis: Excel para PDF (Sem Cadastro, Sem Limites) - nosignpdf.com",
             "desc": "Cole células de planilhas Excel ou carregue CSV para gerar relatórios em PDF formatados e organizados com facilidade."
         },
         "ru": {
-            "title": "Конвертировать Excel в PDF Онлайн – Таблицы в PDF",
+            "title": "100% Бесплатный PDF Редактор: Excel в PDF (Без Регистрации) - nosignpdf.com",
             "desc": "Превратите данные из таблиц Excel или файлов CSV в аккуратный PDF-отчет с сеткой данных."
         }
     },
@@ -370,210 +370,210 @@ TOOLS_METADATA = {
     },
     "/kompresuj-pdf": {
         "pl": {
-            "title": "Kompresuj PDF Online – Zmniejsz Rozmiar Pliku PDF bez Utraty Jakości",
+            "title": "Darmowy Edytor PDF: Kompresuj PDF (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Darmowa kompresja PDF online w przeglądarce. Zmniejsz wagę dokumentu do wysyłki e-mailem lub ePUAP bez logowania i bez wysyłania plików na serwer."
         },
         "en": {
-            "title": "Compress PDF Online – Reduce PDF File Size Free No Sign-Up",
+            "title": "100% FREE PDF Editor: Compress PDF (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "100% free online PDF compressor running locally in your browser. Reduce file size for email attachment limits with zero data collection and no watermarks."
         },
         "es": {
-            "title": "Comprimir PDF Online – Reducir Tamaño de PDF Gratis Sin Registro",
+            "title": "Editor PDF 100% Gratis: Comprimir PDF (Sin Registro, Sin Límites) - nosignpdf.com",
             "desc": "Reduce el tamaño de tus documentos PDF online de forma rápida y segura. Herramienta 100% gratuita, privada en tu navegador y sin marcas de agua."
         },
         "hi": {
-            "title": "पीडीएफ कंप्रेस करें ऑनलाइन – फाइल साइज छोटा करें मुफ्त में",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ कंप्रेस करें (बिना लॉगिन) - nosignpdf.com",
             "desc": "अपने ब्राउज़र में स्थानीय रूप से पीडीएफ का आकार घटाएं बिना गुणवत्ता खोए। 100% मुफ्त टूल, बिना लॉगिन और बिना वॉटरमार्क।"
         },
         "pt": {
-            "title": "Comprimir PDF Online – Reduzir Tamanho de Arquivo PDF sem Perda",
+            "title": "Editor de PDF 100% Grátis: Comprimir PDF (Sem Cadastro, Sem Limites) - nosignpdf.com",
             "desc": "Reduza o tamanho de arquivos PDF pesados para enviar por e-mail ou órgãos públicos mantendo a nitidez do texto e das imagens."
         },
         "ru": {
-            "title": "Сжать PDF Онлайн – Уменьшить Размер Файла PDF Без Потери Качества",
+            "title": "100% Бесплатный PDF Редактор: Сжать PDF (Без Регистрации и Лимитов) - nosignpdf.com",
             "desc": "Эффективно уменьшайте вес документов PDF для отправки по почте или загрузки на госпорталы с сохранением четкости текста."
         }
     },
     "/grafika-do-pdf": {
         "pl": {
-            "title": "Grafika do PDF Online – Konwertuj Zdjęcia JPG, PNG do PDF Za Darmo",
+            "title": "Darmowy Edytor PDF: Zdjęcia i Grafika do PDF (Bez Logowania) - nosignpdf.com",
             "desc": "Błyskawicznie połącz zdjęcia i pliki graficzne JPG, PNG, WebP w jeden estetyczny dokument PDF. 100% prywatnie w pamięci RAM bez rejestracji."
         },
         "en": {
-            "title": "Image to PDF Online – Convert JPG and PNG to PDF Free",
+            "title": "100% FREE PDF Editor: Image to PDF (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Convert JPG, PNG, and WebP pictures into a clean multi-page PDF document online. Fast client-side conversion, no file size limit, and no sign-up."
         },
         "es": {
-            "title": "Imagen a PDF Online – Convertir JPG y PNG a PDF Gratis",
+            "title": "Editor PDF 100% Gratis: Imagen a PDF (Sin Registro, Sin Límites) - nosignpdf.com",
             "desc": "Combina múltiples imágenes JPG, PNG o WebP en un solo documento PDF limpio. Gratis, seguro en tu navegador y sin registros."
         },
         "hi": {
-            "title": "तस्वीर से पीडीएफ बनाएं ऑनलाइन – JPG और PNG से पीडीएफ कनवर्टर",
+            "title": "100% मुफ्त पीडीएफ एडिटर: तस्वीर से पीडीएफ (बिना लॉगिन) - nosignpdf.com",
             "desc": "JPG, PNG और WebP तस्वीरों को तुरंत स्वच्छ पीडीएफ दस्तावेज़ में बदलें। सुरक्षित, तेज़ और बिना किसी पंजीकरण के पूरी तरह मुफ्त।"
         },
         "pt": {
-            "title": "Imagem para PDF Online – Converter JPG, PNG e WebP em PDF Grátis",
+            "title": "Editor de PDF 100% Grátis: Imagem para PDF (Sem Cadastro, Sem Limites) - nosignpdf.com",
             "desc": "Converta fotos e imagens JPG, PNG ou WebP em um documento PDF limpo com ajuste automático de proporções e margens."
         },
         "ru": {
-            "title": "Картинки в PDF Онлайн – Конвертировать JPG и PNG в PDF Бесплатно",
+            "title": "100% Бесплатный PDF Редактор: Картинки в PDF (Без Регистрации) - nosignpdf.com",
             "desc": "Преобразуйте фотографии и изображения JPG, PNG, WebP в единый многостраничный PDF-документ прямо в браузере."
         }
     },
     "/wyczysc-metadane-pdf": {
         "pl": {
-            "title": "Usuń Metadane z PDF Online – Bezpieczne Czyszczenie Ukrytych Danych",
+            "title": "Darmowy Edytor PDF: Usuń Metadane z PDF (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Usuń ukryte metadane, autora, wersję programu Word i historię edycji z pliku PDF. 100% bezpłatnie i lokalnie w przeglądarce bez logowania i rejestracji."
         },
         "en": {
-            "title": "Remove PDF Metadata Online – Free PDF Metadata Stripper",
+            "title": "100% FREE PDF Editor: Remove PDF Metadata (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Strip hidden author names, creation software, editing dates, and XMP metadata from PDF files in your browser. 100% private, free, and no sign-up."
         },
         "es": {
-            "title": "Eliminar Metadatos de PDF Online – Limpiar Datos Ocultos Gratis",
+            "title": "Editor PDF 100% Gratis: Eliminar Metadatos de PDF (Sin Registro) - nosignpdf.com",
             "desc": "Elimina autor, software de creación, fechas y metadatos XMP de tus archivos PDF online. 100% privado en tu navegador y sin registro."
         },
         "hi": {
-            "title": "पीडीएफ मेटाडेटा हटाएं ऑनलाइन – छिपे हुए डेटा मिटाएं मुफ्त में",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ मेटाडेटा हटाएं (बिना लॉगिन) - nosignpdf.com",
             "desc": "अपने पीडीएफ दस्तावेज़ से लेखक का नाम, सॉफ्टवेयर विवरण और मेटाडेटा आसानी से हटाएं। 100% सुरक्षित और मुफ्त बिना लॉगिन।"
         },
         "pt": {
-            "title": "Remover Metadados de PDF Online – Limpeza de Dados Ocultos e Autor",
+            "title": "Editor de PDF 100% Grátis: Remover Metadados de PDF (Sem Cadastro) - nosignpdf.com",
             "desc": "Remova informações confidenciais ocultas, nome do autor, software e histórico de edição de arquivos PDF com total privacidade."
         },
         "ru": {
-            "title": "Удалить Метаданные из PDF Онлайн – Очистка Скрытых Данных и Автора",
+            "title": "100% Бесплатный PDF Редактор: Удалить Метаданные PDF (Без Регистрации) - nosignpdf.com",
             "desc": "Полное удаление скрытых метаданных, имени автора, программы Word и истории изменений из PDF-файла 100% локально."
         }
     },
     "/wyciagnij-grafiki-z-pdf": {
         "pl": {
-            "title": "Wyciągnij Grafiki z PDF Online – Darmowe Pobieranie Obrazów z PDF",
+            "title": "Darmowy Edytor PDF: Wyciągnij Zdjęcia z PDF (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Wyodrębnij i pobierz wszystkie zdjęcia, ilustracje i grafiki osadzone w pliku PDF w oryginalnej jakości. 100% lokalnie w przeglądarce bez logowania."
         },
         "en": {
-            "title": "Extract Images from PDF Online – Download Embedded Photos Free",
+            "title": "100% FREE PDF Editor: Extract Images from PDF (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Extract and download all photos, images, and graphics embedded inside PDF files in original resolution. 100% private, free, and no sign-up."
         },
         "es": {
-            "title": "Extraer Imágenes de PDF Online – Descargar Fotos de PDF Gratis",
+            "title": "Editor PDF 100% Gratis: Extraer Imágenes de PDF (Sin Registro) - nosignpdf.com",
             "desc": "Extrae y descarga todas las fotos, imágenes y gráficos incrustados en archivos PDF con calidad original. Seguro, online y sin registro."
         },
         "hi": {
-            "title": "पीडीएफ से फोटो निकालें ऑनलाइन – तस्वीरें व ग्राफिक्स डाउनलोड करें मुफ्त",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ से फोटो निकालें (बिना लॉगिन) - nosignpdf.com",
             "desc": "पीडीएफ दस्तावेज़ से सभी अंतर्निहित तस्वीरें और ग्राफिक्स मूल गुणवत्ता में निकालें। 100% मुफ्त, सुरक्षित और बिना लॉगिन।"
         },
         "pt": {
-            "title": "Extrair Imagens de PDF Online – Salvar Fotos de Documento em Alta Resolução",
+            "title": "Editor de PDF 100% Grátis: Extrair Imagens de PDF (Sem Cadastro) - nosignpdf.com",
             "desc": "Extraia todas as fotos e ilustrações incorporadas em arquivos PDF no formato JPG e PNG original sem perda de qualidade e sem cadastro."
         },
         "ru": {
-            "title": "Извлечь Картинки из PDF Онлайн – Сохранить Фото в Высоком Качестве",
+            "title": "100% Бесплатный PDF Редактор: Извлечь Картинки из PDF (Без Регистрации) - nosignpdf.com",
             "desc": "Быстро извлекайте встроенные изображения и фото из документов PDF в оригинальном качестве JPG/PNG без регистрации."
         }
     },
     "/zabezpiecz-pdf-haslem": {
         "pl": {
-            "title": "Zabezpiecz PDF Hasłem Online – Szyfrowanie Dokumentów PDF Za Darmo",
+            "title": "Darmowy Edytor PDF: Zabezpiecz PDF Hasłem (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Zaszyfruj poufny plik PDF silnym hasłem dostępu bezpośrednio w przeglądarce. Chroń umowy i dane finansowe bez wysyłania plików na serwer."
         },
         "en": {
-            "title": "Protect PDF with Password Online – Free PDF Encryption Tool",
+            "title": "100% FREE PDF Editor: Protect PDF with Password (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Encrypt your confidential PDF files with a strong password directly in your browser. Protect contracts and sensitive data with zero uploads."
         },
         "es": {
-            "title": "Proteger PDF con Contraseña Online – Encriptar PDF Gratis",
+            "title": "Editor PDF 100% Gratis: Proteger PDF con Contraseña (Sin Registro) - nosignpdf.com",
             "desc": "Protege y encripta tus documentos PDF con contraseña de forma segura en tu navegador. Máxima privacidad sin subir tus archivos."
         },
         "hi": {
-            "title": "पीडीएफ पासवर्ड सुरक्षित करें ऑनलाइन – पीडीएफ पर पासवर्ड लगाएं मुफ्त",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ पासवर्ड सुरक्षित करें (बिना लॉगिन) - nosignpdf.com",
             "desc": "अपने महत्वपूर्ण पीडीएफ दस्तावेज़ को पासवर्ड से सुरक्षित और एन्क्रिप्ट करें सीधे ब्राउज़र में। 100% सुरक्षित और बिना लॉगिन।"
         },
         "pt": {
-            "title": "Proteger PDF com Senha Online – Criptografar Documento com Segurança",
+            "title": "Editor de PDF 100% Grátis: Proteger PDF com Senha (Sem Cadastro) - nosignpdf.com",
             "desc": "Bloqueie e proteja arquivos PDF confidenciais com senha e criptografia forte diretamente no seu navegador sem enviar dados à nuvem."
         },
         "ru": {
-            "title": "Защитить PDF Паролем Онлайн – Надежное Шифрование Документов",
+            "title": "100% Бесплатный PDF Редактор: Защитить PDF Паролем (Без Регистрации) - nosignpdf.com",
             "desc": "Установите надежный пароль и шифрование на ваш PDF-документ прямо в браузере без передачи конфиденциальных данных в сеть."
         }
     },
     "/usun-haslo-z-pdf": {
         "pl": {
-            "title": "Usuń Hasło z PDF Online – Szybkie Odblokowywanie PDF bez Logowania",
+            "title": "Darmowy Edytor PDF: Odblokuj i Usuń Hasło z PDF (Bez Logowania) - nosignpdf.com",
             "desc": "Trwale usuń zabezpieczenie hasłem i ograniczenia edycji z pliku PDF. Odblokuj swój dokument w 100% prywatnie w pamięci RAM urządzenia."
         },
         "en": {
-            "title": "Unlock PDF Online – Remove Password from PDF Free No Sign-Up",
+            "title": "100% FREE PDF Editor: Unlock & Remove PDF Password (No Sign Up) - nosignpdf.com",
             "desc": "Permanently remove password security and permissions restrictions from PDF files. Unlock your PDF locally in memory with zero data collection."
         },
         "es": {
-            "title": "Desbloquear PDF Online – Quitar Contraseña de PDF Gratis Sin Registro",
+            "title": "Editor PDF 100% Gratis: Desbloquear y Quitar Contraseña PDF (Sin Registro) - nosignpdf.com",
             "desc": "Elimina la contraseña y restricciones de tus archivos PDF online de forma permanente. Seguro, rápido en tu navegador y sin registro."
         },
         "hi": {
-            "title": "पीडीएफ पासवर्ड हटाएं ऑनलाइन – पीडीएफ अनलॉक करें मुफ्त में",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ पासवर्ड हटाएं व अनलॉक करें (बिना लॉगिन) - nosignpdf.com",
             "desc": "पीडीएफ फाइल से पासवर्ड सुरक्षा और प्रतिबंध हटाएं सीधे ब्राउज़र में। 100% मुफ्त, तेज़ और बिना किसी पंजीकरण के।"
         },
         "pt": {
-            "title": "Desbloquear PDF Online – Remover Senha de PDF Rápido e Grátis",
+            "title": "Editor de PDF 100% Grátis: Desbloquear e Remover Senha do PDF (Sem Cadastro) - nosignpdf.com",
             "desc": "Remova senhas e restrições de documentos PDF protegidos com facilidade. Acesse e imprima seus arquivos sem travas e sem cadastro."
         },
         "ru": {
-            "title": "Снять Пароль с PDF Онлайн – Разблокировать Защищенный Документ",
+            "title": "100% Бесплатный PDF Редактор: Снять Пароль и Разблокировать PDF (Без Регистрации) - nosignpdf.com",
             "desc": "Быстрое снятие пароля и ограничений с защищенных PDF-файлов онлайн. Скачивайте свободный документ без блокировок."
         }
     },
     "/zmien-pdf-na-czarno-bialy": {
         "pl": {
-            "title": "Zmień PDF na Czarno-Biały Online – Konwersja do Skali Szarości",
+            "title": "Darmowy Edytor PDF: Zmień PDF na Czarno-Biały (Bez Logowania) - nosignpdf.com",
             "desc": "Przekonwertuj kolorowy plik PDF do odcieni szarości (monochromatyczny) online. Zmniejsz zużycie tuszu drukarki i wagę pliku bez rejestracji."
         },
         "en": {
-            "title": "Convert PDF to Grayscale Online – Black and White PDF Free",
+            "title": "100% FREE PDF Editor: Convert PDF to Grayscale (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Convert color PDF documents to clean black and white grayscale online. Save printer ink and toner client-side with no sign-up."
         },
         "es": {
-            "title": "Convertir PDF a Blanco y Negro Online – PDF en Escala de Grises",
+            "title": "Editor PDF 100% Gratis: Convertir PDF a Blanco y Negro (Sin Registro) - nosignpdf.com",
             "desc": "Convierte documentos PDF a color en escala de grises blanco y negro. Ahorra tinta de impresión de forma 100% gratuita y privada."
         },
         "hi": {
-            "title": "पीडीएफ ब्लैक एंड व्हाइट करें ऑनलाइन – ग्रेस्केल कनवर्टर मुफ्त",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ ब्लैक एंड व्हाइट ग्रेस्केल (बिना लॉगिन) - nosignpdf.com",
             "desc": "रंगीन पीडीएफ दस्तावेज़ को ब्लैक एंड व्हाइट (ग्रेस्केल) में बदलें। प्रिंटर स्याही बचाएं और फाइल साइज घटाएं बिना लॉगिन।"
         },
         "pt": {
-            "title": "PDF em Preto e Branco Online – Converter PDF Colorido para Tons de Cinza",
+            "title": "Editor de PDF 100% Grátis: PDF em Preto e Branco Grayscale (Sem Cadastro) - nosignpdf.com",
             "desc": "Converta arquivos PDF coloridos para escala de cinza monocromática online. Economize tinta de impressora e reduza o tamanho do arquivo."
         },
         "ru": {
-            "title": "Черно-Белый PDF Онлайн – Конвертировать PDF в Оттенки Серого",
+            "title": "100% Бесплатный PDF Редактор: Черно-Белый PDF в Оттенках Серого (Без Регистрации) - nosignpdf.com",
             "desc": "Преобразуйте цветной PDF-документ в черно-белый формат (градации серого) онлайн. Экономьте тонер принтера и уменьшайте размер."
         }
     },
     "/ponumeruj-strony-pdf": {
         "pl": {
-            "title": "Ponumeruj Strony w PDF Online – Dodaj Numery Stron do Dokumentu",
+            "title": "Darmowy Edytor PDF: Ponumeruj Strony w PDF (Bez Logowania i Rejestracji) - nosignpdf.com",
             "desc": "Automatycznie dodaj estetyczną numerację stron (np. 1 z N) do pliku PDF. Wybierz pozycję i format numerów w przeglądarce bez logowania."
         },
         "en": {
-            "title": "Add Page Numbers to PDF Online – Number PDF Pages for Free",
+            "title": "100% FREE PDF Editor: Add Page Numbers to PDF (No Sign Up, No Limits) - nosignpdf.com",
             "desc": "Easily insert custom page numbering (e.g. Page 1 of N) into your PDF files online. Fast, clean formatting in your browser with no sign-up."
         },
         "es": {
-            "title": "Numerar Páginas de PDF Online – Insertar Números de Página Gratis",
+            "title": "Editor PDF 100% Gratis: Numerar Páginas de PDF (Sin Registro, Sin Límites) - nosignpdf.com",
             "desc": "Añade números de página personalizados a tus documentos PDF online fácilmente. Rápido, seguro en tu navegador y sin registro."
         },
         "hi": {
-            "title": "पीडीएफ में पेज नंबर जोड़ें ऑनलाइन – पृष्ठ क्रमांक लगाएं मुफ्त में",
+            "title": "100% मुफ्त पीडीएफ एडिटर: पीडीएफ में पेज नंबर जोड़ें (बिना लॉगिन) - nosignpdf.com",
             "desc": "अपने पीडीएफ दस्तावेज़ के पेजों पर क्रमांक (उदा. 1, 2, 3) आसानी से लगाएं। सुंदर फॉर्मेटिंग सीधे ब्राउज़र में बिना लॉगिन।"
         },
         "pt": {
-            "title": "Numerar Páginas de PDF Online – Inserir Números de Página Grátis",
+            "title": "Editor de PDF 100% Grátis: Numerar Páginas de PDF (Sem Cadastro, Sem Limites) - nosignpdf.com",
             "desc": "Adicione numeração de página personalizada e profissional (ex: Página 1 de N) aos seus documentos PDF com total facilidade."
         },
         "ru": {
-            "title": "Пронумеровать Страницы PDF Онлайн – Вставить Номера Страниц в PDF",
-            "desc": "Автоматически добавьте аккуратную нумерацию страниц (напр. 1 из N) в документ PDF. Настраивайте формат и позицию без регистрации."
+            "title": "100% Бесплатный PDF Редактор: Пронумеровать Страницы PDF (Без Регистрации) - nosignpdf.com",
+            "desc": "Автоматически добавьте аккуратную numеrацию страниц (напр. 1 из N) в документ PDF. Настраивайте формат и позицию без регистрации."
         }
     }
 }
@@ -1926,6 +1926,8 @@ def generate_custom_html(tool_path, lang, current_slug):
     html = re.sub(r'<meta\s+name="description"\s+content="[^"]*"\s*/>', f'<meta name="description" content="{desc}" />', html)
     html = re.sub(r'<meta\s+property="og:title"\s+content="[^"]*"\s*/>', f'<meta property="og:title" content="{title}" />', html)
     html = re.sub(r'<meta\s+property="og:description"\s+content="[^"]*"\s*/>', f'<meta property="og:description" content="{desc}" />', html)
+    html = re.sub(r'<meta\s+name="twitter:title"\s+content="[^"]*"\s*/>\s*', '', html)
+    html = re.sub(r'<meta\s+name="twitter:description"\s+content="[^"]*"\s*/>\s*', '', html)
 
     faq_data_by_lang = {
         'pl': [
