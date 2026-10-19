@@ -17,6 +17,7 @@ import {
 } from '../lib/pdfOperations';
 import { FileUploader } from './FileUploader';
 import { useLanguage } from '../i18n/LanguageContext';
+import { useProcessing } from '../context/ProcessingContext';
 
 interface PageManagerGridProps {
   toolRoute: ToolRoute;
@@ -34,6 +35,7 @@ export const PageManagerGrid: React.FC<PageManagerGridProps> = ({
   initialFile,
 }) => {
   const { t } = useLanguage();
+  const processing = useProcessing();
 
   const [pages, setPages] = useState<PageThumbnailItem[]>([]);
   const [originalPages, setOriginalPages] = useState<PageThumbnailItem[]>([]);
@@ -329,7 +331,18 @@ export const PageManagerGrid: React.FC<PageManagerGridProps> = ({
                 size: file.size,
               });
             }
-            await handleFilesLoaded(filesToAdd, true);
+            if (processing && filesToAdd.length > 0) {
+              processing.startProcessing({
+                fileName: filesToAdd[0].name,
+                fileSize: filesToAdd[0].size,
+                targetToolRoute: toolRoute,
+                onComplete: async () => {
+                  await handleFilesLoaded(filesToAdd, true);
+                },
+              });
+            } else {
+              await handleFilesLoaded(filesToAdd, true);
+            }
           }
         }}
       />

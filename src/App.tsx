@@ -20,6 +20,7 @@ import { MetadataStripperModule } from './components/MetadataStripperModule';
 import { SmartNextStepsCard } from './components/SmartNextStepsCard';
 import { TimeSavedCard } from './components/TimeSavedCard';
 import { PublisherArticleSection } from './components/PublisherArticleSection';
+import { ProcessingProvider } from './context/ProcessingContext';
 import { ToolRoute } from './types';
 import { TOOLS } from './data/tools';
 import { downloadPdfBlob } from './lib/pdfOperations';
@@ -342,11 +343,19 @@ function AppContent() {
     );
   };
 
+  // Handler called when file processing finishes to show celebratory time saved stats
+  const handleProcessingFinished = (targetRoute?: ToolRoute) => {
+    const route = targetRoute || (currentPath === '/' ? '/wypelnij-formularz-pdf' : currentPath);
+    const stats = recordCompletedTask(route);
+    setCelebrationStats(stats);
+  };
+
   const activeToolMeta = getToolMeta(currentPath);
 
   return (
-    <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 selection:bg-zinc-900 selection:text-white dark:selection:bg-zinc-100 dark:selection:text-zinc-900 transition-colors">
-      {/* Sleek Minimalist Sticky Header */}
+    <ProcessingProvider onProcessingFinished={handleProcessingFinished}>
+      <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 selection:bg-zinc-900 selection:text-white dark:selection:bg-zinc-100 dark:selection:text-zinc-900 transition-colors">
+        {/* Sleek Minimalist Sticky Header */}
       <Header
         currentPath={currentPath}
         onNavigate={navigateTo}
@@ -447,6 +456,7 @@ function AppContent() {
       {/* Footer */}
       <Footer onNavigate={navigateTo} />
     </div>
+    </ProcessingProvider>
   );
 }
 

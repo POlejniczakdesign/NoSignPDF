@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { UploadCloud, Sparkles, AlertCircle } from 'lucide-react';
 import { generateSamplePdf } from '../lib/pdfOperations';
 import { useLanguage } from '../i18n/LanguageContext';
+import { useProcessing } from '../context/ProcessingContext';
 
 export interface UploadedFileItem {
   name: string;
@@ -27,6 +28,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
   subtitle,
 }) => {
   const { t } = useLanguage();
+  const processing = useProcessing();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [isLoadingSample, setIsLoadingSample] = useState(false);
@@ -37,10 +39,24 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
   const displaySubtitle = subtitle || t.common.dropzoneSubtitle;
 
   const emitFiles = (files: UploadedFileItem[]) => {
-    if (onFilesSelected) {
-      onFilesSelected(files);
-    } else if (onFilesLoaded) {
-      onFilesLoaded(files);
+    if (processing && files.length > 0) {
+      processing.startProcessing({
+        fileName: files[0].name,
+        fileSize: files[0].size,
+        onComplete: () => {
+          if (onFilesSelected) {
+            onFilesSelected(files);
+          } else if (onFilesLoaded) {
+            onFilesLoaded(files);
+          }
+        },
+      });
+    } else {
+      if (onFilesSelected) {
+        onFilesSelected(files);
+      } else if (onFilesLoaded) {
+        onFilesLoaded(files);
+      }
     }
   };
 
