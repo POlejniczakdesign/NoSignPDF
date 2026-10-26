@@ -14,6 +14,11 @@ site_domain = 'https://nosignpdf.com'
 INDEXNOW_KEY = os.environ.get('INDEXNOW_KEY', 'c89b4f2e51904a58b29d8a39e8a719c2')
 indexnow_key_filename = f"{INDEXNOW_KEY}.txt"
 
+# Google AdSense ads.txt Configuration (official authorized digital seller entry)
+ADSENSE_PUB_ID = os.environ.get('ADSENSE_PUB_ID', 'pub-7672441336686997')
+ADSENSE_CERT_ID = 'f08c47fec0942fa0'
+ADS_TXT_CONTENT = f"google.com, {ADSENSE_PUB_ID}, DIRECT, {ADSENSE_CERT_ID}\n"
+
 if not os.path.exists(dist_dir):
     print("Error: dist directory does not exist. Run 'npm run build' first.")
     exit(1)
@@ -25,6 +30,13 @@ os.makedirs('public', exist_ok=True)
 with open(os.path.join('public', indexnow_key_filename), 'w', encoding='utf-8') as f:
     f.write(INDEXNOW_KEY)
 print(f"Generated IndexNow verification key file: {indexnow_key_filename}")
+
+# Ensure physical ads.txt exists in dist/ and public/ with exact Google AdSense declaration
+with open(os.path.join(dist_dir, 'ads.txt'), 'w', encoding='utf-8') as f:
+    f.write(ADS_TXT_CONTENT)
+with open(os.path.join('public', 'ads.txt'), 'w', encoding='utf-8') as f:
+    f.write(ADS_TXT_CONTENT)
+print(f"Generated verified Google AdSense ads.txt: {ADS_TXT_CONTENT.strip()}")
 
 # Ensure 200.html exists in dist as Cloudflare Pages native SPA fallback
 index_path = os.path.join(dist_dir, 'index.html')
@@ -2462,15 +2474,74 @@ with open(os.path.join('public', 'robots.txt'), 'w', encoding='utf-8') as f:
     f.write(robots_content)
 print(f"Wrote {os.path.join(dist_dir, 'robots.txt')} and {os.path.join('public', 'robots.txt')}")
 
-# Copy favicon.ico, ads.txt, and _headers if present
+# Explicitly write verified ads.txt directly to dist/ and public/
+with open(os.path.join(dist_dir, 'ads.txt'), 'w', encoding='utf-8') as f:
+    f.write(ADS_TXT_CONTENT)
+with open(os.path.join('public', 'ads.txt'), 'w', encoding='utf-8') as f:
+    f.write(ADS_TXT_CONTENT)
+print(f"Verified {os.path.join(dist_dir, 'ads.txt')} and {os.path.join('public', 'ads.txt')}")
+
+# Explicitly generate and verify Cloudflare Pages _headers
+headers_rules = """/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/ads.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+  X-Content-Type-Options: nosniff
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+  X-Content-Type-Options: nosniff
+
+/sitemap.xml
+  Content-Type: text/xml; charset=utf-8
+  X-Robots-Tag: all
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
+/sitemap*.xml
+  Content-Type: text/xml; charset=utf-8
+  X-Robots-Tag: all
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
+/*.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+  X-Content-Type-Options: nosniff
+
+/favicon.ico
+  Content-Type: image/x-icon
+  Cache-Control: public, max-age=86400
+"""
+with open(os.path.join(dist_dir, '_headers'), 'w', encoding='utf-8') as f:
+    f.write(headers_rules)
+with open(os.path.join('public', '_headers'), 'w', encoding='utf-8') as f:
+    f.write(headers_rules)
+print(f"Wrote {os.path.join(dist_dir, '_headers')} ensuring Content-Type: text/plain; charset=utf-8 for /ads.txt")
+
+# Copy favicon.ico and _routes.json if present
 if os.path.exists(os.path.join('public', 'favicon.ico')):
     shutil.copyfile(os.path.join('public', 'favicon.ico'), os.path.join(dist_dir, 'favicon.ico'))
-if os.path.exists(os.path.join('public', 'ads.txt')):
-    shutil.copyfile(os.path.join('public', 'ads.txt'), os.path.join(dist_dir, 'ads.txt'))
-if os.path.exists(os.path.join('public', '_headers')):
-    shutil.copyfile(os.path.join('public', '_headers'), os.path.join(dist_dir, '_headers'))
 if os.path.exists(os.path.join('public', '_routes.json')):
     shutil.copyfile(os.path.join('public', '_routes.json'), os.path.join(dist_dir, '_routes.json'))
+
+# Sanity verification for Google AdSense verification bot
+ads_txt_dist_path = os.path.join(dist_dir, 'ads.txt')
+assert os.path.exists(ads_txt_dist_path), "CRITICAL: dist/ads.txt was not created!"
+with open(ads_txt_dist_path, 'r', encoding='utf-8') as f:
+    ads_check = f.read().strip()
+    assert ADSENSE_PUB_ID in ads_check, f"CRITICAL: {ADSENSE_PUB_ID} missing from dist/ads.txt!"
+print(f"✅ Google AdSense ads.txt validated successfully: '{ads_check}'")
 
 print("Creating Cloudflare Pages production zip archive...")
 with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -2493,6 +2564,8 @@ print("  - Full hreflang alternates and canonical tags for Googlebot")
 print("  - sitemap.xml with 114 URLs (6 languages x 19 pages)")
 print("  - Native 200.html SPA routing fallback (no _redirects loops)")
 print(f"  - IndexNow key verification file {indexnow_key_filename} placed at web root")
+print("  - Verified ads.txt with publisher pub-7672441336686997 placed at dist/ root")
+print("  - HTTP header rule configured: Content-Type: text/plain; charset=utf-8 for /ads.txt")
 print("  - favicon.ico, robots.txt, and ads.txt at root")
 
 

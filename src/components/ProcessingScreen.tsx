@@ -11,12 +11,22 @@ import {
 import { useLanguage } from '../i18n/LanguageContext';
 import { Language } from '../i18n/translations';
 
+export interface ProcessingCustomStages {
+  processingTitle?: string;
+  stage1?: string;
+  stage2?: string;
+  stage3?: string;
+  stage4?: string;
+  stage5?: string;
+}
+
 interface ProcessingScreenProps {
   isOpen: boolean;
   fileName: string;
   fileSize?: number;
   onComplete: () => void;
   durationMs?: number;
+  customStages?: ProcessingCustomStages;
 }
 
 export interface ProcessingCopy {
@@ -120,6 +130,7 @@ export const ProcessingScreen: React.FC<ProcessingScreenProps> = ({
   fileSize,
   onComplete,
   durationMs = 4500, // 4.5 seconds for optimal dwell time
+  customStages,
 }) => {
   const { language } = useLanguage();
   const copy = PROCESSING_STRINGS[language] || PROCESSING_STRINGS.en;
@@ -172,29 +183,29 @@ export const ProcessingScreen: React.FC<ProcessingScreenProps> = ({
 
   // Determine active stage and copy
   let currentStage = 1;
-  let currentMessage = copy.stage1;
+  let currentMessage = customStages?.stage1 || copy.stage1;
   let StageIcon = Cpu;
 
   if (progress >= 100) {
     currentStage = 5;
-    currentMessage = copy.stage5;
+    currentMessage = customStages?.stage5 || copy.stage5;
     StageIcon = CheckCircle2;
   } else if (progress >= 85) {
     currentStage = 4;
-    currentMessage = copy.stage4;
+    currentMessage = customStages?.stage4 || copy.stage4;
     StageIcon = Sparkles;
   } else if (progress >= 55) {
     currentStage = 3;
-    currentMessage = copy.stage3;
+    currentMessage = customStages?.stage3 || copy.stage3;
     StageIcon = ShieldCheck;
   } else if (progress >= 25) {
     currentStage = 2;
-    currentMessage = copy.stage2;
+    currentMessage = customStages?.stage2 || copy.stage2;
     StageIcon = Layers;
   }
 
   const displayPercent = Math.min(100, Math.floor(progress));
-  const stepLabel = currentStage <= 4 ? copy.stepIndicator(currentStage, 4) : copy.stage5;
+  const stepLabel = currentStage <= 4 ? copy.stepIndicator(currentStage, 4) : (customStages?.stage5 || copy.stage5);
 
   return (
     <div
@@ -270,7 +281,7 @@ export const ProcessingScreen: React.FC<ProcessingScreenProps> = ({
           <div className="space-y-2 pt-1">
             <div className="flex items-center justify-between text-xs font-semibold">
               <span className="text-zinc-500 dark:text-zinc-400">
-                {progress < 100 ? copy.processingTitle : copy.stage5}
+                {progress < 100 ? (customStages?.processingTitle || copy.processingTitle) : (customStages?.stage5 || copy.stage5)}
               </span>
               <span className="font-mono text-sm font-extrabold text-indigo-600 dark:text-indigo-400">
                 {displayPercent}%

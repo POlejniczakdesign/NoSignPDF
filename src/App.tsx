@@ -233,7 +233,10 @@ function AppContent() {
     if (files.length > 0) {
       setWorkingFile(files[0]);
     }
-    if (files.length > 1) {
+    const hasImage = files.some((f) => /\.(jpe?g|png|webp|gif|bmp)$/i.test(f.name));
+    if (hasImage) {
+      navigateTo('/grafika-do-pdf');
+    } else if (files.length > 1) {
       navigateTo('/polacz-pdf');
     } else {
       navigateTo('/wypelnij-formularz-pdf');
@@ -285,7 +288,9 @@ function AppContent() {
       return (
         <ImageToPdfModule
           key="image-to-pdf"
+          initialFile={workingFile}
           onTriggerDownload={handleTriggerDownload}
+          onProcessingFinished={() => handleProcessingFinished('/grafika-do-pdf')}
         />
       );
     }

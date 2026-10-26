@@ -23,7 +23,7 @@ const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 </urlset>
 `;
 
-const adsContent = `# Google AdSense configuration setup container
+const adsContent = `google.com, pub-7672441336686997, DIRECT, f08c47fec0942fa0
 `;
 
 function staticFilesPlugin() {

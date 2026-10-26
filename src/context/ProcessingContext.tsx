@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useCallback } from 'react';
-import { ProcessingScreen } from '../components/ProcessingScreen';
+import { ProcessingScreen, ProcessingCustomStages } from '../components/ProcessingScreen';
 import { ToolRoute } from '../types';
 
 export interface StartProcessingOptions {
@@ -8,6 +8,7 @@ export interface StartProcessingOptions {
   targetToolRoute?: ToolRoute;
   onComplete: () => void;
   durationMs?: number;
+  customStages?: ProcessingCustomStages;
 }
 
 interface ProcessingContextValue {
@@ -61,6 +62,7 @@ export const ProcessingProvider: React.FC<ProcessingProviderProps> = ({
           fileName={activeJob.fileName}
           fileSize={activeJob.fileSize}
           durationMs={activeJob.durationMs}
+          customStages={activeJob.customStages}
           onComplete={handleComplete}
         />
       )}
