@@ -51,14 +51,18 @@ if os.path.exists(index_path):
 with open(index_path, 'r', encoding='utf-8') as f:
     clean_base_html = f.read()
 
-# Strictly ensure no _redirects file exists anywhere
-for red_path in ['_redirects', os.path.join('public', '_redirects'), os.path.join(dist_dir, '_redirects')]:
-    if os.path.exists(red_path):
-        try:
-            os.remove(red_path)
-            print(f"Removed {red_path} to avoid redirect loops and conflicts.")
-        except Exception:
-            pass
+# Generate Cloudflare Pages _redirects with explicit 200 rewrite for /ads.txt
+redirects_content = f"""/ads.txt /ads.txt 200
+/robots.txt /robots.txt 200
+/sitemap.xml /sitemap.xml 200
+/sitemap*.xml /sitemap*.xml 200
+/{indexnow_key_filename} /{indexnow_key_filename} 200
+"""
+with open(os.path.join(dist_dir, '_redirects'), 'w', encoding='utf-8') as f:
+    f.write(redirects_content)
+with open(os.path.join('public', '_redirects'), 'w', encoding='utf-8') as f:
+    f.write(redirects_content)
+print(f"Generated Cloudflare Pages _redirects with '/ads.txt /ads.txt 200'")
 
 # Generate _routes.json
 routes_config = {
@@ -2529,11 +2533,13 @@ with open(os.path.join('public', '_headers'), 'w', encoding='utf-8') as f:
     f.write(headers_rules)
 print(f"Wrote {os.path.join(dist_dir, '_headers')} ensuring Content-Type: text/plain; charset=utf-8 for /ads.txt")
 
-# Copy favicon.ico and _routes.json if present
+# Copy favicon.ico, _routes.json, and _redirects if present
 if os.path.exists(os.path.join('public', 'favicon.ico')):
     shutil.copyfile(os.path.join('public', 'favicon.ico'), os.path.join(dist_dir, 'favicon.ico'))
 if os.path.exists(os.path.join('public', '_routes.json')):
     shutil.copyfile(os.path.join('public', '_routes.json'), os.path.join(dist_dir, '_routes.json'))
+if os.path.exists(os.path.join('public', '_redirects')):
+    shutil.copyfile(os.path.join('public', '_redirects'), os.path.join(dist_dir, '_redirects'))
 
 # Sanity verification for Google AdSense verification bot
 ads_txt_dist_path = os.path.join(dist_dir, 'ads.txt')
@@ -2542,6 +2548,13 @@ with open(ads_txt_dist_path, 'r', encoding='utf-8') as f:
     ads_check = f.read().strip()
     assert ADSENSE_PUB_ID in ads_check, f"CRITICAL: {ADSENSE_PUB_ID} missing from dist/ads.txt!"
 print(f"✅ Google AdSense ads.txt validated successfully: '{ads_check}'")
+
+redirects_dist_path = os.path.join(dist_dir, '_redirects')
+assert os.path.exists(redirects_dist_path), "CRITICAL: dist/_redirects was not created!"
+with open(redirects_dist_path, 'r', encoding='utf-8') as f:
+    redirects_check = f.read()
+    assert '/ads.txt /ads.txt 200' in redirects_check, "CRITICAL: '/ads.txt /ads.txt 200' missing from dist/_redirects!"
+print(f"✅ Cloudflare Pages _redirects validated with: '/ads.txt /ads.txt 200'")
 
 print("Creating Cloudflare Pages production zip archive...")
 with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -2566,6 +2579,7 @@ print("  - Native 200.html SPA routing fallback (no _redirects loops)")
 print(f"  - IndexNow key verification file {indexnow_key_filename} placed at web root")
 print("  - Verified ads.txt with publisher pub-7672441336686997 placed at dist/ root")
 print("  - HTTP header rule configured: Content-Type: text/plain; charset=utf-8 for /ads.txt")
+print("  - Cloudflare Pages _redirects rewrite configured: '/ads.txt /ads.txt 200'")
 print("  - favicon.ico, robots.txt, and ads.txt at root")
 
 
