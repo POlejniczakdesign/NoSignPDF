@@ -17,7 +17,11 @@ export type ToolRoute =
   | '/zabezpiecz-pdf-haslem'
   | '/usun-haslo-z-pdf'
   | '/zmien-pdf-na-czarno-bialy'
-  | '/ponumeruj-strony-pdf';
+  | '/ponumeruj-strony-pdf'
+  | '/blog'
+  | '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze'
+  | '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych'
+  | '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms';
 
 export interface PdfMetadataItem {
   key: string;

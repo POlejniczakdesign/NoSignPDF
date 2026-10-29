@@ -130,6 +130,32 @@ export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/pdf-v-excel': '/pdf-to-excel',
   '/excel-v-pdf': '/excel-to-pdf',
   '/politika-konfidencialnosti': '/polityka-privacy',
+
+  // Blog hub and technical articles (canonical & aliases)
+  '/blog': '/blog',
+  '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze': '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze',
+  '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych': '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych',
+  '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms': '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms',
+
+  // English blog aliases
+  '/blog/cloud-pdf-document-security': '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze',
+  '/blog/pdf-metadata-management-guide': '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych',
+  '/blog/pdf-legal-standards-iso-32000-acroforms': '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms',
+
+  // Spanish blog aliases
+  '/blog/seguridad-documentos-pdf-nube': '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze',
+  '/blog/guia-gestion-metadatos-pdf': '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych',
+  '/blog/formato-pdf-ambito-legal-iso-32000-acroforms': '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms',
+
+  // Portuguese blog aliases
+  '/blog/seguranca-documentos-pdf-nuvem': '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze',
+  '/blog/guia-gestao-metadados-pdf': '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych',
+  '/blog/formato-pdf-ambito-juridico-iso-32000-acroforms': '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms',
+
+  // Russian blog aliases
+  '/blog/bezopasnost-dokumentov-pdf-v-oblake': '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze',
+  '/blog/upravlenie-metadannymi-pdf-rukovodstvo': '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych',
+  '/blog/format-pdf-v-yuridicheskoj-sfere-iso-32000-acroforms': '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms',
 };
 
 export const DEDICATED_SEO_META: Record<
@@ -630,6 +656,110 @@ export const DEDICATED_SEO_META: Record<
       desc: 'Автоматически добавьте аккуратную нумерацию страниц (напр. 1 из N) в документ PDF. Настраивайте формат и позицию без регистрации.',
     },
   },
+  '/blog': {
+    pl: {
+      title: 'Baza Wiedzy i Poradniki PDF – Bezpieczeństwo i Standardy | nosignpdf.com',
+      desc: 'Eksperckie poradniki o bezpieczeństwie plików PDF, prywatności w pamięci RAM, usuwaniu metadanych i standardach ISO 32000. Kompendium wiedzy bez logowania.',
+    },
+    en: {
+      title: 'PDF Knowledge Base & Expert Guides – Security & Standards | nosignpdf.com',
+      desc: 'Authoritative guides on PDF document cybersecurity, client-side RAM processing, metadata privacy sanitization, and ISO 32000 standards.',
+    },
+    es: {
+      title: 'Base de Conocimiento y Guías PDF – Seguridad y Estándares | nosignpdf.com',
+      desc: 'Guías expertas sobre ciberseguridad en documentos PDF, procesamiento local en RAM, eliminación de metadatos y normas ISO 32000.',
+    },
+    hi: {
+      title: 'पीडीएफ ज्ञान केंद्र और विशेषज्ञ मार्गदर्शिकाएं – सुरक्षा और मानक | nosignpdf.com',
+      desc: 'पीडीएफ दस्तावेज़ सुरक्षा, क्लाइंट-साइड रैम प्रोसेसिंग, मेटाडेटा हटाने और आईएसओ 32000 मानकों पर व्यापक मार्गदर्शिका।',
+    },
+    pt: {
+      title: 'Base de Conhecimento e Guias PDF – Segurança e Padrões | nosignpdf.com',
+      desc: 'Artigos e guias técnicos sobre segurança de documentos PDF na nuvem, processamento em memória RAM e remoção definitiva de metadados.',
+    },
+    ru: {
+      title: 'База Знаний и Руководства по PDF – Безопасность и Стандарты | nosignpdf.com',
+      desc: 'Экспертные статьи по информационной безопасности документов PDF, локальной обработке в RAM, очистке метаданных и стандарту ISO 32000.',
+    },
+  },
+  '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze': {
+    pl: {
+      title: 'Bezpieczeństwo dokumentów PDF w chmurze – Lokalne przetwarzanie w RAM | nosignpdf.com',
+      desc: 'Dlaczego lokalne przetwarzanie w pamięci RAM eliminuje ryzyko wycieku danych w firmie? Analiza zagrożeń chmurowych konwerterów, RODO i dyrektywy NIS2.',
+    },
+    en: {
+      title: 'Cloud PDF Document Security – Why Client-Side RAM Processing Protects Data | nosignpdf.com',
+      desc: 'Discover why in-browser RAM execution protects confidential corporate data from cloud server leaks, third-party sub-processors, and regulatory fines.',
+    },
+    es: {
+      title: 'Seguridad de Documentos PDF en la Nube – Procesamiento Local en RAM | nosignpdf.com',
+      desc: 'Descubre por qué la ejecución local en RAM protege los datos corporativos frente a fugas en servidores cloud y exigencias de RGPD.',
+    },
+    hi: {
+      title: 'क्लाउड में पीडीएफ दस्तावेज़ सुरक्षा – रैम प्रोसेसिंग क्यों सुरक्षित है | nosignpdf.com',
+      desc: 'जानें कि ब्राउज़र मेमोरी (रैम) में स्थानीय प्रोसेसिंग कैसे क्लाउड सर्वर लीक से गोपनीय कॉर्पोरेट डेटा की रक्षा करती है।',
+    },
+    pt: {
+      title: 'Segurança de Documentos PDF na Nuvem – Processamento Local em RAM | nosignpdf.com',
+      desc: 'Por que o processamento estritamente local em RAM protege os dados sigilosos da sua empresa contra vazamentos na nuvem e cumpre a LGPD.',
+    },
+    ru: {
+      title: 'Безопасность документов PDF в облаке – Почему обработка в RAM защищает данные | nosignpdf.com',
+      desc: 'Узнайте, почему локальная обработка PDF в оперативной памяти браузера полностью исключает утечки корпоративных данных на сторонние серверы.',
+    },
+  },
+  '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych': {
+    pl: {
+      title: 'Zarządzanie metadanymi PDF – Jak trwale usunąć ukryte informacje | nosignpdf.com',
+      desc: 'Kompleksowy poradnik: jak trwale usunąć ukryte dane o autorze, oprogramowaniu, historii rewizji i współrzędnych GPS z plików PDF przed ich publikacją.',
+    },
+    en: {
+      title: 'PDF Metadata Management Guide – How to Sanitize Hidden Author Info | nosignpdf.com',
+      desc: 'Learn how to strip invisible document metadata: author names, device models, GPS coordinates, editing history, and embedded object timestamps.',
+    },
+    es: {
+      title: 'Guía de Gestión de Metadatos PDF – Cómo Eliminar Datos Ocultos | nosignpdf.com',
+      desc: 'Guía exhaustiva para eliminar metadatos ocultos en archivos PDF: autor, software, coordenadas GPS e historial de revisiones antes de compartir.',
+    },
+    hi: {
+      title: 'पीडीएफ मेटाडेटा प्रबंधन – छिपी हुई जानकारी कैसे हटाएं | nosignpdf.com',
+      desc: 'पीडीएफ फाइलों से लेखक का नाम, सॉफ्टवेयर, जीपीएस निर्देशांक और संशोधन इतिहास को सुरक्षित और स्थायी रूप से हटाने की पूरी जानकारी।',
+    },
+    pt: {
+      title: 'Guia de Gestão de Metadados PDF – Como Remover Informações Ocultas | nosignpdf.com',
+      desc: 'Aprenda a higienizar completamente metadados ocultos de PDFs: nomes de autores, aparelhos, histórico de revisões e coordenadas de GPS.',
+    },
+    ru: {
+      title: 'Управление метаданными PDF – Как удалить скрытые сведения об авторе | nosignpdf.com',
+      desc: 'Подробное руководство по удалению скрытых метаданных из PDF: имена авторов, версии софта, координаты GPS и история правок перед публикацией.',
+    },
+  },
+  '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms': {
+    pl: {
+      title: 'Format PDF w obrocie prawnym i administracji – ISO 32000 i AcroForms | nosignpdf.com',
+      desc: 'Standard ISO 32000, archiwizacja PDF/A, formularze AcroForms oraz podpisy cyfrowe PAdES w sprawach urzędowych i procedurach prawnych.',
+    },
+    en: {
+      title: 'PDF in Legal & Government Workflow – ISO 32000 & AcroForms Standards | nosignpdf.com',
+      desc: 'Comprehensive technical review of ISO 32000-1/2, PDF/A archival compliance, AcroForms architecture, and cryptographic PAdES digital signatures.',
+    },
+    es: {
+      title: 'El Formato PDF en el Ámbito Legal – Estándares ISO 32000 y AcroForms | nosignpdf.com',
+      desc: 'Normativa ISO 32000, archivo a largo plazo PDF/A, formularios interactivos AcroForms y validez de firmas electrónicas PAdES en tribunales.',
+    },
+    hi: {
+      title: 'कानूनी और प्रशासनिक कार्यों में पीडीएफ प्रारूप – आईएसओ 32000 और एक्रोफॉर्म्स | nosignpdf.com',
+      desc: 'कानूनी और सरकारी प्रक्रियाओं में आईएसओ 32000 मानक, पीडीएफ/ए दीर्घकालिक संग्रहण, एक्रोफॉर्म्स और डिजिटल हस्ताक्षर की विस्तृत तकनीकी समीक्षा।',
+    },
+    pt: {
+      title: 'O Formato PDF no Meio Jurídico e Administrativo – ISO 32000 e AcroForms | nosignpdf.com',
+      desc: 'Guia técnico sobre a norma ISO 32000, conformidade de arquivamento PDF/A, formulários AcroForms e assinaturas digitais qualificadas PAdES.',
+    },
+    ru: {
+      title: 'Формат PDF в юридической сфере – Стандарты ISO 32000 и AcroForms | nosignpdf.com',
+      desc: 'Стандарты ISO 32000-1/2, архивный формат PDF/A, интерактивные формы AcroForms и квалифицированные электронные подписи PAdES в судах.',
+    },
+  },
 };
 
 export const PRIMARY_LOCALIZED_SLUGS: Record<ToolRoute, Record<Language, string>> = {
@@ -652,6 +782,31 @@ export const PRIMARY_LOCALIZED_SLUGS: Record<ToolRoute, Record<Language, string>
   '/zmien-pdf-na-czarno-bialy': { pl: '/zmien-pdf-na-czarno-bialy', en: '/en/pdf-to-grayscale', es: '/es/pdf-a-blanco-y-negro', hi: '/hi/pdf-to-grayscale', pt: '/pt/pdf-preto-e-branco', ru: '/ru/cherno-belyj-pdf' },
   '/ponumeruj-strony-pdf': { pl: '/ponumeruj-strony-pdf', en: '/en/add-page-numbers-to-pdf', es: '/es/numerar-paginas-pdf', hi: '/hi/add-page-numbers-to-pdf', pt: '/pt/numerar-paginas-pdf', ru: '/ru/pronumerovat-stranicy-pdf' },
   '/polityka-privacy': { pl: '/polityka-privacy', en: '/en/privacy-policy', es: '/es/politica-privacidad', hi: '/hi/privacy-policy', pt: '/pt/politica-de-privacidade', ru: '/ru/politika-konfidencialnosti' },
+  '/blog': { pl: '/blog', en: '/en/blog', es: '/es/blog', hi: '/hi/blog', pt: '/pt/blog', ru: '/ru/blog' },
+  '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze': {
+    pl: '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze',
+    en: '/en/blog/cloud-pdf-document-security',
+    es: '/es/blog/seguridad-documentos-pdf-nube',
+    hi: '/hi/blog/cloud-pdf-document-security',
+    pt: '/pt/blog/seguranca-documentos-pdf-nuvem',
+    ru: '/ru/blog/bezopasnost-dokumentov-pdf-v-oblake',
+  },
+  '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych': {
+    pl: '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych',
+    en: '/en/blog/pdf-metadata-management-guide',
+    es: '/es/blog/guia-gestion-metadatos-pdf',
+    hi: '/hi/blog/pdf-metadata-management-guide',
+    pt: '/pt/blog/guia-gestao-metadados-pdf',
+    ru: '/ru/blog/upravlenie-metadannymi-pdf-rukovodstvo',
+  },
+  '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms': {
+    pl: '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms',
+    en: '/en/blog/pdf-legal-standards-iso-32000-acroforms',
+    es: '/es/blog/formato-pdf-ambito-legal-iso-32000-acroforms',
+    hi: '/hi/blog/pdf-legal-standards-iso-32000-acroforms',
+    pt: '/pt/blog/formato-pdf-ambito-juridico-iso-32000-acroforms',
+    ru: '/ru/blog/format-pdf-v-yuridicheskoj-sfere-iso-32000-acroforms',
+  },
 };
 
 export interface ParsedRoute {

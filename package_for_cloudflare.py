@@ -42,14 +42,25 @@ print(f"Generated verified Google AdSense ads.txt: {ADS_TXT_CONTENT.strip()}")
 index_path = os.path.join(dist_dir, 'index.html')
 spa_fallback_path = os.path.join(dist_dir, '200.html')
 spa_404_path = os.path.join(dist_dir, '404.html')
-if os.path.exists(index_path):
-    shutil.copyfile(index_path, spa_fallback_path)
-    shutil.copyfile(index_path, spa_404_path)
-    print(f"Created native SPA fallbacks {spa_fallback_path} and {spa_404_path}")
-
 # Read clean base HTML once before any index.html files are modified
 with open(index_path, 'r', encoding='utf-8') as f:
-    clean_base_html = f.read()
+    raw_html = f.read()
+
+# Sanitize base HTML to ensure pristine clean template (even if dist/index.html was pre-rendered previously)
+clean_base_html = re.sub(r'<div id="root">.*?</div>\s*</body>', '<div id="root"></div>\n  </body>', raw_html, flags=re.DOTALL)
+clean_base_html = re.sub(r'\s*<meta name="indexnow-key"[^>]*>', '', clean_base_html)
+clean_base_html = re.sub(r'\s*<link rel="canonical"[^>]*>', '', clean_base_html)
+clean_base_html = re.sub(r'\s*<link rel="alternate"[^>]*>', '', clean_base_html)
+clean_base_html = re.sub(r'\s*<meta property="og:url"[^>]*>', '', clean_base_html)
+clean_base_html = re.sub(r'\s*<meta property="og:locale"[^>]*>', '', clean_base_html)
+clean_base_html = re.sub(r'\s*<script type="application/ld\+json">.*?</script>', '', clean_base_html, flags=re.DOTALL)
+
+# Write pristine clean SPA fallbacks
+with open(spa_fallback_path, 'w', encoding='utf-8') as f:
+    f.write(clean_base_html)
+with open(spa_404_path, 'w', encoding='utf-8') as f:
+    f.write(clean_base_html)
+print(f"Created pristine native SPA fallbacks {spa_fallback_path} and {spa_404_path}")
 
 # Generate Cloudflare Pages _redirects with explicit 200 rewrite for /ads.txt
 redirects_content = f"""/ads.txt /ads.txt 200
@@ -591,6 +602,110 @@ TOOLS_METADATA = {
             "title": "100% Бесплатный PDF Редактор: Пронумеровать Страницы PDF (Без Регистрации) - nosignpdf.com",
             "desc": "Автоматически добавьте аккуратную numеrацию страниц (напр. 1 из N) в документ PDF. Настраивайте формат и позицию без регистрации."
         }
+    },
+    "/blog": {
+        "pl": {
+            "title": "Baza Wiedzy i Poradniki PDF – Bezpieczeństwo i Standardy | nosignpdf.com",
+            "desc": "Eksperckie poradniki o bezpieczeństwie plików PDF, prywatności w pamięci RAM, usuwaniu metadanych i standardach ISO 32000. Kompendium wiedzy bez logowania."
+        },
+        "en": {
+            "title": "PDF Knowledge Base & Expert Guides – Security & Standards | nosignpdf.com",
+            "desc": "Authoritative guides on PDF document cybersecurity, client-side RAM processing, metadata privacy sanitization, and ISO 32000 standards."
+        },
+        "es": {
+            "title": "Base de Conocimiento y Guías PDF – Seguridad y Estándares | nosignpdf.com",
+            "desc": "Guías expertas sobre ciberseguridad en documentos PDF, procesamiento local en RAM, eliminación de metadatos y normas ISO 32000."
+        },
+        "hi": {
+            "title": "पीडीएफ ज्ञान केंद्र और विशेषज्ञ मार्गदर्शिकाएं – सुरक्षा और मानक | nosignpdf.com",
+            "desc": "पीडीएफ दस्तावेज़ सुरक्षा, क्लाइंट-साइड रैम प्रोसेसिंग, मेटाडेटा हटाने और आईएसओ 32000 मानकों पर व्यापक मार्गदर्शिका।"
+        },
+        "pt": {
+            "title": "Base de Conhecimento e Guias PDF – Segurança e Padrões | nosignpdf.com",
+            "desc": "Artigos e guias técnicos sobre segurança de documentos PDF na nuvem, processamento em memória RAM e remoção definitiva de metadados."
+        },
+        "ru": {
+            "title": "База Знаний и Руководства по PDF – Безопасность и Стандарты | nosignpdf.com",
+            "desc": "Экспертные статьи по информационной безопасности документов PDF, локальной обработке в RAM, очистке метаданных и стандарту ISO 32000."
+        }
+    },
+    "/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze": {
+        "pl": {
+            "title": "Bezpieczeństwo dokumentów PDF w chmurze – Lokalne przetwarzanie w RAM | nosignpdf.com",
+            "desc": "Dlaczego lokalne przetwarzanie w pamięci RAM eliminuje ryzyko wycieku danych w firmie? Analiza zagrożeń chmurowych konwerterów, RODO i dyrektywy NIS2."
+        },
+        "en": {
+            "title": "Cloud PDF Document Security – Why Client-Side RAM Processing Protects Data | nosignpdf.com",
+            "desc": "Discover why in-browser RAM execution protects confidential corporate data from cloud server leaks, third-party sub-processors, and regulatory fines."
+        },
+        "es": {
+            "title": "Seguridad de Documentos PDF en la Nube – Procesamiento Local en RAM | nosignpdf.com",
+            "desc": "Descubre por qué la ejecución local en RAM protege los datos corporativos frente a fugas en servidores cloud y exigencias de RGPD."
+        },
+        "hi": {
+            "title": "क्लाउड में पीडीएफ दस्तावेज़ सुरक्षा – रैम प्रोसेसिंग क्यों सुरक्षित है | nosignpdf.com",
+            "desc": "जानें कि ब्राउज़र मेमोरी (रैम) में स्थानीय प्रोसेसिंग कैसे क्लाउड सर्वर लीक से गोपनीय कॉर्पोरेट डेटा की रक्षा करती है।"
+        },
+        "pt": {
+            "title": "Segurança de Documentos PDF na Nuvem – Processamento Local em RAM | nosignpdf.com",
+            "desc": "Por que o processamento estritamente local em RAM protege os dados sigilosos da sua empresa contra vazamentos na nuvem e cumpre a LGPD."
+        },
+        "ru": {
+            "title": "Безопасность документов PDF в облаке – Почему обработка в RAM защищает данные | nosignpdf.com",
+            "desc": "Узнайте, почему локальная обработка PDF в оперативной памяти браузера полностью исключает утечки корпоративных данных на сторонние серверы."
+        }
+    },
+    "/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych": {
+        "pl": {
+            "title": "Zarządzanie metadanymi PDF – Jak trwale usunąć ukryte informacje | nosignpdf.com",
+            "desc": "Kompleksowy poradnik: jak trwale usunąć ukryte dane o autorze, oprogramowaniu, historii rewizji i współrzędnych GPS z plików PDF przed ich publikacją."
+        },
+        "en": {
+            "title": "PDF Metadata Management Guide – How to Sanitize Hidden Author Info | nosignpdf.com",
+            "desc": "Learn how to strip invisible document metadata: author names, device models, GPS coordinates, editing history, and embedded object timestamps."
+        },
+        "es": {
+            "title": "Guía de Gestión de Metadatos PDF – Cómo Eliminar Datos Ocultos | nosignpdf.com",
+            "desc": "Guía exhaustiva para eliminar metadatos ocultos en archivos PDF: autor, software, coordenadas GPS e historial de revisiones antes de compartir."
+        },
+        "hi": {
+            "title": "पीडीएफ मेटाडेटा प्रबंधन – छिपी हुई जानकारी कैसे हटाएं | nosignpdf.com",
+            "desc": "पीडीएफ फाइलों से लेखक का नाम, सॉफ्टवेयर, जीपीएस निर्देशांक और संशोधन इतिहास को सुरक्षित और स्थायी रूप से हटाने की पूरी जानकारी।"
+        },
+        "pt": {
+            "title": "Guia de Gestão de Metadados PDF – Como Remover Informações Ocultas | nosignpdf.com",
+            "desc": "Aprenda a higienizar completamente metadados ocultos de PDFs: nomes de autores, aparelhos, histórico de revisões e coordenadas de GPS."
+        },
+        "ru": {
+            "title": "Управление метаданными PDF – Как удалить скрытые сведения об авторе | nosignpdf.com",
+            "desc": "Подробное руководство по удалению скрытых метаданных из PDF: имена авторов, версии софта, координаты GPS и история правок перед публикацией."
+        }
+    },
+    "/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms": {
+        "pl": {
+            "title": "Format PDF w obrocie prawnym i administracji – ISO 32000 i AcroForms | nosignpdf.com",
+            "desc": "Standard ISO 32000, archiwizacja PDF/A, formularze AcroForms oraz podpisy cyfrowe PAdES w sprawach urzędowych i procedurach prawnych."
+        },
+        "en": {
+            "title": "PDF in Legal & Government Workflow – ISO 32000 & AcroForms Standards | nosignpdf.com",
+            "desc": "Comprehensive technical review of ISO 32000-1/2, PDF/A archival compliance, AcroForms architecture, and cryptographic PAdES digital signatures."
+        },
+        "es": {
+            "title": "El Formato PDF en el Ámbito Legal – Estándares ISO 32000 y AcroForms | nosignpdf.com",
+            "desc": "Normativa ISO 32000, archivo a largo plazo PDF/A, formularios interactivos AcroForms y validez de firmas electrónicas PAdES en tribunales."
+        },
+        "hi": {
+            "title": "कानूनी और प्रशासनिक कार्यों में पीडीएफ प्रारूप – आईएसओ 32000 और एक्रोफॉर्म्स | nosignpdf.com",
+            "desc": "कानूनी और सरकारी प्रक्रियाओं में आईएसओ 32000 मानक, पीडीएफ/ए दीर्घकालिक संग्रहण, एक्रोफॉर्म्स और डिजिटल हस्ताक्षर की विस्तृत तकनीकी समीक्षा।"
+        },
+        "pt": {
+            "title": "O Formato PDF no Meio Jurídico e Administrativo – ISO 32000 e AcroForms | nosignpdf.com",
+            "desc": "Guia técnico sobre a norma ISO 32000, conformidade de arquivamento PDF/A, formulários AcroForms e assinaturas digitais qualificadas PAdES."
+        },
+        "ru": {
+            "title": "Формат PDF в юридической сфере – Стандарты ISO 32000 и AcroForms | nosignpdf.com",
+            "desc": "Стандарты ISO 32000-1/2, архивный формат PDF/A, интерактивные формы AcroForms и квалифицированные электронные подписи PAdES в судах."
+        }
     }
 }
 
@@ -747,6 +862,38 @@ PRIMARY_URLS = {
         "hi": "/hi/privacy-policy",
         "pt": "/pt/politica-de-privacidade",
         "ru": "/ru/politika-konfidencialnosti"
+    },
+    "/blog": {
+        "pl": "/blog",
+        "en": "/en/blog",
+        "es": "/es/blog",
+        "hi": "/hi/blog",
+        "pt": "/pt/blog",
+        "ru": "/ru/blog"
+    },
+    "/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze": {
+        "pl": "/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze",
+        "en": "/en/blog/cloud-pdf-document-security",
+        "es": "/es/blog/seguridad-documentos-pdf-nube",
+        "hi": "/hi/blog/cloud-pdf-document-security",
+        "pt": "/pt/blog/seguranca-documentos-pdf-nuvem",
+        "ru": "/ru/blog/bezopasnost-dokumentov-pdf-v-oblake"
+    },
+    "/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych": {
+        "pl": "/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych",
+        "en": "/en/blog/pdf-metadata-management-guide",
+        "es": "/es/blog/guia-gestion-metadatos-pdf",
+        "hi": "/hi/blog/pdf-metadata-management-guide",
+        "pt": "/pt/blog/guia-gestao-metadados-pdf",
+        "ru": "/ru/blog/upravlenie-metadannymi-pdf-rukovodstvo"
+    },
+    "/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms": {
+        "pl": "/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms",
+        "en": "/en/blog/pdf-legal-standards-iso-32000-acroforms",
+        "es": "/es/blog/formato-pdf-ambito-legal-iso-32000-acroforms",
+        "hi": "/hi/blog/pdf-legal-standards-iso-32000-acroforms",
+        "pt": "/pt/blog/formato-pdf-ambito-juridico-iso-32000-acroforms",
+        "ru": "/ru/blog/format-pdf-v-yuridicheskoj-sfere-iso-32000-acroforms"
     }
 }
 
@@ -1271,6 +1418,90 @@ ALL_SLUGS = {
         "ru": [
             "/ru/politika-konfidencialnosti",
             "/ru/polityka-privacy"
+        ]
+    },
+    "/blog": {
+        "pl": [
+            "/blog",
+            "/pl/blog"
+        ],
+        "en": [
+            "/en/blog"
+        ],
+        "es": [
+            "/es/blog"
+        ],
+        "hi": [
+            "/hi/blog"
+        ],
+        "pt": [
+            "/pt/blog"
+        ],
+        "ru": [
+            "/ru/blog"
+        ]
+    },
+    "/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze": {
+        "pl": [
+            "/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze",
+            "/pl/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze"
+        ],
+        "en": [
+            "/en/blog/cloud-pdf-document-security"
+        ],
+        "es": [
+            "/es/blog/seguridad-documentos-pdf-nube"
+        ],
+        "hi": [
+            "/hi/blog/cloud-pdf-document-security"
+        ],
+        "pt": [
+            "/pt/blog/seguranca-documentos-pdf-nuvem"
+        ],
+        "ru": [
+            "/ru/blog/bezopasnost-dokumentov-pdf-v-oblake"
+        ]
+    },
+    "/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych": {
+        "pl": [
+            "/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych",
+            "/pl/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych"
+        ],
+        "en": [
+            "/en/blog/pdf-metadata-management-guide"
+        ],
+        "es": [
+            "/es/blog/guia-gestion-metadatos-pdf"
+        ],
+        "hi": [
+            "/hi/blog/pdf-metadata-management-guide"
+        ],
+        "pt": [
+            "/pt/blog/guia-gestao-metadados-pdf"
+        ],
+        "ru": [
+            "/ru/blog/upravlenie-metadannymi-pdf-rukovodstvo"
+        ]
+    },
+    "/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms": {
+        "pl": [
+            "/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms",
+            "/pl/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms"
+        ],
+        "en": [
+            "/en/blog/pdf-legal-standards-iso-32000-acroforms"
+        ],
+        "es": [
+            "/es/blog/formato-pdf-ambito-legal-iso-32000-acroforms"
+        ],
+        "hi": [
+            "/hi/blog/pdf-legal-standards-iso-32000-acroforms"
+        ],
+        "pt": [
+            "/pt/blog/formato-pdf-ambito-juridico-iso-32000-acroforms"
+        ],
+        "ru": [
+            "/ru/blog/format-pdf-v-yuridicheskoj-sfere-iso-32000-acroforms"
         ]
     }
 }
@@ -1924,6 +2155,264 @@ PUBLISHER_CONTENT_RAW = {
     }
 }
 
+# Load comprehensive blog articles knowledge base
+blog_data_file = os.path.join('src', 'data', 'blogArticles.json')
+if os.path.exists(blog_data_file):
+    with open(blog_data_file, 'r', encoding='utf-8') as f:
+        BLOG_DATA = json.load(f)
+else:
+    BLOG_DATA = {"articles": {}, "hub": {}}
+
+SPONSORED_LABEL_BY_LANG = {
+    'pl': 'Narzędzia sponsorowane',
+    'en': 'Sponsored tools',
+    'es': 'Herramientas patrocinadas',
+    'hi': 'प्रायोजित उपकरण',
+    'pt': 'Ferramentas patrocinadas',
+    'ru': 'Спонсорские инструменты'
+}
+
+def get_adsense_slot_html(lang):
+    label = SPONSORED_LABEL_BY_LANG.get(lang, SPONSORED_LABEL_BY_LANG['en'])
+    return f"""
+    <div class="adsense-inject-zone my-8 p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 flex flex-col items-center justify-center min-h-[140px] text-center">
+      <span class="text-[11px] uppercase tracking-wider text-neutral-400 dark:text-neutral-500 font-medium mb-2">{label}</span>
+      <div class="w-full flex justify-center text-xs text-neutral-400">
+        <!-- Google AdSense Unit Injection Slot -->
+        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7672441336686997" data-ad-slot="responsive" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+      </div>
+    </div>
+    """
+
+def get_blog_hub_html(lang):
+    hub_info = BLOG_DATA.get("hub", {}).get(lang, BLOG_DATA.get("hub", {}).get("en", {}))
+    articles = BLOG_DATA.get("articles", {}).get(lang, BLOG_DATA.get("articles", {}).get("en", []))
+    
+    home_href = "/" if lang == "pl" else f"/{lang}"
+    blog_href = "/blog" if lang == "pl" else f"/{lang}/blog"
+    ad_slot = get_adsense_slot_html(lang)
+    
+    cards_html = []
+    for art in articles:
+        canon = art.get("canonicalRoute", "/blog")
+        art_slug = PRIMARY_URLS.get(canon, {}).get(lang, canon)
+        card = f"""
+        <article class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-xs flex flex-col justify-between hover:border-emerald-500/60 transition-all">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold tracking-wider uppercase text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-2.5 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-800/60">
+                {art.get('categoryBadge', 'Poradnik')}
+              </span>
+              <span class="text-zinc-500 dark:text-zinc-400">{art.get('readingTime', '5 min')} • {art.get('publishDate', '2026-03-15')}</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-zinc-900 dark:text-white hover:text-emerald-600 transition-colors">
+              <a href="{art_slug}">{art.get('title', '')}</a>
+            </h2>
+            <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+              {art.get('excerpt', art.get('subtitle', ''))}
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between">
+            <div class="text-xs text-zinc-500 dark:text-zinc-400">
+              <span class="font-semibold text-zinc-700 dark:text-zinc-300">{art.get('author', 'NoSignPDF Security Lab')}</span>
+            </div>
+            <a href="{art_slug}" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400">
+              {hub_info.get('readArticleBtn', 'Czytaj artykuł')} →
+            </a>
+          </div>
+        </article>
+        """
+        cards_html.append(card)
+        
+    cards_str = "".join(cards_html)
+    
+    return f"""
+<div id="blog-hub-view" class="w-full max-w-5xl mx-auto py-8 px-4 font-sans text-zinc-900 dark:text-zinc-100 space-y-8">
+  <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
+    <a href="{home_href}" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Home</a>
+    <span>/</span>
+    <span class="text-zinc-800 dark:text-zinc-200 font-medium">Blog</span>
+  </nav>
+
+  <header class="border-b border-zinc-200 dark:border-zinc-800 pb-8">
+    <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1 rounded-full border border-emerald-200 dark:border-emerald-800 mb-4">
+      <span>📚 {hub_info.get('kicker', 'Baza Wiedzy & Poradniki PDF')}</span>
+    </div>
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">{hub_info.get('hubHeading', 'Baza Wiedzy i Standardy Techniczne PDF')}</h1>
+    <p class="text-base text-zinc-600 dark:text-zinc-300 mt-3 max-w-3xl leading-relaxed">{hub_info.get('hubLead', '')}</p>
+  </header>
+
+  {ad_slot}
+
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {cards_str}
+  </section>
+
+  {ad_slot}
+
+  <section class="p-6 sm:p-8 rounded-2xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-zinc-800">
+    <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-2">Architektura Bezpieczeństwa NoSignPDF</h3>
+    <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed mb-4">
+      Wszystkie nasze narzędzia oraz poradniki opierają się na jednej fundamentalnej zasadzie: zero przesyłania plików na serwer. Cały silnik manipulacji obiektami PDF działa bezpośrednio w pamięci RAM Twojego urządzenia z wykorzystaniem technologii WebAssembly.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+      <div class="p-4 rounded-xl bg-white dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">100% Pamięć RAM</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Brak serwerów pośredniczących w chmurze.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-white dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">Normy ISO 32000</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Zgodność z oficjalnymi specyfikacjami PDF.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-white dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700">
+        <h4 class="text-xs font-bold text-zinc-900 dark:text-white">Higiena Cyfrowa</h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Trwałe usuwanie metadanych i śladów OSINT.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pt-6 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-xs text-zinc-500">
+    <a href="{home_href}" class="hover:text-zinc-900 dark:hover:text-white transition-colors">← {hub_info.get('backToTools', 'Wróć do edytora')}</a>
+    <span>© 2026 NoSignPDF • Baza Wiedzy & Inżynieria PDF</span>
+  </footer>
+</div>
+"""
+
+def get_blog_article_html(tool_path, lang):
+    hub_info = BLOG_DATA.get("hub", {}).get(lang, BLOG_DATA.get("hub", {}).get("en", {}))
+    articles = BLOG_DATA.get("articles", {}).get(lang, BLOG_DATA.get("articles", {}).get("en", []))
+    article = next((a for a in articles if a.get("canonicalRoute") == tool_path), None)
+    if not article and articles:
+        article = articles[0]
+        
+    home_href = "/" if lang == "pl" else f"/{lang}"
+    blog_href = "/blog" if lang == "pl" else f"/{lang}/blog"
+    ad_slot = get_adsense_slot_html(lang)
+    
+    sections_html = []
+    toc_items = []
+    
+    for idx, sec in enumerate(article.get("sections", [])):
+        sec_id = f"section-{idx+1}"
+        heading = sec.get("heading", "")
+        toc_items.append(f'<li><a href="#{sec_id}" class="hover:text-emerald-600 transition-colors">{heading}</a></li>')
+        
+        sec_h2 = f'<h2 id="{sec_id}" class="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white mt-10 mb-4 tracking-tight scroll-mt-20">{heading}</h2>'
+        sec_h3 = f'<h3 class="text-lg font-bold text-zinc-800 dark:text-zinc-200 mt-6 mb-2">{sec.get("subheading", "")}</h3>' if sec.get("subheading") else ''
+        
+        paragraphs = "".join([f'<p class="text-base text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4">{p}</p>' for p in sec.get("paragraphs", [])])
+        
+        bullets_html = ""
+        if sec.get("bulletPoints"):
+            items = "".join([f'<li class="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed mb-2"><strong class="font-bold text-zinc-900 dark:text-white">{b.get("label", "")}</strong> {b.get("desc", "")}</li>' for b in sec["bulletPoints"]])
+            bullets_html = f'<ul class="list-disc pl-6 my-4 space-y-1.5">{items}</ul>'
+            
+        callout_html = ""
+        if sec.get("callout"):
+            callout = sec["callout"]
+            callout_html = f'''
+            <aside class="my-6 p-5 rounded-xl bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-200/80 dark:border-emerald-800/60">
+              <h4 class="text-sm font-bold text-emerald-900 dark:text-emerald-300 mb-1">💡 {callout.get("title", "")}</h4>
+              <p class="text-xs text-emerald-800 dark:text-emerald-400 leading-relaxed">{callout.get("text", "")}</p>
+            </aside>
+            '''
+        
+        # Inject AdSense slot between sections (e.g. after section 2)
+        in_section_ad = ad_slot if idx == 1 else ""
+        sections_html.append(f'<section class="mb-8">{sec_h2}{sec_h3}{paragraphs}{bullets_html}{callout_html}{in_section_ad}</section>')
+        
+    sections_str = "".join(sections_html)
+    toc_str = "".join(toc_items)
+    
+    faq_html = ""
+    if article.get("faq"):
+        faq_items = "".join([f'<div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700/60"><h4 class="text-sm font-bold text-zinc-900 dark:text-white mb-2">❓ {f.get("question", "")}</h4><p class="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed">{f.get("answer", "")}</p></div>' for f in article["faq"]])
+        faq_html = f'''
+        <section class="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+          <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-4">Często zadawane pytania (FAQ)</h3>
+          <div class="space-y-3">{faq_items}</div>
+        </section>
+        '''
+        
+    related_html = ""
+    if article.get("relatedTools"):
+        tool_cards = []
+        for rt in article["relatedTools"]:
+            rt_route = PRIMARY_URLS.get(rt["route"], {}).get(lang, rt["route"])
+            card = f'''
+            <a href="{rt_route}" class="p-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-emerald-500 transition-all flex flex-col justify-between">
+              <div>
+                <h4 class="text-sm font-bold text-zinc-900 dark:text-white">{rt.get("name", "")}</h4>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">{rt.get("description", "")}</p>
+              </div>
+              <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mt-3">Uruchom narzędzie →</span>
+            </a>
+            '''
+            tool_cards.append(card)
+        related_html = f'''
+        <div class="mt-10 p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200 dark:border-zinc-800">
+          <h3 class="text-base font-bold text-zinc-900 dark:text-white mb-3">{hub_info.get("relatedToolsLabel", "Narzędzia")}</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">{"".join(tool_cards)}</div>
+        </div>
+        '''
+
+    return f"""
+<article id="blog-article-view" class="w-full max-w-4xl mx-auto py-8 px-4 font-sans text-zinc-900 dark:text-zinc-100">
+  <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400 mb-6">
+    <a href="{home_href}" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Home</a>
+    <span>/</span>
+    <a href="{blog_href}" class="hover:text-zinc-900 dark:hover:text-white transition-colors">{hub_info.get('backToBlog', 'Blog')}</a>
+    <span>/</span>
+    <span class="text-zinc-800 dark:text-zinc-200 font-medium truncate max-w-xs">{article.get('categoryBadge', 'Poradnik')}</span>
+  </nav>
+
+  <header class="border-b border-zinc-200 dark:border-zinc-800 pb-8 mb-8">
+    <div class="flex flex-wrap items-center gap-3 text-xs mb-3">
+      <span class="font-bold tracking-wider uppercase text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-2.5 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-800/60">
+        {article.get('categoryBadge', 'Poradnik')}
+      </span>
+      <span class="text-zinc-500 dark:text-zinc-400">{article.get('readingTime', '6 min')} • {article.get('publishDate', '2026-03-15')}</span>
+    </div>
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight leading-tight">{article.get('title', '')}</h1>
+    <p class="text-lg text-zinc-600 dark:text-zinc-300 mt-4 leading-relaxed font-normal">{article.get('subtitle', '')}</p>
+    
+    <div class="flex items-center gap-3 mt-6 pt-6 border-t border-zinc-100 dark:border-zinc-800/60 text-xs">
+      <div class="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-200 flex items-center justify-center font-bold">
+        {article.get('author', 'N')[0]}
+      </div>
+      <div>
+        <p class="font-bold text-zinc-900 dark:text-white">{article.get('author', 'Zespół NoSignPDF')}</p>
+        <p class="text-zinc-500 dark:text-zinc-400">{article.get('authorRole', 'Security & Engineering')}</p>
+      </div>
+    </div>
+  </header>
+
+  {ad_slot}
+
+  <nav class="mb-10 p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200 dark:border-zinc-800 text-xs">
+    <p class="font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-3">{hub_info.get('tableOfContentsLabel', 'Spis treści')}:</p>
+    <ul class="space-y-1.5 pl-4 list-decimal text-zinc-700 dark:text-zinc-300">
+      {toc_str}
+    </ul>
+  </nav>
+
+  <div class="article-body">
+    {sections_str}
+  </div>
+
+  {faq_html}
+
+  {related_html}
+
+  {ad_slot}
+
+  <footer class="mt-12 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-4 text-xs text-zinc-500">
+    <a href="{blog_href}" class="hover:text-zinc-900 dark:hover:text-white transition-colors font-medium">← {hub_info.get('backToBlog', 'Wróć do bazy wiedzy')}</a>
+    <a href="{home_href}" class="hover:text-zinc-900 dark:hover:text-white transition-colors font-medium">{hub_info.get('backToTools', 'Wróć do narzędzi PDF')} →</a>
+  </footer>
+</article>
+"""
+
 def generate_custom_html(tool_path, lang, current_slug):
     html = clean_base_html
     html = re.sub(r'<html\s+lang="[^"]*"', f'<html lang="{lang}"', html)
@@ -2014,52 +2503,143 @@ def generate_custom_html(tool_path, lang, current_slug):
     current_faqs = faq_data_by_lang.get(lang, faq_data_by_lang['en'])
     current_steps = steps_data_by_lang.get(lang, steps_data_by_lang['en'])
 
-    jsonld_schemas = [
-        {
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            "name": title,
-            "description": desc,
-            "inLanguage": lang,
-            "step": [
-                {
-                    "@type": "HowToStep",
-                    "position": idx + 1,
-                    "name": s["name"],
-                    "text": s["text"]
-                } for idx, s in enumerate(current_steps)
-            ]
-        },
-        {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "inLanguage": lang,
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": item["q"],
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": item["a"]
+    if tool_path.startswith('/blog/'):
+        art_list = BLOG_DATA.get("articles", {}).get(lang, BLOG_DATA.get("articles", {}).get("en", []))
+        art_item = next((a for a in art_list if a.get("canonicalRoute") == tool_path), None)
+        author_name = art_item.get("author", "Zespół NoSignPDF Security Lab") if art_item else "Zespół NoSignPDF Security Lab"
+        author_role = art_item.get("authorRole", "Lead Security Engineer") if art_item else "Lead Security Engineer"
+        pub_date = art_item.get("publishDate", "2026-03-15") if art_item else "2026-03-15"
+        
+        jsonld_schemas = [
+            {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": title,
+                "description": desc,
+                "inLanguage": lang,
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": canonical_url
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": author_name,
+                    "jobTitle": author_role
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "NoSignPDF",
+                    "url": site_domain
+                },
+                "datePublished": pub_date,
+                "dateModified": "2026-04-01"
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": site_domain if lang == 'pl' else f"{site_domain}/{lang}"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": f"{site_domain}/blog" if lang == 'pl' else f"{site_domain}/{lang}/blog"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": title,
+                        "item": canonical_url
                     }
-                } for item in current_faqs
-            ]
-        },
-        {
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "NoSignPDF",
-            "url": canonical_url,
-            "applicationCategory": "UtilityApplication",
-            "operatingSystem": "All",
-            "browserRequirements": "Requires JavaScript and WebAssembly",
-            "offers": {
-                "@type": "Offer",
-                "price": "0.00",
-                "priceCurrency": "USD"
+                ]
             }
-        }
-    ]
+        ]
+    elif tool_path == '/blog':
+        jsonld_schemas = [
+            {
+                "@context": "https://schema.org",
+                "@type": "CollectionPage",
+                "name": title,
+                "description": desc,
+                "url": canonical_url,
+                "inLanguage": lang,
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "NoSignPDF",
+                    "url": site_domain
+                }
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": site_domain if lang == 'pl' else f"{site_domain}/{lang}"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": canonical_url
+                    }
+                ]
+            }
+        ]
+    else:
+        jsonld_schemas = [
+            {
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                "name": title,
+                "description": desc,
+                "inLanguage": lang,
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": idx + 1,
+                        "name": s["name"],
+                        "text": s["text"]
+                    } for idx, s in enumerate(current_steps)
+                ]
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "inLanguage": lang,
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": item["q"],
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": item["a"]
+                        }
+                    } for item in current_faqs
+                ]
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                "name": "NoSignPDF",
+                "url": canonical_url,
+                "applicationCategory": "UtilityApplication",
+                "operatingSystem": "All",
+                "browserRequirements": "Requires JavaScript and WebAssembly",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0.00",
+                    "priceCurrency": "USD"
+                }
+            }
+        ]
 
     jsonld_script = f"""    <script type="application/ld+json">
 {json.dumps(jsonld_schemas, ensure_ascii=False, indent=4)}
@@ -2092,6 +2672,12 @@ def generate_custom_html(tool_path, lang, current_slug):
     if tool_path == '/polityka-privacy':
         privacy_body = get_privacy_html_body(lang)
         html = html.replace('<div id="root"></div>', f'<div id="root">{privacy_body}</div>')
+    elif tool_path == '/blog':
+        blog_hub_body = get_blog_hub_html(lang)
+        html = html.replace('<div id="root"></div>', f'<div id="root">{blog_hub_body}</div>')
+    elif tool_path.startswith('/blog/'):
+        blog_art_body = get_blog_article_html(tool_path, lang)
+        html = html.replace('<div id="root"></div>', f'<div id="root">{blog_art_body}</div>')
     else:
         publisher_body = get_publisher_html_body(lang, tool_path, title, desc)
         html = html.replace('<div id="root"></div>', f'<div id="root">{publisher_body}</div>')
@@ -2426,7 +3012,7 @@ sitemap_lines = [
 ]
 
 for tool_path in PRIMARY_URLS.keys():
-    priority = '1.0' if tool_path == '/' else ('0.9' if tool_path in ['/wypelnij-formularz-pdf', '/kompresuj-pdf', '/grafika-do-pdf', '/polacz-pdf', '/wyczysc-metadane-pdf', '/wyciagnij-grafiki-z-pdf', '/zabezpiecz-pdf-haslem', '/usun-haslo-z-pdf', '/zmien-pdf-na-czarno-bialy', '/ponumeruj-strony-pdf'] else ('0.3' if tool_path == '/polityka-privacy' else '0.8'))
+    priority = '1.0' if tool_path == '/' else ('0.85' if tool_path == '/blog' else ('0.80' if tool_path.startswith('/blog/') else ('0.9' if tool_path in ['/wypelnij-formularz-pdf', '/kompresuj-pdf', '/grafika-do-pdf', '/polacz-pdf', '/wyczysc-metadane-pdf', '/wyciagnij-grafiki-z-pdf', '/zabezpiecz-pdf-haslem', '/usun-haslo-z-pdf', '/zmien-pdf-na-czarno-bialy', '/ponumeruj-strony-pdf'] else ('0.3' if tool_path == '/polityka-privacy' else '0.8'))))
 
     pl_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['pl']}" if PRIMARY_URLS[tool_path]['pl'] != '/' else f"{site_domain}/"
     en_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['en']}"
@@ -2574,7 +3160,7 @@ print(f"\nSuccess! Archive created: {zip_filename} ({file_size_mb:.2f} MB)")
 print("Cloudflare Pages 6-language deployment package is 100% ready:")
 print("  - Static HTML pre-rendered for all 6 languages (pl, en, es, hi, pt, ru)")
 print("  - Full hreflang alternates and canonical tags for Googlebot")
-print("  - sitemap.xml with 114 URLs (6 languages x 19 pages)")
+print("  - sitemap.xml with 138 URLs (6 languages x 23 pages including 18 blog guides and hubs)")
 print("  - Native 200.html SPA routing fallback (no _redirects loops)")
 print(f"  - IndexNow key verification file {indexnow_key_filename} placed at web root")
 print("  - Verified ads.txt with publisher pub-7672441336686997 placed at dist/ root")

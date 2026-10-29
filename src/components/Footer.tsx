@@ -1,13 +1,23 @@
 import React from 'react';
-import { FileText, Lock, ShieldCheck } from 'lucide-react';
+import { FileText, Lock, ShieldCheck, BookOpen } from 'lucide-react';
 import { ToolRoute } from '../types';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Language } from '../i18n/translations';
 import { buildLocalizedPath } from '../lib/routing';
+import { BLOG_ARTICLES, BLOG_HUB_TRANSLATIONS } from '../data/blogArticles';
 
 interface FooterProps {
   onNavigate: (path: ToolRoute) => void;
 }
+
+const FOOTER_BLOG_TITLES: Record<Language, string> = {
+  pl: 'Baza Wiedzy & Poradniki',
+  en: 'Knowledge Base & Guides',
+  es: 'Base de Conocimiento y Guías',
+  hi: 'ज्ञान केंद्र व मार्गदर्शिकाएँ',
+  pt: 'Base de Conhecimento e Guias',
+  ru: 'База Знаний и Руководства',
+};
 
 const FOOTER_SEO_INDEX_TITLES: Record<Language, string> = {
   pl: 'Szybki indeks modułów PDF',
@@ -36,7 +46,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const { t, language, localizedTools } = useLanguage();
 
   const seoIndexTitle = FOOTER_SEO_INDEX_TITLES[language] || FOOTER_SEO_INDEX_TITLES.en;
+  const blogTitle = FOOTER_BLOG_TITLES[language] || FOOTER_BLOG_TITLES.en;
   const nicheTools = localizedTools.filter((tool) => CORE_11_TOOL_IDS.includes(tool.id));
+  const blogArticles = BLOG_ARTICLES[language] || BLOG_ARTICLES.en;
 
   return (
     <footer
@@ -44,9 +56,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       className="w-full bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 py-12 transition-colors mt-auto"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-zinc-100 dark:border-zinc-800">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-8 border-b border-zinc-100 dark:border-zinc-800">
           {/* Col 1: About */}
-          <div className="space-y-3 md:col-span-2">
+          <div className="space-y-3">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-white flex items-center justify-center text-white dark:text-zinc-950">
                 <FileText className="w-4 h-4" />
@@ -91,7 +103,51 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </ul>
           </div>
 
-          {/* Col 3: Bezpieczeństwo i Prywatność */}
+          {/* Col 3: Baza Wiedzy & Poradniki PDF */}
+          <div className="space-y-2">
+            <div className="flex items-center gap-1.5">
+              <BookOpen className="w-3.5 h-3.5 text-indigo-500" />
+              <h4 className="text-xs font-bold text-zinc-900 dark:text-white uppercase tracking-wider">
+                {blogTitle}
+              </h4>
+            </div>
+            <ul className="space-y-1.5 text-xs">
+              {blogArticles.map((art) => {
+                const localizedHref = buildLocalizedPath(art.canonicalRoute, language);
+                return (
+                  <li key={art.id}>
+                    <a
+                      id={`footer-blog-link-${art.id}`}
+                      href={localizedHref}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onNavigate(art.canonicalRoute);
+                      }}
+                      className="text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer text-left block truncate"
+                      title={art.title}
+                    >
+                      {art.title}
+                    </a>
+                  </li>
+                );
+              })}
+              <li className="pt-1">
+                <a
+                  id="footer-blog-hub-link"
+                  href={buildLocalizedPath('/blog', language)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('/blog');
+                  }}
+                  className="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline block"
+                >
+                  {language === 'pl' ? 'Wszystkie poradniki PDF →' : 'All PDF Guides →'}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4: Bezpieczeństwo i Prywatność */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-zinc-900 dark:text-white uppercase tracking-wider">
               {t.footer.securityTitle}
@@ -126,14 +182,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* Discreet SEO Text Links Grid (Discreet Crawl Booster for Googlebot across all 11 niche subpages) */}
+        {/* Discreet SEO Text Links Grid (Discreet Crawl Booster for Googlebot across all 11 niche subpages and blog guides) */}
         <div className="pt-8 pb-6 border-b border-zinc-100 dark:border-zinc-800">
           <div className="text-[10px] font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-3">
             {seoIndexTitle}
           </div>
           <nav
             aria-label={seoIndexTitle}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-2 text-[11px]"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-2 text-[11px]"
           >
             {nicheTools.map((tool) => {
               const localizedHref = buildLocalizedPath(tool.path, language);

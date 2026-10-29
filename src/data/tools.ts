@@ -243,7 +243,7 @@ export interface SeoContentItem {
   extendedText: string;
 }
 
-export const SEO_DETAILS: Record<ToolRoute, SeoContentItem> = {
+export const SEO_DETAILS: Partial<Record<ToolRoute, SeoContentItem>> = {
   '/': {
     h2Title: 'Dlaczego PDF Studio Online to najbezpieczniejszy edytor PDF w sieci?',
     intro: 'Większość internetowych konwerterów i edytorów PDF (takich jak iLovePDF czy SmallPDF) wymaga przesłania Twoich poufnych umów, faktur i dokumentów tożsamości na ich serwery. PDF Studio Online działa zupełnie inaczej: całe przetwarzanie odbywa się w 100% po stronie Twojej przeglądarki internetowej przy użyciu nowoczesnych technologii WebAssembly i JavaScript (pdf-lib, pdfjs-dist).',

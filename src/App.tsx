@@ -20,6 +20,8 @@ import { MetadataStripperModule } from './components/MetadataStripperModule';
 import { SmartNextStepsCard } from './components/SmartNextStepsCard';
 import { TimeSavedCard } from './components/TimeSavedCard';
 import { PublisherArticleSection } from './components/PublisherArticleSection';
+import { BlogHub } from './components/BlogHub';
+import { BlogArticleView } from './components/BlogArticleView';
 import { ProcessingProvider } from './context/ProcessingContext';
 import { ToolRoute } from './types';
 import { TOOLS } from './data/tools';
@@ -337,6 +339,24 @@ function AppContent() {
       return <PrivacyPolicy onNavigate={navigateTo} />;
     }
 
+    if (currentPath === '/blog') {
+      return <BlogHub onNavigate={navigateTo} />;
+    }
+
+    if (
+      currentPath === '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze' ||
+      currentPath === '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych' ||
+      currentPath === '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms' ||
+      currentPath.startsWith('/blog/')
+    ) {
+      return (
+        <BlogArticleView
+          articleRoute={currentPath}
+          onNavigate={navigateTo}
+        />
+      );
+    }
+
     // Manager grid for delete, rotate, merge, split
     return (
       <PageManagerGrid
@@ -380,7 +400,7 @@ function AppContent() {
           <AdContainer type="banner-top" />
 
           {/* Subpage Header (only on tools if desired, clean and understated) */}
-          {currentPath !== '/' && (
+          {currentPath !== '/' && !currentPath.startsWith('/blog') && (
             <div className="w-full max-w-5xl mb-4 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400">
               <div className="flex items-center gap-1.5">
                 <button
@@ -429,14 +449,14 @@ function AppContent() {
           </div>
 
           {/* Structured SEO Content Section (tools and home only) */}
-          {currentPath !== '/polityka-privacy' && (
+          {currentPath !== '/polityka-privacy' && !currentPath.startsWith('/blog') && (
             <div className="w-full max-w-4xl mt-8">
               <SEOSection toolRoute={currentPath} />
             </div>
           )}
 
           {/* Comprehensive Publisher Content & PDF Guide (AdSense Publisher-Content Quality Booster) */}
-          {currentPath !== '/polityka-privacy' && (
+          {currentPath !== '/polityka-privacy' && !currentPath.startsWith('/blog') && (
             <PublisherArticleSection onNavigate={navigateTo} />
           )}
         </main>

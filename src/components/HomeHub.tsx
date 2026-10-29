@@ -17,11 +17,13 @@ import {
   Sparkles,
   ChevronDown,
   Clock,
+  BookOpen,
 } from 'lucide-react';
 import { ToolRoute, ToolMeta } from '../types';
 import { FileUploader } from './FileUploader';
 import { useLanguage } from '../i18n/LanguageContext';
 import { getCumulativeStats, formatTimeSaved } from '../lib/timeSavedTracker';
+import { BLOG_ARTICLES, BLOG_HUB_TRANSLATIONS } from '../data/blogArticles';
 
 interface HomeHubProps {
   onNavigate: (path: ToolRoute) => void;
@@ -32,6 +34,8 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
   const { t, localizedTools, language } = useLanguage();
   const [moreToolsOpen, setMoreToolsOpen] = useState(false);
   const [cumulativeStats] = useState(() => getCumulativeStats());
+  const hubCopy = BLOG_HUB_TRANSLATIONS[language] || BLOG_HUB_TRANSLATIONS.en;
+  const blogArticles = BLOG_ARTICLES[language] || BLOG_ARTICLES.en;
 
   // The prominent hero tools required
   const HERO_TOOL_ROUTES: ToolRoute[] = [
@@ -356,6 +360,60 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
             ))}
           </div>
         )}
+      </div>
+
+      {/* Dedicated Knowledge Base & Expert Guides Section ("Baza Wiedzy / Poradniki PDF") */}
+      <div id="home-knowledge-base-section" className="max-w-6xl mx-auto space-y-5 pt-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-200/60 dark:border-zinc-800 pb-3">
+          <div className="flex items-center gap-2">
+            <BookOpen className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+            <h3 className="text-base sm:text-lg font-extrabold text-zinc-900 dark:text-white tracking-tight">
+              {hubCopy.kicker}
+            </h3>
+          </div>
+          <button
+            onClick={() => onNavigate('/blog')}
+            className="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 flex items-center gap-1 cursor-pointer"
+          >
+            <span>{hubCopy.pageTitle.split('–')[0].trim()}</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {blogArticles.map((art) => (
+            <div
+              key={art.id}
+              onClick={() => onNavigate(art.canonicalRoute)}
+              className="group p-5 sm:p-6 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-indigo-500/80 shadow-2xs hover:shadow-lg transition-all duration-200 cursor-pointer flex flex-col justify-between"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                    {art.categoryBadge}
+                  </span>
+                  <span className="text-[11px] text-zinc-400 dark:text-zinc-500 flex items-center gap-1">
+                    <Clock className="w-3 h-3" />
+                    <span>{art.readingTime}</span>
+                  </span>
+                </div>
+
+                <h4 className="text-sm sm:text-base font-bold text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors leading-snug line-clamp-2">
+                  {art.title}
+                </h4>
+
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 line-clamp-3 leading-relaxed">
+                  {art.excerpt}
+                </p>
+              </div>
+
+              <div className="pt-3 mt-4 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+                <span>{hubCopy.readArticleBtn}</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
