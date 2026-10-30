@@ -138,6 +138,8 @@ export interface TranslationDict {
     termsOfService: string;
     privacyAndTerms: string;
     cookiePolicy: string;
+    aboutUs: string;
+    contact: string;
     copyright: string;
     engine: string;
   };
@@ -266,6 +268,8 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       termsOfService: 'Regulamin Serwisu',
       privacyAndTerms: 'Regulamin i Polityka Prywatności',
       cookiePolicy: 'Polityka Cookies (Pliki Cookie)',
+      aboutUs: 'O nas / Autor',
+      contact: 'Kontakt / Wsparcie',
       copyright: 'Wszelkie prawa zastrzeżone.',
       engine: '100% Client-Side Engine • Powered by pdf-lib & pdfjs-dist',
     },
@@ -392,6 +396,8 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       termsOfService: 'Terms of Service',
       privacyAndTerms: 'Privacy Policy & Terms',
       cookiePolicy: 'Cookie Policy',
+      aboutUs: 'About Us / Author',
+      contact: 'Contact / Support',
       copyright: 'All rights reserved.',
       engine: '100% Client-Side Engine • Powered by pdf-lib & pdfjs-dist',
     },
@@ -518,6 +524,8 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       termsOfService: 'Términos de Servicio',
       privacyAndTerms: 'Política de Privacidad y Términos',
       cookiePolicy: 'Política de Cookies',
+      aboutUs: 'Sobre Nosotros / Autor',
+      contact: 'Contacto y Soporte',
       copyright: 'Todos los derechos reservados.',
       engine: '100% Client-Side Engine • Desarrollado con pdf-lib y pdfjs-dist',
     },
@@ -644,6 +652,8 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       termsOfService: 'उपयोग की शर्तें (Terms of Service)',
       privacyAndTerms: 'गोपनीयता नीति और नियम',
       cookiePolicy: 'कुकी नीति (Cookie Policy)',
+      aboutUs: 'हमारे बारे में / लेखक',
+      contact: 'संपर्क व तकनीकी सहायता',
       copyright: 'सर्वाधिकार सुरक्षित।',
       engine: '100% Client-Side Engine • Powered by pdf-lib & pdfjs-dist',
     },
@@ -770,6 +780,8 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       termsOfService: 'Termos de Serviço',
       privacyAndTerms: 'Termos e Privacidade',
       cookiePolicy: 'Política de Cookies',
+      aboutUs: 'Sobre Nós / Autor',
+      contact: 'Contato e Suporte',
       copyright: 'Todos os direitos reservados.',
       engine: '100% Client-Side Engine • Powered by pdf-lib & pdfjs-dist',
     },
@@ -896,6 +908,8 @@ export const TRANSLATIONS: Record<Language, TranslationDict> = {
       termsOfService: 'Условия использования',
       privacyAndTerms: 'Условия и конфиденциальность',
       cookiePolicy: 'Политика использования файлов cookie',
+      aboutUs: 'О нас / Об авторе',
+      contact: 'Контакты и Поддержка',
       copyright: 'Все права защищены.',
       engine: '100% Client-Side Engine • Powered by pdf-lib & pdfjs-dist',
     },

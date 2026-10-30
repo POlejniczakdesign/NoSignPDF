@@ -21,7 +21,9 @@ export type ToolRoute =
   | '/blog'
   | '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze'
   | '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych'
-  | '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms';
+  | '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms'
+  | '/about'
+  | '/contact';
 
 export interface PdfMetadataItem {
   key: string;

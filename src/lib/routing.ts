@@ -156,6 +156,23 @@ export const ROUTE_ALIASES: Record<string, ToolRoute> = {
   '/blog/bezopasnost-dokumentov-pdf-v-oblake': '/blog/bezpieczenstwo-dokumentow-pdf-w-chmurze',
   '/blog/upravlenie-metadannymi-pdf-rukovodstvo': '/blog/zarzadzanie-metadanymi-pdf-usuwanie-danych',
   '/blog/format-pdf-v-yuridicheskoj-sfere-iso-32000-acroforms': '/blog/format-pdf-w-obrocie-prawnym-iso-32000-acroforms',
+
+  // About Us and Contact canonical & localized aliases
+  '/about': '/about',
+  '/about-us': '/about',
+  '/o-nas': '/about',
+  '/sobre-nosotros': '/about',
+  '/sobre': '/about',
+  '/o-projekte': '/about',
+
+  '/contact': '/contact',
+  '/contact-us': '/contact',
+  '/kontakt': '/contact',
+  '/contacto': '/contact',
+  '/contato': '/contact',
+  '/kontakty': '/contact',
+  '/support': '/contact',
+  '/wsparcie': '/contact',
 };
 
 export const DEDICATED_SEO_META: Record<
@@ -760,6 +777,58 @@ export const DEDICATED_SEO_META: Record<
       desc: 'Стандарты ISO 32000-1/2, архивный формат PDF/A, интерактивные формы AcroForms и квалифицированные электронные подписи PAdES в судах.',
     },
   },
+  '/about': {
+    pl: {
+      title: 'O Nas i Twórcach – Misja NoSignPDF Dev Team | nosignpdf.com',
+      desc: 'Poznaj zespół inżynierów cyberbezpieczeństwa NoSignPDF Dev Team. Dowiedz się, dlaczego stworzyliśmy darmowe, w 100% lokalne narzędzia PDF w technologii WebAssembly chroniące prywatność danych w pamięci RAM.',
+    },
+    en: {
+      title: 'About Us & Dev Team – In-Browser Privacy Mission | nosignpdf.com',
+      desc: 'Meet the cybersecurity engineers behind NoSignPDF Dev Team. Discover our mission to provide 100% client-side, zero-upload WebAssembly PDF tools that protect business data privacy.',
+    },
+    es: {
+      title: 'Sobre Nosotros y el Equipo – Misión de Privacidad Local | nosignpdf.com',
+      desc: 'Conoce al equipo de ingenieros de ciberseguridad NoSignPDF Dev Team. Descubre nuestra misión de ofrecer herramientas PDF gratuitas, locales en RAM y sin subidas a servidores en la nube.',
+    },
+    hi: {
+      title: 'हमारे बारे में और डेवलपर्स – स्थानीय गोपनीयता मिशन | nosignpdf.com',
+      desc: 'NoSignPDF Dev Team के साइबर सुरक्षा इंजीनियरों से मिलें। जानें कैसे हमारे 100% ब्राउज़र-आधारित क्लाइंट-साइड टूल्स आपके दस्तावेज़ों की गोपनीयता सुरक्षित रखते हैं।',
+    },
+    pt: {
+      title: 'Sobre Nós e a Equipe Dev – Missão de Privacidade em RAM | nosignpdf.com',
+      desc: 'Conheça a equipe de engenheiros de segurança da informação NoSignPDF Dev Team. Nossa missão é disponibilizar ferramentas PDF gratuitas executadas 100% na memória RAM do seu navegador.',
+    },
+    ru: {
+      title: 'О Нас и Разработчиках – Миссия Конфиденциальности в RAM | nosignpdf.com',
+      desc: 'Познакомьтесь с командой инженеров кибербезопасности NoSignPDF Dev Team. Узнайте, почему мы создали бесплатные локальные инструменты PDF на WebAssembly без отправки файлов в облако.',
+    },
+  },
+  '/contact': {
+    pl: {
+      title: 'Kontakt i Wsparcie Techniczne – NoSignPDF Dev Team | nosignpdf.com',
+      desc: 'Skontaktuj się z zespołem NoSignPDF Dev Team. Zgłoś problem z plikiem PDF, zaproponuj nową funkcję lub uzyskaj pomoc techniczną pod adresem contact@nosignpdf.com.',
+    },
+    en: {
+      title: 'Contact Us & Technical Support – NoSignPDF Dev Team | nosignpdf.com',
+      desc: 'Get in touch with the NoSignPDF Dev Team. Report PDF processing issues, submit feature requests, or reach technical support directly at contact@nosignpdf.com.',
+    },
+    es: {
+      title: 'Contacto y Soporte Técnico – NoSignPDF Dev Team | nosignpdf.com',
+      desc: 'Ponte en contacto con el equipo de NoSignPDF. Reporta incidencias con documentos PDF, solicita nuevas funciones o escribe a soporte en contact@nosignpdf.com.',
+    },
+    hi: {
+      title: 'संपर्क करें और तकनीकी सहायता – NoSignPDF Dev Team | nosignpdf.com',
+      desc: 'NoSignPDF डेवलपर टीम से संपर्क करें। किसी भी पीडीएफ समस्या या सुझाव के लिए contact@nosignpdf.com पर तकनीकी सहायता प्राप्त करें।',
+    },
+    pt: {
+      title: 'Contato e Suporte Técnico – NoSignPDF Dev Team | nosignpdf.com',
+      desc: 'Fale com a equipe de engenharia NoSignPDF Dev Team. Envie dúvidas sobre processamento de PDFs, sugestões ou contate o suporte em contact@nosignpdf.com.',
+    },
+    ru: {
+      title: 'Контакты и Техническая Поддержка – NoSignPDF Dev Team | nosignpdf.com',
+      desc: 'Свяжитесь с командой инженеров NoSignPDF Dev Team. Сообщите об ошибке обработки PDF или направьте запрос в службу поддержки: contact@nosignpdf.com.',
+    },
+  },
 };
 
 export const PRIMARY_LOCALIZED_SLUGS: Record<ToolRoute, Record<Language, string>> = {
@@ -806,6 +875,22 @@ export const PRIMARY_LOCALIZED_SLUGS: Record<ToolRoute, Record<Language, string>
     hi: '/hi/blog/pdf-legal-standards-iso-32000-acroforms',
     pt: '/pt/blog/formato-pdf-ambito-juridico-iso-32000-acroforms',
     ru: '/ru/blog/format-pdf-v-yuridicheskoj-sfere-iso-32000-acroforms',
+  },
+  '/about': {
+    pl: '/about',
+    en: '/en/about',
+    es: '/es/about',
+    hi: '/hi/about',
+    pt: '/pt/about',
+    ru: '/ru/about',
+  },
+  '/contact': {
+    pl: '/contact',
+    en: '/en/contact',
+    es: '/es/contact',
+    hi: '/hi/contact',
+    pt: '/pt/contact',
+    ru: '/ru/contact',
   },
 };
 

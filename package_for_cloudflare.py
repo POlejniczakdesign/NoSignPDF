@@ -706,6 +706,58 @@ TOOLS_METADATA = {
             "title": "Формат PDF в юридической сфере – Стандарты ISO 32000 и AcroForms | nosignpdf.com",
             "desc": "Стандарты ISO 32000-1/2, архивный формат PDF/A, интерактивные формы AcroForms и квалифицированные электронные подписи PAdES в судах."
         }
+    },
+    "/about": {
+        "pl": {
+            "title": "O Nas i Twórcach – Misja NoSignPDF Dev Team | nosignpdf.com",
+            "desc": "Poznaj zespół inżynierów cyberbezpieczeństwa NoSignPDF Dev Team. Dowiedz się, dlaczego stworzyliśmy darmowe, w 100% lokalne narzędzia PDF w technologii WebAssembly chroniące prywatność danych w pamięci RAM."
+        },
+        "en": {
+            "title": "About Us & Dev Team – In-Browser Privacy Mission | nosignpdf.com",
+            "desc": "Meet the cybersecurity engineers behind NoSignPDF Dev Team. Discover our mission to provide 100% client-side, zero-upload WebAssembly PDF tools that protect business data privacy."
+        },
+        "es": {
+            "title": "Sobre Nosotros y el Equipo – Misión de Privacidad Local | nosignpdf.com",
+            "desc": "Conoce al equipo de ingenieros de ciberseguridad NoSignPDF Dev Team. Descubre nuestra misión de ofrecer herramientas PDF gratuitas, locales en RAM y sin subidas a servidores en la nube."
+        },
+        "hi": {
+            "title": "हमारे बारे में और डेवलपर्स – स्थानीय गोपनीयता मिशन | nosignpdf.com",
+            "desc": "NoSignPDF Dev Team के साइबर सुरक्षा इंजीनियरों से मिलें। जानें कैसे हमारे 100% ब्राउज़र-आधारित क्लाइंट-साइड टूल्स आपके दस्तावेज़ों की गोपनीयता सुरक्षित रखते हैं।"
+        },
+        "pt": {
+            "title": "Sobre Nós e a Equipe Dev – Missão de Privacidade em RAM | nosignpdf.com",
+            "desc": "Conheça a equipe de engenheiros de segurança da informação NoSignPDF Dev Team. Nossa missão é disponibilizar ferramentas PDF gratuitas executadas 100% na memória RAM do seu navegador."
+        },
+        "ru": {
+            "title": "О Нас и Разработчиках – Миссия Конфиденциальности в RAM | nosignpdf.com",
+            "desc": "Познакомьтесь с командой инженеров кибербезопасности NoSignPDF Dev Team. Узнайте, почему мы создали бесплатные локальные инструменты PDF на WebAssembly без отправки файлов в облако."
+        }
+    },
+    "/contact": {
+        "pl": {
+            "title": "Kontakt i Wsparcie Techniczne – NoSignPDF Dev Team | nosignpdf.com",
+            "desc": "Skontaktuj się z zespołem NoSignPDF Dev Team. Zgłoś problem z plikiem PDF, zaproponuj nową funkcję lub uzyskaj pomoc techniczną pod adresem contact@nosignpdf.com."
+        },
+        "en": {
+            "title": "Contact Us & Technical Support – NoSignPDF Dev Team | nosignpdf.com",
+            "desc": "Get in touch with the NoSignPDF Dev Team. Report PDF processing issues, submit feature requests, or reach technical support directly at contact@nosignpdf.com."
+        },
+        "es": {
+            "title": "Contacto y Soporte Técnico – NoSignPDF Dev Team | nosignpdf.com",
+            "desc": "Ponte en contacto con el equipo de NoSignPDF. Reporta incidencias con documentos PDF, solicita nuevas funciones o escribe a soporte en contact@nosignpdf.com."
+        },
+        "hi": {
+            "title": "संपर्क करें और तकनीकी सहायता – NoSignPDF Dev Team | nosignpdf.com",
+            "desc": "NoSignPDF डेवलपर टीम से संपर्क करें। किसी भी पीडीएफ समस्या या सुझाव के लिए contact@nosignpdf.com पर तकनीकी सहायता प्राप्त करें।"
+        },
+        "pt": {
+            "title": "Contato e Suporte Técnico – NoSignPDF Dev Team | nosignpdf.com",
+            "desc": "Fale com a equipe de engenharia NoSignPDF Dev Team. Envie dúvidas sobre processamento de PDFs, sugestões ou contate o suporte em contact@nosignpdf.com."
+        },
+        "ru": {
+            "title": "Контакты и Техническая Поддержка – NoSignPDF Dev Team | nosignpdf.com",
+            "desc": "Свяжитесь с командой инженеров NoSignPDF Dev Team. Сообщите об ошибке обработки PDF или направьте запрос в службу поддержки: contact@nosignpdf.com."
+        }
     }
 }
 
@@ -894,6 +946,22 @@ PRIMARY_URLS = {
         "hi": "/hi/blog/pdf-legal-standards-iso-32000-acroforms",
         "pt": "/pt/blog/formato-pdf-ambito-juridico-iso-32000-acroforms",
         "ru": "/ru/blog/format-pdf-v-yuridicheskoj-sfere-iso-32000-acroforms"
+    },
+    "/about": {
+        "pl": "/about",
+        "en": "/en/about",
+        "es": "/es/about",
+        "hi": "/hi/about",
+        "pt": "/pt/about",
+        "ru": "/ru/about"
+    },
+    "/contact": {
+        "pl": "/contact",
+        "en": "/en/contact",
+        "es": "/es/contact",
+        "hi": "/hi/contact",
+        "pt": "/pt/contact",
+        "ru": "/ru/contact"
     }
 }
 
@@ -1502,6 +1570,63 @@ ALL_SLUGS = {
         ],
         "ru": [
             "/ru/blog/format-pdf-v-yuridicheskoj-sfere-iso-32000-acroforms"
+        ]
+    },
+    "/about": {
+        "pl": [
+            "/about",
+            "/pl/about",
+            "/o-nas",
+            "/pl/o-nas"
+        ],
+        "en": [
+            "/en/about",
+            "/en/about-us"
+        ],
+        "es": [
+            "/es/about",
+            "/es/sobre-nosotros",
+            "/es/sobre"
+        ],
+        "hi": [
+            "/hi/about"
+        ],
+        "pt": [
+            "/pt/about",
+            "/pt/sobre",
+            "/pt/sobre-nos"
+        ],
+        "ru": [
+            "/ru/about",
+            "/ru/o-nas",
+            "/ru/o-projekte"
+        ]
+    },
+    "/contact": {
+        "pl": [
+            "/contact",
+            "/pl/contact",
+            "/kontakt",
+            "/pl/kontakt"
+        ],
+        "en": [
+            "/en/contact",
+            "/en/contact-us"
+        ],
+        "es": [
+            "/es/contact",
+            "/es/contacto"
+        ],
+        "hi": [
+            "/hi/contact"
+        ],
+        "pt": [
+            "/pt/contact",
+            "/pt/contato"
+        ],
+        "ru": [
+            "/ru/contact",
+            "/ru/kontakty"
         ]
     }
 }
@@ -2593,6 +2718,86 @@ def generate_custom_html(tool_path, lang, current_slug):
                 ]
             }
         ]
+    elif tool_path == '/about':
+        jsonld_schemas = [
+            {
+                "@context": "https://schema.org",
+                "@type": "AboutPage",
+                "name": title,
+                "description": desc,
+                "url": canonical_url,
+                "inLanguage": lang,
+                "mainEntity": {
+                    "@type": "Organization",
+                    "name": "NoSignPDF",
+                    "url": site_domain,
+                    "founder": {
+                        "@type": "Organization",
+                        "name": "NoSignPDF Dev Team",
+                        "description": "Independent Cybersecurity & Applied Cryptography Engineering Collective"
+                    },
+                    "description": "Privacy-first, 100% in-browser Client-Side WebAssembly PDF tool suite."
+                }
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": site_domain if lang == 'pl' else f"{site_domain}/{lang}"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": title,
+                        "item": canonical_url
+                    }
+                ]
+            }
+        ]
+    elif tool_path == '/contact':
+        jsonld_schemas = [
+            {
+                "@context": "https://schema.org",
+                "@type": "ContactPage",
+                "name": title,
+                "description": desc,
+                "url": canonical_url,
+                "inLanguage": lang,
+                "mainEntity": {
+                    "@type": "Organization",
+                    "name": "NoSignPDF",
+                    "url": site_domain,
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "email": "contact@nosignpdf.com",
+                        "contactType": "technical support",
+                        "availableLanguage": ["pl", "en", "es", "hi", "pt", "ru"]
+                    }
+                }
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": site_domain if lang == 'pl' else f"{site_domain}/{lang}"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": title,
+                        "item": canonical_url
+                    }
+                ]
+            }
+        ]
     else:
         jsonld_schemas = [
             {
@@ -2672,6 +2877,12 @@ def generate_custom_html(tool_path, lang, current_slug):
     if tool_path == '/polityka-privacy':
         privacy_body = get_privacy_html_body(lang)
         html = html.replace('<div id="root"></div>', f'<div id="root">{privacy_body}</div>')
+    elif tool_path == '/about':
+        about_body = get_about_html_body(lang)
+        html = html.replace('<div id="root"></div>', f'<div id="root">{about_body}</div>')
+    elif tool_path == '/contact':
+        contact_body = get_contact_html_body(lang)
+        html = html.replace('<div id="root"></div>', f'<div id="root">{contact_body}</div>')
     elif tool_path == '/blog':
         blog_hub_body = get_blog_hub_html(lang)
         html = html.replace('<div id="root"></div>', f'<div id="root">{blog_hub_body}</div>')
@@ -2683,6 +2894,505 @@ def generate_custom_html(tool_path, lang, current_slug):
         html = html.replace('<div id="root"></div>', f'<div id="root">{publisher_body}</div>')
 
     return html
+
+def get_about_html_body(lang):
+    about_data = {
+        "pl": {
+            "back_href": "/",
+            "back_text": "← Powrót do narzędzi PDF",
+            "badge": "Inicjatywa Inżynierów Cyberbezpieczeństwa",
+            "title": "O projekcie NoSignPDF i zespole",
+            "highlight": "NoSignPDF Dev Team",
+            "subtitle": "Stworzyliśmy NoSignPDF, aby zakończyć erę wysyłania poufnych dokumentów biznesowych na obce serwery chmurowe. Przetwarzaj pliki PDF w 100% lokalnie w pamięci RAM swojej przeglądarki.",
+            "mission_title": "Nasza Misja: Wolność, Prywatność i Suwerenność Danych",
+            "mission_p1": "Projekt NoSignPDF narodził się jako niezależna inicjatywa inżynierów cyberbezpieczeństwa, analityków danych i programistów systemowych. W dobie powszechnej chmury większość popularnych konwerterów i edytorów PDF wymaga od użytkowników przesyłania plików na odległe serwery. Oznacza to, że poufne umowy handlowe, faktury z numerami NIP/PESEL, dokumentacja medyczna czy wyciągi bankowe opuszczają urządzenie i trafiają do zewnętrznych baz danych.",
+            "mission_p2": "Postanowiliśmy to radykalnie zmienić. Wykorzystując nowoczesne możliwości standardu WebAssembly (WASM), nowoczesnego silnika JavaScript oraz akceleracji sprzętowej w przeglądarce, przenieśliśmy całą logikę manipulacji plikami PDF bezpośrednio do pamięci RAM urządzenia użytkownika. Ani jeden bajt Twojego pliku nigdy nie opuszcza Twojego komputera ani telefonu.",
+            "pillars_title": "Filary Architektury Bezpieczeństwa NoSignPDF",
+            "p1_t": "100% Client-Side RAM Sandbox",
+            "p1_d": "Wszystkie operacje (wypełnianie AcroForms, scalanie, dzielenie, usuwanie metadanych, kompresja i konwersja obrazów) zachodzą w izolowanej piaskownicy przeglądarki. Pliki nie są uploadowane na żaden zewnętrzny serwer.",
+            "p2_t": "Zgodność ze Standardami ISO 32000",
+            "p2_d": "Stosujemy rygorystyczne normy ISO 32000-1 oraz ISO 32000-2 dla struktury plików PDF oraz archiwizacji długoterminowej PDF/A, gwarantując integralność cyfrową i poprawność prawną generowanych dokumentów.",
+            "p3_t": "Zero-Telemetry & Zero Rejestracji",
+            "p3_d": "Nie wymagamy tworzenia kont, podawania adresów e-mail, haseł ani instalacji wtyczek. Nie prowadzimy logów użytkownika ani profilowania telemetrycznego. Twoja prywatność jest bezwarunkowa.",
+            "p4_t": "Zgodność z RODO / GDPR i Dyrektywą NIS2",
+            "p4_d": "Brak transferu danych oznacza, że firmy i instytucje korzystające z NoSignPDF nie muszą podpisywać umów powierzenia przetwarzania danych (DPA) i całkowicie eliminują ryzyko wycieków w łańcuchu dostaw.",
+            "team_title": "Kim jest NoSignPDF Dev Team?",
+            "team_desc": "Jesteśmy międzynarodową grupą inżynierów oprogramowania i pasjonatów prywatności cyfrowej z wieloletnim doświadczeniem w inżynierii bezpieczeństwa aplikacji webowych, kryptografii stosowanej i optymalizacji silników renderujących. Rozwijamy NoSignPDF jako transparentne narzędzie użyteczności publicznej, udowadniając, że zaawansowane narzędzia do pracy z dokumentami mogą być w pełni bezpłatne i bezpieczne bez kompromisów.",
+            "tech_title": "Nasz Stos Technologiczny i Silnik Przetwarzania",
+            "tech_desc": "Aplikacja łączy biblioteki niskopoziomowe takie jak pdf-lib, silnik pdfjs-dist od Mozilla oraz natywne Canvas API przeglądarki. Całość jest hostowana na globalnej, rozproszonej sieci Cloudflare Pages w architekturze Static SPA, co zapewnia sub-sekundowy czas odpowiedzi na całym świecie.",
+            "ethics_title": "Etyczny Model Finansowania",
+            "ethics_p1": "Wielu dostawców bezpłatnych narzędzi monetyzuje dane użytkowników poprzez ich agregację, analizę lub sprzedaż baz kontaktowych. Nasz model jest w 100% transparentny: nigdy nie dotykamy Twoich plików.",
+            "ethics_p2": "Utrzymanie infrastruktury serwerowej i dalszy rozwój funkcjonalności finansujemy wyłącznie ze standardowych, nieinwazyjnych reklam partnerskich Google AdSense wyświetlanych w interfejsie. Dzięki temu narzędzie pozostaje 100% darmowe dla każdego użytkownika na świecie.",
+            "contact_href": "/contact",
+            "contact_btn": "Skontaktuj się z zespołem inżynierów"
+        },
+        "en": {
+            "back_href": "/en",
+            "back_text": "← Back to PDF Tools",
+            "badge": "Cybersecurity Engineering Initiative",
+            "title": "About NoSignPDF & the Engineers Behind It",
+            "highlight": "NoSignPDF Dev Team",
+            "subtitle": "We built NoSignPDF to end the era of sending confidential business documents to third-party cloud servers. Process PDF files 100% locally in your browser RAM.",
+            "mission_title": "Our Mission: Freedom, Privacy, and Sovereign Document Security",
+            "mission_p1": "NoSignPDF was founded as an independent initiative by cybersecurity engineers, data analysts, and systems developers. In the cloud-first era, most PDF converters and online editors require users to upload documents to remote servers. This exposes confidential business contracts, financial statements, medical records, and identity data to external data storage and sub-processor risks.",
+            "mission_p2": "We set out to change this paradigm. By leveraging WebAssembly (WASM), modern browser execution sandboxes, and hardware acceleration, we shifted the entire document manipulation pipeline into local client memory. Not a single byte of your file ever leaves your device.",
+            "pillars_title": "Pillars of the NoSignPDF Security Architecture",
+            "p1_t": "100% Client-Side RAM Sandbox",
+            "p1_d": "Every operation (AcroForms filling, merging, splitting, metadata sanitization, compression, and image conversion) runs inside an isolated browser sandbox. Zero files are uploaded to any server.",
+            "p2_t": "Strict ISO 32000 Compliance",
+            "p2_d": "We strictly adhere to ISO 32000-1 and ISO 32000-2 specifications as well as PDF/A archival guidelines, ensuring full legal validity and document integrity across corporate and government workflows.",
+            "p3_t": "Zero-Telemetry & Zero Sign Up",
+            "p3_d": "No account creation, no email harvesting, no password requirements, and no plugin installations. We do not track telemetry or profile users. Privacy is unconditional.",
+            "p4_t": "GDPR / RODO & NIS2 Compliance",
+            "p4_d": "Because no data is transferred across the network, organizations using NoSignPDF eliminate data processor liabilities (DPA) and protect against supply chain data leaks.",
+            "team_title": "Who is the NoSignPDF Dev Team?",
+            "team_desc": "We are an international collective of software engineers and digital privacy advocates with extensive backgrounds in application security, applied cryptography, and high-performance browser engines. We maintain NoSignPDF as a transparent public utility, demonstrating that high-grade PDF tooling can be free and secure without compromise.",
+            "tech_title": "Technology Stack & Engine Architecture",
+            "tech_desc": "The platform integrates low-level client engines including pdf-lib, Mozilla pdfjs-dist, and hardware-accelerated Canvas APIs. Delivered globally via Cloudflare Pages edge network as a static SPA, ensuring sub-second response times worldwide.",
+            "ethics_title": "Ethical & Transparent Monetization",
+            "ethics_p1": "Many 'free' tools monetize user data through hidden document profiling, scraping, or selling user databases. Our philosophy is diametrically opposed: we cannot view, monetize, or harvest what never touches a server.",
+            "ethics_p2": "Infrastructure overhead and ongoing tool development are funded solely through non-intrusive Google AdSense display advertising on our web interface. This guarantees that all tools remain 100% free with unlimited access for all users.",
+            "contact_href": "/en/contact",
+            "contact_btn": "Contact Engineering Team"
+        },
+        "es": {
+            "back_href": "/es",
+            "back_text": "← Volver a Herramientas PDF",
+            "badge": "Iniciativa de Ingeniería en Ciberseguridad",
+            "title": "Acerca del proyecto NoSignPDF y su equipo",
+            "highlight": "NoSignPDF Dev Team",
+            "subtitle": "Creamos NoSignPDF para terminar con la subida de documentos confidenciales a servidores externos. Procesa archivos PDF 100% localmente en la memoria RAM de tu navegador.",
+            "mission_title": "Nuestra Misión: Privacidad, Libertad y Seguridad Digital",
+            "mission_p1": "NoSignPDF nació como una iniciativa independiente de ingenieros de ciberseguridad y desarrolladores de sistemas. La mayoría de los editores y conversores de PDF en línea obligan a subir contratos, nóminas e información médica a servidores remotos con riesgo de filtraciones.",
+            "mission_p2": "Revolucionamos este proceso trasladando toda la lógica de manipulación de PDF a la memoria local de tu dispositivo mediante WebAssembly (WASM). Ni un solo byte de tu información sale de tu equipo.",
+            "pillars_title": "Pilares de Seguridad de NoSignPDF",
+            "p1_t": "Ejecución 100% Local en RAM",
+            "p1_d": "Todas las funciones se ejecutan en un entorno seguro y aislado en tu navegador sin conectarse a servidores de almacenamiento.",
+            "p2_t": "Estándares Internacionales ISO 32000",
+            "p2_d": "Cumplimos con las especificaciones ISO 32000-1/2 y PDF/A, asegurando la validez legal y formato oficial de tus documentos.",
+            "p3_t": "Cero Telemetría y Sin Registro",
+            "p3_d": "Sin cuentas, sin correos electrónicos y sin contraseñas. Acceso inmediato y privado sin recopilación de datos.",
+            "p4_t": "Conformidad con RGPD y Directiva NIS2",
+            "p4_d": "Al no existir transferencia de datos a la nube, las empresas garantizan la máxima protección de privacidad sin riesgos de filtración.",
+            "team_title": "¿Quiénes integran NoSignPDF Dev Team?",
+            "team_desc": "Somos un grupo internacional de ingenieros de software dedicados a la protección de datos y la criptografía aplicada. Mantenemos NoSignPDF como un servicio público y transparente.",
+            "tech_title": "Arquitectura Tecnológica",
+            "tech_desc": "Implementado con pdf-lib, pdfjs-dist y Canvas nativo, distribuido a través de la red global de Cloudflare Pages.",
+            "ethics_title": "Modelo Ético de Financiación",
+            "ethics_p1": "Jamás monetizamos con datos de usuarios. No recopilamos ni vendemos información.",
+            "ethics_p2": "Mantenemos el servicio 100% gratuito mediante publicidad respetuosa de Google AdSense en la interfaz.",
+            "contact_href": "/es/contact",
+            "contact_btn": "Contactar al Equipo"
+        },
+        "hi": {
+            "back_href": "/hi",
+            "back_text": "← पीडीएफ टूल्स पर वापस जाएं",
+            "badge": "साइबर सुरक्षा इंजीनियर्स की स्वतंत्र पहल",
+            "title": "NoSignPDF परियोजना और डेवलपर्स के बारे में",
+            "highlight": "NoSignPDF Dev Team",
+            "subtitle": "हमने क्लाउड सर्वरों पर गोपनीय व्यावसायिक दस्तावेज़ भेजने की बाध्यता समाप्त करने के लिए NoSignPDF बनाया है। अपनी फाइलों को 100% स्थानीय रूप से ब्राउज़र रैम में प्रोसेस करें।",
+            "mission_title": "हमारा मिशन: डेटा संप्रभुता, गोपनीयता और सुरक्षा",
+            "mission_p1": "NoSignPDF की स्थापना साइबर सुरक्षा इंजीनियरों और सिस्टम डेवलपर्स द्वारा की गई। अधिकांश ऑनलाइन पीडीएफ टूल फाइलों को क्लाउड सर्वर पर अपलोड करवाते हैं, जिससे वित्तीय व व्यक्तिगत डेटा लीक होने का खतरा बना रहता है।",
+            "mission_p2": "हमने WebAssembly (WASM) और ब्राउज़र मेमोरी का उपयोग करके पूरे पीडीएफ प्रोसेसिंग इंजन को आपके डिवाइस में स्थानांतरित कर दिया है। आपकी फाइल का एक बाइट भी आपके कंप्यूटर से बाहर नहीं जाता।",
+            "pillars_title": "सुरक्षा वास्तुकला के मुख्य स्तंभ",
+            "p1_t": "100% क्लाइंट-साइड रैम निष्पादन",
+            "p1_d": "सभी कार्य ब्राउज़र के सुरक्षित सैंडबॉक्स में होते हैं। किसी भी सर्वर पर फाइल अपलोड नहीं होती।",
+            "p2_t": "आईएसओ 32000 और पीडीएफ/ए मानक",
+            "p2_d": "अंतर्राष्ट्रीय दस्तावेज़ मानकों का पूर्ण अनुपालन ताकि कानूनी और आधिकारिक वैधता बनी रहे।",
+            "p3_t": "बिना लॉगिन और बिना डेटा ट्रैकिंग",
+            "p3_d": "खाता बनाने, ईमेल या पासवर्ड दर्ज करने की आवश्यकता नहीं। पूर्ण गोपनीयता की गारंटी।",
+            "p4_t": "जीडीपीआर व गोपनीयता नियमों का अनुपालन",
+            "p4_d": "डेटा ट्रांसफर न होने से कॉर्पोरेट और व्यक्तिगत उपयोगकर्ताओं के लिए शून्य जोखिम।",
+            "team_title": "NoSignPDF Dev Team कौन हैं?",
+            "team_desc": "हम सॉफ्टवेयर सुरक्षा और डेटा गोपनीयता के क्षेत्र में कार्यरत अनुभवी इंजीनियरों की अंतरराष्ट्रीय टीम हैं।",
+            "tech_title": "तकनीकी स्टैक",
+            "tech_desc": "pdf-lib, pdfjs-dist और Cloudflare Pages द्वारा वैश्विक स्तर पर तीव्र गति से संचालित।",
+            "ethics_title": "नैतिक वित्तीय मॉडल",
+            "ethics_p1": "हम उपयोगकर्ताओं के डेटा को कभी नहीं बेचते या एकत्र करते हैं।",
+            "ethics_p2": "सेवा को 100% मुफ्त बनाए रखने के लिए हम केवल Google AdSense के गैर-हस्तक्षेपकारी विज्ञापनों का उपयोग करते हैं।",
+            "contact_href": "/hi/contact",
+            "contact_btn": "डेवलपर टीम से संपर्क करें"
+        },
+        "pt": {
+            "back_href": "/pt",
+            "back_text": "← Voltar às Ferramentas PDF",
+            "badge": "Iniciativa de Engenharia em Cibersegurança",
+            "title": "Sobre o Projeto NoSignPDF e a Equipe",
+            "highlight": "NoSignPDF Dev Team",
+            "subtitle": "Desenvolvemos o NoSignPDF para eliminar a necessidade de enviar documentos confidenciais para servidores na nuvem. Processe PDFs 100% localmente na memória RAM do seu navegador.",
+            "mission_title": "Nossa Missão: Privacidade, Soberania e Segurança de Dados",
+            "mission_p1": "O NoSignPDF nasceu como uma iniciativa independente de engenheiros de segurança da informação e desenvolvedores de software. A maioria das ferramentas online exige o upload de contratos comerciais, notas fiscais e relatórios confidenciais para servidores remotos com riscos à privacidade.",
+            "mission_p2": "Transformamos esse cenário utilizando WebAssembly (WASM) e aceleração de hardware. Toda a manipulação de PDFs ocorre exclusivamente na memória RAM do seu dispositivo. Nenhum byte sai do seu computador ou smartphone.",
+            "pillars_title": "Pilares da Arquitetura de Segurança NoSignPDF",
+            "p1_t": "Sandbox 100% Local na Memória RAM",
+            "p1_d": "Preenchimento de AcroForms, junção, divisão, limpeza de metadados e conversão executados localmente sem upload.",
+            "p2_t": "Conformidade Rigorosa com ISO 32000",
+            "p2_d": "Aderência aos padrões ISO 32000-1/2 e PDF/A, garantindo validade jurídica e compatibilidade oficial.",
+            "p3_t": "Zero Telemetria e Sem Cadastro",
+            "p3_d": "Sem necessidade de contas, e-mails, senhas ou extensões. Acesso instantâneo e privacidade sem concessões.",
+            "p4_t": "Conformidade com LGPD e GDPR",
+            "p4_d": "Como não há transferência de dados para terceiros, empresas eliminam riscos de vazamento e responsabilidade regulatória.",
+            "team_title": "Quem é a NoSignPDF Dev Team?",
+            "team_desc": "Somos um coletivo internacional de engenheiros apaixonados por segurança digital e criptografia aplicada, dedicados a construir utilitários públicos transparentes.",
+            "tech_title": "Tecnologia e Infraestrutura",
+            "tech_desc": "Construído com bibliotecas de baixo nível (pdf-lib, pdfjs-dist) e servido via rede global Cloudflare Pages.",
+            "ethics_title": "Monetização Ética e Transparente",
+            "ethics_p1": "Nunca monetizamos dados de usuários. Seus arquivos permanecem estritamente privados.",
+            "ethics_p2": "Mantemos a plataforma 100% gratuita através de anúncios discretos do Google AdSense.",
+            "contact_href": "/pt/contact",
+            "contact_btn": "Falar com a Equipe"
+        },
+        "ru": {
+            "back_href": "/ru",
+            "back_text": "← Вернуться к инструментам PDF",
+            "badge": "Инициатива Инженеров Кибербезопасности",
+            "title": "О проекте NoSignPDF и команде разработчиков",
+            "highlight": "NoSignPDF Dev Team",
+            "subtitle": "Мы создали NoSignPDF, чтобы покончить с отправкой конфиденциальных документов на сторонние облачные серверы. Обрабатывайте файлы PDF на 100% локально в оперативной памяти браузера.",
+            "mission_title": "Наша Миссия: Суверенитет, Приватность и Безопасность Данных",
+            "mission_p1": "Проект NoSignPDF зародился как независимая инициатива инженеров по информационной безопасности и системных программистов. В эпоху повсеместных облачных сервисов большинство онлайн-редакторов PDF принуждают пользователей загружать файлы на удаленные серверы, подвергая утечкам коммерческие договоры, финансовые отчеты и персональные данные.",
+            "mission_p2": "Мы изменили этот подход благодаря технологиям WebAssembly (WASM) и изолированным средам браузера. Весь процесс редактирования, объединения и конвертации выполняется исключительно в оперативной памяти (RAM) вашего устройства. Ни единый байт не покидает ваш компьютер или смартфон.",
+            "pillars_title": "Фундаментальные Принципы Безопасности NoSignPDF",
+            "p1_t": "100% Client-Side RAM Sandbox",
+            "p1_d": "Все операции (заполнение AcroForms, слияние, разделение, очистка метаданных и сжатие) происходят в локальной песочнице браузера без загрузки на серверы.",
+            "p2_t": "Соответствие Стандартам ISO 32000",
+            "p2_d": "Строгое соблюдение спецификаций ISO 32000-1/2 и архивного стандарта PDF/A обеспечивает юридическую чистоту и корректность документов.",
+            "p3_t": "Zero-Telemetry и Без Регистрации",
+            "p3_d": "Никаких учетных записей, сбора email-адресов, паролей и плагинов. Мы не ведем логов и не составляем профилей пользователей.",
+            "p4_t": "Соответствие Требованиям GDPR и NIS2",
+            "p4_d": "Отсутствие передачи данных по сети полностью снимает риски регуляторных штрафов и утечек в цепочке поставок.",
+            "team_title": "Кто такие NoSignPDF Dev Team?",
+            "team_desc": "Мы — международное сообщество инженеров-разработчиков и специалистов по прикладной криптографии. Мы развиваем NoSignPDF как открытый общедоступный инструмент высокой надежности.",
+            "tech_title": "Технологический Стек и Архитектура",
+            "tech_desc": "Система построена на связке pdf-lib, Mozilla pdfjs-dist и Canvas API, а статическое размещение на Cloudflare Pages гарантирует максимальную скорость отклика.",
+            "ethics_title": "Этичная Модель Монетизации",
+            "ethics_p1": "Мы категорически против монетизации данных пользователей. Ваши файлы принадлежат только вам.",
+            "ethics_p2": "Развитие инфраструктуры поддерживается исключительно за счет аккуратной рекламы Google AdSense на страницах сервиса.",
+            "contact_href": "/ru/contact",
+            "contact_btn": "Связаться с инженерами"
+        }
+    }
+    d = about_data.get(lang, about_data['en'])
+
+    return f"""
+<div id="about-us-view" class="w-full max-w-5xl mx-auto py-8 px-4 font-sans text-zinc-900 dark:text-zinc-100">
+  <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
+    <a href="{d['back_href']}" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-xs font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
+      {d['back_text']}
+    </a>
+    <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-700 bg-indigo-50 dark:bg-indigo-950/40 px-3.5 py-1 rounded-full border border-indigo-200">
+      🔒 {d['badge']}
+    </span>
+  </div>
+
+  <header class="bg-gradient-to-br from-white via-zinc-50 to-indigo-50/30 dark:from-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 sm:p-12 mb-8 shadow-xs">
+    <div class="max-w-3xl space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-900 text-white text-[11px] font-bold tracking-wider uppercase">
+        NoSignPDF Dev Team
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-tight">
+        {d['title']} <span class="text-indigo-600 dark:text-indigo-400">{d['highlight']}</span>
+      </h1>
+      <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed font-normal">
+        {d['subtitle']}
+      </p>
+    </div>
+  </header>
+
+  <div class="space-y-8">
+    <section class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-10 space-y-4 shadow-xs">
+      <h2 class="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">
+        🏆 {d['mission_title']}
+      </h2>
+      <div class="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 space-y-4 leading-relaxed">
+        <p>{d['mission_p1']}</p>
+        <p>{d['mission_p2']}</p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-bold text-zinc-900 dark:text-white px-1">
+        {d['pillars_title']}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 space-y-2.5 shadow-xs">
+          <h3 class="text-base font-bold text-zinc-900 dark:text-white">⚙️ {d['p1_t']}</h3>
+          <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">{d['p1_d']}</p>
+        </div>
+        <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 space-y-2.5 shadow-xs">
+          <h3 class="text-base font-bold text-zinc-900 dark:text-white">📜 {d['p2_t']}</h3>
+          <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">{d['p2_d']}</p>
+        </div>
+        <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 space-y-2.5 shadow-xs">
+          <h3 class="text-base font-bold text-zinc-900 dark:text-white">🛡️ {d['p3_t']}</h3>
+          <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">{d['p3_d']}</p>
+        </div>
+        <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 space-y-2.5 shadow-xs">
+          <h3 class="text-base font-bold text-zinc-900 dark:text-white">🇪🇺 {d['p4_t']}</h3>
+          <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">{d['p4_d']}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 space-y-3 shadow-xs">
+        <h3 class="text-lg font-bold text-zinc-900 dark:text-white">👥 {d['team_title']}</h3>
+        <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">{d['team_desc']}</p>
+      </div>
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 space-y-3 shadow-xs">
+        <h3 class="text-lg font-bold text-zinc-900 dark:text-white">💻 {d['tech_title']}</h3>
+        <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">{d['tech_desc']}</p>
+      </div>
+    </section>
+
+    <section class="bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 space-y-3">
+      <h3 class="text-base font-bold text-zinc-900 dark:text-white">🤝 {d['ethics_title']}</h3>
+      <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{d['ethics_p1']}</p>
+      <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{d['ethics_p2']}</p>
+    </section>
+
+    <section class="bg-indigo-600 text-white rounded-3xl p-8 sm:p-10 text-center space-y-4">
+      <h3 class="text-2xl sm:text-3xl font-extrabold">{d['badge']}</h3>
+      <p class="text-sm sm:text-base text-indigo-100 max-w-xl mx-auto leading-relaxed">
+        {d['subtitle']}
+      </p>
+      <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+        <a href="{d['back_href']}" class="px-6 py-3 rounded-xl bg-white text-indigo-900 text-sm font-bold hover:bg-indigo-50 transition-colors shadow-sm">
+          {d['back_text']}
+        </a>
+        <a href="{d['contact_href']}" class="px-6 py-3 rounded-xl bg-indigo-700 hover:bg-indigo-800 text-white border border-indigo-400/40 text-sm font-bold transition-colors">
+          {d['contact_btn']}
+        </a>
+      </div>
+    </section>
+  </div>
+</div>
+"""
+
+def get_contact_html_body(lang):
+    contact_data = {
+        "pl": {
+            "back_href": "/",
+            "back_text": "← Powrót do narzędzi PDF",
+            "badge": "Oficjalny Kanał Wsparcia Technicznego",
+            "title": "Kontakt i Pomoc Techniczna",
+            "subtitle": "Masz problem z nietypowym plikiem PDF, chcesz zgłosić błąd lub zaproponować nową funkcję? Zespół inżynierów NoSignPDF Dev Team jest do Twojej dyspozycji.",
+            "email_title": "Oficjalny adres e-mail wsparcia",
+            "email_desc": "Pisz bezpośrednio do inżynierów odpowiedzialnych za rozwój silnika PDF:",
+            "sla_title": "Czas Odpowiedzi: 24-48h",
+            "sla_desc": "Odpowiadamy na wszystkie zgłoszenia techniczne i zapytania o bezpieczeństwo w dni robocze.",
+            "form_title": "Formularz kontaktowy online",
+            "name_label": "Imię i nazwisko / Nazwa firmy",
+            "email_label": "Twój adres e-mail do odpowiedzi",
+            "category_label": "Temat zgłoszenia",
+            "cat1": "Zgłoszenie błędu w przetwarzaniu pliku PDF",
+            "cat2": "Propozycja nowego narzędzia lub usprawnienia",
+            "cat3": "Kwestie cyberbezpieczeństwa i prywatności",
+            "cat4": "Inne pytanie ogólne",
+            "message_label": "Opis problemu lub treść wiadomości",
+            "privacy_note": "Prywatność gwarantowana: Nie dołączaj do wiadomości poufnych haseł ani danych kart. Twój adres e-mail posłuży wyłącznie do udzielenia odpowiedzi technicznej.",
+            "submit_btn": "Wyślij wiadomość do wsparcia (contact@nosignpdf.com)"
+        },
+        "en": {
+            "back_href": "/en",
+            "back_text": "← Back to PDF Tools",
+            "badge": "Official Engineering Support Channel",
+            "title": "Contact Us & Technical Support",
+            "subtitle": "Encountered an issue with a complex PDF, found a bug, or have an idea for a new client-side tool? The NoSignPDF Dev Team is here to help.",
+            "email_title": "Official Support Email",
+            "email_desc": "Direct line to the engineers maintaining the PDF execution engine:",
+            "sla_title": "Response Time: 24-48h",
+            "sla_desc": "We review and respond to all technical inquiries and bug reports during business days.",
+            "form_title": "Online Support Contact Form",
+            "name_label": "Your Name or Company",
+            "email_label": "Your Email Address (for replies)",
+            "category_label": "Issue Category",
+            "cat1": "PDF Document Processing Bug Report",
+            "cat2": "Feature Request / Tool Suggestion",
+            "cat3": "Cybersecurity or Privacy Inquiry",
+            "cat4": "General Question",
+            "message_label": "Message & Issue Details",
+            "privacy_note": "Privacy guaranteed: Never send confidential passwords or private personal data. Your email is solely used to respond to this ticket.",
+            "submit_btn": "Send Message to Support (contact@nosignpdf.com)"
+        },
+        "es": {
+            "back_href": "/es",
+            "back_text": "← Volver a Herramientas PDF",
+            "badge": "Canal Oficial de Soporte Técnico",
+            "title": "Contacto y Asistencia Técnica",
+            "subtitle": "¿Problemas con un archivo PDF o una propuesta de mejora? El equipo de NoSignPDF Dev Team está a tu disposición.",
+            "email_title": "Correo Oficial de Soporte",
+            "email_desc": "Escribe directamente al equipo de ingenieros de NoSignPDF:",
+            "sla_title": "Tiempo de respuesta: 24-48h",
+            "sla_desc": "Atendemos consultas técnicas e incidencias en días hábiles.",
+            "form_title": "Formulario de contacto de soporte",
+            "name_label": "Nombre o Empresa",
+            "email_label": "Tu correo electrónico",
+            "category_label": "Tema del mensaje",
+            "cat1": "Error al procesar archivo PDF",
+            "cat2": "Sugerencia de nueva función",
+            "cat3": "Seguridad y Privacidad",
+            "cat4": "Otra consulta",
+            "message_label": "Detalles del problema o mensaje",
+            "privacy_note": "Garantía de privacidad: Tu correo solo se usará para responder a tu consulta.",
+            "submit_btn": "Enviar consulta a soporte (contact@nosignpdf.com)"
+        },
+        "hi": {
+            "back_href": "/hi",
+            "back_text": "← पीडीएफ टूल्स पर वापस जाएं",
+            "badge": "आधिकारिक तकनीकी सहायता",
+            "title": "संपर्क और तकनीकी सहायता",
+            "subtitle": "क्या आपको किसी पीडीएफ फाइल में समस्या आ रही है या कोई नया सुझाव देना चाहते हैं? NoSignPDF Dev Team से संपर्क करें।",
+            "email_title": "आधिकारिक सहायता ईमेल",
+            "email_desc": "सीधे डेवलपर टीम को ईमेल लिखें:",
+            "sla_title": "प्रतिक्रिया समय: 24-48 घंटे",
+            "sla_desc": "कार्य दिवसों में सभी तकनीकी प्रश्नों का उत्तर दिया जाता है।",
+            "form_title": "ऑनलाइन सहायता फॉर्म",
+            "name_label": "आपका नाम या संगठन",
+            "email_label": "आपका ईमेल पता",
+            "category_label": "विषय",
+            "cat1": "पीडीएफ प्रोसेसिंग में त्रुटि (Bug)",
+            "cat2": "नए फीचर का सुझाव",
+            "cat3": "सुरक्षा और गोपनीयता संबंधित प्रश्न",
+            "cat4": "अन्य सामान्य प्रश्न",
+            "message_label": "समस्या का विस्तृत विवरण",
+            "privacy_note": "गोपनीयता की गारंटी: आपका ईमेल केवल उत्तर देने के लिए उपयोग किया जाएगा।",
+            "submit_btn": "सहायता संदेश भेजें (contact@nosignpdf.com)"
+        },
+        "pt": {
+            "back_href": "/pt",
+            "back_text": "← Voltar às Ferramentas PDF",
+            "badge": "Canal Oficial de Suporte Técnico",
+            "title": "Contato e Suporte Técnico",
+            "subtitle": "Encontrou alguma falha em um arquivo PDF ou deseja sugerir melhorias? A equipe NoSignPDF Dev Team está pronta para ajudar.",
+            "email_title": "E-mail Oficial de Suporte",
+            "email_desc": "Fale diretamente com os engenheiros de desenvolvimento:",
+            "sla_title": "Prazo de Resposta: 24-48h",
+            "sla_desc": "Respondemos a chamados técnicos e dúvidas sobre privacidade em dias úteis.",
+            "form_title": "Formulário de atendimento técnico",
+            "name_label": "Nome ou Empresa",
+            "email_label": "Seu e-mail de contato",
+            "category_label": "Assunto do chamado",
+            "cat1": "Erro no processamento de documento PDF",
+            "cat2": "Sugestão de nova funcionalidade",
+            "cat3": "Dúvidas de privacidade e segurança",
+            "cat4": "Outras informações",
+            "message_label": "Descrição do problema ou mensagem",
+            "privacy_note": "Privacidade garantida: Seu e-mail será usado exclusivamente para a resposta técnica.",
+            "submit_btn": "Enviar chamado de suporte (contact@nosignpdf.com)"
+        },
+        "ru": {
+            "back_href": "/ru",
+            "back_text": "← Вернуться к инструментам PDF",
+            "badge": "Официальный Канал Техподдержки",
+            "title": "Контакты и Техническая Поддержка",
+            "subtitle": "Столкнулись со сложным файлом PDF, обнаружили ошибку или хотите предложить улучшение? Инженеры NoSignPDF Dev Team ответят на ваши вопросы.",
+            "email_title": "Официальный email техподдержки",
+            "email_desc": "Прямая связь с разработчиками ядра обработки PDF:",
+            "sla_title": "Время ответа: 24-48 часов",
+            "sla_desc": "Все технические запросы обрабатываются инженерами в рабочие дни.",
+            "form_title": "Форма обращения в службу поддержки",
+            "name_label": "Ваше имя или организация",
+            "email_label": "Ваш контактный email",
+            "category_label": "Тема обращения",
+            "cat1": "Ошибка при обработке файла PDF",
+            "cat2": "Предложение новой функции",
+            "cat3": "Вопросы безопасности и конфиденциальности",
+            "cat4": "Другой вопрос",
+            "message_label": "Описание проблемы или вопрос",
+            "privacy_note": "Гарантия приватности: Ваш email используется исключительно для ответа службы поддержки.",
+            "submit_btn": "Отправить обращение (contact@nosignpdf.com)"
+        }
+    }
+    d = contact_data.get(lang, contact_data['en'])
+
+    return f"""
+<div id="contact-view" class="w-full max-w-5xl mx-auto py-8 px-4 font-sans text-zinc-900 dark:text-zinc-100">
+  <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
+    <a href="{d['back_href']}" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-xs font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
+      {d['back_text']}
+    </a>
+    <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50 dark:bg-emerald-950/40 px-3.5 py-1 rounded-full border border-emerald-200">
+      ✉️ {d['badge']}
+    </span>
+  </div>
+
+  <header class="bg-gradient-to-br from-white via-zinc-50 to-emerald-50/30 dark:from-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 sm:p-12 mb-8 shadow-xs">
+    <div class="max-w-3xl space-y-3">
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-tight">
+        {d['title']}
+      </h1>
+      <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed font-normal">
+        {d['subtitle']}
+      </p>
+    </div>
+  </header>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <div class="lg:col-span-5 space-y-6">
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-7 space-y-4 shadow-xs">
+        <h3 class="text-base font-bold text-zinc-900 dark:text-white">📫 {d['email_title']}</h3>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400">{d['email_desc']}</p>
+        <div class="p-3 bg-zinc-50 dark:bg-zinc-800/60 rounded-xl border border-zinc-200 dark:border-zinc-700 flex items-center justify-between gap-2">
+          <a href="mailto:contact@nosignpdf.com" class="text-sm font-mono font-bold text-indigo-600 dark:text-indigo-400 hover:underline">
+            contact@nosignpdf.com
+          </a>
+          <span class="text-xs px-2 py-1 rounded bg-zinc-200 dark:bg-zinc-700 font-semibold text-zinc-700 dark:text-zinc-300">
+            Official Email
+          </span>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-7 space-y-3 shadow-xs">
+        <h3 class="text-base font-bold text-zinc-900 dark:text-white">⏱️ {d['sla_title']}</h3>
+        <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{d['sla_desc']}</p>
+      </div>
+
+      <div class="bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 text-xs text-zinc-500 dark:text-zinc-400 space-y-2">
+        <div class="font-bold text-zinc-800 dark:text-zinc-200">🔒 Gwarancja Zero-Upload</div>
+        <p>{d['privacy_note']}</p>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 shadow-xs">
+        <form action="mailto:contact@nosignpdf.com" method="post" enctype="text/plain" class="space-y-5">
+          <h2 class="text-lg font-bold text-zinc-900 dark:text-white">{d['form_title']}</h2>
+
+          <div>
+            <label class="block text-xs font-bold text-zinc-700 dark:text-zinc-300 mb-1.5">{d['name_label']} *</label>
+            <input type="text" name="name" required class="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-sm text-zinc-900 dark:text-zinc-100" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-zinc-700 dark:text-zinc-300 mb-1.5">{d['email_label']} *</label>
+            <input type="email" name="email" required class="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-sm text-zinc-900 dark:text-zinc-100" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-zinc-700 dark:text-zinc-300 mb-1.5">{d['category_label']}</label>
+            <select name="category" class="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-sm text-zinc-900 dark:text-zinc-100">
+              <option>{d['cat1']}</option>
+              <option>{d['cat2']}</option>
+              <option>{d['cat3']}</option>
+              <option>{d['cat4']}</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-zinc-700 dark:text-zinc-300 mb-1.5">{d['message_label']} *</label>
+            <textarea name="message" rows="5" required class="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-sm text-zinc-900 dark:text-zinc-100"></textarea>
+          </div>
+
+          <button type="submit" class="w-full px-6 py-3 rounded-xl bg-zinc-900 text-white font-bold text-sm hover:bg-zinc-800 transition-colors">
+            {d['submit_btn']}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+"""
 
 def get_privacy_html_body(lang):
     if lang == 'pl':
@@ -3012,7 +3722,7 @@ sitemap_lines = [
 ]
 
 for tool_path in PRIMARY_URLS.keys():
-    priority = '1.0' if tool_path == '/' else ('0.85' if tool_path == '/blog' else ('0.80' if tool_path.startswith('/blog/') else ('0.9' if tool_path in ['/wypelnij-formularz-pdf', '/kompresuj-pdf', '/grafika-do-pdf', '/polacz-pdf', '/wyczysc-metadane-pdf', '/wyciagnij-grafiki-z-pdf', '/zabezpiecz-pdf-haslem', '/usun-haslo-z-pdf', '/zmien-pdf-na-czarno-bialy', '/ponumeruj-strony-pdf'] else ('0.3' if tool_path == '/polityka-privacy' else '0.8'))))
+    priority = '1.0' if tool_path == '/' else ('0.85' if tool_path == '/blog' else ('0.80' if tool_path.startswith('/blog/') else ('0.7' if tool_path in ['/about', '/contact'] else ('0.9' if tool_path in ['/wypelnij-formularz-pdf', '/kompresuj-pdf', '/grafika-do-pdf', '/polacz-pdf', '/wyczysc-metadane-pdf', '/wyciagnij-grafiki-z-pdf', '/zabezpiecz-pdf-haslem', '/usun-haslo-z-pdf', '/zmien-pdf-na-czarno-bialy', '/ponumeruj-strony-pdf'] else ('0.3' if tool_path == '/polityka-privacy' else '0.8')))))
 
     pl_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['pl']}" if PRIMARY_URLS[tool_path]['pl'] != '/' else f"{site_domain}/"
     en_alt = f"{site_domain}{PRIMARY_URLS[tool_path]['en']}"
@@ -3160,7 +3870,7 @@ print(f"\nSuccess! Archive created: {zip_filename} ({file_size_mb:.2f} MB)")
 print("Cloudflare Pages 6-language deployment package is 100% ready:")
 print("  - Static HTML pre-rendered for all 6 languages (pl, en, es, hi, pt, ru)")
 print("  - Full hreflang alternates and canonical tags for Googlebot")
-print("  - sitemap.xml with 138 URLs (6 languages x 23 pages including 18 blog guides and hubs)")
+print("  - sitemap.xml with 150 URLs (6 languages x 25 pages including About, Contact, and 18 blog guides and hubs)")
 print("  - Native 200.html SPA routing fallback (no _redirects loops)")
 print(f"  - IndexNow key verification file {indexnow_key_filename} placed at web root")
 print("  - Verified ads.txt with publisher pub-7672441336686997 placed at dist/ root")

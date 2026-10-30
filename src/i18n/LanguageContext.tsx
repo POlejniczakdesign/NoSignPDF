@@ -154,6 +154,72 @@ export const TOOL_DEFINITIONS_BY_LANG: Record<Language, ToolMeta[]> = {
       badge: 'Nowość',
       seoKeywords: ['grafika do pdf', 'jpg do pdf online', 'zdjęcia do pdf'],
     },
+    {
+      id: 'metadane',
+      path: '/wyczysc-metadane-pdf',
+      name: 'Czyszczenie Metadanych PDF',
+      shortName: 'Usuń Metadane',
+      tagline: 'Trwale usuń ukryte informacje, autora, nazwę programu i historię edycji z pliku PDF.',
+      description: 'Wykryj i wyczyść ukryte metadane (nazwa programu, autor, model komputera, daty modyfikacji, tagi XMP) w 100% lokalnie w przeglądarce.',
+      iconName: 'ShieldCheck',
+      badge: '100% Privacy',
+      seoKeywords: ['usuń metadane z pdf', 'czyszczenie metadanych pdf online', 'jak usunąć autora z pdf', 'usuwanie xmp pdf bez programu', 'anonimizacja dokumentu pdf'],
+    },
+    {
+      id: 'wyciagnij-grafiki',
+      path: '/wyciagnij-grafiki-z-pdf',
+      name: 'Wyciągnij Grafiki z PDF',
+      shortName: 'Wyciągnij Grafiki',
+      tagline: 'Wyodrębnij i pobierz osadzone zdjęcia i ilustracje z pliku PDF w oryginalnej jakości.',
+      description: 'Zapisz wszystkie grafiki JPG i PNG zawarte w dokumencie PDF bez kompresji i bez utraty jakości.',
+      iconName: 'Images',
+      badge: 'Nowość',
+      seoKeywords: ['wyciągnij zdjęcia z pdf', 'jak pobrać obrazki z pdf', 'ekstrakcja grafik pdf'],
+    },
+    {
+      id: 'zabezpiecz',
+      path: '/zabezpiecz-pdf-haslem',
+      name: 'Zabezpiecz PDF Hasłem',
+      shortName: 'Zabezpiecz Hasłem',
+      tagline: 'Zaszyfruj swój dokument PDF silnym hasłem bezpośrednio w przeglądarce.',
+      description: 'Chroń poufne umowy i dokumenty finansowe za pomocą bezpiecznego szyfrowania bez wysyłania do chmury.',
+      iconName: 'Lock',
+      badge: 'Bezpieczeństwo',
+      seoKeywords: ['zabezpiecz pdf hasłem', 'szyfrowanie pdf online', 'hasło do pdf bez programu'],
+    },
+    {
+      id: 'usun-haslo',
+      path: '/usun-haslo-z-pdf',
+      name: 'Usuń Hasło z PDF',
+      shortName: 'Odblokuj PDF',
+      tagline: 'Trwale usuń hasło i ograniczenia edycji lub drukowania z pliku PDF.',
+      description: 'Odblokuj zabezpieczony plik PDF w 100% prywatnie w pamięci RAM Twojego urządzenia.',
+      iconName: 'Lock',
+      badge: 'Nowość',
+      seoKeywords: ['usuń hasło z pdf online', 'odblokuj pdf', 'jak zdjąć hasło z pdf'],
+    },
+    {
+      id: 'czarno-bialy',
+      path: '/zmien-pdf-na-czarno-bialy',
+      name: 'Zmień PDF na Czarno-Biały',
+      shortName: 'Czarno-Biały PDF',
+      tagline: 'Przekonwertuj kolorowy plik PDF do odcieni szarości i oszczędzaj tusz w drukarce.',
+      description: 'Zamień kolorowe strony na elegancki monochromatyczny format do oszczędnego i szybkiego druku.',
+      iconName: 'Sparkles',
+      badge: 'Nowość',
+      seoKeywords: ['pdf czarno biały online', 'konwersja pdf do skali szarości', 'monochromatyczny pdf'],
+    },
+    {
+      id: 'numeruj',
+      path: '/ponumeruj-strony-pdf',
+      name: 'Ponumeruj Strony w PDF',
+      shortName: 'Numeruj Strony',
+      tagline: 'Automatycznie dodaj estetyczną numerację stron z wyborem pozycji i formatu.',
+      description: 'Wstawiaj numery stron (np. Strona 1 z N) w nagłówku lub stopce dokumentu PDF bezpośrednio w przeglądarce.',
+      iconName: 'FileText',
+      badge: 'Nowość',
+      seoKeywords: ['ponumeruj strony w pdf', 'dodaj numery stron pdf', 'numeracja arkuszy pdf'],
+    },
   ],
   en: [
     {
@@ -292,6 +358,72 @@ export const TOOL_DEFINITIONS_BY_LANG: Record<Language, ToolMeta[]> = {
       iconName: 'Images',
       badge: 'New',
       seoKeywords: ['images to pdf online', 'jpg to pdf converter', 'png to pdf'],
+    },
+    {
+      id: 'metadane',
+      path: '/wyczysc-metadane-pdf',
+      name: 'Sanitize PDF Metadata',
+      shortName: 'Remove Metadata',
+      tagline: 'Permanently remove hidden author, software, and revision metadata from PDF files.',
+      description: 'Scan and strip sensitive metadata tags (/Info, XMP, creator, dates) 100% locally in browser memory.',
+      iconName: 'ShieldCheck',
+      badge: '100% Privacy',
+      seoKeywords: ['remove pdf metadata', 'clean pdf metadata online', 'strip author from pdf', 'pdf metadata sanitizer'],
+    },
+    {
+      id: 'wyciagnij-grafiki',
+      path: '/wyciagnij-grafiki-z-pdf',
+      name: 'Extract Images from PDF',
+      shortName: 'Extract Images',
+      tagline: 'Extract and save all embedded pictures and illustrations in original resolution.',
+      description: 'Download embedded JPG, PNG, and raster images from PDF files without compression loss.',
+      iconName: 'Images',
+      badge: 'New',
+      seoKeywords: ['extract images from pdf', 'download pictures from pdf', 'pdf image extractor online'],
+    },
+    {
+      id: 'zabezpiecz',
+      path: '/zabezpiecz-pdf-haslem',
+      name: 'Protect PDF with Password',
+      shortName: 'Set Password',
+      tagline: 'Encrypt your confidential PDF files with strong password protection client-side.',
+      description: 'Secure agreements, tax records, and sensitive documents with robust encryption without uploading to servers.',
+      iconName: 'Lock',
+      badge: 'Security',
+      seoKeywords: ['protect pdf with password', 'encrypt pdf online', 'password protect pdf without upload'],
+    },
+    {
+      id: 'usun-haslo',
+      path: '/usun-haslo-z-pdf',
+      name: 'Unlock & Remove PDF Password',
+      shortName: 'Unlock PDF',
+      tagline: 'Permanently remove password restrictions and permissions locks from PDF files.',
+      description: 'Decrypt and unlock protected PDF documents in memory to restore free printing and editing.',
+      iconName: 'Lock',
+      badge: 'New',
+      seoKeywords: ['unlock pdf online', 'remove password from pdf', 'pdf password remover free'],
+    },
+    {
+      id: 'czarno-bialy',
+      path: '/zmien-pdf-na-czarno-bialy',
+      name: 'Convert PDF to Grayscale',
+      shortName: 'Grayscale PDF',
+      tagline: 'Convert color PDF documents to clean monochrome grayscale to save printer toner.',
+      description: 'Transform vibrant color pages into sleek grayscale for cost-effective printing and lower file sizes.',
+      iconName: 'Sparkles',
+      badge: 'New',
+      seoKeywords: ['pdf to grayscale online', 'black and white pdf converter', 'convert color pdf to bw'],
+    },
+    {
+      id: 'numeruj',
+      path: '/ponumeruj-strony-pdf',
+      name: 'Add Page Numbers to PDF',
+      shortName: 'Number Pages',
+      tagline: 'Easily insert custom page numbers into headers or footers of your PDF document.',
+      description: 'Add clean page numbers (e.g. Page 1 of N) with customizable position, font size, and layout in memory.',
+      iconName: 'FileText',
+      badge: 'New',
+      seoKeywords: ['add page numbers to pdf', 'number pdf pages online', 'insert page numbers pdf free'],
     },
   ],
   es: [
@@ -432,6 +564,72 @@ export const TOOL_DEFINITIONS_BY_LANG: Record<Language, ToolMeta[]> = {
       badge: 'Nuevo',
       seoKeywords: ['imagenes a pdf online', 'convertir jpg a pdf', 'fotos a pdf'],
     },
+    {
+      id: 'metadane',
+      path: '/wyczysc-metadane-pdf',
+      name: 'Limpiar Metadatos de PDF',
+      shortName: 'Eliminar Metadatos',
+      tagline: 'Elimina de forma permanente el autor, software e historial de edición de tus archivos PDF.',
+      description: 'Detecta y limpia metadatos ocultos (/Info, etiquetas XMP) 100% en la memoria RAM de tu dispositivo.',
+      iconName: 'ShieldCheck',
+      badge: '100% Privacidad',
+      seoKeywords: ['eliminar metadatos pdf', 'limpiar autor pdf online', 'anonimizar documento pdf'],
+    },
+    {
+      id: 'wyciagnij-grafiki',
+      path: '/wyciagnij-grafiki-z-pdf',
+      name: 'Extraer Imágenes de PDF',
+      shortName: 'Extraer Imágenes',
+      tagline: 'Extrae y descarga todas las fotografías e ilustraciones en su resolución original.',
+      description: 'Guarda imágenes JPG y PNG incrustadas en el PDF sin recompresión y sin perder nitidez.',
+      iconName: 'Images',
+      badge: 'Nuevo',
+      seoKeywords: ['extraer imagenes de pdf', 'descargar fotos de pdf', 'extractor imagenes pdf online'],
+    },
+    {
+      id: 'zabezpiecz',
+      path: '/zabezpiecz-pdf-haslem',
+      name: 'Proteger PDF con Contraseña',
+      shortName: 'Poner Contraseña',
+      tagline: 'Encripta tus documentos PDF con una contraseña segura sin subir archivos a la red.',
+      description: 'Protege contratos y datos confidenciales con cifrado robusto directamente en tu navegador.',
+      iconName: 'Lock',
+      badge: 'Seguridad',
+      seoKeywords: ['proteger pdf con contrasena', 'encriptar pdf online', 'poner contrasena a pdf'],
+    },
+    {
+      id: 'usun-haslo',
+      path: '/usun-haslo-z-pdf',
+      name: 'Desbloquear y Quitar Contraseña',
+      shortName: 'Desbloquear PDF',
+      tagline: 'Elimina contraseñas y restricciones de permisos de archivos PDF protegidos.',
+      description: 'Desbloquea documentos PDF protegidos de forma privada en memoria RAM para imprimir y copiar.',
+      iconName: 'Lock',
+      badge: 'Nuevo',
+      seoKeywords: ['desbloquear pdf online', 'quitar contrasena pdf', 'eliminar clave pdf gratis'],
+    },
+    {
+      id: 'czarno-bialy',
+      path: '/zmien-pdf-na-czarno-bialy',
+      name: 'Convertir PDF a Blanco y Negro',
+      shortName: 'Blanco y Negro',
+      tagline: 'Transforma documentos PDF en color a escala de grises para ahorrar tinta de impresora.',
+      description: 'Convierte páginas a color en escala de grises monocromática para imprimir con menor consumo.',
+      iconName: 'Sparkles',
+      badge: 'Nuevo',
+      seoKeywords: ['convertir pdf a blanco y negro', 'pdf escala de grises online', 'pdf monocromatico'],
+    },
+    {
+      id: 'numeruj',
+      path: '/ponumeruj-strony-pdf',
+      name: 'Numerar Páginas de PDF',
+      shortName: 'Numerar Páginas',
+      tagline: 'Inserta numeración de páginas personalizada y elegante en tus documentos PDF.',
+      description: 'Añade números de página (ej. Página 1 de N) eligiendo posición y formato en el navegador.',
+      iconName: 'FileText',
+      badge: 'Nuevo',
+      seoKeywords: ['numerar paginas pdf', 'agregar numeros de pagina pdf', 'paginar pdf online gratis'],
+    },
   ],
   hi: [
     {
@@ -570,6 +768,72 @@ export const TOOL_DEFINITIONS_BY_LANG: Record<Language, ToolMeta[]> = {
       iconName: 'Images',
       badge: 'नया',
       seoKeywords: ['तस्वीर से पीडीएफ', 'फोटो से पीडीएफ', 'jpg से pdf'],
+    },
+    {
+      id: 'metadane',
+      path: '/wyczysc-metadane-pdf',
+      name: 'पीडीएफ मेटाडेटा साफ करें',
+      shortName: 'मेटाडेटा हटाएं',
+      tagline: 'पीडीएफ से लेखक, सॉफ्टवेयर और संशोधन इतिहास की छिपी जानकारी स्थायी रूप से हटाएं।',
+      description: 'ब्राउज़र मेमोरी में 100% स्थानीय रूप से संवेदनशील मेटाडेटा (/Info, XMP) को स्कैन और हटाएं।',
+      iconName: 'ShieldCheck',
+      badge: '100% गोपनीयता',
+      seoKeywords: ['पीडीएफ मेटाडेटा हटाएं', 'पीडीएफ लेखक साफ करें', 'मेटाडेटा क्लीनर'],
+    },
+    {
+      id: 'wyciagnij-grafiki',
+      path: '/wyciagnij-grafiki-z-pdf',
+      name: 'पीडीएफ से तस्वीरें निकालें',
+      shortName: 'तस्वीरें निकालें',
+      tagline: 'पीडीएफ में शामिल सभी फोटो और चित्रों को मूल गुणवत्ता में निकालें और डाउनलोड करें।',
+      description: 'पीडीएफ फाइलों से बिना गुणवत्ता खोए सीधे JPG और PNG छवियां सुरक्षित डाउनलोड करें।',
+      iconName: 'Images',
+      badge: 'नया',
+      seoKeywords: ['पीडीएफ से इमेज निकालें', 'पीडीएफ फोटो डाउनलोड', 'पीडीएफ इमेज एक्सट्रैक्टर'],
+    },
+    {
+      id: 'zabezpiecz',
+      path: '/zabezpiecz-pdf-haslem',
+      name: 'पीडीएफ पासवर्ड सुरक्षित करें',
+      shortName: 'पासवर्ड लगाएं',
+      tagline: 'क्लाउड पर अपलोड किए बिना मजबूत पासवर्ड से अपनी पीडीएफ को एन्क्रिप्ट करें।',
+      description: 'गोपनीय अनुबंधों और वित्तीय दस्तावेजों को ब्राउज़र में सीधे सुरक्षित एन्क्रिप्शन दें।',
+      iconName: 'Lock',
+      badge: 'सुरक्षा',
+      seoKeywords: ['पीडीएफ पासवर्ड सुरक्षित करें', 'पीडीएफ एन्क्रिप्ट करें', 'पीडीएफ लॉक करें'],
+    },
+    {
+      id: 'usun-haslo',
+      path: '/usun-haslo-z-pdf',
+      name: 'पीडीएफ पासवर्ड हटाएं व अनलॉक करें',
+      shortName: 'अनलॉक पीडीएफ',
+      tagline: 'सुरक्षित पीडीएफ फाइलों से पासवर्ड और संपादन/प्रिंट प्रतिबंध हटाएं।',
+      description: 'डिवाइस रैम में सुरक्षित रूप से संरक्षित पीडीएफ को अनलॉक करें और आसानी से उपयोग करें।',
+      iconName: 'Lock',
+      badge: 'नया',
+      seoKeywords: ['पीडीएफ पासवर्ड हटाएं', 'पीडीएफ अनलॉक करें', 'पीडीएफ लॉक हटाएं'],
+    },
+    {
+      id: 'czarno-bialy',
+      path: '/zmien-pdf-na-czarno-bialy',
+      name: 'पीडीएफ ब्लैक एंड व्हाइट (ग्रेस्केल)',
+      shortName: 'ब्लैक एंड व्हाइट',
+      tagline: 'रंगीन पीडीएफ को ग्रेस्केल में बदलें और प्रिंटर स्याही बचाएं।',
+      description: 'सस्ती और तेज़ छपाई के लिए रंगीन पृष्ठों को सुंदर मोनोक्रोम शेड्स में बदलें।',
+      iconName: 'Sparkles',
+      badge: 'नया',
+      seoKeywords: ['ब्लैक एंड व्हाइट पीडीएफ', 'पीडीएफ ग्रेस्केल ऑनलाइन', 'रंगीन पीडीएफ बी/डब्ल्यू करें'],
+    },
+    {
+      id: 'numeruj',
+      path: '/ponumeruj-strony-pdf',
+      name: 'पीडीएफ पृष्ठ संख्या जोड़ें',
+      shortName: 'पेज नंबर जोड़ें',
+      tagline: 'पीडीएफ दस्तावेज़ में हेडर या फूटर में सुंदर पृष्ठ संख्या स्वचालित रूप से डालें।',
+      description: 'ब्राउज़र में स्थिति और प्रारूप चुनकर पेज नंबर (जैसे पृष्ठ 1 / N) आसानी से जोड़ें।',
+      iconName: 'FileText',
+      badge: 'नया',
+      seoKeywords: ['पीडीएफ पेज नंबर डालें', 'पीडीएफ पृष्ठ संख्या जोड़ें', 'पेज नंबरिंग पीडीएफ'],
     },
   ],
   pt: [
@@ -987,33 +1251,10 @@ export const TOOL_DEFINITIONS_BY_LANG: Record<Language, ToolMeta[]> = {
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>(() => {
     if (typeof window !== 'undefined') {
-      // 1. Sprawdź przedrostek ścieżki URL (np. /es, /hi, /en, /pl) – absolutny priorytet SEO dla Google i użytkowników
+      // Rygorystyczna izolacja językowa: język ZAWSZE wynika w 100% z aktywnej ścieżki URL
+      // /en/... -> en, /es/... -> es, /hi/... -> hi, /pt/... -> pt, /ru/... -> ru, / lub /pl/... -> pl
       const parsed = parsePathname(window.location.pathname);
-      if (parsed.isLangInPath) {
-        localStorage.setItem('app_language', parsed.lang);
-        return parsed.lang;
-      }
-
-      // 2. Sprawdź parametr 'lang' z adresu URL (dla kampanii reklamowych np. ?lang=hi)
-      const urlParams = new URLSearchParams(window.location.search);
-      const urlLang = urlParams.get('lang')?.toLowerCase();
-      if (urlLang && SUPPORTED_LANGUAGES.includes(urlLang as Language)) {
-        localStorage.setItem('app_language', urlLang);
-        return urlLang as Language;
-      }
-
-      // 3. Jeśli brak w URL, sprawdź język zapisany w localStorage
-      const saved = localStorage.getItem('app_language') as Language;
-      if (saved && SUPPORTED_LANGUAGES.includes(saved)) {
-        return saved;
-      }
-
-      // 4. Wykryj język z przeglądarki użytkownika
-      const browserLang = navigator.language?.slice(0, 2).toLowerCase();
-      if (browserLang && SUPPORTED_LANGUAGES.includes(browserLang as Language)) {
-        return browserLang as Language;
-      }
-      return 'pl'; // Domyślny język polski
+      return parsed.lang;
     }
     return 'pl';
   });
@@ -1021,7 +1262,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     if (typeof window !== 'undefined') {
-      localStorage.setItem('app_language', lang);
       document.documentElement.lang = lang;
     }
   };
@@ -1030,20 +1270,13 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (typeof window !== 'undefined') {
       document.documentElement.lang = language;
 
-      // Obsługa nawigacji wstecz/w przód w przeglądarce
+      // Obsługa nawigacji wstecz/w przód w przeglądarce (popstate)
+      // Zawsze synchronizuje aktywny język z aktualną ścieżką URL bez wycieków stanów
       const handleUrlChange = () => {
         const parsed = parsePathname(window.location.pathname);
-        if (parsed.isLangInPath && parsed.lang !== language) {
-          setLanguage(parsed.lang);
-          return;
-        }
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang')?.toLowerCase();
-        if (urlLang && SUPPORTED_LANGUAGES.includes(urlLang as Language)) {
-          if (urlLang !== language) {
-            setLanguage(urlLang as Language);
-          }
+        if (parsed.lang !== language) {
+          setLanguageState(parsed.lang);
+          document.documentElement.lang = parsed.lang;
         }
       };
 

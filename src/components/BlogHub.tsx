@@ -13,8 +13,83 @@ import {
 } from 'lucide-react';
 import { ToolRoute } from '../types';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Language } from '../i18n/translations';
 import { BLOG_ARTICLES, BLOG_HUB_TRANSLATIONS, BlogArticle } from '../data/blogArticles';
 import { buildLocalizedPath } from '../lib/routing';
+
+interface ArchitectureBannerContent {
+  title: string;
+  subtitle: string;
+  pillar1Title: string;
+  pillar1Desc: string;
+  pillar2Title: string;
+  pillar2Desc: string;
+  pillar3Title: string;
+  pillar3Desc: string;
+}
+
+const ARCHITECTURE_BANNER: Record<Language, ArchitectureBannerContent> = {
+  pl: {
+    title: 'Architektura Zero-Upload w Praktyce',
+    subtitle: 'Każdy poradnik opisuje standardy stosowane bezpośrednio w silniku NoSignPDF',
+    pillar1Title: '1. Pamięć RAM komputera',
+    pillar1Desc: 'Przetwarzanie dokumentów zachodzi w odizolowanym procesie przeglądarki bez dotykania serwera.',
+    pillar2Title: '2. Brak zapisu na dysku',
+    pillar2Desc: 'Po zamknięciu karty bufor pamięci jest czyszczony przez silnik JavaScript Garbage Collector.',
+    pillar3Title: '3. Zgodność z RODO i NIS2',
+    pillar3Desc: 'Brak powierzenia przetwarzania danych podmiotom trzecim (brak konieczności umów DPA).',
+  },
+  en: {
+    title: 'Zero-Upload Architecture in Practice',
+    subtitle: 'Every technical guide outlines standards implemented directly within the NoSignPDF engine',
+    pillar1Title: '1. Device RAM Memory',
+    pillar1Desc: 'Document processing occurs strictly in an isolated browser sandbox with zero network transmission.',
+    pillar2Title: '2. Zero Disk Persistence',
+    pillar2Desc: 'Closing the browser tab purges memory buffers immediately via the JavaScript Garbage Collector.',
+    pillar3Title: '3. GDPR & Data Sovereignty',
+    pillar3Desc: 'No data processing is delegated to third parties, eliminating cross-border data transfer liabilities.',
+  },
+  es: {
+    title: 'Arquitectura Zero-Upload en la Práctica',
+    subtitle: 'Cada guía describe los estándares técnicos implementados directamente en el motor NoSignPDF',
+    pillar1Title: '1. Memoria RAM del dispositivo',
+    pillar1Desc: 'El procesamiento de archivos se ejecuta en un sandbox aislado del navegador sin transferir datos.',
+    pillar2Title: '2. Cero persistencia en disco',
+    pillar2Desc: 'Al cerrar la pestaña del navegador, el búfer de memoria se libera por el Garbage Collector.',
+    pillar3Title: '3. Conformidad RGPD y Privacidad',
+    pillar3Desc: 'Sin cesión de datos a servidores externos, garantizando el cumplimiento normativo internacional.',
+  },
+  hi: {
+    title: 'व्यावहारिक रूप में ज़ीरो-अपलोड आर्किटेक्चर',
+    subtitle: 'प्रत्येक तकनीकी लेख NoSignPDF इंजन में लागू किए गए सुरक्षा मानकों का विवरण देता है',
+    pillar1Title: '1. डिवाइस की रैम (RAM) मेमोरी',
+    pillar1Desc: 'दस्तावेज़ प्रोसेसिंग ब्राउज़र के सुरक्षित सैंडबॉक्स में होती है बिना किसी सर्वर ट्रांसमिशन के।',
+    pillar2Title: '2. डिस्क पर कोई डेटा सुरक्षित नहीं',
+    pillar2Desc: 'टैब बंद होते ही जावास्क्रिप्ट गारबेज कलेक्टर द्वारा मेमोरी बफर तुरंत खाली कर दिया जाता है।',
+    pillar3Title: '3. डेटा गोपनीयता और सुरक्षा',
+    pillar3Desc: 'तृतीय पक्ष सर्वरों पर डेटा कभी नहीं भेजा जाता, जिससे कॉर्पोरेट डेटा पूरी तरह सुरक्षित रहता है।',
+  },
+  pt: {
+    title: 'Arquitetura Zero-Upload na Prática',
+    subtitle: 'Cada guia técnico descreve os padrões aplicados diretamente no motor do NoSignPDF',
+    pillar1Title: '1. Memória RAM do Dispositivo',
+    pillar1Desc: 'O processamento ocorre de forma estritamente isolada no navegador sem transferir dados à nuvem.',
+    pillar2Title: '2. Zero Armazenamento em Disco',
+    pillar2Desc: 'Ao fechar a aba, os buffers de memória são destruídos imediatamente pelo Garbage Collector.',
+    pillar3Title: '3. Conformidade LGPD e GDPR',
+    pillar3Desc: 'Nenhum dado é compartilhado com terceiros, eliminando riscos de vazamento em servidores.',
+  },
+  ru: {
+    title: 'Архитектура Zero-Upload на Практике',
+    subtitle: 'Каждое руководство описывает стандарты, реализованные непосредственно в движке NoSignPDF',
+    pillar1Title: '1. Оперативная память RAM',
+    pillar1Desc: 'Обработка документов происходит исключительно в изолированном процессе браузера без сети.',
+    pillar2Title: '2. Без сохранения на диск',
+    pillar2Desc: 'После закрытия вкладки буфер памяти мгновенно очищается сборщиком мусора Garbage Collector.',
+    pillar3Title: '3. Соответствие GDPR и конфиденциальность',
+    pillar3Desc: 'Данные никогда не передаются третьим лицам, гарантируя полную защиту корпоративной тайны.',
+  },
+};
 
 interface BlogHubProps {
   onNavigate: (route: ToolRoute) => void;
@@ -22,8 +97,9 @@ interface BlogHubProps {
 
 export const BlogHub: React.FC<BlogHubProps> = ({ onNavigate }) => {
   const { language } = useLanguage();
-  const hubCopy = BLOG_HUB_TRANSLATIONS[language] || BLOG_HUB_TRANSLATIONS.en;
-  const articles = BLOG_ARTICLES[language] || BLOG_ARTICLES.en;
+  const hubCopy = BLOG_HUB_TRANSLATIONS[language] || BLOG_HUB_TRANSLATIONS.pl;
+  const articles = BLOG_ARTICLES[language] || BLOG_ARTICLES.pl;
+  const arch = ARCHITECTURE_BANNER[language] || ARCHITECTURE_BANNER.pl;
 
   const getArticleIcon = (id: string) => {
     switch (id) {
@@ -136,10 +212,10 @@ export const BlogHub: React.FC<BlogHubProps> = ({ onNavigate }) => {
             </div>
             <div>
               <h3 className="text-sm font-bold text-zinc-900 dark:text-white">
-                Architektura Zero-Upload w Praktyce
+                {arch.title}
               </h3>
               <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                Każdy poradnik opisuje standardy stosowane bezpośrednio w silniku NoSignPDF
+                {arch.subtitle}
               </p>
             </div>
           </div>
@@ -154,26 +230,26 @@ export const BlogHub: React.FC<BlogHubProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-zinc-600 dark:text-zinc-400">
           <div className="space-y-1">
             <span className="font-bold text-zinc-800 dark:text-zinc-200 block">
-              1. Pamięć RAM komputera
+              {arch.pillar1Title}
             </span>
             <p>
-              Przetwarzanie dokumentów zachodzi w odizolowanym procesie przeglądarki bez dotykania serwera.
+              {arch.pillar1Desc}
             </p>
           </div>
           <div className="space-y-1">
             <span className="font-bold text-zinc-800 dark:text-zinc-200 block">
-              2. Brak zapisu na dysku
+              {arch.pillar2Title}
             </span>
             <p>
-              Po zamknięciu karty bufor pamięci jest czyszczony przez silnik JavaScript Garbage Collector.
+              {arch.pillar2Desc}
             </p>
           </div>
           <div className="space-y-1">
             <span className="font-bold text-zinc-800 dark:text-zinc-200 block">
-              3. Zgodność z RODO i NIS2
+              {arch.pillar3Title}
             </span>
             <p>
-              Brak powierzenia przetwarzania danych podmiotom trzecim (brak konieczności umów DPA).
+              {arch.pillar3Desc}
             </p>
           </div>
         </div>

@@ -133,7 +133,7 @@ export const ProcessingScreen: React.FC<ProcessingScreenProps> = ({
   customStages,
 }) => {
   const { language } = useLanguage();
-  const copy = PROCESSING_STRINGS[language] || PROCESSING_STRINGS.en;
+  const copy = PROCESSING_STRINGS[language] || PROCESSING_STRINGS.pl;
 
   const [progress, setProgress] = useState<number>(0);
   const [isClosing, setIsClosing] = useState<boolean>(false);

@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { ToolRoute } from '../types';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Language } from '../i18n/translations';
 import { BLOG_ARTICLES, BLOG_HUB_TRANSLATIONS, BlogArticle } from '../data/blogArticles';
 import { buildLocalizedPath } from '../lib/routing';
 
@@ -22,10 +23,19 @@ interface BlogArticleViewProps {
   onNavigate: (route: ToolRoute) => void;
 }
 
+const LAUNCH_TOOL_LABELS: Record<Language, string> = {
+  pl: 'Uruchom narzędzie',
+  en: 'Launch tool',
+  es: 'Abrir herramienta',
+  hi: 'टूल शुरू करें',
+  pt: 'Abrir ferramenta',
+  ru: 'Запустить инструмент',
+};
+
 export const BlogArticleView: React.FC<BlogArticleViewProps> = ({ articleRoute, onNavigate }) => {
-  const { language } = useLanguage();
-  const hubCopy = BLOG_HUB_TRANSLATIONS[language] || BLOG_HUB_TRANSLATIONS.en;
-  const articles = BLOG_ARTICLES[language] || BLOG_ARTICLES.en;
+  const { language, t } = useLanguage();
+  const hubCopy = BLOG_HUB_TRANSLATIONS[language] || BLOG_HUB_TRANSLATIONS.pl;
+  const articles = BLOG_ARTICLES[language] || BLOG_ARTICLES.pl;
 
   // Find active article
   const article = articles.find((a) => a.canonicalRoute === articleRoute) || articles[0];
@@ -40,7 +50,7 @@ export const BlogArticleView: React.FC<BlogArticleViewProps> = ({ articleRoute, 
           onClick={() => onNavigate('/')}
           className="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors cursor-pointer"
         >
-          {language === 'pl' ? 'Strona główna' : 'Home'}
+          {t.common.home}
         </button>
         <span>/</span>
         <a
@@ -182,7 +192,7 @@ export const BlogArticleView: React.FC<BlogArticleViewProps> = ({ articleRoute, 
                   </p>
                 </div>
                 <div className="pt-3 mt-3 border-t border-zinc-200/60 dark:border-zinc-700/60 text-[11px] font-bold text-indigo-600 dark:text-indigo-400 flex items-center justify-between">
-                  <span>{language === 'pl' ? 'Uruchom narzędzie' : 'Launch tool'}</span>
+                  <span>{LAUNCH_TOOL_LABELS[language] || LAUNCH_TOOL_LABELS.pl}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </div>
               </div>

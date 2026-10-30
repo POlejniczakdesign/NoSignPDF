@@ -22,6 +22,8 @@ import { TimeSavedCard } from './components/TimeSavedCard';
 import { PublisherArticleSection } from './components/PublisherArticleSection';
 import { BlogHub } from './components/BlogHub';
 import { BlogArticleView } from './components/BlogArticleView';
+import { AboutUs } from './components/AboutUs';
+import { Contact } from './components/Contact';
 import { ProcessingProvider } from './context/ProcessingContext';
 import { ToolRoute } from './types';
 import { TOOLS } from './data/tools';
@@ -138,7 +140,7 @@ function AppContent() {
     const handleLocationChange = () => {
       const parsed = parsePathname(window.location.pathname);
       setCurrentPath(parsed.toolRoute);
-      if (parsed.isLangInPath && parsed.lang !== language) {
+      if (parsed.lang !== language) {
         setLanguage(parsed.lang);
       }
     };
@@ -337,6 +339,14 @@ function AppContent() {
 
     if (currentPath === '/polityka-privacy') {
       return <PrivacyPolicy onNavigate={navigateTo} />;
+    }
+
+    if (currentPath === '/about') {
+      return <AboutUs onNavigate={navigateTo} />;
+    }
+
+    if (currentPath === '/contact') {
+      return <Contact onNavigate={navigateTo} />;
     }
 
     if (currentPath === '/blog') {

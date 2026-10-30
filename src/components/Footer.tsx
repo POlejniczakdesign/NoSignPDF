@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Lock, ShieldCheck, BookOpen } from 'lucide-react';
+import { FileText, Lock, ShieldCheck, BookOpen, Users, Mail } from 'lucide-react';
 import { ToolRoute } from '../types';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Language } from '../i18n/translations';
@@ -28,6 +28,15 @@ const FOOTER_SEO_INDEX_TITLES: Record<Language, string> = {
   ru: 'Индекс инструментов PDF',
 };
 
+const FOOTER_ALL_GUIDES_LABELS: Record<Language, string> = {
+  pl: 'Wszystkie poradniki PDF →',
+  en: 'All PDF Guides →',
+  es: 'Todas las guías PDF →',
+  hi: 'सभी पीडीएफ मार्गदर्शिकाएँ →',
+  pt: 'Todos os guias de PDF →',
+  ru: 'Все руководства по PDF →',
+};
+
 const CORE_11_TOOL_IDS = [
   'wypelnij',
   'usun',
@@ -45,10 +54,10 @@ const CORE_11_TOOL_IDS = [
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const { t, language, localizedTools } = useLanguage();
 
-  const seoIndexTitle = FOOTER_SEO_INDEX_TITLES[language] || FOOTER_SEO_INDEX_TITLES.en;
-  const blogTitle = FOOTER_BLOG_TITLES[language] || FOOTER_BLOG_TITLES.en;
+  const seoIndexTitle = FOOTER_SEO_INDEX_TITLES[language] || FOOTER_SEO_INDEX_TITLES.pl;
+  const blogTitle = FOOTER_BLOG_TITLES[language] || FOOTER_BLOG_TITLES.pl;
   const nicheTools = localizedTools.filter((tool) => CORE_11_TOOL_IDS.includes(tool.id));
-  const blogArticles = BLOG_ARTICLES[language] || BLOG_ARTICLES.en;
+  const blogArticles = BLOG_ARTICLES[language] || BLOG_ARTICLES.pl;
 
   return (
     <footer
@@ -141,7 +150,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   }}
                   className="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline block"
                 >
-                  {language === 'pl' ? 'Wszystkie poradniki PDF →' : 'All PDF Guides →'}
+                  {FOOTER_ALL_GUIDES_LABELS[language] || FOOTER_ALL_GUIDES_LABELS.pl}
                 </a>
               </li>
             </ul>
@@ -156,6 +165,22 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               {t.footer.securityDesc}
             </p>
             <div className="pt-1 flex flex-col sm:flex-row flex-wrap gap-2">
+              <button
+                id="footer-about-link"
+                onClick={() => onNavigate('/about')}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-xs font-semibold text-indigo-700 dark:text-indigo-300 border border-indigo-200/80 dark:border-indigo-800/80 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 transition-colors cursor-pointer"
+              >
+                <Users className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+                <span>{t.footer.aboutUs}</span>
+              </button>
+              <button
+                id="footer-contact-link"
+                onClick={() => onNavigate('/contact')}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-xs font-semibold text-emerald-700 dark:text-emerald-300 border border-emerald-200/80 dark:border-emerald-800/80 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 transition-colors cursor-pointer"
+              >
+                <Mail className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                <span>{t.footer.contact}</span>
+              </button>
               <button
                 id="footer-privacy-policy-link"
                 onClick={() => onNavigate('/polityka-privacy')}
@@ -218,6 +243,22 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             © {new Date().getFullYear()} NoSignPDF. {t.footer.copyright}
           </div>
           <div className="flex flex-wrap items-center gap-3 text-[11px]">
+            <button
+              id="footer-bottom-about-link"
+              onClick={() => onNavigate('/about')}
+              className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors cursor-pointer underline decoration-zinc-300 dark:decoration-zinc-700 underline-offset-2"
+            >
+              {t.footer.aboutUs}
+            </button>
+            <span>•</span>
+            <button
+              id="footer-bottom-contact-link"
+              onClick={() => onNavigate('/contact')}
+              className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors cursor-pointer underline decoration-zinc-300 dark:decoration-zinc-700 underline-offset-2"
+            >
+              {t.footer.contact}
+            </button>
+            <span>•</span>
             <button
               id="footer-bottom-privacy-link"
               onClick={() => onNavigate('/polityka-privacy')}

@@ -22,8 +22,27 @@ import {
 import { ToolRoute, ToolMeta } from '../types';
 import { FileUploader } from './FileUploader';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Language } from '../i18n/translations';
 import { getCumulativeStats, formatTimeSaved } from '../lib/timeSavedTracker';
 import { BLOG_ARTICLES, BLOG_HUB_TRANSLATIONS } from '../data/blogArticles';
+
+const OPEN_TOOL_LABELS: Record<Language, string> = {
+  pl: 'Otwórz',
+  en: 'Open',
+  es: 'Abrir',
+  hi: 'खोलें',
+  pt: 'Abrir',
+  ru: 'Открыть',
+};
+
+const DEFAULT_NEW_BADGES: Record<Language, string> = {
+  pl: 'Nowość',
+  en: 'New',
+  es: 'Nuevo',
+  hi: 'नया',
+  pt: 'Novo',
+  ru: 'Новинка',
+};
 
 interface HomeHubProps {
   onNavigate: (path: ToolRoute) => void;
@@ -34,8 +53,8 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
   const { t, localizedTools, language } = useLanguage();
   const [moreToolsOpen, setMoreToolsOpen] = useState(false);
   const [cumulativeStats] = useState(() => getCumulativeStats());
-  const hubCopy = BLOG_HUB_TRANSLATIONS[language] || BLOG_HUB_TRANSLATIONS.en;
-  const blogArticles = BLOG_ARTICLES[language] || BLOG_ARTICLES.en;
+  const hubCopy = BLOG_HUB_TRANSLATIONS[language] || BLOG_HUB_TRANSLATIONS.pl;
+  const blogArticles = BLOG_ARTICLES[language] || BLOG_ARTICLES.pl;
 
   // The prominent hero tools required
   const HERO_TOOL_ROUTES: ToolRoute[] = [
@@ -272,7 +291,7 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
                     {isNew && (
                       <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-full bg-blue-600 text-white shadow-xs">
                         <Sparkles className="w-3 h-3" />
-                        <span>{tool.badge || 'Nowość'}</span>
+                        <span>{tool.badge || DEFAULT_NEW_BADGES[language] || DEFAULT_NEW_BADGES.pl}</span>
                       </span>
                     )}
                   </div>
@@ -353,7 +372,7 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate, onFileDrop }) => {
                   </p>
                 </div>
                 <div className="pt-2 mt-3 border-t border-zinc-100 dark:border-zinc-800 text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 flex items-center justify-between">
-                  <span>Otwórz</span>
+                  <span>{OPEN_TOOL_LABELS[language] || OPEN_TOOL_LABELS.pl}</span>
                   <ArrowRight className="w-3 h-3" />
                 </div>
               </div>

@@ -88,7 +88,7 @@ export const Header: React.FC<HeaderProps> = ({
   const langDropdownRef = useRef<HTMLDivElement>(null);
   const toolsDropdownRef = useRef<HTMLDivElement>(null);
 
-  const categories = CATEGORY_NAMES[language] || CATEGORY_NAMES.en;
+  const categories = CATEGORY_NAMES[language] || CATEGORY_NAMES.pl;
 
   // Close dropdowns on outside click
   useEffect(() => {
